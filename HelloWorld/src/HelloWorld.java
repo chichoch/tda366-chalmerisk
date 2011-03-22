@@ -6,7 +6,7 @@ public class HelloWorld {
 	 */
 	public static void main (String[] arg) {
 		String s = Test.getString();
-		System.out.println("HELLO WORLD" + s);
+		System.out.println("HELLO CHALMERISK" + s);
 		//JOptionPane.showMessageDialog(null, "TJENÄÄÄÄÄÄÄ!");
 	}
 }
