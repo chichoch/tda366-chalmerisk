@@ -2,7 +2,7 @@ import javax.swing.*;
 
 public class HelloWorld {
 	/*
-	 * JÄttekonstig grej.
+	 * JÄttekonstig grejs.
 	 */
 	public static void main (String[] arg) {
 		String s = Test.getString();
