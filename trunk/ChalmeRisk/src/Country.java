@@ -20,7 +20,11 @@ public class Country {
 	public void setOwner(String s) {
 		owner = s;
 	}
-	public void getContinent(String e) {
+	
+	public String getContinent() {
+		return continent;
+	}
+	public void setContinent(String e) {
 		continent = e;
 	}
 	
