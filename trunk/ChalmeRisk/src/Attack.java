@@ -36,7 +36,6 @@ public class Attack extends JFrame{
             	System.exit(0);
             }
 		});
-		
 		icon = new ImageIcon("KnightSmall.gif");
 		icon2 = new ImageIcon("KnightRed.gif");
 		ikon = new JLabel(icon);
