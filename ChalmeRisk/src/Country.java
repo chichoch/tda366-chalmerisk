@@ -1,9 +1,14 @@
 
 public class Country {
 	private int troops;
+	private String country;
 	private String owner;
 	private String continent;
 	public enum Neighbors {SVERIGE, NORGE};
+	
+	public Country(String s){
+		country = s;
+	}
 	
 	public int getTroops() {
 		return troops;
@@ -27,6 +32,4 @@ public class Country {
 	public void setContinent(String e) {
 		continent = e;
 	}
-	
-	
 }
