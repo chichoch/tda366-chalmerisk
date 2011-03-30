@@ -8,7 +8,7 @@ public class Dice {
 	 * Constructor. Creates a dice with a random number
 	 */
 	public Dice() {
-		num = (int) ((Math.random() * 6) + 1);
+		tossDice();
 	}
 	/*
 	 * Returns the number the Dice have currently
