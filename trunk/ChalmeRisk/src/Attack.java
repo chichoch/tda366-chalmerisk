@@ -139,7 +139,6 @@ public class Attack extends JFrame {
 			retreat.setText("Invade!");
 			def.setOwner(att.getOwner());
 		}
-		}
 	}
 }
 
