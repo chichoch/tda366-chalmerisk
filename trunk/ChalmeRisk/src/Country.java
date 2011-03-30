@@ -10,6 +10,12 @@ public class Country {
 		country = s;
 	}
 	
+	public Country(String country, String owner, int troops){
+		this.country = country;
+		this.owner = owner;
+		this.troops = troops;
+	}
+	
 	public int getTroops() {
 		return troops;
 	}
