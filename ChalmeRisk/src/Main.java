@@ -1,7 +1,6 @@
 
 public class Main {
 	public static void main (String[] arg) {
-		System.out.println("ChalmeRisk!");
 		new GUItest();
 		Country sverige = new Country("Sverige", "Player 1", 16);
 		Country danmark = new Country("Danmark", "Player 2", 16);
