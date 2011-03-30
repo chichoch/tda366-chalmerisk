@@ -1,150 +1,145 @@
-import javax.swing.*;
+import java.awt.Color;
 import java.awt.event.*;
 import java.awt.*;
 
-public class Attack extends JFrame{
-	
-	private ImageIcon icon;
-	private ImageIcon icon2;
-	private JPanel teamOnePanel;
-	private JPanel teamTwoPanel;
-	private JPanel actionPanel;
-	private JButton exit;
-	private JButton attack;
-	private JLabel ikon;
-	private JLabel ikon2;
-	private JLabel ikon3;
-	private JLabel ikon4;
-	private JLabel ikon5;
-	private JLabel ikon6;
-	private JLabel ikon7;
-	private JLabel ikon8;
-	private JLabel winner;
-	private JButton invade;
-	
-	public Attack(){
-		init();
-	}
-	
-	private void init(){
-		invade = new JButton();
-		invade.setVisible(false);
-		invade.setEnabled(false);
-		
-		invade.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e){
-            	System.exit(0);
-            }
-		});
-		icon = new ImageIcon("KnightSmall.gif");
-		icon2 = new ImageIcon("KnightRed.gif");
-		ikon = new JLabel(icon);
-		ikon.setVisible(true);
-		ikon2 = new JLabel(icon);
-		ikon2.setVisible(true);
-		ikon3 = new JLabel(icon);
-		ikon3.setVisible(true);
-		ikon4 = new JLabel(icon);
-		ikon4.setVisible(true);
-		ikon5 = new JLabel(icon2);
-		ikon5.setVisible(true);
-		ikon6 = new JLabel(icon2);
-		ikon6.setVisible(true);
-		ikon7 = new JLabel(icon2);
-		ikon7.setVisible(true);
-		ikon8 = new JLabel(icon2);
-		ikon8.setVisible(true);
-		
-		exit = new JButton("Retreat!");
-		exit.setVisible(true);
-		exit.setSize(50, 25);
-		exit.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e){
-            	System.exit(0);
-            }
-		});
-		attack = new JButton("Attack!");
-		attack.setVisible(true);
-		attack.setSize(50, 25);
-		
-		winner = new JLabel("Start Attacking");
+import javax.swing.*;
 
-		teamOnePanel = new JPanel();
-		teamOnePanel.setVisible(true);
-		teamOnePanel.setLayout(new GridLayout(4,1));
-		teamOnePanel.setBorder(BorderFactory.createLineBorder(Color.black));
-		teamOnePanel.add(ikon);
-		teamOnePanel.add(ikon2);
-		teamOnePanel.add(ikon3);
-		teamOnePanel.add(ikon4);
-		
-		teamTwoPanel = new JPanel();
-		teamTwoPanel.setVisible(true);
-		teamTwoPanel.setLayout(new GridLayout(4,1));
-		teamTwoPanel.setBorder(BorderFactory.createLineBorder(Color.black));
-		teamTwoPanel.add(ikon5);
-		teamTwoPanel.add(ikon6);
-		teamTwoPanel.add(ikon7);
-		teamTwoPanel.add(ikon8);
-		
+
+public class Attack extends JFrame {
+	private JPanel attTeamPanel;
+	private JPanel defTeamPanel;
+	private JPanel actionPanel;
+	private JLabel status;
+	private ImageIcon attCannon;
+	private ImageIcon attHorse;
+	private ImageIcon attInfantry;
+	private ImageIcon defCannon;
+	private ImageIcon defHorse;
+	private ImageIcon defInfantry;
+	private JButton fight;
+	private int attTroops;
+	private int defTroops;
+	private JButton retreat;
+	private JLabel standings;
+	
+	public Attack(final Country att, final Country def){
+		status = new JLabel();
+		attTeamPanel = new JPanel();
+		defTeamPanel = new JPanel();
 		actionPanel = new JPanel();
-		actionPanel.setVisible(true);
-		actionPanel.setBorder(BorderFactory.createLineBorder(Color.black));
-		actionPanel.setLayout(new FlowLayout());
-		actionPanel.add(exit);
-		actionPanel.add(attack);
-		actionPanel.add(winner);
-		actionPanel.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+		fight = new JButton("Fight!");
+		attTroops = att.getTroops();
+		defTroops = def.getTroops();
+		retreat = new JButton("Retreat!");
+		standings = new JLabel();
 		
-		this.setLayout(new GridLayout(1,3));
-		this.add(teamOnePanel);
-		this.add(actionPanel);
-		this.add(teamTwoPanel);
-		
-		attack.addActionListener(new ActionListener() {
+		fight.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e){
-            	double i = Math.random()*10;
-        		if(i < 5){
-        			teamOnePanel.remove(0);
-        			winner.setText("Red killed 1");
-        		}
-        		else if(i>5){
-        			teamTwoPanel.remove(0);
-        			winner.setText("Green Killed 1");
-        		}
-        		if(teamOnePanel.getComponentCount()==0){
-        			actionPanel.setLayout(new BorderLayout());
-        			actionPanel.add(invade);
-        			winner.setVisible(false);
-        			attack.setEnabled(false);
-        			attack.setVisible(false);
-        			exit.setVisible(false);
-        			exit.setEnabled(false);
-        			invade.setText("Flee!");
-        			invade.setEnabled(true);
-        			invade.setVisible(true);
-        		}
-        		if(teamTwoPanel.getComponentCount()==0){
-        			actionPanel.setLayout(new BorderLayout());
-        			actionPanel.add(invade);
-        			winner.setVisible(false);
-        			attack.setEnabled(false);
-        			attack.setVisible(false);
-        			exit.setVisible(false);
-        			exit.setEnabled(false);
-        			invade.setText("Invade!");
-        			invade.setVisible(true);
-        			invade.setEnabled(true);
-        		}
-        		
-        		repaint();
-            }
+				fight(att, def);
+				setTroops(attTroops, defTroops);
+			}
 		});
+		
+		retreat.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e){
+				att.setTroops(attTroops);
+				def.setTroops(defTroops);
+				System.exit(0);
+			}
+		});
+		
+		setPanel(attTeamPanel);
+		setPanel(defTeamPanel);
+		setPanel(actionPanel);
+		
+		actionPanel.add(status);
+		actionPanel.add(fight);
+		actionPanel.add(retreat);
+		actionPanel.add(standings);
+		
+		attCannon = new ImageIcon("greenCannon.gif");
+		attHorse = new ImageIcon("KnightSmall.gif");
+		attInfantry = new ImageIcon("greenInfantry.gif");
+		defCannon = new ImageIcon("redCannon.gif");
+		defHorse = new ImageIcon("KnightRed.gif");
+		defInfantry = new ImageIcon("redInfantry.gif");
+		
+		setTroops(att.getTroops(), def.getTroops());
+		
+		setLayout(new GridLayout(1,3));
 		setUndecorated(true);
 		setVisible(true);
 		pack();
 		setLocation(450, 200);
 		setSize(400, 400);
+		
+		add(attTeamPanel);
+		add(actionPanel);
+		add(defTeamPanel);
+	}
+	
+	public void setPanel(JPanel panel){
+		panel.setVisible(true);
+		panel.setLayout(new GridLayout(4,1));
+		panel.setBorder(BorderFactory.createLineBorder(Color.black));
+	}
+	
+	public void setTroops(int attTroops, int defTroops){
+		attTeamPanel.removeAll();
+		defTeamPanel.removeAll();
+		while(attTroops>0 ){
+			if(attTroops%10==0){
+				attTroops=attTroops-10;
+				attTeamPanel.add(new JLabel(attCannon));
+			}
+			else if(attTroops%5==0){
+				attTroops=attTroops-5;
+				attTeamPanel.add(new JLabel(attHorse));
+			}
+			else{
+				attTroops=attTroops-1;
+				attTeamPanel.add(new JLabel(attInfantry));
+			}
+		}
+		while(defTroops>0 ){
+			if(defTroops%10==0){
+				defTroops=defTroops-10;
+				defTeamPanel.add(new JLabel(defCannon));
+			}
+			else if(defTroops%5==0){
+				defTroops=defTroops-5;
+				defTeamPanel.add(new JLabel(defHorse));
+			}
+			else{
+				defTroops=defTroops-1;
+				defTeamPanel.add(new JLabel(defInfantry));
+			}
+		}
+		repaint();
+		validate();
+	}
+	public void fight(Country att, Country def){
+		double i = Math.random()*10;
+		if(i < 5){
+			attTroops = attTroops-1;
+			status.setText("Red killed 1");
+		}
+		else if(i>=5){
+			defTroops = defTroops -1;
+			status.setText("Green Killed 1");
+		}
+		if(attTroops == 1){
+			//fight.setVisible(false);
+			fight.setEnabled(false);
+			retreat.setText("Flee");
+		}
+		if(defTroops == 0){
+			//fight.setVisible(false);
+			fight.setEnabled(false);
+			retreat.setText("Invade!");
+			def.setOwner(att.getOwner());
+		}
 	}
 }
+
 
