@@ -119,32 +119,26 @@ public class Attack extends JFrame {
 		validate();
 	}
 	public void fight(Country att, Country def){
-		double i = Math.random();
-		if(i < 0.3){
-			attTroops = attTroops-2;
-			status.setText("Red killed 2");
-		}
-		
-		
-		else if(i>0.6){
-			defTroops = defTroops -2;
-			status.setText("Green Killed 2");
-		}
-		else{
-			defTroops = defTroops -1;
+		double i = Math.random()*10;
+		if(i < 5){
 			attTroops = attTroops-1;
-			status.setText("Green & Red Killed 1");
+			status.setText("Red killed 1");
 		}
-		if(attTroops <= 1){
+		else if(i>=5){
+			defTroops = defTroops -1;
+			status.setText("Green Killed 1");
+		}
+		if(attTroops == 1){
 			//fight.setVisible(false);
 			fight.setEnabled(false);
 			retreat.setText("Flee");
 		}
-		if(defTroops <= 0){
+		if(defTroops == 0){
 			//fight.setVisible(false);
 			fight.setEnabled(false);
 			retreat.setText("Invade!");
 			def.setOwner(att.getOwner());
+		}
 		}
 	}
 }
