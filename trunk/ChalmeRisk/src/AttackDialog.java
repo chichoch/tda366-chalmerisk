@@ -18,6 +18,7 @@ public class AttackDialog extends JFrame{
 	private JButton fight;
 	private JButton retreat;
 	
+	//constructor thats sets up the window
 	public AttackDialog(Country att, Country def){
 		status = new JLabel();
 		attTeamPanel = new JPanel();
@@ -26,16 +27,6 @@ public class AttackDialog extends JFrame{
 		fight = new JButton("Fight!");
 		retreat = new JButton("Retreat!");
 		standings = new JLabel();
-		
-		fight.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e){
-			}
-		});
-		
-		retreat.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e){
-			}
-		});
 		
 		setPanel(attTeamPanel);
 		setPanel(defTeamPanel);
@@ -53,7 +44,7 @@ public class AttackDialog extends JFrame{
 		defHorse = new ImageIcon("KnightRed.gif");
 		defInfantry = new ImageIcon("redInfantry.gif");
 		
-		setTroops(att.getTroops(), def.getTroops());
+		repaintTroops(att.getTroops(), def.getTroops());
 		
 		setLayout(new GridLayout(1,3));
 		setUndecorated(true);
@@ -65,6 +56,19 @@ public class AttackDialog extends JFrame{
 		add(attTeamPanel);
 		add(actionPanel);
 		add(defTeamPanel);
+		
+		//actionlisteners
+		fight.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e){
+				//AttackController.startFight();
+			}
+		});
+		
+		retreat.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e){
+				//AttackController.endFight();
+			}
+		});
 	}
 	
 	public void setPanel(JPanel panel){
@@ -73,7 +77,8 @@ public class AttackDialog extends JFrame{
 		panel.setBorder(BorderFactory.createLineBorder(Color.black));
 	}
 	
-	public void setTroops(int attTroops, int defTroops){
+	//Paints up troops in the panels
+	public void repaintTroops(int attTroops, int defTroops){
 		attTeamPanel.removeAll();
 		defTeamPanel.removeAll();
 		while(attTroops>0 ){
