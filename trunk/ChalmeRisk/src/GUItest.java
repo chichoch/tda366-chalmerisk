@@ -17,7 +17,6 @@ public class GUItest extends JFrame {
 	private JButton sweden;
 	private JButton finland;
 	private JButton nextStep;
-	private JPanel knappar;
 	Country finland1 = new Country("Finland", "Player 2", 12);
 	Country norge1 = new Country("Norge", "Player 2", 12);
 	
@@ -69,7 +68,6 @@ public class GUItest extends JFrame {
 		add(bottom, BorderLayout.SOUTH);
 		add(top, BorderLayout.NORTH);
 		
-		final boolean hej = false;
 		
 		norge.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e){
@@ -80,8 +78,5 @@ public class GUItest extends JFrame {
 		setExtendedState(getExtendedState()|JFrame.MAXIMIZED_BOTH); //Fullscreen
 		setVisible(true);
 		pack();
-	}
-	public GUItest(Country a, Country b, Country c, Country d){
-	
 	}
 }
