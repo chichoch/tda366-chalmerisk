@@ -14,5 +14,9 @@ public class AttackController {
 		
 	}
 	
+	public void endFight() {
+		
+	}
+	
 	
 }
