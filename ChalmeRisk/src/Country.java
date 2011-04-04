@@ -7,9 +7,10 @@ public class Country {
 	private String continent;
 	public enum Neighbors {SVERIGE, NORGE};
 	
-	public Country(String s, int i){
+	public Country(String s, int i, int f){
 		country = s;
 		countryid= i;
+		troops= f;
 	}
 	
 	public Country(String country, String owner, int troops){
