@@ -7,6 +7,10 @@ public class Country {
 	private String continent;
 	public enum Neighbors {SVERIGE, NORGE};
 	
+	public Country() {
+		
+	}
+	
 	public Country(String s, int i, int f){
 		country = s;
 		countryid= i;
