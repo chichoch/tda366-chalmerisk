@@ -11,6 +11,9 @@ public class Map {
 		if(Chalmers.getCountryId()== i){ 
 			return Chalmers;
 		}
+		if(Chalmers2.getCountryId()== i){ 
+			return Chalmers2;
+		}
 		return null;
 	}
 }
