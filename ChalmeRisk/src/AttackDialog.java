@@ -60,13 +60,13 @@ public class AttackDialog extends JFrame{
 		//actionlisteners
 		fight.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e){
-				//AttackController.startFight();
+				GUItest.aCtrl.startFight();
 			}
 		});
 		
 		retreat.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e){
-				//AttackController.endFight();
+				GUItest.aCtrl.endFight();
 			}
 		});
 	}

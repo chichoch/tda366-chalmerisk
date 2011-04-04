@@ -44,7 +44,7 @@ public class Attack extends JFrame {
 			public void actionPerformed(ActionEvent e){
 				att.setTroops(attTroops);
 				def.setTroops(defTroops);
-				System.exit(0);
+				setVisible(false);
 			}
 		});
 		

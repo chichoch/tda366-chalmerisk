@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 
-public class GUItest extends JFrame {
+public class GUItest extends JFrame implements ActionListener {
 	private JLayeredPane karta;
 	private JPanel bottom;
 	private JPanel top;
@@ -17,8 +17,7 @@ public class GUItest extends JFrame {
 	private JButton sweden;
 	private JButton finland;
 	private JButton nextStep;
-	Country finland1 = new Country("Finland", "Player 2", 12);
-	Country norge1 = new Country("Norge", "Player 2", 12);
+	public static AttackController aCtrl = new AttackController();
 	
 	public GUItest() {
 		setLayout(new BorderLayout());
@@ -29,11 +28,15 @@ public class GUItest extends JFrame {
 		ImageIcon cang = new ImageIcon("greenCannon.gif");
 		karta = new JLayeredPane();
 		karta.setBackground(Color.BLUE);
+		
+		//Set icons
 		JLabel l = new JLabel(icon);
 		norge = new JButton (knightr);
 		sweden = new JButton (infg);
 		danmark = new JButton (infr);
 		finland = new JButton (cang);
+		
+		//Set bounds
 		norge.setBounds(560, 225, 75, 75);
 		norge.setContentAreaFilled(false);
 		norge.setBorder(BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -50,6 +53,12 @@ public class GUItest extends JFrame {
         karta.add(sweden, JLayeredPane.DEFAULT_LAYER);
         karta.add(danmark, JLayeredPane.DEFAULT_LAYER);
         karta.add(finland, JLayeredPane.DEFAULT_LAYER);
+        
+        //Add ActionListeners
+        norge.addActionListener(this);
+        sweden.addActionListener(this);
+        danmark.addActionListener(this);
+        finland.addActionListener(this);
 
         l.setIcon(icon); // NOI18N
         l.setBounds(200, -50, 1000, 800);
@@ -69,14 +78,25 @@ public class GUItest extends JFrame {
 		add(top, BorderLayout.NORTH);
 		
 		
-		norge.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e){
-				new Attack(norge1, finland1);
-			}
-		});
 		
 		setExtendedState(getExtendedState()|JFrame.MAXIMIZED_BOTH); //Fullscreen
 		setVisible(true);
 		pack();
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == norge) {
+			aCtrl.setCountry(1);
+		}
+		if (e.getSource() == sweden) {
+			aCtrl.setCountry(2);
+		}
+		if (e.getSource() == finland) {
+			aCtrl.setCountry(3);
+		}
+		if (e.getSource() == danmark) {
+			aCtrl.setCountry(4);
+		}
 	}
 }

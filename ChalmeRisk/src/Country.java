@@ -12,15 +12,18 @@ public class Country {
 	}
 	
 	public Country(String s, int i, int f){
-		country = s;
-		countryid= i;
-		troops= f;
+		this.country = s;
+		this.countryid= i;
+		this.troops= f;
 	}
 	
 	public Country(String country, String owner, int troops){
 		this.country = country;
 		this.owner = owner;
 		this.troops = troops;
+	}
+	public String getName() {
+		return country;
 	}
 	
 	public int getTroops() {
