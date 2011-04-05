@@ -5,7 +5,7 @@ public class AttackController {
 	
 	private Country attCountry;
 	private Country defCountry;
-	private Map map = new Map();
+	public Map map = new Map();
 	private boolean firstCountrySelected;
 	private AttackDialog attack = new AttackDialog();
 	private boolean takeOverCountry;
