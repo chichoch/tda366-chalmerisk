@@ -56,7 +56,7 @@ public class AttackController {
 	
 	//When you click "Invade" or "Retreat".
 	public void endFight() {
-		
+		attack.setVisible(false);
 	}
 	
 	
