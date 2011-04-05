@@ -1,13 +1,20 @@
 
 public class Player {
 	
-	public enum Colur{ BLUE, RED, GREEN, YELLOW, BLACK, BROWN}
-	public enum Name{ PLAYER1, PLAYER2, PLAYER3, PLAYER4, PLAYER5, PLATER6 }
+	public enum Color{ BLUE, RED, GREEN, YELLOW, BLACK, BROWN}
+	private String name;
 	
-	private final Colur colur;
-    private final Name name;
-    private Player(Colur colur, Name name) {
-        this.name = name;
-        this.colur = colur;
+	private final Color color;
+    private Player(Color color,String name) {
+    	this.name = name;
+        this.color = color;
+    }
+    
+    public Color color() {
+    	return color;
+    }
+    
+    public String getName() {
+    	return name;
     }
 }
