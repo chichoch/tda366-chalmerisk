@@ -8,9 +8,11 @@ public class AttackController {
 	private Map map = new Map();
 	private boolean firstCountrySelected;
 	private AttackDialog attack = new AttackDialog();
+	private boolean takeOverCountry;
 	
 	//Constructor
 	public AttackController() {
+		takeOverCountry = false;
 		firstCountrySelected = false;
 	}
 	
@@ -49,7 +51,8 @@ public class AttackController {
 		}
 		if(defCountry.getTroops() == 0){
 			//fight.setVisible(false);
-			attack.setAttackerWin();	
+			attack.setAttackerWin();
+			takeOverCountry = true;
 		}
 		attack.repaintTroops(attCountry.getTroops(), defCountry.getTroops());
 	}
@@ -57,7 +60,10 @@ public class AttackController {
 	//When you click "Invade" or "Retreat".
 	public void endFight() {
 		attack.setVisible(false);
+		if(takeOverCountry == true){
+			defCountry.setOwner(attCountry.getOwner());
+			attCountry.setTroops(attCountry.getTroops()-1);
+			defCountry.setTroops(1);
+		}
 	}
-	
-	
 }
