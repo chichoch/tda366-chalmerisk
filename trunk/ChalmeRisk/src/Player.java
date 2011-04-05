@@ -6,7 +6,7 @@ public class Player {
 	private Color color;
 	private String name;
 	
-    private Player(Color color,String name) {
+    public Player(Color color,String name) {
     	this.name = name;
         this.color = color;
     }

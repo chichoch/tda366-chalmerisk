@@ -59,13 +59,13 @@ public class AttackDialog extends JFrame{
 		//actionlisteners
 		fight.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e){
-				GUItest.aCtrl.startFight();
+				Builder.aCtrl.startFight();
 			}
 		});
 		
 		retreat.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e){
-				GUItest.aCtrl.endFight();
+				Builder.aCtrl.endFight();
 			}
 		});
 	}
@@ -112,13 +112,13 @@ public class AttackDialog extends JFrame{
 		//actionlisteners
 		fight.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e){
-				GUItest.aCtrl.startFight();
+				Builder.aCtrl.startFight();
 			}
 		});
 		
 		retreat.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e){
-				GUItest.aCtrl.endFight();
+				Builder.aCtrl.endFight();
 			}
 		});
 	}

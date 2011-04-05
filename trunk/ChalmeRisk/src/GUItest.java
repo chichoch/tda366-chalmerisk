@@ -13,11 +13,10 @@ public class GUItest extends JFrame implements ActionListener {
 	private JPanel bottom;
 	private JPanel top;
 	private JButton norge;
-	private JButton danmark;
+	private JButton denmark;
 	private JButton sweden;
 	private JButton finland;
 	private JButton nextStep;
-	public static AttackController aCtrl = new AttackController();
 	
 	public GUItest() {
 		setLayout(new BorderLayout());
@@ -31,10 +30,10 @@ public class GUItest extends JFrame implements ActionListener {
 		
 		//Set icons
 		JLabel l = new JLabel(icon);
-		norge = new JButton (knightr);
-		sweden = new JButton (infg);
-		danmark = new JButton (infr);
-		finland = new JButton (cang);
+		norge = new JButton (Builder.iconHandler.getIcon(Builder.player1, Builder.map.getCountry(1).getTroops()));
+		sweden = new JButton (Builder.iconHandler.getIcon(Builder.player2, Builder.map.getCountry(2).getTroops()));
+		denmark = new JButton (Builder.iconHandler.getIcon(Builder.player1, Builder.map.getCountry(3).getTroops()));
+		finland = new JButton (Builder.iconHandler.getIcon(Builder.player2, Builder.map.getCountry(4).getTroops()));
 		
 		//Set bounds
 		norge.setBounds(560, 225, 75, 75);
@@ -43,21 +42,21 @@ public class GUItest extends JFrame implements ActionListener {
 		sweden.setBounds(800, 300, 75, 75);
 		sweden.setContentAreaFilled(false);
 		sweden.setBorder(BorderFactory.createEmptyBorder(1, 1, 1, 1));
-		danmark.setBounds(975, 280, 75, 75);
-		danmark.setContentAreaFilled(false);
-		danmark.setBorder(BorderFactory.createEmptyBorder(1, 1, 1, 1));
+		denmark.setBounds(975, 280, 75, 75);
+		denmark.setContentAreaFilled(false);
+		denmark.setBorder(BorderFactory.createEmptyBorder(1, 1, 1, 1));
 		finland.setBounds(530, 350, 75, 75);
 		finland.setContentAreaFilled(false);
 		finland.setBorder(BorderFactory.createEmptyBorder(1, 1, 1, 1));
         karta.add(norge, JLayeredPane.DEFAULT_LAYER);
         karta.add(sweden, JLayeredPane.DEFAULT_LAYER);
-        karta.add(danmark, JLayeredPane.DEFAULT_LAYER);
+        karta.add(denmark, JLayeredPane.DEFAULT_LAYER);
         karta.add(finland, JLayeredPane.DEFAULT_LAYER);
         
         //Add ActionListeners
         norge.addActionListener(this);
         sweden.addActionListener(this);
-        danmark.addActionListener(this);
+        denmark.addActionListener(this);
         finland.addActionListener(this);
 
         l.setIcon(icon); // NOI18N
@@ -87,16 +86,16 @@ public class GUItest extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == norge) {
-			aCtrl.setCountry(1);
+			Builder.aCtrl.setCountry(1);
 		}
 		if (e.getSource() == sweden) {
-			aCtrl.setCountry(2);
+			Builder.aCtrl.setCountry(2);
 		}
 		if (e.getSource() == finland) {
-			aCtrl.setCountry(3);
+			Builder.aCtrl.setCountry(3);
 		}
-		if (e.getSource() == danmark) {
-			aCtrl.setCountry(4);
+		if (e.getSource() == denmark) {
+			Builder.aCtrl.setCountry(4);
 		}
 	}
 }
