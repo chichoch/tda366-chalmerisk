@@ -6,15 +6,10 @@ public class Map {
 	private int[] finlandGrannar = {1,2};
 	private int[] sverigeGrannar = {1,3,4};
 	private int[] danmarkGrannar = {2};
-	private Country Norge = new Country("Norge", 1, 10, norgeGrannar);
-	private Country Sverige = new Country("Sverige", 2, 10, finlandGrannar);
-	private Country Finland = new Country("Finland", 3, 10, sverigeGrannar);
-	private Country Danmark = new Country("Danmark", 4, 10, danmarkGrannar);
-
-
-	
-	
-
+	private Country Norge = new Country("Norge", 1, 4, norgeGrannar);
+	private Country Sverige = new Country("Sverige", 2, 7, finlandGrannar);
+	private Country Finland = new Country("Finland", 3, 12, sverigeGrannar);
+	private Country Danmark = new Country("Danmark", 4, 18, danmarkGrannar);
 
 	//Returns the specific ID of each country
 	public Country getCountry(int i){

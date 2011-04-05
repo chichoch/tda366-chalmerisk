@@ -5,9 +5,7 @@ public class AttackController {
 	
 	private Country attCountry;
 	private Country defCountry;
-	public Map map = new Map();
 	private boolean firstCountrySelected;
-	private AttackDialog attack = new AttackDialog();
 	private boolean takeOverCountry;
 	
 	//Constructor
@@ -20,18 +18,18 @@ public class AttackController {
 		
 		 if (!firstCountrySelected) {
 			firstCountrySelected = true;
-			attCountry = map.getCountry(id);
-			JOptionPane.showMessageDialog(null, "Första landet markerat (" + map.getCountry(id).getName() + ")" );
+			attCountry = Builder.map.getCountry(id);
+			JOptionPane.showMessageDialog(null, "Första landet markerat (" + Builder.map.getCountry(id).getName() + ")" );
 	
 			
 		}
 		else {
-			defCountry = map.getCountry(id);	
-			JOptionPane.showMessageDialog(null, "Andra landet markerat (" + map.getCountry(id).getName() + ")" );
+			defCountry = Builder.map.getCountry(id);	
+			JOptionPane.showMessageDialog(null, "Andra landet markerat (" + Builder.map.getCountry(id).getName() + ")" );
 			firstCountrySelected = false;	
-			attack.newAttack();
-			attack.repaintTroops(attCountry.getTroops(), defCountry.getTroops());
-			attack.setVisible(true);
+			Builder.attack.newAttack();
+			Builder.attack.repaintTroops(attCountry.getTroops(), defCountry.getTroops());
+			Builder.attack.setVisible(true);
 			//new Attack(attCountry, defCountry);
 		}	
 	}
@@ -40,26 +38,26 @@ public class AttackController {
 		double i = Math.random()*10;
 		if(i < 5){
 			attCountry.setTroops(attCountry.getTroops() - 1);
-			attack.setStatusText("Defender killed 1 ");
+			Builder.attack.setStatusText("Defender killed 1 ");
 		}
 		else if(i>=5){
 			defCountry.setTroops(defCountry.getTroops() - 1);
-			attack.setStatusText("Attacker killed 1 ");
+			Builder.attack.setStatusText("Attacker killed 1 ");
 		}
 		if(attCountry.getTroops() == 1){
-			attack.setDefenderWin();
+			Builder.attack.setDefenderWin();
 		}
 		if(defCountry.getTroops() == 0){
 			//fight.setVisible(false);
-			attack.setAttackerWin();
+			Builder.attack.setAttackerWin();
 			takeOverCountry = true;
 		}
-		attack.repaintTroops(attCountry.getTroops(), defCountry.getTroops());
+		Builder.attack.repaintTroops(attCountry.getTroops(), defCountry.getTroops());
 	}
 	
 	//When you click "Invade" or "Retreat".
 	public void endFight() {
-		attack.setVisible(false);
+		Builder.attack.setVisible(false);
 		if(takeOverCountry == true){
 			defCountry.setOwner(attCountry.getOwner());
 			attCountry.setTroops(attCountry.getTroops()-1);
