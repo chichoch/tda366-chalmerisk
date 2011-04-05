@@ -27,7 +27,7 @@ public class AttackController {
 			defCountry = map.getCountry(id);	
 			JOptionPane.showMessageDialog(null, "Andra landet markerat (" + map.getCountry(id).getName() + ")" );
 			firstCountrySelected = false;	
-			
+			attack.newAttack();
 			attack.repaintTroops(attCountry.getTroops(), defCountry.getTroops());
 			attack.setVisible(true);
 			//new Attack(attCountry, defCountry);
