@@ -182,6 +182,7 @@ public class AttackDialog extends JFrame{
 	public void newAttack() {
 		fight.setEnabled(true);
 		retreat.setText("Retreat");
+		status.setText("");
 	}
 }
 
