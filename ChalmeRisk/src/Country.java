@@ -7,29 +7,28 @@ public class Country {
 	private int countryid;
 	private Player owner;
 	private String continent;
-	private Neighbours neighbour;
-	//private int[] grannar;
+
+	private int[] grannar;
 
 	public Country() {
 		
 	}
-	
-	public Country(String s, int id, int t, Neighbours n) {
+	/*
+	public Country(String s, int id, int t) {
 		this.country = s;
 		this.countryid = id;
 		this.troops = t;
-		this.neighbour = n;
 	}
-	
+	*/
 
-	/*
+	
 	public Country(String s, int id, int t, int[] n) {
 		this.country = s;
 		this.countryid = id;
 		this.troops = t;
 		this.grannar = n;
 	}
-	*/
+	
 
 	public Country(String country, Player owner, int troops){
 		this.country = country;
@@ -61,9 +60,11 @@ public class Country {
 		owner = p;
 	}
 	
-	public boolean hasNeighbour(Country c){
-		if ( neighbour.getNeighbours().contains(c) ){
+	public boolean hasNeighbour(int n){
+		for ( int i = 0; i < grannar.length; i++  ){
+			if ( grannar[i] == n){
 			return true;	
+			}
 		}
 		return false;
 	}
