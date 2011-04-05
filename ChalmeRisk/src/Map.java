@@ -8,7 +8,7 @@ public class Map {
 	private Country Finland = new Country("Finland", 3, 10);
 	private Country Danmark = new Country("Danmark", 4, 10);
 	//A Country that indicates that something is wrong.
-	private Country empty = new Country("EMPTY COUNTRY", "ERROR", 3);
+	private Country empty = new Country("EMPTY COUNTRY", "ERROR", 0);
 	//private Country Chalmers = new Country("Chalmers");
 	//private Country Chalmers = new Country("Chalmers");
 	//private Country Chalmers = new Country("Chalmers");
