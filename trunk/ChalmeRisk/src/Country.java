@@ -3,7 +3,7 @@ public class Country {
 	private int troops;
 	private String country;
 	private int countryid;
-	private String owner;
+	private Player owner;
 	private String continent;
 	public enum Neighbors {SVERIGE, NORGE};
 	
@@ -17,7 +17,7 @@ public class Country {
 		this.troops= f;
 	}
 	
-	public Country(String country, String owner, int troops){
+	public Country(String country, Player owner, int troops){
 		this.country = country;
 		this.owner = owner;
 		this.troops = troops;
@@ -30,7 +30,7 @@ public class Country {
 		return troops;
 	}
 
-	public String getOwner() {
+	public Player getOwner() {
 		return owner;
 	}
 	public int getCountryId(){
@@ -41,8 +41,8 @@ public class Country {
 		troops = i;
 	}
 	
-	public void setOwner(String s) {
-		owner = s;
+	public void setOwner(Player p) {
+		owner = p;
 	}
 	
 	public String getContinent() {
