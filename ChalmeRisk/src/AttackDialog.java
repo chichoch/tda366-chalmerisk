@@ -18,6 +18,58 @@ public class AttackDialog extends JFrame{
 	private JButton fight;
 	private JButton retreat;
 	
+	public AttackDialog() {
+		status = new JLabel();
+		attTeamPanel = new JPanel();
+		defTeamPanel = new JPanel();
+		actionPanel = new JPanel();
+		fight = new JButton("Fight!");
+		retreat = new JButton("Retreat!");
+		standings = new JLabel();
+		
+		setPanel(attTeamPanel);
+		setPanel(defTeamPanel);
+		setPanel(actionPanel);
+		
+		actionPanel.add(status);
+		actionPanel.add(fight);
+		actionPanel.add(retreat);
+		actionPanel.add(standings);
+		
+		attCannon = new ImageIcon("greenCannon.gif");
+		attHorse = new ImageIcon("KnightSmall.gif");
+		attInfantry = new ImageIcon("greenInfantry.gif");
+		defCannon = new ImageIcon("redCannon.gif");
+		defHorse = new ImageIcon("KnightRed.gif");
+		defInfantry = new ImageIcon("redInfantry.gif");
+		
+		//repaintTroops(att.getTroops(), def.getTroops());
+		
+		setLayout(new GridLayout(1,3));
+		setUndecorated(true);
+		setVisible(false);
+		pack();
+		setLocation(450, 200);
+		setSize(400, 400);
+		
+		add(attTeamPanel);
+		add(actionPanel);
+		add(defTeamPanel);
+		
+		//actionlisteners
+		fight.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e){
+				GUItest.aCtrl.startFight();
+			}
+		});
+		
+		retreat.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e){
+				GUItest.aCtrl.endFight();
+			}
+		});
+	}
+	
 	//constructor thats sets up the window
 	public AttackDialog(Country att, Country def){
 		status = new JLabel();
@@ -44,11 +96,11 @@ public class AttackDialog extends JFrame{
 		defHorse = new ImageIcon("KnightRed.gif");
 		defInfantry = new ImageIcon("redInfantry.gif");
 		
-		repaintTroops(att.getTroops(), def.getTroops());
+		//repaintTroops(att.getTroops(), def.getTroops());
 		
 		setLayout(new GridLayout(1,3));
 		setUndecorated(true);
-		setVisible(true);
+		setVisible(false);
 		pack();
 		setLocation(450, 200);
 		setSize(400, 400);
@@ -112,4 +164,22 @@ public class AttackDialog extends JFrame{
 		repaint();
 		validate();
 	}
+	
+	public void setStatusText(String s) {
+		status.setText(s);
+	}
+	
+	public void setAttackerWin() {
+		fight.setEnabled(false);
+		retreat.setText("Invade!");
+	}
+	
+	public void setDefenderWin() {
+		fight.setEnabled(false);
+		retreat.setText("Flee");
+	}
+	
 }
+
+	
+
