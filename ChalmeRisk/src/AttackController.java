@@ -31,6 +31,7 @@ public class AttackController {
 				Builder.attack.newAttack();
 				Builder.attack.repaintTroops(attCountry.getTroops(), defCountry.getTroops());
 				Builder.attack.setVisible(true);
+				Builder.guiTest.update();
 				//new Attack(attCountry, defCountry);
 			}
 			else {
