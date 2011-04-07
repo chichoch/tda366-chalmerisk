@@ -22,11 +22,12 @@ public class Country {
 	*/
 
 	
-	public Country(String s, int id, int t, int[] n) {
+	public Country(String s, int id, int t, int[] n, Player owner) {
 		this.country = s;
 		this.countryid = id;
 		this.troops = t;
 		this.grannar = n;
+		this.owner = owner;
 	}
 	
 
