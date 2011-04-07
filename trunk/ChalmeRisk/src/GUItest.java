@@ -20,7 +20,7 @@ public class GUItest extends JFrame implements ActionListener {
 	
 	public GUItest() {
 		setLayout(new BorderLayout());
-		ImageIcon icon = new ImageIcon("testmap.gif");
+		ImageIcon icon = new ImageIcon("testmap1.jpg");
 		ImageIcon knightr = new ImageIcon("KnightRed.gif");
 		ImageIcon infg = new ImageIcon("greenInfantry.gif");
 		ImageIcon infr = new ImageIcon("redInfantry.gif");
@@ -30,22 +30,23 @@ public class GUItest extends JFrame implements ActionListener {
 		
 		//Set icons
 		JLabel l = new JLabel(icon);
+		//norge = new JButton (Builder.iconHandler.getIcon(Builder.map.getCountry(1).getOwner(), Builder.map.getCountry(1).getTroops()));
 		norge = new JButton (Builder.iconHandler.getIcon(Builder.player1, Builder.map.getCountry(1).getTroops()));
 		sweden = new JButton (Builder.iconHandler.getIcon(Builder.player2, Builder.map.getCountry(2).getTroops()));
 		denmark = new JButton (Builder.iconHandler.getIcon(Builder.player1, Builder.map.getCountry(3).getTroops()));
 		finland = new JButton (Builder.iconHandler.getIcon(Builder.player2, Builder.map.getCountry(4).getTroops()));
 		
 		//Set bounds
-		norge.setBounds(560, 225, 75, 75);
+		norge.setBounds(600, 235, 75, 75);
 		norge.setContentAreaFilled(false);
 		norge.setBorder(BorderFactory.createEmptyBorder(1, 1, 1, 1));
-		sweden.setBounds(800, 300, 75, 75);
+		sweden.setBounds(755, 310, 75, 75);
 		sweden.setContentAreaFilled(false);
 		sweden.setBorder(BorderFactory.createEmptyBorder(1, 1, 1, 1));
-		denmark.setBounds(975, 280, 75, 75);
+		denmark.setBounds(820, 270, 75, 75);
 		denmark.setContentAreaFilled(false);
 		denmark.setBorder(BorderFactory.createEmptyBorder(1, 1, 1, 1));
-		finland.setBounds(530, 350, 75, 75);
+		finland.setBounds(630, 330, 75, 75);
 		finland.setContentAreaFilled(false);
 		finland.setBorder(BorderFactory.createEmptyBorder(1, 1, 1, 1));
         karta.add(norge, JLayeredPane.DEFAULT_LAYER);
@@ -60,7 +61,7 @@ public class GUItest extends JFrame implements ActionListener {
         finland.addActionListener(this);
 
         l.setIcon(icon); // NOI18N
-        l.setBounds(200, -50, 1000, 800);
+        l.setBounds(0, -50, 1400, 800);
         karta.add(l, JLayeredPane.DEFAULT_LAYER);
 	
 		bottom = new JPanel();
