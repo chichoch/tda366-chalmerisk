@@ -30,12 +30,17 @@ public class GUItest extends JFrame implements ActionListener {
 		
 		//Set icons
 		JLabel l = new JLabel(icon);
-		//norge = new JButton (Builder.iconHandler.getIcon(Builder.map.getCountry(1).getOwner(), Builder.map.getCountry(1).getTroops()));
-		norge = new JButton (Builder.iconHandler.getIcon(Builder.player1, Builder.map.getCountry(1).getTroops()));
+		norge = new JButton (Builder.iconHandler.getIcon(Builder.map.getCountry(1).getOwner(), Builder.map.getCountry(1).getTroops()));
+		sweden = new JButton (Builder.iconHandler.getIcon(Builder.map.getCountry(2).getOwner(), Builder.map.getCountry(2).getTroops()));
+		denmark = new JButton (Builder.iconHandler.getIcon(Builder.map.getCountry(3).getOwner(), Builder.map.getCountry(3).getTroops()));
+		finland = new JButton (Builder.iconHandler.getIcon(Builder.map.getCountry(4).getOwner(), Builder.map.getCountry(4).getTroops()));
+		/*
+		 * norge = new JButton (Builder.iconHandler.getIcon(Builder.player1, Builder.map.getCountry(1).getTroops()));
+		
 		sweden = new JButton (Builder.iconHandler.getIcon(Builder.player2, Builder.map.getCountry(2).getTroops()));
 		denmark = new JButton (Builder.iconHandler.getIcon(Builder.player1, Builder.map.getCountry(3).getTroops()));
 		finland = new JButton (Builder.iconHandler.getIcon(Builder.player2, Builder.map.getCountry(4).getTroops()));
-		
+		*/
 		//Set bounds
 		norge.setBounds(600, 235, 75, 75);
 		norge.setContentAreaFilled(false);
@@ -82,6 +87,14 @@ public class GUItest extends JFrame implements ActionListener {
 		setExtendedState(getExtendedState()|JFrame.MAXIMIZED_BOTH); //Fullscreen
 		setVisible(true);
 		pack();
+	}
+	
+	public void update() {
+		norge.setIcon((Builder.iconHandler.getIcon(Builder.map.getCountry(1).getOwner(), Builder.map.getCountry(1).getTroops())));
+		sweden.setIcon((Builder.iconHandler.getIcon(Builder.map.getCountry(2).getOwner(), Builder.map.getCountry(2).getTroops())));
+		denmark.setIcon(Builder.iconHandler.getIcon(Builder.map.getCountry(3).getOwner(), Builder.map.getCountry(3).getTroops()));
+		finland.setIcon((Builder.iconHandler.getIcon(Builder.map.getCountry(4).getOwner(), Builder.map.getCountry(4).getTroops())));
+		
 	}
 
 	@Override

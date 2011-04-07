@@ -66,6 +66,7 @@ public class AttackDialog extends JFrame{
 		retreat.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e){
 				Builder.aCtrl.endFight();
+				Builder.guiTest.update();
 			}
 		});
 	}
