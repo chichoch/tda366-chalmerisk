@@ -28,7 +28,7 @@ public class AttackController {
 			
 		}
 		else {
-			if(attCountry.getOwner() == Builder.map.getCountry(id).getOwner()){
+			if(attCountry.getOwner() != Builder.map.getCountry(id).getOwner()){
 				defCountry = Builder.map.getCountry(id);	
 				if (attCountry.hasNeighbour(id) == true) {
 					JOptionPane.showMessageDialog(null, "Andra landet markerat (" + Builder.map.getCountry(id).getName() + ")" );
