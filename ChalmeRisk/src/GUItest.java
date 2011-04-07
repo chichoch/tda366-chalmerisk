@@ -94,7 +94,7 @@ public class GUItest extends JFrame implements ActionListener {
 		sweden.setIcon((Builder.iconHandler.getIcon(Builder.map.getCountry(2).getOwner(), Builder.map.getCountry(2).getTroops())));
 		denmark.setIcon(Builder.iconHandler.getIcon(Builder.map.getCountry(3).getOwner(), Builder.map.getCountry(3).getTroops()));
 		finland.setIcon((Builder.iconHandler.getIcon(Builder.map.getCountry(4).getOwner(), Builder.map.getCountry(4).getTroops())));
-		
+		validate();
 	}
 
 	@Override
