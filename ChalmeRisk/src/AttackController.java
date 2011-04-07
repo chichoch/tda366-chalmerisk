@@ -25,13 +25,18 @@ public class AttackController {
 		}
 		else {
 			defCountry = Builder.map.getCountry(id);	
-			JOptionPane.showMessageDialog(null, "Andra landet markerat (" + Builder.map.getCountry(id).getName() + ")" );
-			firstCountrySelected = false;	
-			Builder.attack.newAttack();
-			Builder.attack.repaintTroops(attCountry.getTroops(), defCountry.getTroops());
-			Builder.attack.setVisible(true);
-			//new Attack(attCountry, defCountry);
-		}	
+			if (attCountry.hasNeighbour(id) == true) {
+				JOptionPane.showMessageDialog(null, "Andra landet markerat (" + Builder.map.getCountry(id).getName() + ")" );
+				firstCountrySelected = false;	
+				Builder.attack.newAttack();
+				Builder.attack.repaintTroops(attCountry.getTroops(), defCountry.getTroops());
+				Builder.attack.setVisible(true);
+				//new Attack(attCountry, defCountry);
+			}
+			else {
+				JOptionPane.showMessageDialog(null, "Landet du vill attackera måste vara ett grannland!");
+			}
+		}	 
 	}
 	
 	public void startFight() {
