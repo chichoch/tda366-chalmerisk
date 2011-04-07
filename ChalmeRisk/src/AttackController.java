@@ -17,10 +17,14 @@ public class AttackController {
 	public void setCountry(int id) {
 		
 		 if (!firstCountrySelected) {
-			firstCountrySelected = true;
-			attCountry = Builder.map.getCountry(id);
-			JOptionPane.showMessageDialog(null, "Första landet markerat (" + Builder.map.getCountry(id).getName() + ")" );
-	
+			if(Builder.map.getCountry(id).getTroops()==1){
+				JOptionPane.showMessageDialog(null, "För få trupper för att attackera!");
+			}
+			else{
+				firstCountrySelected = true;
+				attCountry = Builder.map.getCountry(id);
+				JOptionPane.showMessageDialog(null, "Första landet markerat (" + Builder.map.getCountry(id).getName() + ")" );	
+			}
 			
 		}
 		else {
