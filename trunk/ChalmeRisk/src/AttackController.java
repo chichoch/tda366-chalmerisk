@@ -16,7 +16,7 @@ public class AttackController {
 	
 	public void setCountry(int id) {
 		
-		 if (!firstCountrySelected) {
+		if (!firstCountrySelected) {
 			if(Builder.map.getCountry(id).getTroops()==1){
 				JOptionPane.showMessageDialog(null, "För få trupper för att attackera!");
 			}
@@ -28,18 +28,25 @@ public class AttackController {
 			
 		}
 		else {
-			defCountry = Builder.map.getCountry(id);	
-			if (attCountry.hasNeighbour(id) == true) {
-				JOptionPane.showMessageDialog(null, "Andra landet markerat (" + Builder.map.getCountry(id).getName() + ")" );
-				firstCountrySelected = false;	
-				Builder.attack.newAttack();
-				Builder.attack.repaintTroops(attCountry.getTroops(), defCountry.getTroops());
-				Builder.attack.setVisible(true);
-				Builder.guiTest.update();
-				//new Attack(attCountry, defCountry);
+			if(attCountry.getOwner() == Builder.map.getCountry(id).getOwner()){
+				defCountry = Builder.map.getCountry(id);	
+				if (attCountry.hasNeighbour(id) == true) {
+					JOptionPane.showMessageDialog(null, "Andra landet markerat (" + Builder.map.getCountry(id).getName() + ")" );
+					firstCountrySelected = false;	
+					Builder.attack.newAttack();
+					Builder.attack.repaintTroops(attCountry.getTroops(), defCountry.getTroops());
+					Builder.attack.setVisible(true);
+					Builder.guiTest.update();
+					//new Attack(attCountry, defCountry);
+				}
+				else {
+					JOptionPane.showMessageDialog(null, "Landet du vill attackera måste vara ett grannland!");
+				}
 			}
-			else {
-				JOptionPane.showMessageDialog(null, "Landet du vill attackera måste vara ett grannland!");
+			else{
+				JOptionPane.showMessageDialog(null, "Du kan inte attackera ditt eget land");
+				attCountry = null;
+				firstCountrySelected = false;
 			}
 		}	 
 	}
