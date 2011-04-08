@@ -11,7 +11,7 @@ public class CountryView extends JPanel implements Observer{
 	
 	public CountryView(Country country){
 		setLayout(new FlowLayout());
-		icon = new ImageIcon("redCannon.gif");
+		icon = Builder.iconHandler.getIcon(Builder.map.getCountry(1).getOwner(), Builder.map.getCountry(1).getTroops());
 		troopIcon = new JLabel();
 		troopDisplay = new JLabel("14");
 		troopIcon.setIcon(icon);
