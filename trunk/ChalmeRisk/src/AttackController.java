@@ -69,7 +69,7 @@ public class AttackController {
 			Builder.attack.setAttackerWin();
 			takeOverCountry = true;
 		}
-		Builder.attack.repaintTroops(attCountry.getTroops(), defCountry.getTroops());
+		Builder.attack.repaintTroops(attCountry.getTroops(), defCountry.getTroops());	
 	}
 	
 	//When you click "Invade" or "Retreat".
