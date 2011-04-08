@@ -29,8 +29,8 @@ public class GUItest extends JFrame implements ActionListener {
 		JLabel l = new JLabel(icon);
 		norge = new JButton (Builder.iconHandler.getIcon(Builder.map.getCountry(1).getOwner(), Builder.map.getCountry(1).getTroops()));
 		sweden = new JButton (Builder.iconHandler.getIcon(Builder.map.getCountry(2).getOwner(), Builder.map.getCountry(2).getTroops()));
-		denmark = new JButton (Builder.iconHandler.getIcon(Builder.map.getCountry(3).getOwner(), Builder.map.getCountry(3).getTroops()));
-		finland = new JButton (Builder.iconHandler.getIcon(Builder.map.getCountry(4).getOwner(), Builder.map.getCountry(4).getTroops()));
+		finland = new JButton (Builder.iconHandler.getIcon(Builder.map.getCountry(3).getOwner(), Builder.map.getCountry(3).getTroops()));
+		denmark = new JButton (Builder.iconHandler.getIcon(Builder.map.getCountry(4).getOwner(), Builder.map.getCountry(4).getTroops()));
 	
 		//Set bounds
 		norge.setBounds(600, 235, 75, 75);
@@ -83,8 +83,8 @@ public class GUItest extends JFrame implements ActionListener {
 	public void update() {
 		norge.setIcon((Builder.iconHandler.getIcon(Builder.map.getCountry(1).getOwner(), Builder.map.getCountry(1).getTroops())));
 		sweden.setIcon((Builder.iconHandler.getIcon(Builder.map.getCountry(2).getOwner(), Builder.map.getCountry(2).getTroops())));
-		denmark.setIcon(Builder.iconHandler.getIcon(Builder.map.getCountry(3).getOwner(), Builder.map.getCountry(3).getTroops()));
-		finland.setIcon((Builder.iconHandler.getIcon(Builder.map.getCountry(4).getOwner(), Builder.map.getCountry(4).getTroops())));
+		finland.setIcon((Builder.iconHandler.getIcon(Builder.map.getCountry(3).getOwner(), Builder.map.getCountry(3).getTroops())));
+		denmark.setIcon(Builder.iconHandler.getIcon(Builder.map.getCountry(4).getOwner(), Builder.map.getCountry(4).getTroops()));
 		validate();
 	}
 
