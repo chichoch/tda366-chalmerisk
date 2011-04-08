@@ -21,10 +21,7 @@ public class GUItest extends JFrame implements ActionListener {
 	public GUItest() {
 		setLayout(new BorderLayout());
 		ImageIcon icon = new ImageIcon("testmap1.jpg");
-		ImageIcon knightr = new ImageIcon("KnightRed.gif");
-		ImageIcon infg = new ImageIcon("greenInfantry.gif");
-		ImageIcon infr = new ImageIcon("redInfantry.gif");
-		ImageIcon cang = new ImageIcon("greenCannon.gif");
+		
 		karta = new JLayeredPane();
 		karta.setBackground(Color.BLUE);
 		
