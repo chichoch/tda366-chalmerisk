@@ -18,16 +18,6 @@ public class PaintDice extends JFrame {
         defDice1 = new Dice();
         defDice2 = new Dice();
         
-        JPanel eastPanel = new JPanel();
-        JPanel westPanel = new JPanel();
-        /*
-        westPanel.add(attDice1 , BorderLayout.WEST);
-        westPanel.add(attDice2 , BorderLayout.WEST);
-        westPanel.add(attDice3 , BorderLayout.WEST);
-        eastPanel.add(defDice1, BorderLayout.EAST);
-        eastPanel.add(defDice2, BorderLayout.EAST);
-        
-       */
         setVisible(true);
 		pack();
     }
