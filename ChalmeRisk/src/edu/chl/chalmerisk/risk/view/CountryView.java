@@ -1,7 +1,13 @@
+package edu.chl.chalmerisk.risk.view;
+
 import java.awt.*;
+import edu.chl.chalmerisk.risk.*;
 import java.util.Observable;
 import java.util.Observer;
 import javax.swing.*;
+
+import edu.chl.chalmerisk.risk.constants.Country;
+import edu.chl.chalmerisk.risk.core.Builder;
 
 
 public class CountryView extends JPanel implements Observer{

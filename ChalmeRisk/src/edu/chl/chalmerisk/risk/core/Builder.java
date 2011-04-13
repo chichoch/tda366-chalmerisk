@@ -1,4 +1,14 @@
+package edu.chl.chalmerisk.risk.core;
+
 import java.awt.Color;
+import edu.chl.chalmerisk.risk.*;
+
+import edu.chl.chalmerisk.risk.constants.Map;
+import edu.chl.chalmerisk.risk.constants.Player;
+import edu.chl.chalmerisk.risk.ctrl.AttackController;
+import edu.chl.chalmerisk.risk.ctrl.DiceController;
+import edu.chl.chalmerisk.risk.view.AttackDialog;
+import edu.chl.chalmerisk.risk.view.GUItest;
 
 
 public class Builder {
@@ -9,7 +19,7 @@ public class Builder {
 	public static GUItest guiTest = new GUItest();
 	public static AttackDialog attack = new AttackDialog();
 	public static AttackController aCtrl = new AttackController();
-	
+	public static DiceController diceC = new DiceController();
 	public Builder(){
 	}
 }

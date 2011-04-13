@@ -1,8 +1,13 @@
+package edu.chl.chalmerisk.risk.core;
 import java.awt.Color;
+import edu.chl.chalmerisk.risk.*;
 import java.awt.event.*;
 import java.awt.*;
 
 import javax.swing.*;
+
+import edu.chl.chalmerisk.risk.constants.Country;
+import edu.chl.chalmerisk.risk.view.PaintDice;
 
 
 public class Attack extends JFrame {
@@ -32,6 +37,7 @@ public class Attack extends JFrame {
 		defTroops = def.getTroops();
 		retreat = new JButton("Retreat!");
 		standings = new JLabel();
+		
 		
 		fight.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e){
@@ -119,12 +125,16 @@ public class Attack extends JFrame {
 		validate();
 	}
 	public void fight(Country att, Country def){
-		double i = Math.random()*10;
-		if(i < 5){
+		
+		
+		int i = Builder.diceC.getResult();
+		//double i = Math.random()*10;
+		
+		if(i == 1){
 			attTroops = attTroops-1;
 			status.setText("Red killed 1");
 		}
-		else if(i>=5){
+		else if(i==2){
 			defTroops = defTroops -1;
 			status.setText("Green Killed 1");
 		}
