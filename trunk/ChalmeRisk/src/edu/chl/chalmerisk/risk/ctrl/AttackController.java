@@ -1,4 +1,10 @@
+package edu.chl.chalmerisk.risk.ctrl;
+
 import javax.swing.JOptionPane;
+import edu.chl.chalmerisk.risk.*;
+
+import edu.chl.chalmerisk.risk.constants.Country;
+import edu.chl.chalmerisk.risk.core.Builder;
 
 
 public class AttackController {
@@ -17,7 +23,7 @@ public class AttackController {
 	public void setCountry(int id) {
 		
 		if (!firstCountrySelected) {
-			if(Builder.map.getCountry(id).getTroops()==1){
+			if(Builder.map.getCountry(id).getTroops()<=1){
 				JOptionPane.showMessageDialog(null, "För få trupper för att attackera!");
 			}
 			else{
@@ -52,19 +58,34 @@ public class AttackController {
 	}
 	
 	public void startFight() {
-		double i = Math.random()*10;
-		if(i < 5){
+		
+		int i = Builder.diceC.getResult();
+		//double i = Math.random()*10;
+		if(i==1){
 			attCountry.setTroops(attCountry.getTroops() - 1);
 			Builder.attack.setStatusText("Defender killed 1 ");
 		}
-		else if(i>=5){
+		else if(i==2){
 			defCountry.setTroops(defCountry.getTroops() - 1);
 			Builder.attack.setStatusText("Attacker killed 1 ");
 		}
-		if(attCountry.getTroops() == 1){
+		else if(i==3){
+			defCountry.setTroops(defCountry.getTroops() - 2);
+			Builder.attack.setStatusText("Attacker killed 2 ");
+		}
+		else if(i==4){
+			attCountry.setTroops(attCountry.getTroops() - 2);
+			Builder.attack.setStatusText("Attacker killed 2 ");
+		}
+		else if(i==5){
+			defCountry.setTroops(defCountry.getTroops() - 1);
+			attCountry.setTroops(attCountry.getTroops() - 1);
+			Builder.attack.setStatusText("Attacker and defender killed 1 ");
+		}
+		if(attCountry.getTroops() <= 1){
 			Builder.attack.setDefenderWin();
 		}
-		if(defCountry.getTroops() == 0){
+		if(defCountry.getTroops() <= 0){
 			//fight.setVisible(false);
 			Builder.attack.setAttackerWin();
 			takeOverCountry = true;

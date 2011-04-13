@@ -1,7 +1,13 @@
+package edu.chl.chalmerisk.risk.view;
+
 import java.awt.Color;
+import edu.chl.chalmerisk.risk.*;
 import java.awt.GridLayout;
 import java.awt.event.*;
 import javax.swing.*;
+
+import edu.chl.chalmerisk.risk.constants.Country;
+import edu.chl.chalmerisk.risk.core.Builder;
 
 public class AttackDialog extends JFrame{
 	private JPanel attTeamPanel;

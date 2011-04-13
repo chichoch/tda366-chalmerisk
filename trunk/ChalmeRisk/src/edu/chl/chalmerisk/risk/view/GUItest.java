@@ -1,4 +1,8 @@
+package edu.chl.chalmerisk.risk.view;
+
+
 import java.awt.BorderLayout;
+import edu.chl.chalmerisk.risk.*;
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.LayoutManager;
@@ -6,6 +10,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.*;
+
+import edu.chl.chalmerisk.risk.core.Builder;
 
 
 public class GUItest extends JFrame implements ActionListener {

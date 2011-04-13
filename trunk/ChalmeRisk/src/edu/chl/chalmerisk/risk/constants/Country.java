@@ -1,4 +1,7 @@
+package edu.chl.chalmerisk.risk.constants;
+
 import java.util.List;
+import edu.chl.chalmerisk.risk.*;
 
 
 public class Country {

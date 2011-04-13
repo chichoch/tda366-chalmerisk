@@ -1,4 +1,6 @@
+package edu.chl.chalmerisk.risk.constants;
 import java.awt.Color;
+import edu.chl.chalmerisk.risk.*;
 
 
 public class Player {

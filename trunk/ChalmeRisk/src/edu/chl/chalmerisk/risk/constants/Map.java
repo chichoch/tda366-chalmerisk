@@ -1,4 +1,8 @@
+package edu.chl.chalmerisk.risk.constants;
 import javax.swing.JOptionPane;
+import edu.chl.chalmerisk.risk.*;
+
+import edu.chl.chalmerisk.risk.core.Builder;
 
 
 public class Map {
@@ -7,9 +11,9 @@ public class Map {
 	private int[] sverigeGrannar = {1,3,4};
 	private int[] danmarkGrannar = {2};
 	private Country Norge = new Country("Norge", 1, 4, norgeGrannar, Builder.player1);
-	private Country Sverige = new Country("Sverige", 2, 7, sverigeGrannar, Builder.player2);
+	private Country Sverige = new Country("Sverige", 2, 7, sverigeGrannar, Builder.player1);
 	private Country Finland = new Country("Finland", 3, 12, finlandGrannar, Builder.player2);
-	private Country Danmark = new Country("Danmark", 4, 18, danmarkGrannar, Builder.player1);
+	private Country Danmark = new Country("Danmark", 4, 18, danmarkGrannar, Builder.player2);
 
 	//Returns the specific ID of each country
 	public Country getCountry(int i){
