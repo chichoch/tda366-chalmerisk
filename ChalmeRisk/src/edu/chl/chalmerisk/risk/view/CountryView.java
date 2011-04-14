@@ -14,10 +14,12 @@ public class CountryView extends JPanel implements Observer{
 	private JLabel troopDisplay;
 	private ImageIcon icon;
 	private JLabel troopIcon;
+	private Country country;
 	
 	public CountryView(Country country){
+		this.country = country;
 		setLayout(new FlowLayout());
-		icon = Builder.iconHandler.getIcon(Builder.map.getCountry(1).getOwner(), Builder.map.getCountry(1).getTroops());
+		icon = Builder.iconHandler.getIcon(country.getOwner(), country.getTroops());
 		troopIcon = new JLabel();
 		troopDisplay = new JLabel("14");
 		troopIcon.setIcon(icon);
@@ -27,7 +29,14 @@ public class CountryView extends JPanel implements Observer{
 	}
 	
 	@Override
-	public void update(Observable Country, Object arg) {
-		System.out.println("blah");
+	public void update(Observable observable, Object arg) {
+		if(observable.equals(country)){
+			if(arg.equals(new Integer(0))){
+				troopDisplay.setText(""+country.getTroops());
+			}
+			if(arg.equals(new Integer(1))){
+				Builder.iconHandler.getIcon(country.getOwner(), country.getTroops());
+			}
+		}
 	}
 }
