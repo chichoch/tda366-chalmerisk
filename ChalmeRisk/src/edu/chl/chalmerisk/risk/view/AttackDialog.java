@@ -42,13 +42,6 @@ public class AttackDialog extends JFrame{
 		actionPanel.add(retreat);
 		actionPanel.add(standings);
 		
-		attCannon = new ImageIcon("resources/greenCannon.gif");
-		attHorse = new ImageIcon("resources/KnightSmall.gif");
-		attInfantry = new ImageIcon("resources/greenInfantry.gif");
-		defCannon = new ImageIcon("resources/redCannon.gif");
-		defHorse = new ImageIcon("resources/KnightRed.gif");
-		defInfantry = new ImageIcon("resources/redInfantry.gif");
-		
 		//repaintTroops(att.getTroops(), def.getTroops());
 		
 		setLayout(new GridLayout(1,3));
@@ -185,10 +178,16 @@ public class AttackDialog extends JFrame{
 		retreat.setText("Flee");
 	}
 	
-	public void newAttack() {
+	public void newAttack(Country att, Country def) {
 		fight.setEnabled(true);
 		retreat.setText("Retreat");
 		status.setText("");
+		attCannon = (Builder.iconHandler.getIcon(att.getOwner(), 10));
+		attHorse = (Builder.iconHandler.getIcon(att.getOwner(), 5));
+		attInfantry = (Builder.iconHandler.getIcon(att.getOwner(), 1));
+		defCannon = (Builder.iconHandler.getIcon(def.getOwner(), 10));
+		defHorse = (Builder.iconHandler.getIcon(def.getOwner(), 5));
+		defInfantry = (Builder.iconHandler.getIcon(def.getOwner(), 1));
 	}
 }
 
