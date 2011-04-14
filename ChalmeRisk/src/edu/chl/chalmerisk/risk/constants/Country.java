@@ -1,10 +1,12 @@
 package edu.chl.chalmerisk.risk.constants;
 
 import java.util.List;
+import java.util.Observable;
+
 import edu.chl.chalmerisk.risk.*;
 
 
-public class Country {
+public class Country extends Observable{
 	private int troops;
 	private String country;
 	private int countryid;
@@ -58,10 +60,12 @@ public class Country {
 	
 	public void setTroops(int i) {
 		troops = i;
+		notifyObservers(0);
 	}
 	
 	public void setOwner(Player p) {
 		owner = p;
+		notifyObservers(1);
 	}
 	
 	public boolean hasNeighbour(int n){
