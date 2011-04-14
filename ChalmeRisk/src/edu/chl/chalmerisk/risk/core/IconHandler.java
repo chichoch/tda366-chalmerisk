@@ -15,6 +15,7 @@ public class IconHandler {
 	ImageIcon greenCannon = new ImageIcon("resources/greenCannon.gif");
 	ImageIcon redCannon = new ImageIcon("resources/redCannon.gif");
 	ImageIcon greenKnight = new ImageIcon("resources/KnightSmall.gif");
+	ImageIcon compInf = new ImageIcon("");
 	
 	public IconHandler(){
 		

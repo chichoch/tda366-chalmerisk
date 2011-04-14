@@ -26,6 +26,7 @@ public class CountryView extends JPanel implements Observer{
 		add(troopIcon);
 		add(troopDisplay);
 		setPreferredSize(new Dimension(75,75));
+		setOpaque(false);
 	}
 	
 	@Override
