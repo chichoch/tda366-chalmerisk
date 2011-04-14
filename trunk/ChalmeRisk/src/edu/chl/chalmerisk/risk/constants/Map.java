@@ -14,6 +14,7 @@ public class Map {
 	private Country Sverige = new Country("Sverige", 2, 7, sverigeGrannar, Builder.player1);
 	private Country Finland = new Country("Finland", 3, 12, finlandGrannar, Builder.player2);
 	private Country Danmark = new Country("Danmark", 4, 18, danmarkGrannar, Builder.player2);
+	
 
 	//Returns the specific ID of each country
 	public Country getCountry(int i){
