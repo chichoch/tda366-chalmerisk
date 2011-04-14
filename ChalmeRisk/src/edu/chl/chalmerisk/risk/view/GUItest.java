@@ -6,8 +6,6 @@ import edu.chl.chalmerisk.risk.*;
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.LayoutManager;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -41,13 +39,13 @@ public class GUItest extends JFrame implements MouseListener {
 		denmark = new CountryView(Builder.map.getCountry(4)); 
 	
 		//Set bounds
-		norge.setBounds(600, 235, 75, 75);
+		norge.setBounds(600, 235, 60, 75);
 		norge.setBorder(BorderFactory.createEmptyBorder(1, 1, 1, 1));
-		sweden.setBounds(755, 310, 75, 75);
+		sweden.setBounds(755, 310, 60, 75);
 		sweden.setBorder(BorderFactory.createEmptyBorder(1, 1, 1, 1));
-		denmark.setBounds(820, 270, 75, 75);
+		denmark.setBounds(820, 270, 60, 75);
 		denmark.setBorder(BorderFactory.createEmptyBorder(1, 1, 1, 1));
-		finland.setBounds(630, 330, 75, 75);
+		finland.setBounds(630, 330, 60, 75);
 		finland.setBorder(BorderFactory.createEmptyBorder(1, 1, 1, 1));
         karta.add(norge, JLayeredPane.DEFAULT_LAYER);
         karta.add(sweden, JLayeredPane.DEFAULT_LAYER);
@@ -77,8 +75,6 @@ public class GUItest extends JFrame implements MouseListener {
 		add(bottom, BorderLayout.SOUTH);
 		add(top, BorderLayout.NORTH);
 		
-		
-		
 		setExtendedState(getExtendedState()|JFrame.MAXIMIZED_BOTH); //Fullscreen
 		setVisible(true);
 		pack();
@@ -88,7 +84,6 @@ public class GUItest extends JFrame implements MouseListener {
 	public void mouseClicked(MouseEvent e) {
 		if (e.getSource() == norge) {
 			Builder.aCtrl.setCountry(1);
-			System.out.println("Hej");
 		}
 		if (e.getSource() == sweden) {
 			Builder.aCtrl.setCountry(2);

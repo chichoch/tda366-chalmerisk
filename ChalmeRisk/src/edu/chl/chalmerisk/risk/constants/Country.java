@@ -2,6 +2,7 @@ package edu.chl.chalmerisk.risk.constants;
 
 import java.util.List;
 import java.util.Observable;
+import java.util.Observer;
 
 import edu.chl.chalmerisk.risk.*;
 
@@ -33,6 +34,9 @@ public class Country extends Observable{
 		this.troops = t;
 		this.grannar = n;
 		this.owner = owner;
+		setChanged();
+		notifyObservers(0);
+		notifyObservers(1);
 	}
 	
 
@@ -40,6 +44,9 @@ public class Country extends Observable{
 		this.country = country;
 		this.owner = owner;
 		this.troops = troops;
+		setChanged();
+		notifyObservers(0);
+		notifyObservers(1);
 	}
 
 
@@ -60,11 +67,13 @@ public class Country extends Observable{
 	
 	public void setTroops(int i) {
 		troops = i;
+		setChanged();
 		notifyObservers(0);
 	}
 	
 	public void setOwner(Player p) {
 		owner = p;
+		setChanged();
 		notifyObservers(1);
 	}
 	
