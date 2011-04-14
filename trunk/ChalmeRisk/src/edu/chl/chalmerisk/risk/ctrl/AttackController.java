@@ -38,12 +38,11 @@ public class AttackController {
 				defCountry = Builder.map.getCountry(id);	
 				if (attCountry.hasNeighbour(id) == true) {
 					JOptionPane.showMessageDialog(null, "Andra landet markerat (" + Builder.map.getCountry(id).getName() + ")" );
-					firstCountrySelected = false;	
-					Builder.attack.newAttack();
+					firstCountrySelected = false;
+					takeOverCountry = false;
+					Builder.attack.newAttack(attCountry, defCountry);
 					Builder.attack.repaintTroops(attCountry.getTroops(), defCountry.getTroops());
 					Builder.attack.setVisible(true);
-					//Builder.guiTest.update();
-					//new Attack(attCountry, defCountry);
 				}
 				else {
 					JOptionPane.showMessageDialog(null, "Landet du vill attackera måste vara ett grannland!");
@@ -58,7 +57,6 @@ public class AttackController {
 	}
 	
 	public void startFight() {
-		takeOverCountry = false;
 		int i = Builder.diceC.getResult();
 		//double i = Math.random()*10;
 		if(i==1){
