@@ -58,7 +58,7 @@ public class AttackController {
 	}
 	
 	public void startFight() {
-		
+		takeOverCountry = false;
 		int i = Builder.diceC.getResult();
 		//double i = Math.random()*10;
 		if(i==1){
