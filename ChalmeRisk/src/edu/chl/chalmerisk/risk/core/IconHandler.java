@@ -9,12 +9,12 @@ import edu.chl.chalmerisk.risk.constants.Player;
 
 
 public class IconHandler {
-	ImageIcon redKnight = new ImageIcon("KnightRed.gif");
-	ImageIcon greenInfantrie = new ImageIcon("greenInfantry.gif");
-	ImageIcon redInfantrie = new ImageIcon("redInfantry.gif");
-	ImageIcon greenCannon = new ImageIcon("greenCannon.gif");
-	ImageIcon redCannon = new ImageIcon("redCannon.gif");
-	ImageIcon greenKnight = new ImageIcon("KnightSmall.gif");
+	ImageIcon redKnight = new ImageIcon("resources/KnightRed.gif");
+	ImageIcon greenInfantrie = new ImageIcon("resources/greenInfantry.gif");
+	ImageIcon redInfantrie = new ImageIcon("resources/redInfantry.gif");
+	ImageIcon greenCannon = new ImageIcon("resources/greenCannon.gif");
+	ImageIcon redCannon = new ImageIcon("resources/redCannon.gif");
+	ImageIcon greenKnight = new ImageIcon("resources/KnightSmall.gif");
 	
 	public IconHandler(){
 		

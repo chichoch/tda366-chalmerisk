@@ -42,12 +42,12 @@ public class AttackDialog extends JFrame{
 		actionPanel.add(retreat);
 		actionPanel.add(standings);
 		
-		attCannon = new ImageIcon("greenCannon.gif");
-		attHorse = new ImageIcon("KnightSmall.gif");
-		attInfantry = new ImageIcon("greenInfantry.gif");
-		defCannon = new ImageIcon("redCannon.gif");
-		defHorse = new ImageIcon("KnightRed.gif");
-		defInfantry = new ImageIcon("redInfantry.gif");
+		attCannon = new ImageIcon("resources/greenCannon.gif");
+		attHorse = new ImageIcon("resources/KnightSmall.gif");
+		attInfantry = new ImageIcon("resources/greenInfantry.gif");
+		defCannon = new ImageIcon("resources/redCannon.gif");
+		defHorse = new ImageIcon("resources/KnightRed.gif");
+		defInfantry = new ImageIcon("resources/redInfantry.gif");
 		
 		//repaintTroops(att.getTroops(), def.getTroops());
 		

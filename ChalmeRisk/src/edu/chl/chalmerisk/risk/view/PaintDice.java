@@ -25,12 +25,12 @@ public class PaintDice extends JFrame {
 		defendingTroops=0;
 
 		Dice dice = new Dice();
-		diceImage1 = new ImageIcon("testdice1.gif");
-		diceImage2 = new ImageIcon("testdice2.gif");
-		diceImage3 = new ImageIcon("testdice3.gif");
-		diceImage4 = new ImageIcon("testdice4.gif");
-		diceImage5 = new ImageIcon("testdice5.gif");
-		diceImage6 = new ImageIcon("testdice6.gif");
+		diceImage1 = new ImageIcon("resources/testdice1.gif");
+		diceImage2 = new ImageIcon("resources/testdice2.gif");
+		diceImage3 = new ImageIcon("resources/testdice3.gif");
+		diceImage4 = new ImageIcon("resources/testdice4.gif");
+		diceImage5 = new ImageIcon("resources/testdice5.gif");
+		diceImage6 = new ImageIcon("resources/testdice6.gif");
 		dicePanelWest = new JPanel();
 		dicePanelEast = new JPanel();
 		
