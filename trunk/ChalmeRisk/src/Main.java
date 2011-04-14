@@ -5,7 +5,7 @@ import edu.chl.chalmerisk.risk.*;
 public class Main {
 	public static void main (String[] arg) {
 		new Builder();
-		new PaintDice();
+		//new PaintDice();
 		
 		
 	}

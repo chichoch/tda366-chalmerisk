@@ -8,20 +8,22 @@ import java.awt.FlowLayout;
 import java.awt.LayoutManager;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 import javax.swing.*;
 
 import edu.chl.chalmerisk.risk.core.Builder;
 
 
-public class GUItest extends JFrame implements ActionListener {
+public class GUItest extends JFrame implements MouseListener {
 	private JLayeredPane karta;
 	private JPanel bottom;
 	private JPanel top;
-	private JButton norge;
-	private JButton denmark;
-	private JButton sweden;
-	private JButton finland;
+	private JPanel norge;
+	private JPanel denmark;
+	private JPanel sweden;
+	private JPanel finland;
 	private JButton nextStep;
 	
 	public GUItest() {
@@ -33,34 +35,30 @@ public class GUItest extends JFrame implements ActionListener {
 		
 		//Set icons
 		JLabel l = new JLabel(icon);
-		norge = new JButton (Builder.iconHandler.getIcon(Builder.map.getCountry(1).getOwner(), Builder.map.getCountry(1).getTroops()));
-		sweden = new JButton (Builder.iconHandler.getIcon(Builder.map.getCountry(2).getOwner(), Builder.map.getCountry(2).getTroops()));
-		finland = new JButton (Builder.iconHandler.getIcon(Builder.map.getCountry(3).getOwner(), Builder.map.getCountry(3).getTroops()));
-		denmark = new JButton (Builder.iconHandler.getIcon(Builder.map.getCountry(4).getOwner(), Builder.map.getCountry(4).getTroops()));
+		norge = new CountryView(Builder.map.getCountry(1)); 
+		sweden = new CountryView(Builder.map.getCountry(2)); 
+		finland = new CountryView(Builder.map.getCountry(3)); 
+		denmark = new CountryView(Builder.map.getCountry(4)); 
 	
 		//Set bounds
 		norge.setBounds(600, 235, 75, 75);
-		norge.setContentAreaFilled(false);
 		norge.setBorder(BorderFactory.createEmptyBorder(1, 1, 1, 1));
 		sweden.setBounds(755, 310, 75, 75);
-		sweden.setContentAreaFilled(false);
 		sweden.setBorder(BorderFactory.createEmptyBorder(1, 1, 1, 1));
 		denmark.setBounds(820, 270, 75, 75);
-		denmark.setContentAreaFilled(false);
 		denmark.setBorder(BorderFactory.createEmptyBorder(1, 1, 1, 1));
 		finland.setBounds(630, 330, 75, 75);
-		finland.setContentAreaFilled(false);
 		finland.setBorder(BorderFactory.createEmptyBorder(1, 1, 1, 1));
         karta.add(norge, JLayeredPane.DEFAULT_LAYER);
         karta.add(sweden, JLayeredPane.DEFAULT_LAYER);
         karta.add(denmark, JLayeredPane.DEFAULT_LAYER);
         karta.add(finland, JLayeredPane.DEFAULT_LAYER);
         
-        //Add ActionListeners
-        norge.addActionListener(this);
-        sweden.addActionListener(this);
-        denmark.addActionListener(this);
-        finland.addActionListener(this);
+        //Add MouseListeners
+        norge.addMouseListener(this);
+        sweden.addMouseListener(this);
+        denmark.addMouseListener(this);
+        finland.addMouseListener(this);
 
         l.setIcon(icon); // NOI18N
         l.setBounds(0, -50, 1400, 800);
@@ -86,18 +84,11 @@ public class GUItest extends JFrame implements ActionListener {
 		pack();
 	}
 	
-	public void update() {
-		norge.setIcon((Builder.iconHandler.getIcon(Builder.map.getCountry(1).getOwner(), Builder.map.getCountry(1).getTroops())));
-		sweden.setIcon((Builder.iconHandler.getIcon(Builder.map.getCountry(2).getOwner(), Builder.map.getCountry(2).getTroops())));
-		finland.setIcon((Builder.iconHandler.getIcon(Builder.map.getCountry(3).getOwner(), Builder.map.getCountry(3).getTroops())));
-		denmark.setIcon(Builder.iconHandler.getIcon(Builder.map.getCountry(4).getOwner(), Builder.map.getCountry(4).getTroops()));
-		validate();
-	}
-
 	@Override
-	public void actionPerformed(ActionEvent e) {
+	public void mouseClicked(MouseEvent e) {
 		if (e.getSource() == norge) {
 			Builder.aCtrl.setCountry(1);
+			System.out.println("Hej");
 		}
 		if (e.getSource() == sweden) {
 			Builder.aCtrl.setCountry(2);
@@ -108,5 +99,29 @@ public class GUItest extends JFrame implements ActionListener {
 		if (e.getSource() == denmark) {
 			Builder.aCtrl.setCountry(4);
 		}
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
 	}
 }
