@@ -127,7 +127,7 @@ public class Attack extends JFrame {
 	public void fight(Country att, Country def){
 		
 		
-		int i = Builder.diceC.getResult();
+		int i = Builder.diceC.getResult(attTroops,defTroops);
 		//double i = Math.random()*10;
 		
 		if(i == 1){
