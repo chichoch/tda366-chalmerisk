@@ -5,6 +5,7 @@ import java.awt.*;
 import edu.chl.chalmerisk.risk.*;
 import javax.swing.*;
 import edu.chl.chalmerisk.risk.core.Dice;
+import edu.chl.chalmerisk.risk.ctrl.DiceController;
 
 public class PaintDice extends JFrame {
 
@@ -16,13 +17,12 @@ public class PaintDice extends JFrame {
 	private ImageIcon diceImage4;
 	private ImageIcon diceImage5;
 	private ImageIcon diceImage6;
-	private int attckingTroops;
-	private int defendingTroops;
+	
+	private int i;
+	private DiceController attNumberOfDice;
+	private DiceController defNumberOfDice;
 
 	public PaintDice() {
-
-		attckingTroops=0;
-		defendingTroops=0;
 
 		Dice dice = new Dice();
 		diceImage1 = new ImageIcon("resources/testdice1.gif");
@@ -34,10 +34,8 @@ public class PaintDice extends JFrame {
 		dicePanelWest = new JPanel();
 		dicePanelEast = new JPanel();
 		
-
-		while(attckingTroops <=2 ){
-			attckingTroops++;
-			dice.tossDice();
+		while( i <= attNumberOfDice.getAttNumberOfDices() ){
+			i++;
 			switch (dice.getNumber()) {
 			case 1:  
 				dicePanelWest.add(new JLabel(diceImage1));      
@@ -63,9 +61,8 @@ public class PaintDice extends JFrame {
 			}
 
 		}
-		while(defendingTroops <=1 ){
-			defendingTroops++;
-			dice.tossDice();
+		while(i <= defNumberOfDice.getDefNumberOfDices() ){
+			i++;
 			switch (dice.getNumber()) {
 			case 1:  
 				dicePanelEast.add(new JLabel(diceImage1));      
