@@ -1,29 +1,54 @@
 package edu.chl.chalmerisk.risk.core;
 
+import edu.chl.chalmerisk.risk.ctrl.ReinforcementController;
+
 public class Turn {
 	
-	private int index=-1;
-	private TurnState[] states  = {Builder.aCtrl};
+	
+	private TurnState[] states  = {Builder.rCtrl, Builder.aCtrl, Builder.tCtrl};
 	
 	private int currentStateIndex = 0;
 	
 	   public void reinforcementState()  { 
-		   states[currentStateIndex].reinforcementState( this ); 
+		   states[currentStateIndex].reinforcementState( Builder.rCtrl); 
 	   }
 	   
 	   public void attackState() { 
-		   states[currentStateIndex].attackState( this ); 
+		   states[currentStateIndex].attackState( Builder.aCtrl  );  
 	   }
 	   public void troopMovementState() { 
-		   states[currentStateIndex].troopMovementState( this ); 
+		   states[currentStateIndex].troopMovementState( Builder.tCtrl ); 
 	   }
 	   public void changeState() {
-		   index=index+1;
-		   if(index == 3){
-			   index=0;
+		   if(currentStateIndex == 0){
+			   reinforcementState();
+			   currentStateIndex++;
 		   }
-		   currentStateIndex = index; 
-		   attackState();
+		   else if(currentStateIndex == 1){
+			   attackState();
+			   currentStateIndex++;
+		   }
+		   else{
+			   troopMovementState();
+			   currentStateIndex=0;
+		   }
+		   
+	   }
+	   public void currentState(){
+		   if(currentStateIndex == 0){
+			   reinforcementState();
+		   }
+		   else if(currentStateIndex == 1){
+			   attackState();
+		   }
+		   else{
+			   troopMovementState();
+		   }
+	   }
+	   
+	  
+	   public void setCountry(int n){
+		   states[currentStateIndex].setCountry(n);
 	   }
 
 

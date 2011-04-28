@@ -4,4 +4,7 @@ import edu.chl.chalmerisk.risk.core.*;
 
 public class ReinforcementController extends TurnState {
 
+	public ReinforcementController(){
+		
+	}
 }
