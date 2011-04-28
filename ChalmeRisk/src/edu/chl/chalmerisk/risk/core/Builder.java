@@ -4,8 +4,8 @@ import java.awt.Color;
 import edu.chl.chalmerisk.risk.constants.Map;
 import edu.chl.chalmerisk.risk.constants.Player;
 import edu.chl.chalmerisk.risk.ctrl.*;
-import edu.chl.chalmerisk.risk.view.AttackDialog;
-import edu.chl.chalmerisk.risk.view.GUItest;
+import edu.chl.chalmerisk.risk.view.*;
+
 
 
 public class Builder {
@@ -15,6 +15,7 @@ public class Builder {
 	public static IconHandler iconHandler = new IconHandler();
 	public static GUItest guiTest = new GUItest();
 	public static AttackDialog attack = new AttackDialog();
+	public static MovementDialog movement = new MovementDialog();
 	public static AttackController aCtrl = new AttackController();
 	public static ReinforcementController rCtrl = new ReinforcementController();
 	public static TroopMovementController tCtrl = new TroopMovementController();
