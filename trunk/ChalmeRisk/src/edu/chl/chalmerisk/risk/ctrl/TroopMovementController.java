@@ -1,5 +1,5 @@
 package edu.chl.chalmerisk.risk.ctrl;
-
-public class TroopMovementController {
+import edu.chl.chalmerisk.risk.core.*;
+public class TroopMovementController extends TurnState {
 
 }
