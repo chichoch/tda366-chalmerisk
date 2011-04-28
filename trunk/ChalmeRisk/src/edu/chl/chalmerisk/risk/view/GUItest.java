@@ -3,6 +3,7 @@ package edu.chl.chalmerisk.risk.view;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Frame;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -72,7 +73,7 @@ public class GUItest extends JFrame implements MouseListener {
 		add(bottom, BorderLayout.SOUTH);
 		add(top, BorderLayout.NORTH);
 		
-		setExtendedState(getExtendedState()|JFrame.MAXIMIZED_BOTH); //Fullscreen
+		setExtendedState(getExtendedState()|Frame.MAXIMIZED_BOTH); //Fullscreen
 		setVisible(true);
 		pack();
 	}
