@@ -4,15 +4,18 @@ package edu.chl.chalmerisk.risk.view;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Frame;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.*;
 
 import edu.chl.chalmerisk.risk.core.Builder;
+import edu.chl.chalmerisk.risk.core.Turn;
 
 
-public class GUItest extends JFrame implements MouseListener {
+public class GUItest extends JFrame implements MouseListener, ActionListener {
 	private JLayeredPane karta;
 	private JPanel bottom;
 	private JPanel top;
@@ -62,6 +65,7 @@ public class GUItest extends JFrame implements MouseListener {
 	
 		bottom = new JPanel();
 		nextStep = new JButton("Nästa steg");
+		nextStep.addActionListener(this);
 		bottom.add(nextStep);
 		top = new JPanel();
 		top.setBackground(Color.BLACK);
@@ -78,6 +82,9 @@ public class GUItest extends JFrame implements MouseListener {
 		pack();
 	}
 	
+	
+
+	
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		if (e.getSource() == norge) {
@@ -93,6 +100,9 @@ public class GUItest extends JFrame implements MouseListener {
 			Builder.aCtrl.setCountry(4);
 		}
 	}
+
+	
+
 
 	@Override
 	public void mouseEntered(MouseEvent arg0) {
@@ -115,6 +125,14 @@ public class GUItest extends JFrame implements MouseListener {
 	@Override
 	public void mouseReleased(MouseEvent arg0) {
 		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource()== nextStep){
+			Builder.turn.changeState();
+		}
 		
 	}
 }

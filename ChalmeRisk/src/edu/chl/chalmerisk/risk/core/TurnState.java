@@ -2,14 +2,14 @@ package edu.chl.chalmerisk.risk.core;
 
 public abstract class TurnState {
 
-	public void reinforcement(Turn turn){
-		System.out.print("error");
+	public void reinforcementState(Turn turn){
+		System.out.print("error0");
 	}
 	
-	public void attack(Turn turn){
-		
+	public void attackState(Turn turn){
+		System.out.print("errorattack");
 	}
-	public void troopMovement(Turn turn){
-		
+	public void troopMovementState(Turn turn){
+		System.out.print("error");
 	}
 }
