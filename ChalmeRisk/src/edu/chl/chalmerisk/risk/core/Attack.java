@@ -6,10 +6,9 @@ import java.awt.*;
 import javax.swing.*;
 
 import edu.chl.chalmerisk.risk.constants.Country;
-import edu.chl.chalmerisk.risk.view.PaintDice;
 
 
-public class Attack extends JFrame {
+public class Attack extends JFrame{
 	private JPanel attTeamPanel;
 	private JPanel defTeamPanel;
 	private JPanel actionPanel;
