@@ -1,8 +1,6 @@
 package edu.chl.chalmerisk.risk.core;
 
 import java.awt.Color;
-import edu.chl.chalmerisk.risk.*;
-
 import edu.chl.chalmerisk.risk.constants.Map;
 import edu.chl.chalmerisk.risk.constants.Player;
 import edu.chl.chalmerisk.risk.ctrl.AttackController;

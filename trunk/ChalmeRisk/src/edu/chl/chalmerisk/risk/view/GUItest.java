@@ -2,10 +2,7 @@ package edu.chl.chalmerisk.risk.view;
 
 
 import java.awt.BorderLayout;
-import edu.chl.chalmerisk.risk.*;
 import java.awt.Color;
-import java.awt.FlowLayout;
-import java.awt.LayoutManager;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 

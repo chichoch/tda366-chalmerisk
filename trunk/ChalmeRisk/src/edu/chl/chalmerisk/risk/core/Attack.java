@@ -1,6 +1,5 @@
 package edu.chl.chalmerisk.risk.core;
 import java.awt.Color;
-import edu.chl.chalmerisk.risk.*;
 import java.awt.event.*;
 import java.awt.*;
 

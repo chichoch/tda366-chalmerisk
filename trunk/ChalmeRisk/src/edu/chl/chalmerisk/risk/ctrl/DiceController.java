@@ -1,5 +1,4 @@
 package edu.chl.chalmerisk.risk.ctrl;
-import edu.chl.chalmerisk.risk.*;
 import edu.chl.chalmerisk.risk.core.Dice;
 
 public class DiceController {

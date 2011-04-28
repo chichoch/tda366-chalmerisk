@@ -1,7 +1,4 @@
 package edu.chl.chalmerisk.risk.constants;
-import javax.swing.JOptionPane;
-import edu.chl.chalmerisk.risk.*;
-
 import edu.chl.chalmerisk.risk.core.Builder;
 
 

@@ -1,5 +1,4 @@
 package edu.chl.chalmerisk.risk.core;
-import edu.chl.chalmerisk.risk.*;
 /*
  * A Class that describes a Dice. 
  * 
