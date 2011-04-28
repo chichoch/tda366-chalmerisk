@@ -18,6 +18,7 @@ public class Builder {
 	public static AttackDialog attack = new AttackDialog();
 	public static AttackController aCtrl = new AttackController();
 	public static DiceController diceC = new DiceController();
+	public static Turn turn = new Turn();
 	public Builder(){
 	}
 }
