@@ -1,6 +1,6 @@
 package edu.chl.chalmerisk.risk.core;
 
-abstract class State {
+public abstract class State {
 
 	public void reinforcement(Turn turn){
 		
