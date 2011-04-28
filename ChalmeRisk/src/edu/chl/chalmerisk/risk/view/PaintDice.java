@@ -2,7 +2,6 @@ package edu.chl.chalmerisk.risk.view;
 
 
 import java.awt.*;
-import edu.chl.chalmerisk.risk.*;
 import javax.swing.*;
 import edu.chl.chalmerisk.risk.core.Dice;
 import edu.chl.chalmerisk.risk.ctrl.DiceController;

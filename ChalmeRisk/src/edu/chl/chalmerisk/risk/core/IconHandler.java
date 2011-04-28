@@ -1,10 +1,6 @@
 package edu.chl.chalmerisk.risk.core;
-import edu.chl.chalmerisk.risk.*;
-
 import java.awt.Color;
-
 import javax.swing.ImageIcon;
-
 import edu.chl.chalmerisk.risk.constants.Player;
 
 

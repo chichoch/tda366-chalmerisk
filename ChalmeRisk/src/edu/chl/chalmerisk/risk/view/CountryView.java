@@ -1,7 +1,6 @@
 package edu.chl.chalmerisk.risk.view;
 
 import java.awt.*;
-import edu.chl.chalmerisk.risk.*;
 import java.util.Observable;
 import java.util.Observer;
 import javax.swing.*;
