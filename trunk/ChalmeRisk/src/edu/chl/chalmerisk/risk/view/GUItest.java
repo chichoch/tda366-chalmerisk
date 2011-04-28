@@ -24,6 +24,7 @@ public class GUItest extends JFrame implements MouseListener, ActionListener {
 	private JPanel sweden;
 	private JPanel finland;
 	private JButton nextStep;
+	private JLabel infoLabel;
 	
 	public GUItest() {
 		setLayout(new BorderLayout());
@@ -66,6 +67,8 @@ public class GUItest extends JFrame implements MouseListener, ActionListener {
 		bottom = new JPanel();
 		nextStep = new JButton("Nästa steg");
 		nextStep.addActionListener(this);
+		infoLabel= new JLabel("Info");
+		bottom.add(infoLabel);
 		bottom.add(nextStep);
 		top = new JPanel();
 		top.setBackground(Color.BLACK);
@@ -80,6 +83,10 @@ public class GUItest extends JFrame implements MouseListener, ActionListener {
 		setExtendedState(getExtendedState()|Frame.MAXIMIZED_BOTH); //Fullscreen
 		setVisible(true);
 		pack();
+	}
+	
+	public void setInfo(String info){
+		infoLabel.setText(info);
 	}
 	
 	
