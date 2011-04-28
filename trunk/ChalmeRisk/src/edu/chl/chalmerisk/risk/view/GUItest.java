@@ -88,16 +88,16 @@ public class GUItest extends JFrame implements MouseListener, ActionListener {
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		if (e.getSource() == norge) {
-			Builder.aCtrl.setCountry(1);
+			Builder.turn.setCountry(1);
 		}
 		if (e.getSource() == sweden) {
-			Builder.aCtrl.setCountry(2);
+			Builder.turn.setCountry(2);
 		}
 		if (e.getSource() == finland) {
-			Builder.aCtrl.setCountry(3);
+			Builder.turn.setCountry(3);
 		}
 		if (e.getSource() == denmark) {
-			Builder.aCtrl.setCountry(4);
+			Builder.turn.setCountry(4);
 		}
 	}
 
