@@ -7,11 +7,11 @@ public class Dice {
 	private int num;
 	/*
 	 * Constructor. Creates a dice with a random number
-	 */
+	 
 	public Dice() {
 		tossDice();
 	}
-	/*
+	
 	 * Returns the number the Dice have currently
 	 */
 	public int getNumber() {
