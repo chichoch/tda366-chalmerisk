@@ -1,0 +1,14 @@
+import edu.chl.chalmerisk.risk.core.Builder;
+import edu.chl.chalmerisk.risk.ctrl.DiceController;
+import edu.chl.chalmerisk.*;
+
+public class Main {
+	public static void main (String[] arg) {
+		//new Builder();
+		//new PaintDice();
+		DiceController b = new DiceController();
+		System.out.println("Result: "+b.getResult(3,2));
+		System.out.println("A1: "+b.getAttDice1()+" A2: "+b.getAttDice2()+" A3: "+b.getAttDice3());
+		System.out.println("D1: "+b.getDefDice1()+" D2: "+b.getDefDice2());
+	}
+}
