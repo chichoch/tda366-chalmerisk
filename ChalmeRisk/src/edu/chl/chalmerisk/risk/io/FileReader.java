@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class FileReader implements IFileReader {
-	private List<String> sList = new ArrayList();
+	private List<String> sList = new ArrayList<String>();
 	public List<String> getFile(String filename) throws FileNotFoundException {
 		sList.clear();
 		Scanner sc = new Scanner(new FileInputStream(filename));
