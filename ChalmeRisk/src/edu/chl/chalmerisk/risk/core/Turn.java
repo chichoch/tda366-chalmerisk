@@ -17,7 +17,8 @@ public class Turn {
 		   states[currentStateIndex].attackState( Builder.aCtrl  );  
 	   }
 	   public void troopMovementState() { 
-		   states[currentStateIndex].troopMovementState( Builder.tCtrl ); 
+		   states[currentStateIndex].troopMovementState( Builder.tCtrl );
+		   Builder.round.newRound();
 	   }
 	   public void changeState() {
 		   if(currentStateIndex == 0){
@@ -50,8 +51,7 @@ public class Turn {
 	   public void setCountry(int n){
 		   states[currentStateIndex].setCountry(n);
 	   }
-
-
+	   
 }
 
 
