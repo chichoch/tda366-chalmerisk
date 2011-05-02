@@ -25,6 +25,9 @@ public class AttackController extends TurnState{
 			if(Builder.map.getCountry(id).getTroops()<=1){
 				JOptionPane.showMessageDialog(null, "För få trupper för att attackera!");
 			}
+			else if(!Builder.map.getCountry(id).getOwner().equals(Builder.round.getCurrentPlayer())){
+				JOptionPane.showMessageDialog(null, "Du måste attackera från ditt egna land" );	
+			}
 			else{
 				firstCountrySelected = true;
 				attCountry = Builder.map.getCountry(id);
@@ -67,12 +70,24 @@ public class AttackController extends TurnState{
 			Builder.attack.setStatusText("Attacker killed 1 ");
 		}
 		else if(i==3){
-			defCountry.setTroops(defCountry.getTroops() - 2);
-			Builder.attack.setStatusText("Attacker killed 2 ");
+			if(defCountry.getTroops()==1){
+				defCountry.setTroops(defCountry.getTroops() - 1);
+				Builder.attack.setStatusText("Attacker killed 2 ");
+			}
+			else{
+				defCountry.setTroops(defCountry.getTroops() - 2);
+				Builder.attack.setStatusText("Attacker killed 2 ");
+			}
 		}
 		else if(i==4){
-			attCountry.setTroops(attCountry.getTroops() - 2);
-			Builder.attack.setStatusText("Attacker killed 2 ");
+			if(attCountry.getTroops()==1){
+				attCountry.setTroops(attCountry.getTroops() - 1);
+				Builder.attack.setStatusText("Defender killed 1 ");
+			}
+			else{
+				attCountry.setTroops(attCountry.getTroops() - 2);
+				Builder.attack.setStatusText("Defender killed 2 ");
+			}
 		}
 		else if(i==5){
 			defCountry.setTroops(defCountry.getTroops() - 1);
