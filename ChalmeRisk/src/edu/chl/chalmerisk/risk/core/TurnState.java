@@ -1,8 +1,7 @@
 package edu.chl.chalmerisk.risk.core;
 
-import edu.chl.chalmerisk.risk.ctrl.AttackController;
-import edu.chl.chalmerisk.risk.ctrl.ReinforcementController;
-import edu.chl.chalmerisk.risk.ctrl.TroopMovementController;
+import edu.chl.chalmerisk.risk.ctrl.*;
+
 
 public abstract class TurnState {
 

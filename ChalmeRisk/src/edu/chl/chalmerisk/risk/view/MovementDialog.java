@@ -1,33 +1,75 @@
 package edu.chl.chalmerisk.risk.view;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.*;
 
-public class MovementDialog extends JFrame {
+import edu.chl.chalmerisk.risk.constants.Country;
+import edu.chl.chalmerisk.risk.core.Builder;
+
+public class MovementDialog extends JFrame implements ActionListener {
 	
-	private JPanel movementPanel;
-	private JSlider quantity;
-	private JButton moveTroops;
+	private JPanel movementPanelCenter;
+	private JPanel movementPanelSouth;
+	private JSlider quantitySlider;
+	private JButton moveTroopsButton;
+	private JButton cancelButton;
 	
 	public MovementDialog(){
-		quantity = new JSlider();
-		quantity.setMajorTickSpacing(10);
-		quantity.setPaintLabels(true);
-		moveTroops = new JButton("Move troops!");
-		movementPanel = new JPanel();
+		quantitySlider = new JSlider();
+		quantitySlider.setMinimum(1);
+		quantitySlider.setMajorTickSpacing(1);
+		quantitySlider.setSnapToTicks(true);
+		moveTroopsButton = new JButton("Move troops!");
+		cancelButton = new JButton("Cancel");
+		movementPanelCenter = new JPanel();
+		movementPanelSouth = new JPanel();
 		
-		movementPanel.setLayout(new GridLayout(2,1));
-		movementPanel.add(quantity);
-		movementPanel.add(moveTroops);
+		movementPanelCenter.setLayout(new GridLayout(1,1));
+		movementPanelCenter.add(quantitySlider);
 		
-		add(movementPanel, BorderLayout.CENTER);
+		movementPanelSouth.setLayout(new GridLayout(2,1));
+		movementPanelSouth.add(moveTroopsButton);
+		movementPanelSouth.add(cancelButton);
+		
+		add(movementPanelCenter, BorderLayout.CENTER);
+		add(movementPanelSouth, BorderLayout.SOUTH);
 		
 		setUndecorated(true);
 		setVisible(false);
 		pack();
-		setSize(300,300);
+		setLocation(500, 200);
+		setSize(300,150);
+	
+		
+
+		
+		moveTroopsButton.addActionListener(this); 
+		cancelButton.addActionListener(this);
+		
 	}
-	public void newMovement(){
-		setVisible(true);
+		public void actionPerformed(ActionEvent e){
+			
+			if(e.getSource() == moveTroopsButton){
+				Builder.tCtrl.doMovement(quantitySlider.getValue());
+				setVisible(false);
+			}
+			
+			if(e.getSource()== cancelButton){
+				setVisible(false);
+			}
+	}
+
+	public void newMovement(Country fromCountry, Country toCountry){
+		moveTroopsButton.setEnabled(true);
+		cancelButton.setEnabled(true);
+		quantitySlider.setMaximum(fromCountry.getTroops()-1);
+		quantitySlider.setValue(1);
+		quantitySlider.setPaintLabels(true);
+		
+		
+		
 	}
 }
