@@ -1,4 +1,3 @@
-import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,6 +9,7 @@ public class Main {
 	
 	public static void main (String[] arg) {
 		new Builder();
+		
 		//new PaintDice();
 		
 		//The following code was just for testing:

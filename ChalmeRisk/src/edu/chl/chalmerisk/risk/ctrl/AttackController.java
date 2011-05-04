@@ -59,8 +59,8 @@ public class AttackController extends TurnState{
 	}
 	
 	public void startFight() {
-		//int i = Builder.diceC.getResult(attCountry.getTroops(), defCountry.getTroops());
-		double i = (int) ((Math.random() * 2) + 1);;
+		int i = Builder.diceC.getResult(attCountry.getTroops(), defCountry.getTroops());
+		//double i = (int) ((Math.random() * 2) + 1);;
 		if(i==1){
 			attCountry.setTroops(attCountry.getTroops() - 1);
 			Builder.attack.setStatusText("Defender killed 1 ");

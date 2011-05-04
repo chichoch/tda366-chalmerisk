@@ -41,6 +41,7 @@ public class DiceController {
 			defNumberOfDice = 2;
 			
 		}
+		//test
 		//System.out.println("ANbr "+attNumberOfDice+" DNbr "+ defNumberOfDice);
 		return battle(attNumberOfDice, defNumberOfDice);
 	}
@@ -127,6 +128,7 @@ public class DiceController {
 			}
 			
 			/**
+			 *Testing 
 			System.out.println("AMax: "+attDiceMax+" AMin: "+attDiceMin);
 			System.out.println("DMax: "+defDiceMax+" DMin: "+defDiceMin);
 			**/
