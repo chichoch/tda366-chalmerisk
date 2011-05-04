@@ -4,14 +4,17 @@ import java.util.List;
 import edu.chl.chalmerisk.risk.constants.Player;
 import edu.chl.chalmerisk.risk.core.Builder;
 import edu.chl.chalmerisk.risk.core.Round;
+import edu.chl.chalmerisk.risk.view.PaintDice;
+import edu.chl.chalmerisk.risk.view.StartMenu;
 
 public class Main {
 	
 	public static void main (String[] arg) {
 		new Builder();
+		new StartMenu();
+
 		
 		//new PaintDice();
-		
 		//The following code was just for testing:
 		/*
 		List<Player> list = new ArrayList<Player>();

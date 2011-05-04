@@ -52,5 +52,6 @@ public class TroopMovementController extends TurnState {
 	public void doMovement(int value){
 		firstSelectedCountry.setTroops(firstSelectedCountry.getTroops()-value);
 		secondSelectedCountry.setTroops(secondSelectedCountry.getTroops()+value);
+		Builder.turn.changeState();
 	}
 }

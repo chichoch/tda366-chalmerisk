@@ -18,7 +18,6 @@ public class Round {
 	
 	public void newRound() {
 		try {
-			System.out.println("" + pList.indexOf(currentPlayer));
 			currentPlayer = pList.get(pList.indexOf(currentPlayer) + 1);
 			numOfPlayers = pList.size();
 		}
