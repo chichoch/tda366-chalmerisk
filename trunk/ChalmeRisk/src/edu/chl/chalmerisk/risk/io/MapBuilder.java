@@ -3,6 +3,7 @@ package edu.chl.chalmerisk.risk.io;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import edu.chl.chalmerisk.risk.constants.Country;
 
@@ -12,6 +13,8 @@ public class MapBuilder {
 	private String mapIconFileName;
 	private String countryName;
 	private int countryId;
+	private int countryX;
+	private int countryY;
 	private int[] countryNeighboors;
 	private int numOfCountries;
 	/**
@@ -25,7 +28,7 @@ public class MapBuilder {
 	 * The Country's ID
 	 * Position, X-axis
 	 * Position, Y-axis
-	 * Neighbours (Other Country-ID's, seperated with colons (:)
+	 * Neighbours (Other Country-ID's, seperated with a blank step.
 	 * ____________________________________
 	 * 
 	 * 
@@ -39,19 +42,19 @@ public class MapBuilder {
 	 * 1
 	 * 340
 	 * 210
-	 * 2,4,5,12
+	 * 2 4 5 12
 	 * 
 	 * Norge
 	 * 2
 	 * 120
 	 * 234
-	 * 1,5,7
+	 * 1 5 7
 	 * 
 	 * Finland
 	 * 3
 	 * 412
 	 * 231
-	 * 12,32
+	 * 12 32
 	 * ___________________________________________________________
 	 * 
 	 * 
@@ -69,6 +72,17 @@ public class MapBuilder {
 		mapIconFileName = command.get(0);
 		
 		for (int i = 0; i < numOfCountries; i++) {
+			countryName = command.get((i * 5) + 1);
+			System.out.println(countryName);
+			countryId = Integer.parseInt(command.get((i * 5) + 2));
+			System.out.println("" + countryId);
+			countryX = Integer.parseInt(command.get((i * 5) + 3));
+			countryY = Integer.parseInt(command.get((i * 5) + 4));
+			
+			Scanner sc = new Scanner(command.get((i * 5) + 5));
+			while (sc.hasNextInt()) {
+			
+			}
 			
 		}
 		System.out.println("Antal länder:" + numOfCountries + "\n" + command.get(0) + "\n " + command.get(1) + "\n " + command.get(2) 
