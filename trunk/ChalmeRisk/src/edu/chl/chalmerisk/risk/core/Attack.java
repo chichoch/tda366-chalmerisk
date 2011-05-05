@@ -7,7 +7,7 @@ import javax.swing.*;
 
 import edu.chl.chalmerisk.risk.constants.Country;
 
-
+//TODO REMOVE! 
 public class Attack extends JFrame{
 	private JPanel attTeamPanel;
 	private JPanel defTeamPanel;
