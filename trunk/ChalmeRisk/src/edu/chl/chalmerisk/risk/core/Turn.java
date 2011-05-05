@@ -5,20 +5,20 @@ package edu.chl.chalmerisk.risk.core;
 public class Turn {
 	
 	
-	private TurnState[] states  = {Builder.rCtrl, Builder.aCtrl, Builder.tCtrl};
+	private TurnState[] states  = {ChalmeRisk.rCtrl, ChalmeRisk.aCtrl, ChalmeRisk.tCtrl};
 	
 	private int currentStateIndex = 0;
 	
 	   public void reinforcementState()  { 
-		   states[currentStateIndex].reinforcementState( Builder.rCtrl); 
+		   states[currentStateIndex].reinforcementState( ChalmeRisk.rCtrl); 
 	   }
 	   
 	   public void attackState() { 
-		   states[currentStateIndex].attackState( Builder.aCtrl  );  
+		   states[currentStateIndex].attackState( ChalmeRisk.aCtrl  );  
 	   }
 	   public void troopMovementState() { 
-		   states[currentStateIndex].troopMovementState( Builder.tCtrl );
-		   Builder.round.newRound();
+		   states[currentStateIndex].troopMovementState( ChalmeRisk.tCtrl );
+		   ChalmeRisk.round.newRound();
 	   }
 	   public void changeState() {
 		   if(currentStateIndex == 0){

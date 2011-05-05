@@ -4,7 +4,7 @@ import java.io.FileNotFoundException;
 import java.util.List;
 /**
  * Interface for subsystem FileReader 
- * @author christophe
+ * @author hajo, Modified by Christophe.
  *
  */
 public interface IFileReader {

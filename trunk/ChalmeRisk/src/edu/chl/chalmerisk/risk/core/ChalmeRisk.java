@@ -13,15 +13,20 @@ import edu.chl.chalmerisk.risk.view.*;
 
 
 
-public class Builder {
+public class ChalmeRisk {
 	public static Player player1 = new Player(Color.RED, "Fredrik");
 	public static Player player2 = new Player(Color.GREEN, "Christope");
 	private static List<Player> pList = new ArrayList<Player>();
+	//Imutable 
 	public static Map map;
+	//TODO Move to view.
 	public static IconHandler iconHandler;
-	public static GUItest guiTest;
-	public static AttackDialog attack = new AttackDialog();
+	//TODO MOve to View.
+	public static MainFrame guiTest;
+	//TODO Runtime
 	public static MovementDialog movement = new MovementDialog();
+	//TODO Runtime
+	public static AttackDialog attack = new AttackDialog();
 	public static AttackController aCtrl = new AttackController();
 	public static ReinforcementController rCtrl = new ReinforcementController();
 	public static TroopMovementController tCtrl = new TroopMovementController();
@@ -29,11 +34,11 @@ public class Builder {
 	public static Turn turn = new Turn();
 	public static Round round;
 	
-	public Builder() throws FileNotFoundException{
+	public ChalmeRisk() throws FileNotFoundException{
 		map = new Map("maps/testmap.txt");
 		setPlayers();
 		iconHandler  = new IconHandler();
-		guiTest = new GUItest();
+		guiTest = new MainFrame();
 		
 		pList.add(player1);
 		pList.add(player2);

@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 import edu.chl.chalmerisk.risk.constants.Country;
-import edu.chl.chalmerisk.risk.core.Builder;
+import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 
 public class MovementDialog extends JFrame implements ActionListener {
 	
@@ -53,7 +53,7 @@ public class MovementDialog extends JFrame implements ActionListener {
 		public void actionPerformed(ActionEvent e){
 			
 			if(e.getSource() == moveTroopsButton){
-				Builder.tCtrl.doMovement(quantitySlider.getValue());
+				ChalmeRisk.tCtrl.doMovement(quantitySlider.getValue());
 				setVisible(false);
 			}
 			

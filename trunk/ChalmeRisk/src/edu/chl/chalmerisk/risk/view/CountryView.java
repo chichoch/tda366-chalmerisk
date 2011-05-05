@@ -5,7 +5,7 @@ import java.util.Observable;
 import java.util.Observer;
 import javax.swing.*;
 import edu.chl.chalmerisk.risk.constants.Country;
-import edu.chl.chalmerisk.risk.core.Builder;
+import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 
 public class CountryView extends JPanel implements Observer{
 	private JLabel troopDisplay;
@@ -17,7 +17,7 @@ public class CountryView extends JPanel implements Observer{
 		this.country = country;
 		country.addObserver(this);
 		setLayout(new FlowLayout());
-		icon = Builder.iconHandler.getIcon(country.getOwner(), country.getTroops());
+		icon = ChalmeRisk.iconHandler.getIcon(country.getOwner(), country.getTroops());
 		troopIcon = new JLabel();
 		troopDisplay = new JLabel(""+country.getTroops());
 		troopIcon.setIcon(icon);
@@ -33,10 +33,10 @@ public class CountryView extends JPanel implements Observer{
 		if(observable.equals(country)){
 			if(arg.equals(new Integer(0))){
 				troopDisplay.setText(""+country.getTroops());
-				troopIcon.setIcon(Builder.iconHandler.getIcon(country.getOwner(), country.getTroops()));
+				troopIcon.setIcon(ChalmeRisk.iconHandler.getIcon(country.getOwner(), country.getTroops()));
 			}
 			if(arg.equals(new Integer(1))){
-				troopIcon.setIcon(Builder.iconHandler.getIcon(country.getOwner(), country.getTroops()));
+				troopIcon.setIcon(ChalmeRisk.iconHandler.getIcon(country.getOwner(), country.getTroops()));
 			}
 		}
 	}
