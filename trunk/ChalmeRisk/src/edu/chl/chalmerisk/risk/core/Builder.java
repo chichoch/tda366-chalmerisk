@@ -28,6 +28,7 @@ public class Builder {
 	public static DiceController diceC = new DiceController();
 	public static Turn turn = new Turn();
 	public static Round round;
+	
 	public Builder() throws FileNotFoundException{
 		map = new Map("maps/testmap.txt");
 		setPlayers();
@@ -39,7 +40,7 @@ public class Builder {
 		round = new Round(pList);
 	}
 	
-	//A preliminary method to set the players in the game.
+	//An ugly preliminary method to set the players in the game.
 	public void setPlayers() {
 		map.setPlayer(player1, 1);
 		map.setPlayer(player1, 2);
