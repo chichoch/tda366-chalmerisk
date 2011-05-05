@@ -20,7 +20,9 @@ public abstract class TurnState {
 		Builder.guiTest.setInfo("Finished troop movement state");
 	}
 	
-	public void setCountry(int n){}
+	public void setCountry(int n){
+		//Should always be Overrided.
+	}
 	
 	
 }
