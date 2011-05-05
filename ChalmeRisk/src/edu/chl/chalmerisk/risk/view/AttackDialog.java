@@ -6,7 +6,7 @@ import java.awt.event.*;
 import javax.swing.*;
 
 import edu.chl.chalmerisk.risk.constants.Country;
-import edu.chl.chalmerisk.risk.core.Builder;
+import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 
 public class AttackDialog extends JFrame{
 	private JPanel attTeamPanel;
@@ -57,13 +57,13 @@ public class AttackDialog extends JFrame{
 		//actionlisteners
 		fight.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e){
-				Builder.aCtrl.startFight();
+				ChalmeRisk.aCtrl.startFight();
 			}
 		});
 		
 		retreat.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e){
-				Builder.aCtrl.endFight();
+				ChalmeRisk.aCtrl.endFight();
 			}
 		});
 	}
@@ -87,12 +87,12 @@ public class AttackDialog extends JFrame{
 		actionPanel.add(retreat);
 		actionPanel.add(standings);
 		
-		attCannon = (Builder.iconHandler.getIcon(att.getOwner(), 10));
-		attHorse = (Builder.iconHandler.getIcon(att.getOwner(), 5));
-		attInfantry = (Builder.iconHandler.getIcon(att.getOwner(), 1));
-		defCannon = (Builder.iconHandler.getIcon(def.getOwner(), 10));
-		defHorse = (Builder.iconHandler.getIcon(att.getOwner(), 5));
-		defInfantry = (Builder.iconHandler.getIcon(att.getOwner(), 1));
+		attCannon = (ChalmeRisk.iconHandler.getIcon(att.getOwner(), 10));
+		attHorse = (ChalmeRisk.iconHandler.getIcon(att.getOwner(), 5));
+		attInfantry = (ChalmeRisk.iconHandler.getIcon(att.getOwner(), 1));
+		defCannon = (ChalmeRisk.iconHandler.getIcon(def.getOwner(), 10));
+		defHorse = (ChalmeRisk.iconHandler.getIcon(att.getOwner(), 5));
+		defInfantry = (ChalmeRisk.iconHandler.getIcon(att.getOwner(), 1));
 		
 		//repaintTroops(att.getTroops(), def.getTroops());
 		
@@ -110,13 +110,13 @@ public class AttackDialog extends JFrame{
 		//actionlisteners
 		fight.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e){
-				Builder.aCtrl.startFight();
+				ChalmeRisk.aCtrl.startFight();
 			}
 		});
 		
 		retreat.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e){
-				Builder.aCtrl.endFight();
+				ChalmeRisk.aCtrl.endFight();
 			}
 		});
 	}
@@ -181,12 +181,12 @@ public class AttackDialog extends JFrame{
 		fight.setEnabled(true);
 		retreat.setText("Retreat");
 		status.setText("");
-		attCannon = (Builder.iconHandler.getIcon(att.getOwner(), 10));
-		attHorse = (Builder.iconHandler.getIcon(att.getOwner(), 5));
-		attInfantry = (Builder.iconHandler.getIcon(att.getOwner(), 1));
-		defCannon = (Builder.iconHandler.getIcon(def.getOwner(), 10));
-		defHorse = (Builder.iconHandler.getIcon(def.getOwner(), 5));
-		defInfantry = (Builder.iconHandler.getIcon(def.getOwner(), 1));
+		attCannon = (ChalmeRisk.iconHandler.getIcon(att.getOwner(), 10));
+		attHorse = (ChalmeRisk.iconHandler.getIcon(att.getOwner(), 5));
+		attInfantry = (ChalmeRisk.iconHandler.getIcon(att.getOwner(), 1));
+		defCannon = (ChalmeRisk.iconHandler.getIcon(def.getOwner(), 10));
+		defHorse = (ChalmeRisk.iconHandler.getIcon(def.getOwner(), 5));
+		defInfantry = (ChalmeRisk.iconHandler.getIcon(def.getOwner(), 1));
 	}
 }
 

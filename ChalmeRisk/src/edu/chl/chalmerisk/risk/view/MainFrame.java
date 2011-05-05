@@ -11,11 +11,11 @@ import java.awt.event.MouseListener;
 
 import javax.swing.*;
 
-import edu.chl.chalmerisk.risk.core.Builder;
+import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 import edu.chl.chalmerisk.risk.core.Turn;
 
 
-public class GUItest extends JFrame implements MouseListener, ActionListener {
+public class MainFrame extends JFrame implements MouseListener, ActionListener {
 	private JLayeredPane karta;
 	private JPanel bottom;
 	private JPanel top;
@@ -26,7 +26,8 @@ public class GUItest extends JFrame implements MouseListener, ActionListener {
 	private JButton nextStep;
 	private JLabel infoLabel;
 	
-	public GUItest() {
+	//TODO No hardcode here!
+	public MainFrame() {
 		setLayout(new BorderLayout());
 		ImageIcon icon = new ImageIcon("resources/testmap1.jpg");
 		
@@ -35,10 +36,10 @@ public class GUItest extends JFrame implements MouseListener, ActionListener {
 		
 		//Set icons
 		JLabel l = new JLabel(icon);
-		norge = new CountryView(Builder.map.getCountry(1)); 
-		sweden = new CountryView(Builder.map.getCountry(2)); 
-		finland = new CountryView(Builder.map.getCountry(3)); 
-		denmark = new CountryView(Builder.map.getCountry(4)); 
+		norge = new CountryView(ChalmeRisk.map.getCountry(1)); 
+		sweden = new CountryView(ChalmeRisk.map.getCountry(2)); 
+		finland = new CountryView(ChalmeRisk.map.getCountry(3)); 
+		denmark = new CountryView(ChalmeRisk.map.getCountry(4)); 
 	
 		//Set bounds
 		norge.setBounds(600, 235, 60, 75);
@@ -95,16 +96,16 @@ public class GUItest extends JFrame implements MouseListener, ActionListener {
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		if (e.getSource() == norge) {
-			Builder.turn.setCountry(1);
+			ChalmeRisk.turn.setCountry(1);
 		}
 		if (e.getSource() == sweden) {
-			Builder.turn.setCountry(2);
+			ChalmeRisk.turn.setCountry(2);
 		}
 		if (e.getSource() == finland) {
-			Builder.turn.setCountry(3);
+			ChalmeRisk.turn.setCountry(3);
 		}
 		if (e.getSource() == denmark) {
-			Builder.turn.setCountry(4);
+			ChalmeRisk.turn.setCountry(4);
 		}
 	}
 
@@ -138,7 +139,7 @@ public class GUItest extends JFrame implements MouseListener, ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()== nextStep){
-			Builder.turn.changeState();
+			ChalmeRisk.turn.changeState();
 		}
 		
 	}

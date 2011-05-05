@@ -1,17 +1,24 @@
-import java.awt.Color;
+package edu.chl.chalmerisk.risk;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
 import edu.chl.chalmerisk.risk.constants.Player;
-import edu.chl.chalmerisk.risk.core.Builder;
+import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 import edu.chl.chalmerisk.risk.core.Round;
+import edu.chl.chalmerisk.risk.io.MapBuilder;
+import edu.chl.chalmerisk.risk.view.PaintDice;
+import edu.chl.chalmerisk.risk.view.StartMenu;
 
 public class Main {
 	
-	public static void main (String[] arg) {
-		new Builder();
-		//new PaintDice();
+	public static void main (String[] arg) throws FileNotFoundException {
+		//new Builder();
+		new ChalmeRisk();
+		new StartMenu();
+
 		
+		//new PaintDice();
 		//The following code was just for testing:
 		/*
 		List<Player> list = new ArrayList<Player>();

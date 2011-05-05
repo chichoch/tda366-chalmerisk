@@ -6,7 +6,11 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
+/**
+ * 
+ * @author hajo, modified by Christophe
+ * 
+ */
 public class FileReader implements IFileReader {
 	private List<String> sList = new ArrayList<String>();
 	public List<String> getFile(String filename) throws FileNotFoundException {

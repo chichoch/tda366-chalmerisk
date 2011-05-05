@@ -12,11 +12,11 @@ public class ReinforcementController extends TurnState {
 	
 	@Override
 	public void setCountry(int id){
-		if(!Builder.map.getCountry(id).getOwner().equals(Builder.round.getCurrentPlayer())){
+		if(!ChalmeRisk.map.getCountry(id).getOwner().equals(ChalmeRisk.round.getCurrentPlayer())){
 			JOptionPane.showMessageDialog(null, "Du kan endast sätta ut trupper i dina egna länder" );	
 		}
 		else{
-			Builder.map.getCountry(id).setTroops(Builder.map.getCountry(id).getTroops()+1);
+			ChalmeRisk.map.getCountry(id).setTroops(ChalmeRisk.map.getCountry(id).getTroops()+1);
 		}
 	}
 }
