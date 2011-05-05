@@ -9,9 +9,10 @@ public class Country extends Observable{
 	private int countryid;
 	private Player owner;
 	private String continent;
-
 	private int[] grannar;
-
+	private int x;
+	private int y;
+	
 	public Country() {
 		
 	}
@@ -24,9 +25,11 @@ public class Country extends Observable{
 	*/
 
 	
-	public Country(String s, int id, int t, int[] n, Player owner) {
+	public Country(String s, int id, int x, int y, int t, int[] n, Player owner) {
 		this.country = s;
 		this.countryid = id;
+		this.x = x;
+		this.y = y;
 		this.troops = t;
 		this.grannar = n;
 		this.owner = owner;
@@ -88,5 +91,21 @@ public class Country extends Observable{
 	
 	public void setContinent(String e) {
 		continent = e;
+	}
+	
+	public int getX() {
+		return x;
+	}
+	
+	public void setX(int x) {
+		this.x = x;
+	}
+	
+	public int getY() {
+		return y;
+	}
+	
+	public void setY(int y) {
+		this.y = y;
 	}
 }

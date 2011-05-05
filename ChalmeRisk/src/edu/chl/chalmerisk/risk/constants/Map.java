@@ -1,31 +1,41 @@
 package edu.chl.chalmerisk.risk.constants;
+import java.io.FileNotFoundException;
+import java.util.List;
+
 import edu.chl.chalmerisk.risk.core.Builder;
+import edu.chl.chalmerisk.risk.io.MapBuilder;
 
 
 public class Map {
-	private int[] norgeGrannar = {2,3};
-	private int[] finlandGrannar = {1,2};
-	private int[] sverigeGrannar = {1,3,4};
-	private int[] danmarkGrannar = {2};
-	private Country Norge = new Country("Norge", 1, 2, norgeGrannar, Builder.player1);
-	private Country Sverige = new Country("Sverige", 2, 4, sverigeGrannar, Builder.player1);
-	private Country Finland = new Country("Finland", 3, 6, finlandGrannar, Builder.player1);
-	private Country Danmark = new Country("Danmark", 4, 3, danmarkGrannar, Builder.player2);
+	private MapBuilder map;
+	private List<Country> list;
+	private String iconFileName;
 	
-
+	public Map(String filename) throws FileNotFoundException {
+		map = new MapBuilder(filename);
+		list = map.getCountries();
+		iconFileName = map.getIconFileName();
+	}
 	//Returns the specific ID of each country
-	public Country getCountry(int i){
-		if(Norge.getCountryId() == i){ 
-			return Norge;
-		}
-		if(Sverige.getCountryId() == i){ 
-			return Sverige;
-		}
-		if(Finland.getCountryId()== i){ 
-			return Finland;
-		}
-		return Danmark;
-		
+	public Country getCountry(int id) {
+ 		for (int i = 0; i < list.size(); i++) {
+ 			if (list.get(i).getCountryId() == id) {
+ 				return list.get(i);
+ 			}
+ 		}
+ 		return null;
+ 	}
+	
+	public String getIconFileName() {
+		return iconFileName;
+	}
+	
+	public void setPlayer(Player p, int countryId) {
+		for (int i = 0; i < list.size(); i++) {
+ 			if (list.get(i).getCountryId() == countryId) {
+ 				list.get(i).setOwner(p);
+ 			}
+ 		}
 	}
 	 
 }
