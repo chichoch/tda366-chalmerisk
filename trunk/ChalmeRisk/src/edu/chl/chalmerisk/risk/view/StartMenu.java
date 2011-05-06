@@ -18,11 +18,13 @@ public class StartMenu extends JFrame implements ActionListener{
 	    private FlowLayout layout; 
 	    private JPanel rightPanel;
 	    private JPanel leftPanel;
+	    private NewGameMenu newGameMenu;
 	  
 	
 	    public StartMenu(){
 	    
 	        leftPanel = new JPanel();
+	        newGameMenu = new NewGameMenu();
 	        buttonPanel = new JPanel();
 	        rightPanel = new JPanel();
 	        newGameButton = new JButton();
@@ -84,7 +86,10 @@ public class StartMenu extends JFrame implements ActionListener{
 	       newGameButton.addActionListener(new ActionListener() {
 	    	   public void actionPerformed(ActionEvent e) {
 	    		   if(e.getSource()==newGameButton){
-	    			   setVisible(false);
+	    			   remove(buttonPanel);
+	    			   add(newGameMenu, BorderLayout.CENTER);
+	    			   validate();
+	    			   //setVisible(false);
 	    		   }
 		
 	    	   }

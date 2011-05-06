@@ -9,6 +9,7 @@ import edu.chl.chalmerisk.risk.constants.Map;
 import edu.chl.chalmerisk.risk.constants.Player;
 import edu.chl.chalmerisk.risk.ctrl.*;
 import edu.chl.chalmerisk.risk.io.MapBuilder;
+import edu.chl.chalmerisk.risk.util.*;
 import edu.chl.chalmerisk.risk.view.*;
 
 
@@ -19,6 +20,7 @@ public class ChalmeRisk {
 	private static List<Player> pList = new ArrayList<Player>();
 	//Imutable 
 	public static Map map;
+	public static RandomizeCountries random;
 	//TODO Move to view.
 	public static IconHandler iconHandler;
 	//TODO MOve to View.
