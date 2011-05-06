@@ -36,5 +36,9 @@ public class Map {
  				list.get(i).setOwner(p);
  			}
  		}
-	}	 
+	}
+	
+	public List<Country> getCountries() {
+		return list;
+	}
 }
