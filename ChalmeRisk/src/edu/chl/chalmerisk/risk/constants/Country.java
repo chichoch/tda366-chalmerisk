@@ -12,19 +12,11 @@ public class Country extends Observable{
 	private int[] grannar;
 	private int x;
 	private int y;
-	
+
 	public Country() {
 		
 	}
-	/*
-	public Country(String s, int id, int t) {
-		this.country = s;
-		this.countryid = id;
-		this.troops = t;
-	}
-	*/
 
-	
 	public Country(String s, int id, int x, int y, int t, int[] n, Player owner) {
 		this.country = s;
 		this.countryid = id;
@@ -38,17 +30,6 @@ public class Country extends Observable{
 		notifyObservers(1);
 	}
 	
-
-	public Country(String country, Player owner, int troops){
-		this.country = country;
-		this.owner = owner;
-		this.troops = troops;
-		setChanged();
-		notifyObservers(0);
-		notifyObservers(1);
-	}
-
-
 	public String getName() {
 		return country;
 	}
