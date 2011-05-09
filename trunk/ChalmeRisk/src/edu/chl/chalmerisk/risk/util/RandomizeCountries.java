@@ -17,7 +17,7 @@ public class RandomizeCountries {
 	private int index = 0;
 	private int indexplayer; 
 	private List<Country> copyList = new ArrayList<Country>();
-	public  List<Country> randomize(List <Player> pList, List<Country> cList){
+	public  List<Country> randomize (List <Player> pList, List<Country> cList){
 		int l = cList.size();
 		for (int j=0; j<l; j++){
 			id = (int)(Math.random()*cList.size());
@@ -38,7 +38,8 @@ public class RandomizeCountries {
 		return cList;
 	}
 }
-/*	public static void main(String[] args){
+/*
+public static void main(String[] args){
 		Player random = new Player(Color.ORANGE, "Random");
 		Country Norge = new Country("Norge", 1, 233, 233, 1, new int[5], random);
 		Country Sverige = new Country("Sverige", 2, 233, 233, 1, new int[5], random);
