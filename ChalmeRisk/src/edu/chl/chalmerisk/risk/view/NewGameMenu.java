@@ -3,7 +3,6 @@ import java.awt.*;
 import java.awt.event.*;
 
 import javax.swing.*;
-import edu.chl.chalmerisk.risk.core.*;
 
 
 public class NewGameMenu extends JPanel implements ActionListener{

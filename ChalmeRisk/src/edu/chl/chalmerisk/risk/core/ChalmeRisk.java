@@ -8,7 +8,6 @@ import java.util.List;
 import edu.chl.chalmerisk.risk.constants.Map;
 import edu.chl.chalmerisk.risk.constants.Player;
 import edu.chl.chalmerisk.risk.ctrl.*;
-import edu.chl.chalmerisk.risk.io.MapBuilder;
 import edu.chl.chalmerisk.risk.util.*;
 import edu.chl.chalmerisk.risk.view.*;
 

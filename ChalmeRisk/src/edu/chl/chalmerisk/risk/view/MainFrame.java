@@ -12,7 +12,6 @@ import java.awt.event.MouseListener;
 import javax.swing.*;
 
 import edu.chl.chalmerisk.risk.core.ChalmeRisk;
-import edu.chl.chalmerisk.risk.core.Turn;
 
 
 public class MainFrame extends JFrame implements MouseListener, ActionListener {
@@ -44,11 +43,11 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener {
 		//Set bounds
 		norge.setBounds(600, 235, 60, 75);
 		norge.setBorder(BorderFactory.createEmptyBorder(1, 1, 1, 1));
-		sweden.setBounds(755, 310, 60, 75);
+		sweden.setBounds(780, 310, 60, 75);
 		sweden.setBorder(BorderFactory.createEmptyBorder(1, 1, 1, 1));
-		denmark.setBounds(820, 270, 60, 75);
+		denmark.setBounds(880, 270, 60, 75);
 		denmark.setBorder(BorderFactory.createEmptyBorder(1, 1, 1, 1));
-		finland.setBounds(630, 330, 60, 75);
+		finland.setBounds(630, 310, 60, 75);
 		finland.setBorder(BorderFactory.createEmptyBorder(1, 1, 1, 1));
         karta.add(norge, JLayeredPane.DEFAULT_LAYER);
         karta.add(sweden, JLayeredPane.DEFAULT_LAYER);
