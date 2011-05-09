@@ -15,8 +15,12 @@ public class ReinforcementController extends TurnState {
 		if(!ChalmeRisk.map.getCountry(id).getOwner().equals(ChalmeRisk.round.getCurrentPlayer())){
 			JOptionPane.showMessageDialog(null, "Du kan endast sätta ut trupper i dina egna länder" );	
 		}
-		else{
+		else if (ChalmeRisk.round.getCurrentPlayer().getReinforcements() > 0){
 			ChalmeRisk.map.getCountry(id).setTroops(ChalmeRisk.map.getCountry(id).getTroops()+1);
+			ChalmeRisk.round.getCurrentPlayer().decReinforcements();
+		}
+		else {
+			JOptionPane.showMessageDialog(null, "Inga trupper kvar att placera ut.");
 		}
 	}
 }
