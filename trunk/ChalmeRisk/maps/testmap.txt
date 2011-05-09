@@ -1,22 +1,35 @@
 resources/testmap1.jpg
+
+<continent>
+Skandinavien
+5
+
+<country>
 Norge
 1
 600
 235
 2 3
 
+<country>
 Sverige
 2
 755
 310
 1 3 4
 
+<country>
 Finland
 3
 630
 330
 1 2
 
+<continent>
+Europa
+3
+
+<country>
 Danmark
 4
 820

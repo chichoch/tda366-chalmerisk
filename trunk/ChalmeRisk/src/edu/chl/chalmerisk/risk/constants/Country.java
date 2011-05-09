@@ -77,7 +77,7 @@ public class Country extends Observable{
 	public int getX() {
 		return x;
 	}
-	
+	//TODO Remove?
 	public void setX(int x) {
 		this.x = x;
 	}
@@ -85,7 +85,7 @@ public class Country extends Observable{
 	public int getY() {
 		return y;
 	}
-	
+	//TODO Remove?
 	public void setY(int y) {
 		this.y = y;
 	}
