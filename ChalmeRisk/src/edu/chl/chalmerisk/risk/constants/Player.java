@@ -25,7 +25,17 @@ public class Player {
     	return reinforcements;
     }
     
-    public void setReinforcements(int reinforcements){
-    	this.reinforcements = reinforcements;
+    public void setReinforcements(int troops) {
+    	this.reinforcements = troops;
+    }
+    /**
+     * Decreases reinforcements left with 1 unit.
+     */
+    public void decReinforcements(){
+    	reinforcements--;
+    }
+    
+    public void setMoreReinforcements(int troops) {
+    	reinforcements += troops;
     }
 }

@@ -15,12 +15,14 @@ public class Map {
 		countryList = map.getCountries();
 		iconFileName = map.getIconFileName();
 		continentList = map.getContinents();
+		//
 		for (int i=0; i < continentList.size(); i++) {
 			System.out.println("" + continentList.get(i).getName());
 			for (int j=0; j < continentList.get(i).getCountries().size(); j ++) {
-				System.out.println(continentList.get(i).getCountries().get(j).getName());
+				System.out.println("\t" + continentList.get(i).getCountries().get(j).getName());
 			}
 		}
+	
 	}
 	//Returns the specific ID of each country
 	public Country getCountry(int id) {

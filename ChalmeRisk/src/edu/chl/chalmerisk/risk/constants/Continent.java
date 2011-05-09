@@ -1,8 +1,10 @@
 package edu.chl.chalmerisk.risk.constants;
 
+import java.awt.Color;
 import java.util.List;
 
 public class Continent {
+	private Player test = new Player(Color.black, "Test");
 	private String name;
 	private List<Country> countries;
 	private int value;
@@ -11,6 +13,7 @@ public class Continent {
 		this.name = name;
 		this.countries = c;
 		this.value = value;
+		
 	}
 	
 	public String getName() {
@@ -38,7 +41,7 @@ public class Continent {
 		Player p = countries.get(0).getOwner();
 		for (int i = 1; i < countries.size(); i++) {
 			if (!countries.get(i).getOwner().equals(p)) {
-				return null;
+				return test;
 			}
 		}
 		return p;
