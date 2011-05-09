@@ -19,6 +19,7 @@ public class AttackController extends TurnState{
 		firstCountrySelected = false;
 	}
 	
+	@Override
 	public void setCountry(int id) {
 		
 		if (!firstCountrySelected) {

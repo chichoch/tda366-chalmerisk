@@ -1,11 +1,9 @@
 package edu.chl.chalmerisk.risk.util;
 
-import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 
 import edu.chl.chalmerisk.risk.constants.*;
-import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 
 /* This is a class that randomizes the Countries for
  * the players in the start of each game 

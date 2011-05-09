@@ -1,7 +1,5 @@
 package edu.chl.chalmerisk.risk.constants;
 
-import java.util.List;
-
 public class Continent {
 	private String name;
 	private int value;

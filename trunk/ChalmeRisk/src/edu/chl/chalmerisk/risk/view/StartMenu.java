@@ -5,7 +5,6 @@ import java.awt.*;
 import java.awt.event.*;
 
 import javax.swing.*;
-import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 
 
 public class StartMenu extends JFrame implements ActionListener{
