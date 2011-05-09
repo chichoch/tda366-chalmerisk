@@ -4,11 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.chl.chalmerisk.risk.constants.Player;
+import edu.chl.chalmerisk.risk.util.ReinforcementCalculator;
 
 public class Round {
 	private List<Player> pList = new ArrayList<Player>();
 	private Player currentPlayer;
 	private int numOfPlayers;
+	private ReinforcementCalculator rCalc = new ReinforcementCalculator();
 	
 	public Round(List<Player> list) {
 		pList = list;
@@ -25,6 +27,7 @@ public class Round {
 		catch (IndexOutOfBoundsException e){
 			numOfPlayers = pList.size();
 			currentPlayer = pList.get(0);
+			rCalc.setReinforcements(pList);
 		}
 		
 	}
