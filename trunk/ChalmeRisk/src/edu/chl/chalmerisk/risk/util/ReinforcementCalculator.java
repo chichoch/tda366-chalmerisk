@@ -9,11 +9,12 @@ import edu.chl.chalmerisk.risk.constants.Country;
 import edu.chl.chalmerisk.risk.constants.Player;
 
 public class ReinforcementCalculator {
+	private static ReinforcementCalculator instance;
 	private List<Continent> conts = new ArrayList<Continent>();
 	private List<Player> players = new ArrayList<Player>();
 	private List<Country> countries = new ArrayList<Country>();
 	
-	public ReinforcementCalculator() {
+	private ReinforcementCalculator() {
 		conts = ChalmeRisk.map.getContinents();
 		countries = ChalmeRisk.map.getCountries();
 	}
@@ -46,5 +47,12 @@ public class ReinforcementCalculator {
 			}
 		}
 		return players;
+	}
+	
+	public static ReinforcementCalculator getInstance() {
+		if (instance == null) {
+			instance = new ReinforcementCalculator();
+		}
+		return instance;
 	}
 }
