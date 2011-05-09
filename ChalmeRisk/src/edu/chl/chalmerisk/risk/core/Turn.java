@@ -8,6 +8,8 @@ public class Turn {
 	private TurnState[] states  = {ChalmeRisk.rCtrl, ChalmeRisk.aCtrl, ChalmeRisk.tCtrl};
 	
 	private int currentStateIndex = 0;
+	private int firstRoundsCount = 0;
+	private boolean firstRoundsIndex = true;
 	
 	   public void reinforcementState()  { 
 		   states[currentStateIndex].reinforcementState( ChalmeRisk.rCtrl); 
@@ -21,18 +23,24 @@ public class Turn {
 		   ChalmeRisk.round.newRound();
 	   }
 	   public void changeState() {
-		   if(currentStateIndex == 0){
-			   reinforcementState();
-			   currentStateIndex++;
-		   }
-		   else if(currentStateIndex == 1){
-			   attackState();
-			   currentStateIndex++;
-		   }
-		   else{
-			   troopMovementState();
-			   currentStateIndex=0;
-		   }
+		  if (firstRoundsIndex){
+			  FirstRoundState();
+			  if(firstRoundsCount == (ChalmeRisk.round.getNumberOfPlayers()*3)){
+				  firstRoundsIndex=false;
+			  }
+		  }
+		  else if(currentStateIndex == 0){
+			  reinforcementState();
+			  currentStateIndex++;
+		  }
+		  else if(currentStateIndex == 1){
+			  attackState();
+			  currentStateIndex++;
+		  }
+		  else{
+			  troopMovementState();
+			  currentStateIndex=0;
+		  }
 		   
 	   }
 	   public void currentState(){
@@ -45,6 +53,11 @@ public class Turn {
 		   else{
 			   troopMovementState();
 		   }
+	   }
+	   public void FirstRoundState(){
+		   reinforcementState();
+		   ChalmeRisk.round.newRound();
+		   firstRoundsCount++;
 	   }
 	   
 	  
