@@ -40,4 +40,8 @@ public class CountryView extends JPanel implements Observer{
 			}
 		}
 	}
+	
+	public Country getCountry() {
+		return country;
+	}
 }

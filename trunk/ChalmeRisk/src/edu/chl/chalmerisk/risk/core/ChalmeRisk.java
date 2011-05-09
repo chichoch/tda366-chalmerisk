@@ -36,10 +36,10 @@ public class ChalmeRisk {
 	public static Round round;
 	
 	public ChalmeRisk() throws FileNotFoundException{
-		map = new Map("maps/testmap.txt");
+		map = new Map("maps/testmap2.txt");
 		setPlayers();
 		iconHandler  = new IconHandler();
-		guiTest = new MainFrame();
+		guiTest = new MainFrame(map.getCountries());
 		
 		pList.add(player1);
 		pList.add(player2);
@@ -52,6 +52,7 @@ public class ChalmeRisk {
 		map.setPlayer(player1, 2);
 		map.setPlayer(player2, 3);
 		map.setPlayer(player2, 4);
+		
 	}
 }
 

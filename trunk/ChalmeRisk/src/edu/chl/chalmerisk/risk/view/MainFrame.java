@@ -8,9 +8,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.List;
 
 import javax.swing.*;
 
+import edu.chl.chalmerisk.risk.constants.Country;
 import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 
 
@@ -18,48 +20,28 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener {
 	private JLayeredPane karta;
 	private JPanel bottom;
 	private JPanel top;
-	private JPanel norge;
-	private JPanel denmark;
-	private JPanel sweden;
-	private JPanel finland;
+	private CountryView cv;
 	private JButton nextStep;
 	private JLabel infoLabel;
 	
 	//TODO No hardcode here!
-	public MainFrame() {
+	public MainFrame(List<Country> list) {
 		setLayout(new BorderLayout());
-		ImageIcon icon = new ImageIcon("resources/testmap1.jpg");
+		ImageIcon icon = new ImageIcon(ChalmeRisk.map.getIconFileName());
 		
 		karta = new JLayeredPane();
 		karta.setBackground(Color.BLUE);
 		
 		//Set icons
 		JLabel l = new JLabel(icon);
-		norge = new CountryView(ChalmeRisk.map.getCountry(1)); 
-		sweden = new CountryView(ChalmeRisk.map.getCountry(2)); 
-		finland = new CountryView(ChalmeRisk.map.getCountry(3)); 
-		denmark = new CountryView(ChalmeRisk.map.getCountry(4)); 
-	
-		//Set bounds
-		norge.setBounds(600, 235, 60, 75);
-		norge.setBorder(BorderFactory.createEmptyBorder(1, 1, 1, 1));
-		sweden.setBounds(780, 310, 60, 75);
-		sweden.setBorder(BorderFactory.createEmptyBorder(1, 1, 1, 1));
-		denmark.setBounds(880, 270, 60, 75);
-		denmark.setBorder(BorderFactory.createEmptyBorder(1, 1, 1, 1));
-		finland.setBounds(630, 310, 60, 75);
-		finland.setBorder(BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        karta.add(norge, JLayeredPane.DEFAULT_LAYER);
-        karta.add(sweden, JLayeredPane.DEFAULT_LAYER);
-        karta.add(denmark, JLayeredPane.DEFAULT_LAYER);
-        karta.add(finland, JLayeredPane.DEFAULT_LAYER);
-        
-        //Add MouseListeners
-        norge.addMouseListener(this);
-        sweden.addMouseListener(this);
-        denmark.addMouseListener(this);
-        finland.addMouseListener(this);
-
+		for (int i = 0; i < list.size(); i++) {
+			cv = new CountryView(list.get(i));
+			cv.setBounds(list.get(i).getX(), list.get(i).getY(), 60, 75);
+			cv.setBorder(BorderFactory.createEmptyBorder(1, 1, 1, 1));
+			karta.add(cv, JLayeredPane.DEFAULT_LAYER);
+			cv.addMouseListener(this);
+		}
+		
         l.setIcon(icon); // NOI18N
         l.setBounds(0, -50, 1400, 800);
         karta.add(l, JLayeredPane.DEFAULT_LAYER);
@@ -94,18 +76,7 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener {
 	
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		if (e.getSource() == norge) {
-			ChalmeRisk.turn.setCountry(1);
-		}
-		if (e.getSource() == sweden) {
-			ChalmeRisk.turn.setCountry(2);
-		}
-		if (e.getSource() == finland) {
-			ChalmeRisk.turn.setCountry(3);
-		}
-		if (e.getSource() == denmark) {
-			ChalmeRisk.turn.setCountry(4);
-		}
+		ChalmeRisk.turn.setCountry(((CountryView) e.getSource()).getCountry().getCountryId());
 	}
 
 	
