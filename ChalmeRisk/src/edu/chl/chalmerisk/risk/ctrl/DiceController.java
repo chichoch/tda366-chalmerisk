@@ -14,29 +14,31 @@ public class DiceController {
 	private int attNumberOfDice;
 	private int defNumberOfDice;
 
+	// Takes Attacking/defending troops and returns number of dice.
 	public int getResult(int att, int def) {
-		if(att>=3 && def==1){
+		
+		if(att>3 && def==1){
 			attNumberOfDice = 3;
 			defNumberOfDice = 1;
 		}
-		if(att==2 && def==1){
+		if(att==3 && def==1){
 			attNumberOfDice = 2;
 			defNumberOfDice = 1;
 		}
-		if(att==1 && def==1){
+		if(att==2 && def==1){
 			attNumberOfDice = 1;
 			defNumberOfDice = 1;
 		}
-		if(att>=3 && def>=2){
+		if(att>3 && def>=2){
 			attNumberOfDice = 3;
 			defNumberOfDice = 2;
 		}
-		if(att==2 && def>=2){
+		if(att==3 && def>=2){
 			attNumberOfDice = 2;
 			defNumberOfDice = 2;
 			
 		}
-		if(att==1 && def>=2){
+		if(att==2 && def>=2){
 			attNumberOfDice = 1;
 			defNumberOfDice = 2;
 			
@@ -45,7 +47,9 @@ public class DiceController {
 		//System.out.println("ANbr "+attNumberOfDice+" DNbr "+ defNumberOfDice);
 		return battle(attNumberOfDice, defNumberOfDice);
 	}
-
+	
+	//Takes number of dice and returns the outcome of the battle.
+	
 	public int battle(int attNumberOfDice, int defNumberOfDice) {
 		
 		attDice1.tossDice();
@@ -193,11 +197,10 @@ public class DiceController {
 		return result;
 
 	}
+	//TODO Clean up below! and fix observer
 	
 	public void printTest(int a, int d){
-
-		System.out.println("\tresult: "+getResult(a, d));
-		
+		System.out.println("\tresult: "+getResult(a, d));		
 	}
 	
 	public int getAttDice1(){
@@ -226,8 +229,7 @@ public class DiceController {
 		
 	}
 
-	public int getDefNumberOfDices() {
-		
+	public int getDefNumberOfDices() {		
 		return defNumberOfDice;
 		
 	}
