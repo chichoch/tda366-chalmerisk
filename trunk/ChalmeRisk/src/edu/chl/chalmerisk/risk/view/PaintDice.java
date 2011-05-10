@@ -1,6 +1,5 @@
 package edu.chl.chalmerisk.risk.view;
 
-
 import java.awt.*;
 import javax.swing.*;
 import edu.chl.chalmerisk.risk.core.Dice;

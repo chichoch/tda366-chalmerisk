@@ -1,6 +1,5 @@
 package edu.chl.chalmerisk.risk;
 import java.io.FileNotFoundException;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import edu.chl.chalmerisk.risk.constants.Player;
