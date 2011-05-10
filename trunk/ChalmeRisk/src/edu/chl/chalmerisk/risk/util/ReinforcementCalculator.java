@@ -33,6 +33,7 @@ public class ReinforcementCalculator {
 		for (int p = 0; p < players.size(); p++) {
 			players.get(p).setReinforcements(r);
 		}
+		System.out.println("First Rounds" + r);
 		return pList;
 	}
 	
