@@ -18,7 +18,7 @@ public class ReinforcementCalculator {
 		conts = ChalmeRisk.map.getContinents();
 		countries = ChalmeRisk.map.getCountries();
 	}
-	
+	//TODO When First rounds, you shouldn't get any extra troops for having a continent.
 	public List<Player> setReinforcements(List<Player> pList) {
 		players = pList;
 		//Set every players reinforcements to the minimum (3):
@@ -49,7 +49,7 @@ public class ReinforcementCalculator {
 		return players;
 	}
 	
-	public static ReinforcementCalculator getInstance() {
+	public static synchronized ReinforcementCalculator getInstance() {
 		if (instance == null) {
 			instance = new ReinforcementCalculator();
 		}
