@@ -3,6 +3,7 @@ package edu.chl.chalmerisk.risk.view;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -30,7 +31,7 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener {
 		ImageIcon icon = new ImageIcon(ChalmeRisk.map.getIconFileName());
 		
 		karta = new JLayeredPane();
-		karta.setBackground(Color.BLUE);
+		karta.setBackground(Color.BLACK);
 		
 		//Set icons
 		JLabel l = new JLabel(icon);
@@ -43,7 +44,7 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener {
 		}
 		
         l.setIcon(icon); // NOI18N
-        l.setBounds(0, -50, 1400, 800);
+        l.setBounds(-18, -80, 1400, 800);
         karta.add(l, JLayeredPane.DEFAULT_LAYER);
 	
 		bottom = new JPanel();
@@ -52,7 +53,9 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener {
 		infoLabel= new JLabel("Info");
 		bottom.add(infoLabel);
 		bottom.add(nextStep);
+		bottom.setBackground(Color.BLACK);
 		top = new JPanel();
+		top.setPreferredSize(new Dimension (1400,40));
 		top.setBackground(Color.BLACK);
 		
 		
