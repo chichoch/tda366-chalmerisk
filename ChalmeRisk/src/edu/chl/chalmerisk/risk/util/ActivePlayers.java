@@ -12,7 +12,7 @@ public class ActivePlayers {
 		
 	}
 	
-	public List<Player> getActivePlayers(List<Country> cList) throws GameOverException{
+	public List<Player> getActivePlayers(List<Country> cList) {
 		List<Player> pList = new ArrayList<Player>();
 		pList.add(cList.get(0).getOwner());
 		for (int i = 0; i < cList.size(); i++) {
