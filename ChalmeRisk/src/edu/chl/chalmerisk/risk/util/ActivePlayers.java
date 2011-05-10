@@ -8,7 +8,7 @@ import edu.chl.chalmerisk.risk.core.GameOverException;
 public class ActivePlayers {
 	private static ActivePlayers instance;
 	
-	private ActivePlayers(){
+	private ActivePlayers() {
 		
 	}
 	
@@ -29,7 +29,7 @@ public class ActivePlayers {
 		return pList;
 	}
 	
-	public static synchronized ActivePlayers getInstance(){
+	public static synchronized ActivePlayers getInstance() {
 		if(instance == null){
 			instance = new ActivePlayers();
 		}

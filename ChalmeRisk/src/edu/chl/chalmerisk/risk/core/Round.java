@@ -17,9 +17,11 @@ public class Round {
 		pList = list;
 		currentPlayer = pList.get(0);
 		numOfPlayers = pList.size();
+		ReinforcementCalculator.getInstance().setReinforcements(pList);
 	}
 	
 	public void newRound() {
+		ReinforcementCalculator.getInstance().setReinforcements(pList);
 		try {
 			System.out.println("" + currentPlayer.getName() + " "+ pList.indexOf(currentPlayer));
 			currentPlayer = pList.get(pList.indexOf(currentPlayer) + 1);
@@ -29,9 +31,9 @@ public class Round {
 			numOfPlayers = pList.size();
 			currentPlayer = pList.get(0);
 			//TODO Check the countries for players. Set pList to the players that are still alive.
-			pList = ActivePlayers.getInstance().getActivePlayers(ChalmeRisk.map.getCountries());
+			//pList = ActivePlayers.getInstance().getActivePlayers(ChalmeRisk.map.getCountries());
 			//When its a new round set the reinforcements for the players.
-			ReinforcementCalculator.getInstance().setReinforcements(pList);
+			
 		}
 		
 	}
