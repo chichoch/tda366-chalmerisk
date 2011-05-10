@@ -60,7 +60,7 @@ public class AttackController extends TurnState{
 	}
 	
 	public void startFight() {
-		int i = ChalmeRisk.diceC.getResult(attCountry.getTroops()-1, defCountry.getTroops());
+		int i = ChalmeRisk.diceC.getResult(attCountry.getTroops(), defCountry.getTroops());
 		//double i = (int) ((Math.random() * 2) + 1);;
 		if(i==1){
 			attCountry.setTroops(attCountry.getTroops() - 1);
