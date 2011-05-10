@@ -1,10 +1,7 @@
 package edu.chl.chalmerisk.risk.core;
 
-import java.awt.Color;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 import java.util.List;
-
 import edu.chl.chalmerisk.risk.constants.Map;
 import edu.chl.chalmerisk.risk.constants.Player;
 import edu.chl.chalmerisk.risk.ctrl.*;
@@ -32,16 +29,16 @@ public class ChalmeRisk {
 	public static Turn turn = new Turn();
 	public static Round round;
 	public static RandomizeCountries randomizer;
-	
-	public ChalmeRisk(List<Player> pList, String filename) throws FileNotFoundException{
+
+	public ChalmeRisk(List<Player> pList, String filename) throws FileNotFoundException {
 		
 		map = new Map("maps/"+filename+".txt");
 		randomizer = new RandomizeCountries();
 		map.setCountries(randomizer.randomize(pList, map.getCountries()));
 		iconHandler  = new IconHandler();
 		guiTest = new MainFrame(map.getCountries());
+
 		round = new Round(pList);
-		
 	}
 }
 
