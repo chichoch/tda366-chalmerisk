@@ -31,12 +31,13 @@ public class ChalmeRisk {
 	public static AttackController aCtrl = new AttackController();
 	public static ReinforcementController rCtrl = new ReinforcementController();
 	public static TroopMovementController tCtrl = new TroopMovementController();
+	public static MenuController mCtrl = new MenuController();
 	public static DiceController diceC = new DiceController();
 	public static Turn turn = new Turn();
 	public static Round round;
 	
 	public ChalmeRisk() throws FileNotFoundException{
-		map = new Map("maps/testmap2.txt");
+		map = new Map("maps/testmap.txt");
 		setPlayers();
 		iconHandler  = new IconHandler();
 		guiTest = new MainFrame(map.getCountries());

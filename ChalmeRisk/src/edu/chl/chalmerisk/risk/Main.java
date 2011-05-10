@@ -1,7 +1,14 @@
 package edu.chl.chalmerisk.risk;
 import java.io.FileNotFoundException;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
+import edu.chl.chalmerisk.risk.constants.Player;
 import edu.chl.chalmerisk.risk.core.ChalmeRisk;
-import edu.chl.chalmerisk.risk.view.StartMenu;
+import edu.chl.chalmerisk.risk.core.Round;
+import edu.chl.chalmerisk.risk.io.MapBuilder;
+import edu.chl.chalmerisk.risk.view.MenuView;
+import edu.chl.chalmerisk.risk.view.PaintDice;
 
 public class Main {
 	
@@ -11,7 +18,7 @@ public class Main {
 		//new Builder();
 		new ChalmeRisk();
 
-		new StartMenu();
+		new MenuView();
 
 		
 		//new PaintDice();
