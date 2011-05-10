@@ -28,7 +28,6 @@ public class ChalmeRisk {
 	public static AttackController aCtrl = new AttackController();
 	public static ReinforcementController rCtrl = new ReinforcementController();
 	public static TroopMovementController tCtrl = new TroopMovementController();
-	public static MenuController mCtrl = new MenuController();
 	public static DiceController diceC = new DiceController();
 	public static Turn turn = new Turn();
 	public static Round round;
@@ -37,7 +36,8 @@ public class ChalmeRisk {
 	public ChalmeRisk(List<Player> pList, String filename) throws FileNotFoundException{
 		
 		map = new Map("maps/"+filename+".txt");
-		randomizer.randomize(pList, map.getCountries());
+		randomizer = new RandomizeCountries();
+		map.setCountries(randomizer.randomize(pList, map.getCountries()));
 		iconHandler  = new IconHandler();
 		guiTest = new MainFrame(map.getCountries());
 		round = new Round(pList);
