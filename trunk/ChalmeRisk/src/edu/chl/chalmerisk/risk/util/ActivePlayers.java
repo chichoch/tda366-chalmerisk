@@ -1,4 +1,5 @@
 package edu.chl.chalmerisk.risk.util;
+import java.util.ArrayList;
 import java.util.List;
 
 import edu.chl.chalmerisk.risk.constants.*;
@@ -10,7 +11,16 @@ public class ActivePlayers {
 		
 	}
 	
-	public List<Player> getActivePlayers(List<Country> cList, List<Player> pList){
+	public List<Player> getActivePlayers(List<Country> cList){
+		List<Player> pList = new ArrayList<Player>();
+		pList.add(cList.get(0).getOwner());
+		for (int i = 0; i < cList.size(); i++) {
+			for (int j = 0; j < pList.size(); j++) {
+				if (!cList.get(i).getOwner().equals(pList.get(j))) {
+					pList.add(cList.get(i).getOwner());
+				}
+			}
+		}
 		return pList;
 	}
 	
