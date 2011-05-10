@@ -2,6 +2,7 @@ package edu.chl.chalmerisk.risk.constants;
 import java.io.FileNotFoundException;
 import java.util.List;
 import edu.chl.chalmerisk.risk.io.MapBuilder;
+import edu.chl.chalmerisk.risk.util.RandomizeCountries;
 
 
 public class Map {
@@ -36,6 +37,10 @@ public class Map {
 	
 	public String getIconFileName() {
 		return iconFileName;
+	}
+	
+	public void setCountries(List<Country> cList){
+		countryList = cList;
 	}
 	
 	public void setPlayer(Player p, int countryId) {

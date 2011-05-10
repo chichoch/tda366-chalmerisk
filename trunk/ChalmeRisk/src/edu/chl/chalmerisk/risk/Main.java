@@ -6,18 +6,17 @@ import java.util.List;
 import edu.chl.chalmerisk.risk.constants.Player;
 import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 import edu.chl.chalmerisk.risk.core.Round;
+import edu.chl.chalmerisk.risk.ctrl.MenuController;
 import edu.chl.chalmerisk.risk.io.MapBuilder;
 import edu.chl.chalmerisk.risk.view.MenuView;
 import edu.chl.chalmerisk.risk.view.PaintDice;
 
 public class Main {
 	
-
+	public static MenuController mCtrl;
 
 	public static void main (String[] arg) throws FileNotFoundException {
-		//new Builder();
-		new ChalmeRisk();
-
+		mCtrl = new MenuController();
 		new MenuView();
 
 		

@@ -12,9 +12,12 @@ import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.awt.Color;
+import java.io.FileNotFoundException;
+
 import javax.swing.*;
 
 
+import edu.chl.chalmerisk.risk.Main;
 import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 
 public class MenuView extends JFrame implements ActionListener, ItemListener{
@@ -86,7 +89,7 @@ public class MenuView extends JFrame implements ActionListener, ItemListener{
 		startPlayingButton = new JButton("Start");
 		startPlayingButton.setPreferredSize(new Dimension(120, 45));
 		startPlayingButton.addActionListener(this);
-		String maps[] = { "Världskarta", "Annan karta" };
+		String maps[] = { "testmap", "Ingen karta" };
 		map = new JComboBox(maps);
 		map.setPreferredSize(new Dimension (240, 30));
 		back = new JButton("Back");
@@ -163,7 +166,12 @@ public class MenuView extends JFrame implements ActionListener, ItemListener{
 	        cl.show(centerPanel, main);
 		}
 		if (e.getSource() == startPlayingButton) {
-			ChalmeRisk.mCtrl.newGame(playerTextField1.getText(), playerTextField2.getText(), playerTextField3.getText(), playerTextField4.getText(), (String)map.getSelectedItem());
+			try {
+				Main.mCtrl.newGame(playerTextField1.getText(), playerTextField2.getText(), playerTextField3.getText(), playerTextField4.getText(), (String)map.getSelectedItem());
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			setVisible(false);
 		}
 	}
