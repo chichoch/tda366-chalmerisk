@@ -166,13 +166,18 @@ public class MenuView extends JFrame implements ActionListener, ItemListener{
 	        cl.show(centerPanel, main);
 		}
 		if (e.getSource() == startPlayingButton) {
-			try {
-				Main.mCtrl.newGame(playerTextField1.getText(), playerTextField2.getText(), playerTextField3.getText(), playerTextField4.getText(), (String)map.getSelectedItem());
-			} catch (FileNotFoundException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
+			if(playerTextField2.getText().isEmpty() == true && playerTextField3.getText().isEmpty() == true && playerTextField3.getText().isEmpty() == true){
+				JOptionPane.showMessageDialog(null, "Atleast Player one and Player two has to be active!");
 			}
-			setVisible(false);
+			else{
+				try {
+					Main.mCtrl.newGame(playerTextField1.getText(), playerTextField2.getText(), playerTextField3.getText(), playerTextField4.getText(), (String)map.getSelectedItem());
+				} catch (FileNotFoundException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				setVisible(false);
+			}
 		}
 	}
 
