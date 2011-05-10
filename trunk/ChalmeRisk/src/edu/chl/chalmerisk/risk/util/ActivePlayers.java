@@ -23,6 +23,7 @@ public class ActivePlayers {
 			}
 		}
 		if (pList.size() == 1) {
+			//TODO Should throw a GameOverException() ?
 			//throw new GameOverException();
 		}
 		return pList;
