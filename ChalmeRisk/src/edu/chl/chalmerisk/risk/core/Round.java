@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.chl.chalmerisk.risk.constants.Player;
+import edu.chl.chalmerisk.risk.util.ActivePlayers;
 import edu.chl.chalmerisk.risk.util.ReinforcementCalculator;
 
 public class Round {
@@ -27,6 +28,9 @@ public class Round {
 		catch (IndexOutOfBoundsException e){
 			numOfPlayers = pList.size();
 			currentPlayer = pList.get(0);
+			//TODO Check the countries for players. Set pList to the players that are still alive.
+			pList = ActivePlayers.getInstance().getActivePlayers(ChalmeRisk.map.getCountries());
+			//When its a new round set the reinforcements for the players.
 			ReinforcementCalculator.getInstance().setReinforcements(pList);
 		}
 		
