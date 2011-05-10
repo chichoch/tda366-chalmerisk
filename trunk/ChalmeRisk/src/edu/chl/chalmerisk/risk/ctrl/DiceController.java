@@ -197,7 +197,8 @@ public class DiceController {
 		return result;
 
 	}
-	//TODO Clean up below! and fix observer
+	//TODO Clean up below! and fix observer or a getmethod for att/def dice!
+	
 	
 	public void printTest(int a, int d){
 		System.out.println("\tresult: "+getResult(a, d));		
