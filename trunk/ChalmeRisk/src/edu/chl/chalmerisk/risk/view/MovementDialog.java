@@ -29,7 +29,6 @@ public class MovementDialog extends JFrame implements ActionListener {
 		
 		movementPanelCenter.setLayout(new GridLayout(1,1));
 		movementPanelCenter.add(quantitySlider);
-		
 		movementPanelSouth.setLayout(new GridLayout(2,1));
 		movementPanelSouth.add(moveTroopsButton);
 		movementPanelSouth.add(cancelButton);
@@ -68,8 +67,6 @@ public class MovementDialog extends JFrame implements ActionListener {
 		quantitySlider.setMaximum(fromCountry.getTroops()-1);
 		quantitySlider.setValue(1);
 		quantitySlider.setPaintLabels(true);
-		
-		
-		
+
 	}
 }
