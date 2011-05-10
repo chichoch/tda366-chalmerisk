@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.chl.chalmerisk.risk.constants.*;
+import edu.chl.chalmerisk.risk.core.GameOverException;
 
 public class ActivePlayers {
 	private static ActivePlayers instance;
@@ -11,7 +12,7 @@ public class ActivePlayers {
 		
 	}
 	
-	public List<Player> getActivePlayers(List<Country> cList){
+	public List<Player> getActivePlayers(List<Country> cList) throws GameOverException{
 		List<Player> pList = new ArrayList<Player>();
 		pList.add(cList.get(0).getOwner());
 		for (int i = 0; i < cList.size(); i++) {
@@ -20,6 +21,9 @@ public class ActivePlayers {
 					pList.add(cList.get(i).getOwner());
 				}
 			}
+		}
+		if (pList.size() == 1) {
+			//throw new GameOverException();
 		}
 		return pList;
 	}
