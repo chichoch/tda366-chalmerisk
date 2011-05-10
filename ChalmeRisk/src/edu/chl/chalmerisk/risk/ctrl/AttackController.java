@@ -12,7 +12,7 @@ public class AttackController extends TurnState{
 	private Country defCountry;
 	private boolean firstCountrySelected;
 	private boolean takeOverCountry;
-	
+	//TODO AttackTroops-1
 	//Constructor
 	public AttackController() {
 		takeOverCountry = false;
@@ -44,7 +44,7 @@ public class AttackController extends TurnState{
 					firstCountrySelected = false;
 					takeOverCountry = false;
 					ChalmeRisk.attack.newAttack(attCountry, defCountry);
-					ChalmeRisk.attack.repaintTroops(attCountry.getTroops(), defCountry.getTroops());
+					ChalmeRisk.attack.repaintTroops(attCountry.getTroops()-1, defCountry.getTroops());
 					ChalmeRisk.attack.setVisible(true);
 				}
 				else {
@@ -60,7 +60,7 @@ public class AttackController extends TurnState{
 	}
 	
 	public void startFight() {
-		int i = ChalmeRisk.diceC.getResult(attCountry.getTroops(), defCountry.getTroops());
+		int i = ChalmeRisk.diceC.getResult(attCountry.getTroops()-1, defCountry.getTroops());
 		//double i = (int) ((Math.random() * 2) + 1);;
 		if(i==1){
 			attCountry.setTroops(attCountry.getTroops() - 1);
@@ -103,7 +103,7 @@ public class AttackController extends TurnState{
 			ChalmeRisk.attack.setAttackerWin();
 			takeOverCountry = true;
 		}
-		ChalmeRisk.attack.repaintTroops(attCountry.getTroops(), defCountry.getTroops());	
+		ChalmeRisk.attack.repaintTroops(attCountry.getTroops()-1, defCountry.getTroops());	
 	}
 	
 	//When you click "Invade" or "Retreat".
