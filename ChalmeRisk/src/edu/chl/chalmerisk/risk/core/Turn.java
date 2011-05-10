@@ -65,6 +65,9 @@ public class Turn {
 		   states[currentStateIndex].setCountry(n);
 	   }
 	   
+	   public Boolean isFirstRound() {
+		   return firstRoundsIndex;
+	   }
 }
 
 
