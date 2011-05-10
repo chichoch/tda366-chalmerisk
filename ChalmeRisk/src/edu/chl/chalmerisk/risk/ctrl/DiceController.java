@@ -224,8 +224,7 @@ public class DiceController {
 		return defDice2.getNumber();	
 	}
 	
-	public int getAttNumberOfDices(){
-		
+	public int getAttNumberOfDices(){		
 		return attNumberOfDice;
 		
 	}
