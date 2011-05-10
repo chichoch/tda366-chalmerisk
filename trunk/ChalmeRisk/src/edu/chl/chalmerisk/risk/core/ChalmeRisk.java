@@ -22,7 +22,7 @@ public class ChalmeRisk {
 	public static RandomizeCountries random;
 	//TODO Move to view.
 	public static IconHandler iconHandler;
-	//TODO MOve to View.
+	//TODO Move to View.
 	public static MainFrame guiTest;
 	//TODO Runtime
 	public static MovementDialog movement = new MovementDialog();
