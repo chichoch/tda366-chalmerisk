@@ -16,6 +16,9 @@ public class MovementDialog extends JFrame implements ActionListener {
 	private JSlider quantitySlider;
 	private JButton moveTroopsButton;
 	private JButton cancelButton;
+	// Variables to store two countries
+	private Country c1;
+	private Country c2;
 	
 	public MovementDialog(){
 		quantitySlider = new JSlider();
@@ -52,7 +55,7 @@ public class MovementDialog extends JFrame implements ActionListener {
 		public void actionPerformed(ActionEvent e){
 			
 			if(e.getSource() == moveTroopsButton){
-				ChalmeRisk.tCtrl.doMovement(quantitySlider.getValue());
+				ChalmeRisk.tCtrl.doMovement(quantitySlider.getValue(), c1, c2);
 				setVisible(false);
 			}
 			
@@ -67,6 +70,7 @@ public class MovementDialog extends JFrame implements ActionListener {
 		quantitySlider.setMaximum(fromCountry.getTroops()-1);
 		quantitySlider.setValue(1);
 		quantitySlider.setPaintLabels(true);
-
+		c1=fromCountry;
+		c2=toCountry;
 	}
 }

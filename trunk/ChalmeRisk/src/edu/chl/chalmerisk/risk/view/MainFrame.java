@@ -114,6 +114,7 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener {
 		if(e.getSource()== nextStep){
 			ChalmeRisk.turn.changeState();
 		}
-		
+		//top.setBackground(ChalmeRisk.round.getCurrentPlayer().getColor());
+		bottom.setBackground(ChalmeRisk.round.getCurrentPlayer().getColor());
 	}
 }
