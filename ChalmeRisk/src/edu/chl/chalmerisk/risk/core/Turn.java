@@ -1,11 +1,10 @@
 package edu.chl.chalmerisk.risk.core;
 
+
 import java.util.Observable;
 
 
-
-public class Turn  {
-	
+public class Turn extends Observable{
 	
 	private TurnState[] states  = {ChalmeRisk.rCtrl, ChalmeRisk.aCtrl, ChalmeRisk.tCtrl};
 	
@@ -25,6 +24,7 @@ public class Turn  {
 		   ChalmeRisk.round.newRound();
 	   }
 	   public void changeState() {
+		  
 		  if (firstRoundsIndex){
 			  FirstRoundState();
 			  if(firstRoundsCount == (ChalmeRisk.round.getNumberOfPlayers()*3)){
@@ -43,7 +43,8 @@ public class Turn  {
 			  troopMovementState();
 			  currentStateIndex=0;
 		  }
-		   
+		  setChanged();
+		  notifyObservers(0);
 	   }
 	   public void currentState(){
 		   if(currentStateIndex == 0){
@@ -69,6 +70,10 @@ public class Turn  {
 	   
 	   public Boolean isFirstRound() {
 		   return firstRoundsIndex;
+	   }
+	   
+	   public int getCurrentStateIndex() {
+		   return currentStateIndex;
 	   }
 }
 
