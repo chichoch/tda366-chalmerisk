@@ -13,7 +13,6 @@ public class Round extends Observable{
 	private Player currentPlayer;
 	private int numOfPlayers;
 	
-	
 	public Round(List<Player> list) {
 		pList = list;
 		currentPlayer = pList.get(0);

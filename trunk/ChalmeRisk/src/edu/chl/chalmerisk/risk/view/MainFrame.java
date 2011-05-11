@@ -5,6 +5,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Frame;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -25,6 +26,8 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener {
 	private JButton nextStep;
 	private JLabel infoLabel;
 	private PlayerView pv;
+	private SequenceMap sm;
+	private JPanel emptySpace;
 	
 	//TODO No hardcode here!
 	public MainFrame(List<Country> list) {
@@ -55,11 +58,17 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener {
 		bottom.add(infoLabel);
 		bottom.add(nextStep);
 		bottom.setBackground(Color.BLACK);
-		top = new JPanel(new BorderLayout());
+		top = new JPanel(new GridLayout(1,3));
 		pv= new PlayerView();
-		top.add(pv, BorderLayout.WEST);
+		sm = new SequenceMap();
+		//emptySpace = new JPanel();
+		//emptySpace.setBackground(Color.BLACK);
+		//emptySpace.setSize(new Dimension(300, 40));
+		top.add(pv);
+		top.add(sm);
 		top.setPreferredSize(new Dimension (1400,40));
 		top.setBackground(Color.BLACK);
+	
 		
 		
 		
@@ -74,7 +83,7 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener {
 	}
 	
 	public void setInfo(String info){
-		infoLabel.setText(info);
+		//infoLabel.setText(info);
 	}
 	
 	
