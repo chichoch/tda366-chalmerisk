@@ -1,31 +1,55 @@
 package edu.chl.chalmerisk.risk.view;
+import java.awt.Color;
+import java.awt.Dimension;
 import java.util.Observable;
 import java.util.Observer;
 
+import javax.swing.ImageIcon;
 import javax.swing.Icon;
 import javax.swing.JLabel;
 
 import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 
 public class SequenceMap extends JLabel implements Observer {
-	private Icon imageIcon;
+	private ImageIcon imageIcon;
+	private int state;
+	private String player;
+	
 	public SequenceMap() {
+		imageIcon = new ImageIcon("resources/SQr1.gif");
+		setIcon(imageIcon);
 		ChalmeRisk.turn.addObserver(this);
+		ChalmeRisk.round.addObserver(this);
+		setPreferredSize(new Dimension(160,40));
+		setOpaque(false);
+		setVisible(true);
 	}
 	@Override
 	public void update(Observable observable, Object arg) {
 		// TODO Auto-generated method stub
 		if(observable.equals(ChalmeRisk.turn)){
 			if(arg.equals(new Integer(0))) {
-				setText("" + ChalmeRisk.turn.getCurrentStateIndex());
-			}
-			if(arg.equals(new Integer(1))) {
-				
+				state = ChalmeRisk.turn.getCurrentStateIndex() + 1;
+				System.out.println(state);
 			}
 		}
+		if(observable.equals(ChalmeRisk.round)) {
+			if(arg.equals(new Integer(0))) {
+				if (ChalmeRisk.round.getCurrentPlayer().getColor().equals(Color.RED))
+					player = "r";
+				else if(ChalmeRisk.round.getCurrentPlayer().getColor().equals(Color.blue))
+					player = "b";
+				else if(ChalmeRisk.round.getCurrentPlayer().getColor().equals(Color.yellow))
+					player = "y";
+				else if(ChalmeRisk.round.getCurrentPlayer().getColor().equals(Color.green))
+					player = "g";
+			
+			System.out.println(player);
+			}
+			
+		}
+		imageIcon = new ImageIcon("resources/SQ" + player + state + ".gif");
 		setIcon(imageIcon);
 		
 	}
-	
-	
 }
