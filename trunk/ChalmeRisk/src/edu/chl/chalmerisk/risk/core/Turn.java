@@ -1,8 +1,10 @@
 package edu.chl.chalmerisk.risk.core;
 
+import java.util.Observable;
 
 
-public class Turn {
+
+public class Turn  {
 	
 	
 	private TurnState[] states  = {ChalmeRisk.rCtrl, ChalmeRisk.aCtrl, ChalmeRisk.tCtrl};

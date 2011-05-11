@@ -2,6 +2,7 @@ package edu.chl.chalmerisk.risk.constants;
 import java.awt.Color;
 
 
+
 public class Player {
 	
 	private Color color;

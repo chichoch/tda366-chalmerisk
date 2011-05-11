@@ -36,9 +36,8 @@ public class ChalmeRisk {
 		randomizer = new RandomizeCountries();
 		map.setCountries(randomizer.randomize(pList, map.getCountries()));
 		iconHandler  = new IconHandler();
-		guiTest = new MainFrame(map.getCountries());
-
 		round = new Round(pList);
+		guiTest = new MainFrame(map.getCountries());
 	}
 }
 
