@@ -9,10 +9,12 @@ public class TroopMovementController extends TurnState {
 	private boolean firstCountrySelected;
 	private Country firstSelectedCountry;
 	private Country secondSelectedCountry;
+	private boolean isTroopMovementState;
 	
 	
 	public TroopMovementController(){
 		firstCountrySelected = false;
+		isTroopMovementState = false;
 	}
 	
 	@Override
@@ -38,6 +40,7 @@ public class TroopMovementController extends TurnState {
 					firstCountrySelected = false;
 					ChalmeRisk.movement.newMovement(firstSelectedCountry, secondSelectedCountry);
 					ChalmeRisk.movement.setVisible(true);
+					isTroopMovementState = true;
 				}
 				else {
 					JOptionPane.showMessageDialog(null, "Landet du vill förflytta trupper till måste vara ett grannland!");
@@ -50,9 +53,20 @@ public class TroopMovementController extends TurnState {
 				}
 		}
 	}
+	
+	public void doMovement(int value, Country fromCountry, Country toCountry){
+		fromCountry.setTroops(fromCountry.getTroops()-value);
+		toCountry.setTroops(toCountry.getTroops()+value);
+		if(isTroopMovementState == true){
+			ChalmeRisk.turn.changeState();
+			isTroopMovementState = false;
+		}
+	}
+	/*
 	public void doMovement(int value){
 		firstSelectedCountry.setTroops(firstSelectedCountry.getTroops()-value);
 		secondSelectedCountry.setTroops(secondSelectedCountry.getTroops()+value);
 		ChalmeRisk.turn.changeState();
 	}
+	*/
 }

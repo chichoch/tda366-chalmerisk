@@ -113,6 +113,8 @@ public class AttackController extends TurnState{
 			defCountry.setOwner(attCountry.getOwner());
 			attCountry.setTroops(attCountry.getTroops()-1);
 			defCountry.setTroops(1);
+			ChalmeRisk.movement.newMovement(attCountry, defCountry);
+			ChalmeRisk.movement.setVisible(true);
 		}
 	}
 }
