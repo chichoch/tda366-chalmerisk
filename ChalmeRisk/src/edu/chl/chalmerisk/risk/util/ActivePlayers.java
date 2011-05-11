@@ -11,7 +11,7 @@ public class ActivePlayers {
 	private ActivePlayers() {
 		
 	}
-	
+	//TODO This method is maybe responsible for a "java.lang.OutOfMemoryError: Java heap space" thing.
 	public List<Player> getActivePlayers(List<Country> cList) {
 		List<Player> pList = new ArrayList<Player>();
 		pList.add(cList.get(0).getOwner());
