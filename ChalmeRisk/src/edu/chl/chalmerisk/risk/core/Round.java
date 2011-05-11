@@ -2,12 +2,13 @@ package edu.chl.chalmerisk.risk.core;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Observable;
 
 import edu.chl.chalmerisk.risk.constants.Player;
 import edu.chl.chalmerisk.risk.util.ActivePlayers;
 import edu.chl.chalmerisk.risk.util.ReinforcementCalculator;
 
-public class Round {
+public class Round extends Observable{
 	private List<Player> pList = new ArrayList<Player>();
 	private Player currentPlayer;
 	private int numOfPlayers;
@@ -27,6 +28,7 @@ public class Round {
 			System.out.println("" + currentPlayer.getName() + " "+ pList.indexOf(currentPlayer));
 			currentPlayer = pList.get(pList.indexOf(currentPlayer) + 1);
 			numOfPlayers = pList.size();
+			
 		}
 		catch (IndexOutOfBoundsException e){
 			numOfPlayers = pList.size();
@@ -36,6 +38,8 @@ public class Round {
 			//When its a new round set the reinforcements for the players.
 			ReinforcementCalculator.getInstance().setReinforcements(pList);
 		}
+		setChanged();
+		notifyObservers(0);
 		
 	}
 	public int getNumberOfPlayers() {

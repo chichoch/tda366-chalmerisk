@@ -24,6 +24,7 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener {
 	private CountryView cv;
 	private JButton nextStep;
 	private JLabel infoLabel;
+	private PlayerView pv;
 	
 	//TODO No hardcode here!
 	public MainFrame(List<Country> list) {
@@ -54,7 +55,9 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener {
 		bottom.add(infoLabel);
 		bottom.add(nextStep);
 		bottom.setBackground(Color.BLACK);
-		top = new JPanel();
+		top = new JPanel(new BorderLayout());
+		pv= new PlayerView();
+		top.add(pv, BorderLayout.WEST);
 		top.setPreferredSize(new Dimension (1400,40));
 		top.setBackground(Color.BLACK);
 		
@@ -114,7 +117,5 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener {
 		if(e.getSource()== nextStep){
 			ChalmeRisk.turn.changeState();
 		}
-		//top.setBackground(ChalmeRisk.round.getCurrentPlayer().getColor());
-		bottom.setBackground(ChalmeRisk.round.getCurrentPlayer().getColor());
 	}
 }
