@@ -31,7 +31,7 @@ public class AttackDialog extends JFrame{
 	private DiceView a3dice;
 	private DiceView d1dice;
 	private DiceView d2dice;
-	private DiceView emptydice;
+	
 	
 	public AttackDialog() {
 		fightPanel = new JPanel(new GridLayout(1,3));
@@ -48,13 +48,6 @@ public class AttackDialog extends JFrame{
 		a3dice = new DiceView(ChalmeRisk.dCtrl.getAttDice3());
 		d1dice = new DiceView(ChalmeRisk.dCtrl.getDefDice1());
 		d2dice = new DiceView(ChalmeRisk.dCtrl.getDefDice2());
-		/*
-		a1dice.newAttack();
-		a2dice.newAttack();
-		a3dice.newAttack();
-		d1dice.newAttack();
-		d2dice.newAttack();
-		*/
 		fillPanel = new JPanel();
 		
 		setPanel(attTeamPanel);
