@@ -9,7 +9,7 @@ Green1
 1
 640
 180
-2 14 33
+2 13 33
 
 <country>
 Green2

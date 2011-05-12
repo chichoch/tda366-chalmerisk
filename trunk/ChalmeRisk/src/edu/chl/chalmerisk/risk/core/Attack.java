@@ -125,7 +125,7 @@ public class Attack extends JFrame{
 	public void fight(Country att, Country def){
 		
 		
-		int i = ChalmeRisk.diceC.getResult(attTroops,defTroops);
+		int i = ChalmeRisk.dCtrl.getResult(attTroops,defTroops);
 		//double i = Math.random()*10;
 		
 		if(i == 1){

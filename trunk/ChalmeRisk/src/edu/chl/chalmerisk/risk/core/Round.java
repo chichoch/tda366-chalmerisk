@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Observable;
 
 import edu.chl.chalmerisk.risk.constants.Player;
-import edu.chl.chalmerisk.risk.util.ActivePlayers;
 import edu.chl.chalmerisk.risk.util.ReinforcementCalculator;
 
 public class Round extends Observable{

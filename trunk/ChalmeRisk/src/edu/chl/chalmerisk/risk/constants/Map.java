@@ -2,7 +2,6 @@ package edu.chl.chalmerisk.risk.constants;
 import java.io.FileNotFoundException;
 import java.util.List;
 import edu.chl.chalmerisk.risk.io.MapBuilder;
-import edu.chl.chalmerisk.risk.util.RandomizeCountries;
 
 
 public class Map {

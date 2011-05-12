@@ -1,5 +1,6 @@
 package edu.chl.chalmerisk.risk.view;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.*;
@@ -7,8 +8,10 @@ import javax.swing.*;
 
 import edu.chl.chalmerisk.risk.constants.Country;
 import edu.chl.chalmerisk.risk.core.ChalmeRisk;
+import edu.chl.chalmerisk.risk.core.Dice;
 
 public class AttackDialog extends JFrame{
+	private JPanel fightPanel;
 	private JPanel attTeamPanel;
 	private JPanel defTeamPanel;
 	private JPanel actionPanel;
@@ -22,8 +25,17 @@ public class AttackDialog extends JFrame{
 	private ImageIcon defInfantry;
 	private JButton fight;
 	private JButton retreat;
+	private JPanel dicePanel;
+	private JPanel fillPanel;
+	private DiceView a1dice;
+	private DiceView a2dice;
+	private DiceView a3dice;
+	private DiceView d1dice;
+	private DiceView d2dice;
+	private DiceView emptydice;
 	
 	public AttackDialog() {
+		fightPanel = new JPanel(new GridLayout(1,3));
 		status = new JLabel();
 		attTeamPanel = new JPanel();
 		defTeamPanel = new JPanel();
@@ -31,28 +43,53 @@ public class AttackDialog extends JFrame{
 		fight = new JButton("Fight!");
 		retreat = new JButton("Retreat!");
 		standings = new JLabel();
+		dicePanel = new JPanel();
+		a1dice = new DiceView(ChalmeRisk.dCtrl.getAttDice1());
+		a2dice = new DiceView(ChalmeRisk.dCtrl.getAttDice2());
+		a3dice = new DiceView(ChalmeRisk.dCtrl.getAttDice3());
+		d1dice = new DiceView(ChalmeRisk.dCtrl.getDefDice1());
+		d2dice = new DiceView(ChalmeRisk.dCtrl.getDefDice2());
+		/*
+		a1dice.newAttack();
+		a2dice.newAttack();
+		a3dice.newAttack();
+		d1dice.newAttack();
+		d2dice.newAttack();
+		*/
+		fillPanel = new JPanel();
 		
 		setPanel(attTeamPanel);
 		setPanel(defTeamPanel);
 		setPanel(actionPanel);
+		setPanel(dicePanel);
 		
 		actionPanel.add(status);
 		actionPanel.add(fight);
 		actionPanel.add(retreat);
 		actionPanel.add(standings);
 		
+		dicePanel.setLayout(new GridLayout(1,6));
+		dicePanel.add(a1dice);
+		dicePanel.add(a2dice);
+		dicePanel.add(a3dice);
+		dicePanel.add(fillPanel);
+		dicePanel.add(d1dice);
+		dicePanel.add(d2dice);
+		
 		//repaintTroops(att.getTroops(), def.getTroops());
 		
-		setLayout(new GridLayout(1,3));
+		//setLayout();
 		setUndecorated(true);
 		setVisible(false);
 		pack();
 		setLocation(450, 200);
 		setSize(400, 400);
 		
-		add(attTeamPanel);
-		add(actionPanel);
-		add(defTeamPanel);
+		fightPanel.add(attTeamPanel);
+		fightPanel.add(actionPanel);
+		fightPanel.add(defTeamPanel);
+		add(fightPanel, BorderLayout.CENTER);
+		add(dicePanel, BorderLayout.SOUTH);
 		
 		//actionlisteners
 		fight.addActionListener(new ActionListener() {
@@ -77,10 +114,26 @@ public class AttackDialog extends JFrame{
 		fight = new JButton("Fight!");
 		retreat = new JButton("Retreat!");
 		standings = new JLabel();
+		dicePanel = new JPanel();
+		a1dice = new DiceView(ChalmeRisk.dCtrl.getAttDice1());
+		a2dice = new DiceView(ChalmeRisk.dCtrl.getAttDice2());
+		a3dice = new DiceView(ChalmeRisk.dCtrl.getAttDice3());
+		d1dice = new DiceView(ChalmeRisk.dCtrl.getDefDice1());
+		d2dice = new DiceView(ChalmeRisk.dCtrl.getDefDice2());
+		fillPanel = new JPanel();
+		
+		dicePanel.setLayout(new GridLayout(1,6));
+		dicePanel.add(a1dice);
+		dicePanel.add(a2dice);
+		dicePanel.add(a3dice);
+		dicePanel.add(fillPanel);
+		dicePanel.add(d1dice);
+		dicePanel.add(d2dice);
 		
 		setPanel(attTeamPanel);
 		setPanel(defTeamPanel);
 		setPanel(actionPanel);
+		setPanel(dicePanel);
 		
 		actionPanel.add(status);
 		actionPanel.add(fight);
@@ -106,6 +159,7 @@ public class AttackDialog extends JFrame{
 		add(attTeamPanel);
 		add(actionPanel);
 		add(defTeamPanel);
+		add(dicePanel);
 		
 		//actionlisteners
 		fight.addActionListener(new ActionListener() {
@@ -179,6 +233,11 @@ public class AttackDialog extends JFrame{
 	
 	public void newAttack(Country att, Country def) {
 		fight.setEnabled(true);
+		a1dice.newDice();
+		a2dice.newDice();
+		a3dice.newDice();
+		d1dice.newDice();
+		d2dice.newDice();
 		retreat.setText("Retreat");
 		status.setText("");
 		attCannon = (ChalmeRisk.iconHandler.getIcon(att.getOwner(), 10));
