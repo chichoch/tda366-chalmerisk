@@ -16,30 +16,31 @@ public class DiceController {
 	private int defNumberOfDice;
 
 	// Takes Attacking/defending troops and returns number of dice.
-	public int getResult(int att, int def) {
+	
+	public int getResult(int attckingTroops, int defendingTroops) {
 		
-		if(att>3 && def==1){
+		if(attckingTroops>3 && defendingTroops==1){
 			attNumberOfDice = 3;
 			defNumberOfDice = 1;
 		}
-		if(att==3 && def==1){
+		if(attckingTroops==3 && defendingTroops==1){
 			attNumberOfDice = 2;
 			defNumberOfDice = 1;
 		}
-		if(att==2 && def==1){
+		if(attckingTroops==2 && defendingTroops==1){
 			attNumberOfDice = 1;
 			defNumberOfDice = 1;
 		}
-		if(att>3 && def>=2){
+		if(attckingTroops>3 && defendingTroops>=2){
 			attNumberOfDice = 3;
 			defNumberOfDice = 2;
 		}
-		if(att==3 && def>=2){
+		if(attckingTroops==3 && defendingTroops>=2){
 			attNumberOfDice = 2;
 			defNumberOfDice = 2;
 			
 		}
-		if(att==2 && def>=2){
+		if(attckingTroops==2 && defendingTroops>=2){
 			attNumberOfDice = 1;
 			defNumberOfDice = 2;
 			
@@ -47,7 +48,7 @@ public class DiceController {
 		return battle(attNumberOfDice, defNumberOfDice);
 	}
 	
-	//Takes number of dice and returns the outcome of the battle.
+	//Takes number of dice and returns the outcome of the battle into 5 different cases.
 	
 	public int battle(int attNumberOfDice, int defNumberOfDice) {
 		
