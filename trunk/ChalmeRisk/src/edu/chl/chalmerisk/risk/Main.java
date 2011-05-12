@@ -11,7 +11,6 @@ public class Main {
 		mCtrl = new MenuController();
 		new MenuView();
 
-		//bugtest v2
 		//new PaintDice();
 		//The following code was just for testing:
 		/*
