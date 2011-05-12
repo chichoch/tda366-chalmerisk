@@ -38,7 +38,7 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener, 
 		addMouseMotionListener(this);
 		reinforcementPanel.addMouseMotionListener(this);
 
-		reinforcementPanel.setBounds(140, 140, 30, 30);
+		reinforcementPanel.setBounds(140, 140, 30, 75);
 		reinforcementPanel.setBorder(BorderFactory.createEmptyBorder(1, 1, 1, 1));
 		karta = new JLayeredPane();
 		karta.setBackground(Color.BLACK);
@@ -80,7 +80,7 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener, 
 		top.setPreferredSize(new Dimension (1400,40));
 		top.setBackground(Color.BLACK);
 	
-		
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
 		
 		setTitle("ChalmeRisk");
