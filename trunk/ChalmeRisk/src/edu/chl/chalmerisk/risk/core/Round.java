@@ -5,17 +5,20 @@ import java.util.List;
 import java.util.Observable;
 
 import edu.chl.chalmerisk.risk.constants.Player;
+import edu.chl.chalmerisk.risk.util.ActivePlayers;
 import edu.chl.chalmerisk.risk.util.ReinforcementCalculator;
 
 public class Round extends Observable{
 	private List<Player> pList = new ArrayList<Player>();
 	private Player currentPlayer;
+	private int currentNumber;
 	private int numOfPlayers;
 	
 	public Round(List<Player> list) {
 		pList = list;
 		currentPlayer = pList.get(0);
 		numOfPlayers = pList.size();
+		currentNumber = -1;
 		//Set the reinforcements.
 		ReinforcementCalculator.getInstance().setReinforcements(pList);
 	}
@@ -23,9 +26,24 @@ public class Round extends Observable{
 	public void newRound() {
 		
 		try {
-			System.out.println("" + currentPlayer.getName() + " "+ pList.indexOf(currentPlayer));
-			currentPlayer = pList.get(pList.indexOf(currentPlayer) + 1);
-			numOfPlayers = pList.size();
+			if(ActivePlayers.getInstance().getActivePlayers(pList.get(currentNumber+1))){
+				currentPlayer = pList.get(pList.indexOf(currentPlayer) + 1);
+				numOfPlayers = pList.size();
+				currentNumber++;
+				if(currentNumber+1 == numOfPlayers){
+					currentNumber = -1;
+				}
+			}
+			else{
+				pList.remove(currentNumber+1);
+				numOfPlayers = pList.size();
+				currentPlayer = pList.get(pList.indexOf(currentPlayer) + 1);
+				currentNumber++;
+				if(currentNumber+1 == numOfPlayers){
+					currentNumber = -1;
+				}
+				newRound();
+			}
 			
 		}
 		catch (IndexOutOfBoundsException e){
