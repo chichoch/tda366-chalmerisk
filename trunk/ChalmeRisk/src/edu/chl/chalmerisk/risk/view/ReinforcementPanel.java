@@ -32,11 +32,15 @@ public class ReinforcementPanel extends JPanel implements Observer{
 		if(observable.equals(ChalmeRisk.round.getCurrentPlayer())){
 			if(arg.equals(new Integer(0))){
 				troopLabel.setText("" + ChalmeRisk.round.getCurrentPlayer().getReinforcements());
+				validate();
 			}
 		}
+		//TODO This method never runs, which it should. 
 		if (observable.equals(ChalmeRisk.turn)) {
 			if(arg.equals(new Integer(0))){
 				troopLabel.setText("" + ChalmeRisk.round.getCurrentPlayer().getReinforcements());
+				System.out.println("NU ÄR DU I UPDATE I REINFORCEMENTPANEL");
+				validate();
 			}
 		}
 	}

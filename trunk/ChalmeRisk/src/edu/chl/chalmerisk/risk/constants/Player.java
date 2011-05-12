@@ -1,9 +1,10 @@
 package edu.chl.chalmerisk.risk.constants;
 import java.awt.Color;
+import java.util.Observable;
 
 
 
-public class Player {
+public class Player extends Observable{
 	
 	private Color color;
 	private String name;
@@ -28,15 +29,21 @@ public class Player {
     
     public void setReinforcements(int troops) {
     	this.reinforcements = troops;
+    	setChanged();
+    	notifyObservers(0);
     }
     /**
      * Decreases reinforcements left with 1 unit.
      */
     public void decReinforcements(){
     	reinforcements--;
+    	setChanged();
+    	notifyObservers(0);
     }
     
     public void setMoreReinforcements(int troops) {
     	reinforcements += troops;
+    	setChanged();
+    	notifyObservers(0);
     }
 }
