@@ -24,10 +24,9 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener {
 	private JPanel top;
 	private CountryView cv;
 	private JButton nextStep;
-	private JLabel infoLabel;
 	private PlayerView pv;
 	private SequenceMap sm;
-	private JPanel emptySpace;
+	private InfoView infoView;
 	
 	//TODO No hardcode here!
 	public MainFrame(List<Country> list) {
@@ -52,12 +51,15 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener {
         karta.add(l, JLayeredPane.DEFAULT_LAYER);
 	
 		bottom = new JPanel();
+		bottom.setLayout(new BorderLayout());
 		nextStep = new JButton("Nästa steg");
 		nextStep.addActionListener(this);
-		infoLabel= new JLabel("Info");
-		bottom.add(infoLabel);
-		bottom.add(nextStep);
+		infoView = new InfoView();
+		
+		bottom.add(infoView, BorderLayout.CENTER);
+		bottom.add(nextStep, BorderLayout.EAST);
 		bottom.setBackground(Color.BLACK);
+		
 		top = new JPanel(new GridLayout(1,3));
 		pv= new PlayerView();
 		sm = new SequenceMap();
@@ -82,14 +84,14 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener {
 		pack();
 	}
 	
-	//TODO no hardcode here
+	/*//TODO no hardcode here
 	public void setInfo(String info){
 		infoLabel.setForeground(Color.WHITE);
 		infoLabel.setText(info);
 
 		//infoLabel.setText(info);
 
-	}
+	}*/
 	
 	
 

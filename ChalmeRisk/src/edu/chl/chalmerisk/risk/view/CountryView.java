@@ -38,6 +38,14 @@ public class CountryView extends JPanel implements Observer{
 			if(arg.equals(new Integer(1))){
 				troopIcon.setIcon(ChalmeRisk.iconHandler.getIcon(country.getOwner(), country.getTroops()));
 			}
+			/*if(arg.equals(new Integer(2))){
+				if(country.isSelected()){
+					
+				}
+				else{
+					
+				}
+			}*/
 		}
 	}
 	

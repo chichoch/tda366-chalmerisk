@@ -27,6 +27,7 @@ public class ChalmeRisk {
 	public static ReinforcementController rCtrl = new ReinforcementController();
 	public static TroopMovementController tCtrl = new TroopMovementController();
 	
+	public static InfoModel infoModel = new InfoModel();
 	public static Turn turn = new Turn();
 	public static Round round;
 	public static RandomizeCountries randomizer;
