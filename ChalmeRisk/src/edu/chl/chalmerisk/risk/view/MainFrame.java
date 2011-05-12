@@ -1,17 +1,11 @@
 package edu.chl.chalmerisk.risk.view;
 
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Frame;
-import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
+import java.awt.*;
+import java.awt.event.*;
 import java.util.List;
+import java.util.Observable;
+import java.util.Observer;
 
 import javax.swing.*;
 
@@ -19,10 +13,11 @@ import edu.chl.chalmerisk.risk.constants.Country;
 import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 
 
-public class MainFrame extends JFrame implements MouseListener, ActionListener, MouseMotionListener {
+public class MainFrame extends JFrame implements MouseListener, ActionListener, MouseMotionListener, Observer {
 	private JLayeredPane karta;
 	private JPanel bottom;
 	private JPanel top;
+	private JPanel infoViewPanel;
 	private CountryView cv;
 	private JButton nextStep;
 	private PlayerView pv;
@@ -58,31 +53,34 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener, 
         l.setBounds(-18, -80, 1400, 800);
         karta.add(l, JLayeredPane.DEFAULT_LAYER);
         
-	
+        
 		bottom = new JPanel();
-		bottom.setLayout(new BorderLayout());
-		nextStep = new JButton("Nästa steg");
+		nextStep = new JButton("Next step");
 		nextStep.addActionListener(this);
+		nextStep.setEnabled(false);
 		infoView = new InfoView();
 		
-		bottom.add(infoView, BorderLayout.CENTER);
-		bottom.add(nextStep, BorderLayout.EAST);
+		infoViewPanel = new JPanel();
+		infoViewPanel.setBackground(Color.BLACK);
+		infoViewPanel.setMaximumSize(new Dimension(1200,25));
+		infoViewPanel.setMinimumSize(new Dimension(1200,25));
+		infoViewPanel.setPreferredSize(new Dimension(1200,25));
+		infoViewPanel.add(infoView);
+	
+		bottom.add(infoViewPanel);
+		bottom.add(nextStep);
 		bottom.setBackground(Color.BLACK);
 		
 		top = new JPanel(new GridLayout(1,3));
 		pv= new PlayerView();
 		sm = new SequenceMap();
-		//emptySpace = new JPanel();
-		//emptySpace.setBackground(Color.BLACK);
-		//emptySpace.setSize(new Dimension(300, 40));
+		
 		top.add(pv);
 		top.add(sm);
 		top.setPreferredSize(new Dimension (1400,40));
 		top.setBackground(Color.BLACK);
 	
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		
-		
 		setTitle("ChalmeRisk");
 		add(karta, BorderLayout.CENTER);
 		add(bottom, BorderLayout.SOUTH);
@@ -141,6 +139,9 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener, 
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()== nextStep){
 			ChalmeRisk.turn.changeState();
+			if (ChalmeRisk.turn.getCurrentStateIndex() == 0) {
+				nextStep.setEnabled(false);
+			}
 		}
 	}
 
@@ -159,6 +160,19 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener, 
 		}
 		else {
 			reinforcementPanel.setVisible(false);
+		}
+	}
+
+	@Override
+	public void update(Observable observable, Object arg) {
+		if(observable.equals(ChalmeRisk.round.getCurrentPlayer())){
+			if(arg.equals(new Integer(0))){
+				System.out.println("MAINFRAME UPDATE");
+				if(ChalmeRisk.round.getCurrentPlayer().getReinforcements()==0){
+					nextStep.setEnabled(true);	
+					//validate();
+				}
+			}
 		}
 	}
 }
