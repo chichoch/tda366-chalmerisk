@@ -8,7 +8,6 @@ import javax.swing.*;
 
 import edu.chl.chalmerisk.risk.constants.Country;
 import edu.chl.chalmerisk.risk.core.ChalmeRisk;
-import edu.chl.chalmerisk.risk.core.Dice;
 
 public class AttackDialog extends JFrame{
 	private JPanel fightPanel;

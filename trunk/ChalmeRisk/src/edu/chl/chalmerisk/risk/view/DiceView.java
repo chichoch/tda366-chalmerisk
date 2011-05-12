@@ -1,6 +1,5 @@
 package edu.chl.chalmerisk.risk.view;
 
-import java.awt.*;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -8,7 +7,6 @@ import javax.swing.*;
 
 import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 import edu.chl.chalmerisk.risk.core.Dice;
-import edu.chl.chalmerisk.risk.ctrl.DiceController;
 
 public class DiceView extends JLabel implements Observer {
 
