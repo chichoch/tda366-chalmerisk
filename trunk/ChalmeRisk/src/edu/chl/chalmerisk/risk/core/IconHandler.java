@@ -17,7 +17,18 @@ public class IconHandler {
 	ImageIcon redCannon = new ImageIcon("resources/redCannon.gif");
 	ImageIcon yellowCannon = new ImageIcon("resources/yellowCannon.gif");
 	ImageIcon blueCannon = new ImageIcon("resources/blueCannon.gif");
-	ImageIcon compInf = new ImageIcon("resources/greyInfantry.gif");
+	ImageIcon redKnightSelected = new ImageIcon("resources/KnightRedSelected.gif");
+	ImageIcon blueKnightSelected = new ImageIcon("resources/KnightBlueSelected.gif");
+	ImageIcon yellowKnightSelected = new ImageIcon("resources/KnightYellowSelected.gif");
+	ImageIcon greenKnightSelected = new ImageIcon("resources/KnightGreenSelected.gif");
+	ImageIcon greenInfantrieSelected = new ImageIcon("resources/greenInfantrySelected.gif");
+	ImageIcon redInfantrieSelected = new ImageIcon("resources/redInfantrySelected.gif");
+	ImageIcon blueInfantrieSelected = new ImageIcon("resources/blueInfantrySelected.gif");
+	ImageIcon yellowInfantrieSelected = new ImageIcon("resources/yellowInfantrySelected.gif");
+	ImageIcon greenCannonSelected = new ImageIcon("resources/greenCannonSelected.gif");
+	ImageIcon redCannonSelected = new ImageIcon("resources/redCannonSelected.gif");
+	ImageIcon yellowCannonSelected = new ImageIcon("resources/yellowCannonSelected.gif");
+	ImageIcon blueCannonSelected = new ImageIcon("resources/blueCannonSelected.gif");
 	
 	public IconHandler(){
 		

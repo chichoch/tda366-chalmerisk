@@ -21,33 +21,31 @@ public class TroopMovementController extends TurnState {
 	public void setCountry(int id){
 		if (!firstCountrySelected) {
 			if(ChalmeRisk.map.getCountry(id).getTroops()<=1){
-				JOptionPane.showMessageDialog(null, "För få trupper för att förflytta!");
+				ChalmeRisk.infoModel.setWarningText("There are not enough troops for a troopmovement");
 			}
 			else if(ChalmeRisk.map.getCountry(id).getOwner().equals(ChalmeRisk.round.getCurrentPlayer())){
 				firstCountrySelected = true;
-				firstSelectedCountry = ChalmeRisk.map.getCountry(id);
-				JOptionPane.showMessageDialog(null, "Första landet markerat (" + ChalmeRisk.map.getCountry(id).getName() + ")" );	
+				firstSelectedCountry = ChalmeRisk.map.getCountry(id);	
 			}
 			else{
-				JOptionPane.showMessageDialog(null, "Du måste förflytta trupper från ditt egna land" );
+				ChalmeRisk.infoModel.setWarningText("You can only move troops from your own country");
 			}
 		}
 		else {
 			if(firstSelectedCountry.getOwner() == ChalmeRisk.map.getCountry(id).getOwner()){
 				secondSelectedCountry = ChalmeRisk.map.getCountry(id);
 				if (firstSelectedCountry.hasNeighbour(id) == true) {
-					JOptionPane.showMessageDialog(null, "Andra landet markerat (" + ChalmeRisk.map.getCountry(id).getName() + ")" );
 					firstCountrySelected = false;
 					ChalmeRisk.movement.newMovement(firstSelectedCountry, secondSelectedCountry);
 					ChalmeRisk.movement.setVisible(true);
 					isTroopMovementState = true;
 				}
 				else {
-					JOptionPane.showMessageDialog(null, "Landet du vill förflytta trupper till måste vara ett grannland!");
+					ChalmeRisk.infoModel.setWarningText("You can only move troops to a neighbouring country");
 				}
 			}
 			else{
-				JOptionPane.showMessageDialog(null, "Du kan bara förflytta mellan dina egna länder");
+				ChalmeRisk.infoModel.setWarningText("You can only move troops between your own countries");
 				firstSelectedCountry = null;
 				firstCountrySelected = false;
 				}

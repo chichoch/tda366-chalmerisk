@@ -23,16 +23,15 @@ public class AttackController extends TurnState{
 	public void setCountry(int id) {
 
 		if (!firstCountrySelected) {
-			if(ChalmeRisk.map.getCountry(id).getTroops()<=1){
-				JOptionPane.showMessageDialog(null, "För få trupper för att attackera!");
+			if(!ChalmeRisk.map.getCountry(id).getOwner().equals(ChalmeRisk.round.getCurrentPlayer())){
+				ChalmeRisk.infoModel.setWarningText("You have to attack from one of your own countries!");	
 			}
-			else if(!ChalmeRisk.map.getCountry(id).getOwner().equals(ChalmeRisk.round.getCurrentPlayer())){
-				JOptionPane.showMessageDialog(null, "Du måste attackera från ditt egna land" );	
+			else if(ChalmeRisk.map.getCountry(id).getTroops()<=1){
+				ChalmeRisk.infoModel.setWarningText("You have to few troops to attack from this country!");
 			}
 			else{
 				firstCountrySelected = true;
-				attCountry = ChalmeRisk.map.getCountry(id);
-				JOptionPane.showMessageDialog(null, "Första landet markerat (" + ChalmeRisk.map.getCountry(id).getName() + ")" );	
+				attCountry = ChalmeRisk.map.getCountry(id);	
 			}
 
 		}
@@ -40,7 +39,6 @@ public class AttackController extends TurnState{
 			if(attCountry.getOwner() != ChalmeRisk.map.getCountry(id).getOwner()){
 				defCountry = ChalmeRisk.map.getCountry(id);	
 				if (attCountry.hasNeighbour(id) == true) {
-					JOptionPane.showMessageDialog(null, "Andra landet markerat (" + ChalmeRisk.map.getCountry(id).getName() + ")" );
 					firstCountrySelected = false;
 					takeOverCountry = false;
 					ChalmeRisk.attack.newAttack(attCountry, defCountry);
@@ -48,11 +46,11 @@ public class AttackController extends TurnState{
 					ChalmeRisk.attack.setVisible(true);
 				}
 				else {
-					JOptionPane.showMessageDialog(null, "Landet du vill attackera måste vara ett grannland!");
+					ChalmeRisk.infoModel.setWarningText("You have to attack a neighbouring country!");
 				}
 			}
 			else{
-				JOptionPane.showMessageDialog(null, "Du kan inte attackera ditt eget land");
+				ChalmeRisk.infoModel.setWarningText("You cant attack your own country!");
 				attCountry = null;
 				firstCountrySelected = false;
 			}
