@@ -7,7 +7,7 @@ import edu.chl.chalmerisk.risk.core.*;
 
 
 public class AttackController extends TurnState{
-	
+
 	private Country attCountry;
 	private Country defCountry;
 	private boolean firstCountrySelected;
@@ -18,10 +18,10 @@ public class AttackController extends TurnState{
 		takeOverCountry = false;
 		firstCountrySelected = false;
 	}
-	
+
 	@Override
 	public void setCountry(int id) {
-		
+
 		if (!firstCountrySelected) {
 			if(ChalmeRisk.map.getCountry(id).getTroops()<=1){
 				JOptionPane.showMessageDialog(null, "För få trupper för att attackera!");
@@ -34,7 +34,7 @@ public class AttackController extends TurnState{
 				attCountry = ChalmeRisk.map.getCountry(id);
 				JOptionPane.showMessageDialog(null, "Första landet markerat (" + ChalmeRisk.map.getCountry(id).getName() + ")" );	
 			}
-			
+
 		}
 		else {
 			if(attCountry.getOwner() != ChalmeRisk.map.getCountry(id).getOwner()){
@@ -58,10 +58,9 @@ public class AttackController extends TurnState{
 			}
 		}	 
 	}
-	
+
 	public void startFight() {
 		int i = ChalmeRisk.dCtrl.getResult(attCountry.getTroops(), defCountry.getTroops());
-		//double i = (int) ((Math.random() * 2) + 1);;
 		if(i==1){
 			defCountry.setTroops(defCountry.getTroops() - 1);
 			ChalmeRisk.attack.setStatusText("Attacker killed 1 ");
@@ -70,43 +69,35 @@ public class AttackController extends TurnState{
 			attCountry.setTroops(attCountry.getTroops() - 1);
 			ChalmeRisk.attack.setStatusText("Defender killed 1 ");
 		}
-		
+
 		else if(i==3){
-			if(defCountry.getTroops()==1){
-				defCountry.setTroops(defCountry.getTroops() - 1);
-				ChalmeRisk.attack.setStatusText("Attacker killed 1 ");
-			}
-			else{
-				defCountry.setTroops(defCountry.getTroops() - 2);
-				ChalmeRisk.attack.setStatusText("Attacker killed 2 ");
-			}
+			defCountry.setTroops(defCountry.getTroops() - 2);
+			ChalmeRisk.attack.setStatusText("Attacker killed 2 ");
+
 		}
 		else if(i==4){
-			if(attCountry.getTroops()==1){
-				attCountry.setTroops(attCountry.getTroops() - 1);
-				ChalmeRisk.attack.setStatusText("Defender killed 1 ");
-			}
-			else{
-				attCountry.setTroops(attCountry.getTroops() - 2);
-				ChalmeRisk.attack.setStatusText("Defender killed 2 ");
-			}
+			attCountry.setTroops(attCountry.getTroops() - 2);
+			ChalmeRisk.attack.setStatusText("Defender killed 2 ");
 		}
+
 		else if(i==5){
 			defCountry.setTroops(defCountry.getTroops() - 1);
 			attCountry.setTroops(attCountry.getTroops() - 1);
 			ChalmeRisk.attack.setStatusText("Attacker and defender killed 1 ");
 		}
-		if(attCountry.getTroops() <= 1){
+		
+		if(attCountry.getTroops() == 1){
 			ChalmeRisk.attack.setDefenderWin();
 		}
-		if(defCountry.getTroops() <= 0){
+		
+		if(defCountry.getTroops() == 0){
 			//fight.setVisible(false);
 			ChalmeRisk.attack.setAttackerWin();
 			takeOverCountry = true;
 		}
 		ChalmeRisk.attack.repaintTroops(attCountry.getTroops()-1, defCountry.getTroops());	
 	}
-	
+
 	//When you click "Invade" or "Retreat".
 	public void endFight() {
 		ChalmeRisk.attack.setVisible(false);
