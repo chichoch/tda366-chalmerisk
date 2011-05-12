@@ -5,7 +5,6 @@ import java.util.Observable;
 import java.util.Observer;
 
 import javax.swing.ImageIcon;
-import javax.swing.Icon;
 import javax.swing.JLabel;
 
 import edu.chl.chalmerisk.risk.core.ChalmeRisk;
@@ -30,7 +29,6 @@ public class SequenceMap extends JLabel implements Observer {
 		if(observable.equals(ChalmeRisk.turn)){
 			if(arg.equals(new Integer(0))) {
 				state = ChalmeRisk.turn.getCurrentStateIndex() + 1;
-				System.out.println(state);
 			}
 		}
 		if(observable.equals(ChalmeRisk.round)) {
@@ -43,8 +41,6 @@ public class SequenceMap extends JLabel implements Observer {
 					player = "y";
 				else if(ChalmeRisk.round.getCurrentPlayer().getColor().equals(Color.green))
 					player = "g";
-			
-			System.out.println(player);
 			}
 			
 		}
