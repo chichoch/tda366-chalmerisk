@@ -60,20 +60,21 @@ public class AttackController extends TurnState{
 	}
 	
 	public void startFight() {
-		int i = ChalmeRisk.diceC.getResult(attCountry.getTroops(), defCountry.getTroops());
+		int i = ChalmeRisk.dCtrl.getResult(attCountry.getTroops(), defCountry.getTroops());
 		//double i = (int) ((Math.random() * 2) + 1);;
 		if(i==1){
-			attCountry.setTroops(attCountry.getTroops() - 1);
-			ChalmeRisk.attack.setStatusText("Defender killed 1 ");
-		}
-		else if(i==2){
 			defCountry.setTroops(defCountry.getTroops() - 1);
 			ChalmeRisk.attack.setStatusText("Attacker killed 1 ");
 		}
+		else if(i==2){
+			attCountry.setTroops(attCountry.getTroops() - 1);
+			ChalmeRisk.attack.setStatusText("Defender killed 1 ");
+		}
+		
 		else if(i==3){
 			if(defCountry.getTroops()==1){
 				defCountry.setTroops(defCountry.getTroops() - 1);
-				ChalmeRisk.attack.setStatusText("Attacker killed 2 ");
+				ChalmeRisk.attack.setStatusText("Attacker killed 1 ");
 			}
 			else{
 				defCountry.setTroops(defCountry.getTroops() - 2);

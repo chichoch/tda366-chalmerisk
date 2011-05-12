@@ -1,5 +1,6 @@
 package edu.chl.chalmerisk.risk.ctrl;
 
+
 import edu.chl.chalmerisk.risk.core.Dice;
 
 public class DiceController {
@@ -53,10 +54,11 @@ public class DiceController {
 	public int battle(int attNumberOfDice, int defNumberOfDice) {
 		
 		attDice1.tossDice();
-		attDice2.tossDice();
+		attDice2.tossDice();	
 		attDice3.tossDice();
 		defDice1.tossDice();
 		defDice2.tossDice();
+		
 		
 		int attDiceMax;
 		int attDiceMin;
@@ -78,7 +80,7 @@ public class DiceController {
 			if(attDiceMax > defDice1.getNumber() ) {
 				result = 1;
 			}
-			else {
+			else {	
 				result = 2;
 			}
 		}
@@ -95,7 +97,6 @@ public class DiceController {
 
 		}
 		if(attNumberOfDice==1 && defNumberOfDice==1){
-			
 			if(attDice1.getNumber() > defDice1.getNumber() ) {
 				result = 1;
 			}
@@ -204,24 +205,25 @@ public class DiceController {
 		System.out.println("\tresult: "+getResult(a, d));		
 	}
 	
-	public int getAttDice1(){
-		return attDice1.getNumber();	
+	
+	public Dice getAttDice1(){
+		return attDice1;	
 	}
 	
-	public int getAttDice2(){
-		return attDice2.getNumber();	
+	public Dice getAttDice2(){
+		return attDice2;
 	}
 	
-	public int getAttDice3(){
-		return attDice3.getNumber();	
+	public Dice getAttDice3(){
+		return attDice3;	
 	}
 	
-	public int getDefDice1(){
-		return defDice1.getNumber();	
+	public Dice getDefDice1(){
+		return defDice1;	
 	}
 	
-	public int getDefDice2(){
-		return defDice2.getNumber();	
+	public Dice getDefDice2(){
+		return defDice2;	
 	}
 	
 	public int getAttNumberOfDices(){		
@@ -232,6 +234,9 @@ public class DiceController {
 	public int getDefNumberOfDices() {		
 		return defNumberOfDice;
 		
+	}
+	public void diceNotTossed(){
+	
 	}
 
 }

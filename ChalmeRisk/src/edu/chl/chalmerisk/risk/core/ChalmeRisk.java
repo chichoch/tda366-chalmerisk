@@ -21,11 +21,12 @@ public class ChalmeRisk {
 	//TODO Runtime
 	public static MovementDialog movement = new MovementDialog();
 	//TODO Runtime
+	public static DiceController dCtrl = new DiceController();
 	public static AttackDialog attack = new AttackDialog();
 	public static AttackController aCtrl = new AttackController();
 	public static ReinforcementController rCtrl = new ReinforcementController();
 	public static TroopMovementController tCtrl = new TroopMovementController();
-	public static DiceController diceC = new DiceController();
+	
 	public static Turn turn = new Turn();
 	public static Round round;
 	public static RandomizeCountries randomizer;

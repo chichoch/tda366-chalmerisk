@@ -82,8 +82,13 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener {
 		pack();
 	}
 	
+	//TODO no hardcode here
 	public void setInfo(String info){
+		infoLabel.setForeground(Color.WHITE);
+		infoLabel.setText(info);
+
 		//infoLabel.setText(info);
+
 	}
 	
 	

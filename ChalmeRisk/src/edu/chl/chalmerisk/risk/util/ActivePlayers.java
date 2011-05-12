@@ -3,7 +3,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.chl.chalmerisk.risk.constants.*;
-import edu.chl.chalmerisk.risk.core.GameOverException;
 
 public class ActivePlayers {
 	private static ActivePlayers instance;

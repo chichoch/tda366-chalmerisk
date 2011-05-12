@@ -5,9 +5,7 @@ import java.util.*;
 
 import javax.swing.*;
 
-import edu.chl.chalmerisk.risk.constants.Player;
 import edu.chl.chalmerisk.risk.core.ChalmeRisk;
-import edu.chl.chalmerisk.risk.core.Round;
 
 
 public class PlayerView extends JLabel implements Observer{

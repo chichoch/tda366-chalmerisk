@@ -6,7 +6,6 @@ import java.awt.Choice;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Frame;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
@@ -18,7 +17,6 @@ import javax.swing.*;
 
 
 import edu.chl.chalmerisk.risk.Main;
-import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 
 public class MenuView extends JFrame implements ActionListener, ItemListener{
 	private JPanel leftPanel;
