@@ -44,8 +44,6 @@ public class DiceController {
 			defNumberOfDice = 2;
 			
 		}
-		//test
-		//System.out.println("ANbr "+attNumberOfDice+" DNbr "+ defNumberOfDice);
 		return battle(attNumberOfDice, defNumberOfDice);
 	}
 	
@@ -65,11 +63,6 @@ public class DiceController {
 		int defDiceMax;
 		int defDiceMin;
 		int result = 5;
-		
-		/**
-		System.out.println("A1: "+attDice1.getNumber()+"\tA2: "+attDice2.getNumber()+"\tA3: "+attDice3.getNumber());
-		System.out.print("D1: "+defDice1.getNumber()+"\tD2: "+defDice2.getNumber());
-		**/
 		
 		if(attNumberOfDice==3 && defNumberOfDice==1){
 			
@@ -132,12 +125,6 @@ public class DiceController {
 				defDiceMin = defDice1.getNumber();
 			}
 			
-			/**
-			 *Testing 
-			System.out.println("AMax: "+attDiceMax+" AMin: "+attDiceMin);
-			System.out.println("DMax: "+defDiceMax+" DMin: "+defDiceMin);
-			**/
-			
 			if(attDiceMax > defDiceMax && attDiceMin > defDiceMin ) {
 				result = 3;
 			}
@@ -167,9 +154,6 @@ public class DiceController {
 				defDiceMax=defDice2.getNumber();
 				defDiceMin=defDice1.getNumber();
 			}
-			
-			System.out.println("AMax: "+attDiceMax+" AMin: "+attDiceMin);
-			System.out.println("DMax: "+defDiceMax+" DMin: "+defDiceMin);
 			
 			if(attDiceMax > defDiceMax && attDiceMin > defDiceMin ) {
 				result = 3;
