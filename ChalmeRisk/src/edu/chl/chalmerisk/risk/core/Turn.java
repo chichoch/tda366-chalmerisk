@@ -61,6 +61,8 @@ public class Turn extends Observable{
 		   reinforcementState();
 		   ChalmeRisk.round.newRound();
 		   firstRoundsCount++;
+		   setChanged();
+		   notifyObservers(1);
 	   }
 	   
 	  
