@@ -13,19 +13,18 @@ public class ActivePlayers {
     }
   
     public boolean getActivePlayers(Player player) {
-   	 count = 0;
-   	 List<Country> cList = new ArrayList<Country>();
-   	 cList = ChalmeRisk.map.getCountries();
-   	 for (int i = 0; i < cList.size(); i++) {
-   		 if(cList.get(i).getOwner().equals(player)){
-   			 count++;
-   		 }
-   	 }
-   	 if(count == 0){
-   		 return false;
-   		 
-   	 }
-   	 return true;
+    	count = 0;
+    	List<Country> cList = new ArrayList<Country>();
+    	cList = ChalmeRisk.map.getCountries();
+    	for (int i = 0; i < cList.size(); i++) {
+    		if(cList.get(i).getOwner().equals(player)){
+    			count++;
+    		}
+    	}
+    	if(count == 0){
+    		return false; 		 
+    	}
+    	return true;
     }
  
     public static synchronized ActivePlayers getInstance() {
