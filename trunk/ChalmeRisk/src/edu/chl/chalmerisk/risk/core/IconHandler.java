@@ -29,12 +29,105 @@ public class IconHandler {
 	ImageIcon redCannonSelected = new ImageIcon("resources/redCannonSelected.gif");
 	ImageIcon yellowCannonSelected = new ImageIcon("resources/yellowCannonSelected.gif");
 	ImageIcon blueCannonSelected = new ImageIcon("resources/blueCannonSelected.gif");
+	ImageIcon attackerSelected = new ImageIcon("resources/colorInfantry.gif");
 	
 	public IconHandler(){
 		
 	}
 	
 	public ImageIcon getIcon(Player p, int i){
+		if(i<5){
+			if(p.getColor()==Color.RED){
+				return redInfantrie;
+			}
+			else if(p.getColor()==Color.GREEN){
+				return greenInfantrie;
+			}
+			else if(p.getColor()==Color.YELLOW){
+				return yellowInfantrie;
+			}
+			else if(p.getColor()==Color.BLUE){
+				return blueInfantrie;
+			}
+		}
+		else if(i>=5 && i<10){
+			if(p.getColor()==Color.RED){
+				return redKnight;
+			}
+			else if(p.getColor()==Color.GREEN){
+				return greenKnight;
+			}
+			else if(p.getColor()==Color.YELLOW){
+				return yellowKnight;
+			}
+			else if(p.getColor()==Color.BLUE){
+				return blueKnight;
+			}
+		}
+		else{
+			if(p.getColor()==Color.RED){
+				return redCannon;
+			}
+			else if(p.getColor()==Color.GREEN){
+				return greenCannon;
+			}
+			else if(p.getColor()==Color.YELLOW){
+				return yellowCannon;
+			}
+			else if(p.getColor()==Color.BLUE){
+				return blueCannon;
+			}
+		}
+		return null;
+	}
+	
+	public ImageIcon getSelectedIcon(Player p, int i){
+		if(i<5){
+			if(p.getColor()==Color.RED){
+				return redInfantrieSelected;
+			}
+			else if(p.getColor()==Color.GREEN){
+				return greenInfantrieSelected;
+			}
+			else if(p.getColor()==Color.YELLOW){
+				return yellowInfantrieSelected;
+			}
+			else if(p.getColor()==Color.BLUE){
+				return blueInfantrieSelected;
+			}
+		}
+		else if(i>=5 && i<10){
+			if(p.getColor()==Color.RED){
+				return redKnightSelected;
+			}
+			else if(p.getColor()==Color.GREEN){
+				return greenKnightSelected;
+			}
+			else if(p.getColor()==Color.YELLOW){
+				return yellowKnightSelected;
+			}
+			else if(p.getColor()==Color.BLUE){
+				return blueKnightSelected;
+			}
+		}
+		else{
+			if(p.getColor()==Color.RED){
+				return redCannonSelected;
+			}
+			else if(p.getColor()==Color.GREEN){
+				return greenCannonSelected;
+			}
+			else if(p.getColor()==Color.YELLOW){
+				return yellowCannonSelected;
+			}
+			else if(p.getColor()==Color.BLUE){
+				return blueCannonSelected;
+			}
+		}
+		return null;
+	}
+	
+	public ImageIcon getAttackerIcon(Player p, int i){
 		if(i<5){
 			if(p.getColor()==Color.RED){
 				return redInfantrie;
