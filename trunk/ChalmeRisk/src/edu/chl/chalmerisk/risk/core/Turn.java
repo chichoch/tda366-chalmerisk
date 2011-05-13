@@ -3,6 +3,8 @@ package edu.chl.chalmerisk.risk.core;
 
 import java.util.Observable;
 
+import edu.chl.chalmerisk.risk.util.ReinforcementCalculator;
+
 
 public class Turn extends Observable{
 	
@@ -32,6 +34,7 @@ public class Turn extends Observable{
 			  }
 		  }
 		  else if(currentStateIndex == 0){
+			  ReinforcementCalculator.getInstance().setReinforcements(ChalmeRisk.round.getPlayerList());
 			  reinforcementState();
 			  currentStateIndex++;
 		  }
@@ -58,6 +61,7 @@ public class Turn extends Observable{
 		   }
 	   }
 	   public void FirstRoundState(){
+		   ReinforcementCalculator.getInstance().setReinforcements(ChalmeRisk.round.getPlayerList());
 		   reinforcementState();
 		   ChalmeRisk.round.newRound();
 		   firstRoundsCount++;
