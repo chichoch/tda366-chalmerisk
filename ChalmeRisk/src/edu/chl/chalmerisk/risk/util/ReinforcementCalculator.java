@@ -19,11 +19,12 @@ public class ReinforcementCalculator {
 		countries = ChalmeRisk.map.getCountries();
 	}
 	
-	public List<Player> setReinforcements(List<Player> pList) {
-		if (ChalmeRisk.turn.isFirstRound()) {
-			return setReinforcementsFirstRounds(pList);
-		}
-		return setReinforcementsMain(pList);
+	public Player setReinforcements(Player player) {
+		return setReinforcementsMain(player);
+	}
+	
+	public List<Player> setFirstReinforcements(List<Player> pList) {
+		return setReinforcementsFirstRounds(pList);
 	}
 	
 	public List<Player> setReinforcementsFirstRounds(List<Player> pList) {
@@ -37,34 +38,32 @@ public class ReinforcementCalculator {
 		return pList;
 	}
 	
-	public List<Player> setReinforcementsMain(List<Player> pList) {
-		players = pList;
-		//Set every players reinforcements to the minimum (3):
-		for (int p = 0; p < players.size(); p++) {
-			players.get(p).setReinforcements(3);
-		}
-		//Set reinforcements based on continents.
-		for (int i = 0; i < conts.size(); i++) {
-			for (int j = 0; j < players.size(); j++) {
-				if (conts.get(i).getOwner().equals(players.get(j)) && conts.get(i).getOwner() != null) {
-					players.get(j).setMoreReinforcements(conts.get(i).getValue());
-				}
-			}
-		}
-		//Set reinforcements based on how many countries each player owns.
+	public Player setReinforcementsMain(Player player) {
 		
-		for (int x = 0; x < players.size(); x++) {
-			int numOfCountries = 0;
-			for (int y = 0; y < countries.size(); y++){
-				if (countries.get(y).getOwner().equals(players.get(x))) {
-					numOfCountries++;
-				}
-			}
-			if (numOfCountries > 9) {
-				players.get(x).setMoreReinforcements(numOfCountries/3);
+		//Set reinforcements based on continents.
+		int contValue = 0;
+		for (int i = 0; i < conts.size(); i++) {
+			if (conts.get(i).getOwner().equals(player) && conts.get(i).getOwner() != null) {
+				contValue = contValue + conts.get(i).getValue();
+				//player.setMoreReinforcements(conts.get(i).getValue());
 			}
 		}
-		return players;
+		
+		//Set reinforcements based on how many countries each player owns.
+		int numOfCountries = 0;
+		for (int y = 0; y < countries.size(); y++){
+			if (countries.get(y).getOwner().equals(player)) {
+				numOfCountries++;
+			}
+		}
+		if (numOfCountries > 9) {
+			player.setMoreReinforcements((numOfCountries/3)+ contValue);
+		}
+		else{
+			//Set every players reinforcements to the minimum (3):
+			player.setReinforcements(contValue+3);
+		}
+		return player;
 	}
 	
 	public static synchronized ReinforcementCalculator getInstance() {

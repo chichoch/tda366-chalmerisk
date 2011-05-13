@@ -59,13 +59,13 @@ public class CountryView extends JPanel implements Observer , MouseListener{
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		
-		if(ChalmeRisk.turn.getCurrentStateIndex() == 1 && this.country.getOwner().equals(ChalmeRisk.round.getCurrentPlayer())){
-			System.out.println("Steg 1");
-			if(ChalmeRisk.aCtrl.getfirstCountrySelected()){
-				System.out.println("Steg 2");
-				troopIcon.setIcon(ChalmeRisk.iconHandler.getSelectedIcon(country.getOwner(), country.getTroops()));
-			}
-		}
+		//if(ChalmeRisk.turn.getCurrentStateIndex() == 1 && this.country.getOwner().equals(ChalmeRisk.round.getCurrentPlayer())){
+		//	System.out.println("Steg 1");
+		//	if(ChalmeRisk.aCtrl.getfirstCountrySelected()){
+			//	System.out.println("Steg 2");
+			//	troopIcon.setIcon(ChalmeRisk.iconHandler.getSelectedIcon(country.getOwner(), country.getTroops()));
+		//	}
+	//	}
 		
 	}
 
