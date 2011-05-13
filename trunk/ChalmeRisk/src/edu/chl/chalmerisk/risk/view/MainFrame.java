@@ -57,6 +57,9 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener, 
 		bottom = new JPanel();
 		nextStep = new JButton("Next step");
 		nextStep.addActionListener(this);
+		for (int i = 0; i < ChalmeRisk.round.getPlayerList().size(); i++){
+			ChalmeRisk.round.getPlayerList().get(i).addObserver(this);
+		}
 		nextStep.setEnabled(false);
 		infoView = new InfoView();
 		
