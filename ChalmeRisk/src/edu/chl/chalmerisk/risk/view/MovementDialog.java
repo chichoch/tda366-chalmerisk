@@ -57,8 +57,11 @@ public class MovementDialog extends JFrame implements ActionListener {
 			
 			if(e.getSource() == moveTroopsButton){
 				ChalmeRisk.tCtrl.doMovement(quantitySlider.getValue(), c1, c2);
-				ChalmeRisk.tCtrl.notAllowTroopMovement();
 				setVisible(false);
+				if(ChalmeRisk.turn.getCurrentStateIndex()==2){
+					ChalmeRisk.tCtrl.notAllowTroopMovement();
+				}
+				
 			}
 			
 			if(e.getSource()== cancelButton){

@@ -60,7 +60,7 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener, 
 		for (int i = 0; i < ChalmeRisk.round.getPlayerList().size(); i++){
 			ChalmeRisk.round.getPlayerList().get(i).addObserver(this);
 		}
-		nextStep.setEnabled(false);
+		//nextStep.setEnabled(false);
 		infoView = new InfoView();
 		
 		infoViewPanel = new JPanel();
@@ -143,7 +143,7 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener, 
 		if(e.getSource()== nextStep){
 			ChalmeRisk.turn.changeState();
 			if (ChalmeRisk.turn.getCurrentStateIndex() == 0) {
-				nextStep.setEnabled(false);
+			//	nextStep.setEnabled(false);
 				ChalmeRisk.tCtrl.allowTroopMovement();
 			}
 		}
