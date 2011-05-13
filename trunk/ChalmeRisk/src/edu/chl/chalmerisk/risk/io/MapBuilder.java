@@ -104,9 +104,7 @@ public class MapBuilder {
 				while (!command.get(index + 1).equals("<continent>") && i < command.size()) {
 					if (command.get(i).equals("<country>")) {
 						countryName = command.get(i + 1);
-						System.out.println(countryName);
 						countryId = Integer.parseInt(command.get(i + 2));
-						System.out.println("" + countryId);
 						countryX = Integer.parseInt(command.get(i + 3));
 						countryY = Integer.parseInt(command.get(i + 4));
 						

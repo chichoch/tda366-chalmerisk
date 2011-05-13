@@ -34,7 +34,7 @@ public class Turn extends Observable{
 			  }
 		  }
 		  else if(currentStateIndex == 0){
-			  ReinforcementCalculator.getInstance().setReinforcements(ChalmeRisk.round.getPlayerList());
+			  ReinforcementCalculator.getInstance().setReinforcements(ChalmeRisk.round.getCurrentPlayer());
 			  reinforcementState();
 			  currentStateIndex++;
 		  }
@@ -61,7 +61,7 @@ public class Turn extends Observable{
 		   }
 	   }
 	   public void FirstRoundState(){
-		   ReinforcementCalculator.getInstance().setReinforcements(ChalmeRisk.round.getPlayerList());
+		   ReinforcementCalculator.getInstance().setFirstReinforcements(ChalmeRisk.round.getPlayerList());
 		   reinforcementState();
 		   ChalmeRisk.round.newRound();
 		   firstRoundsCount++;

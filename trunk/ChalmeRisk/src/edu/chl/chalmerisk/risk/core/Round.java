@@ -20,7 +20,7 @@ public class Round extends Observable{
 		numOfPlayers = pList.size();
 		currentNumber = -1;
 		//Set the reinforcements.
-		ReinforcementCalculator.getInstance().setReinforcements(pList);
+		ReinforcementCalculator.getInstance().setFirstReinforcements(pList);
 	}
 	
 	public void newRound() {
