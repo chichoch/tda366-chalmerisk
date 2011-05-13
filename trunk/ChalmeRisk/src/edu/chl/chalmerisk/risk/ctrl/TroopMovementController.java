@@ -27,6 +27,7 @@ public class TroopMovementController extends TurnState {
 			else if(ChalmeRisk.map.getCountry(id).getOwner().equals(ChalmeRisk.round.getCurrentPlayer())){
 				firstCountrySelected = true;
 				firstSelectedCountry = ChalmeRisk.map.getCountry(id);	
+				ChalmeRisk.infoModel.setCorrectMoveText("You have marked the country to move troops from");
 			}
 			else{
 				ChalmeRisk.infoModel.setWarningText("You can only move troops from your own country");
@@ -34,14 +35,13 @@ public class TroopMovementController extends TurnState {
 		}
 		else {
 			if(firstSelectedCountry.getOwner() == ChalmeRisk.map.getCountry(id).getOwner()){
-				ChalmeRisk.infoModel.setCorrectMoveText("You have marked the country to move troops from");
 				secondSelectedCountry = ChalmeRisk.map.getCountry(id);
 				if (firstSelectedCountry.hasNeighbour(id) == true) {
 					firstCountrySelected = false;
 					ChalmeRisk.movement.newMovement(firstSelectedCountry, secondSelectedCountry);
 					if(allowTroopMovement){
-					ChalmeRisk.movement.setVisible(true);
-					isTroopMovementState = true;
+						ChalmeRisk.movement.setVisible(true);
+						isTroopMovementState = true;
 					}
 					else{
 						ChalmeRisk.infoModel.setWarningText("You can only move troops once every turn");
@@ -51,13 +51,14 @@ public class TroopMovementController extends TurnState {
 					ChalmeRisk.infoModel.setWarningText("You can only move troops to a neighbouring country");
 				}
 			}
-			else{
-				ChalmeRisk.infoModel.setWarningText("You can only move troops between your own countries");
-				firstSelectedCountry = null;
-				firstCountrySelected = false;
-				}
+		else{
+			ChalmeRisk.infoModel.setWarningText("You can only move troops between your own countries");
+			firstSelectedCountry = null;
+			firstCountrySelected = false;
+		}
 		}
 	}
+
 	
 	public void doMovement(int value, Country fromCountry, Country toCountry){
 		fromCountry.setTroops(fromCountry.getTroops()-value);
