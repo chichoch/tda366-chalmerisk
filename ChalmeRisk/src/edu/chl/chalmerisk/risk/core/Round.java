@@ -52,10 +52,12 @@ public class Round extends Observable{
 			//TODO Check the countries for players. Set pList to the players that are still alive.
 			//pList = ActivePlayers.getInstance().getActivePlayers(ChalmeRisk.map.getCountries());
 			//When its a new round set the reinforcements for the players.
-			ReinforcementCalculator.getInstance().setReinforcements(pList);
+			//ReinforcementCalculator.getInstance().setReinforcements(pList);
 		}
-		setChanged();
-		notifyObservers(0);
+		finally {
+			setChanged();
+			notifyObservers(0);
+		}
 		
 	}
 	public int getNumberOfPlayers() {
