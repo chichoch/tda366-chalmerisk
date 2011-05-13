@@ -1,9 +1,11 @@
 package edu.chl.chalmerisk.risk.core;
 
+
+
 import edu.chl.chalmerisk.risk.ctrl.*;
 
 
-public abstract class TurnState {
+public abstract class TurnState  {
 
 	//TODO Infolabel is hardcoded, should be fixed with observers
 	public void reinforcementState(ReinforcementController rCtrl){
