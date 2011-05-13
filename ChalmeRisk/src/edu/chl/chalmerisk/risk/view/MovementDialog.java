@@ -20,6 +20,7 @@ public class MovementDialog extends JFrame implements ActionListener {
 	private Country c1;
 	private Country c2;
 	
+	
 	public MovementDialog(){
 		quantitySlider = new JSlider();
 		quantitySlider.setMinimum(1);
@@ -56,6 +57,7 @@ public class MovementDialog extends JFrame implements ActionListener {
 			
 			if(e.getSource() == moveTroopsButton){
 				ChalmeRisk.tCtrl.doMovement(quantitySlider.getValue(), c1, c2);
+				ChalmeRisk.tCtrl.notAllowTroopMovement();
 				setVisible(false);
 			}
 			

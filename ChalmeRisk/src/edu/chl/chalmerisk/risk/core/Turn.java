@@ -39,7 +39,7 @@ public class Turn extends Observable{
 			  attackState();
 			  currentStateIndex++;
 		  }
-		  else{
+		  else if(currentStateIndex == 2){
 			  troopMovementState();
 			  currentStateIndex=0;
 		  }

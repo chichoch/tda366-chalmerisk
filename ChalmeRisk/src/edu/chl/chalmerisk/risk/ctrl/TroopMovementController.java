@@ -10,6 +10,7 @@ public class TroopMovementController extends TurnState {
 	private Country firstSelectedCountry;
 	private Country secondSelectedCountry;
 	private boolean isTroopMovementState;
+	private boolean allowTroopMovement;
 	
 	
 	public TroopMovementController(){
@@ -37,8 +38,13 @@ public class TroopMovementController extends TurnState {
 				if (firstSelectedCountry.hasNeighbour(id) == true) {
 					firstCountrySelected = false;
 					ChalmeRisk.movement.newMovement(firstSelectedCountry, secondSelectedCountry);
+					if(allowTroopMovement){
 					ChalmeRisk.movement.setVisible(true);
 					isTroopMovementState = true;
+					}
+					else{
+						ChalmeRisk.infoModel.setWarningText("You can only move troops once every turn");
+					}
 				}
 				else {
 					ChalmeRisk.infoModel.setWarningText("You can only move troops to a neighbouring country");
@@ -56,10 +62,21 @@ public class TroopMovementController extends TurnState {
 		fromCountry.setTroops(fromCountry.getTroops()-value);
 		toCountry.setTroops(toCountry.getTroops()+value);
 		if(isTroopMovementState == true){
-			ChalmeRisk.turn.changeState();
 			isTroopMovementState = false;
 		}
 	}
+	
+	public void notAllowTroopMovement (){
+		allowTroopMovement=false;
+	}
+	
+	public void allowTroopMovement(){
+		allowTroopMovement=true;
+	}
+	
+
+	
+
 	/*
 	public void doMovement(int value){
 		firstSelectedCountry.setTroops(firstSelectedCountry.getTroops()-value);
