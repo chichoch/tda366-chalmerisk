@@ -2,6 +2,7 @@ package edu.chl.chalmerisk.risk.ctrl;
 import javax.swing.JOptionPane;
 
 import edu.chl.chalmerisk.risk.core.*;
+import edu.chl.chalmerisk.risk.util.ReinforcementCalculator;
 
 public class ReinforcementController extends TurnState{
 
@@ -11,6 +12,7 @@ public class ReinforcementController extends TurnState{
 
 	@Override
 	public void setCountry(int id){
+		ReinforcementCalculator.getInstance().setReinforcements(ChalmeRisk.round.getPlayerList());
 		if(!ChalmeRisk.map.getCountry(id).getOwner().equals(ChalmeRisk.round.getCurrentPlayer())){
 			ChalmeRisk.infoModel.setWarningText("You can only place reinforcements in your countries");
 		}
