@@ -34,6 +34,7 @@ public class TroopMovementController extends TurnState {
 		}
 		else {
 			if(firstSelectedCountry.getOwner() == ChalmeRisk.map.getCountry(id).getOwner()){
+				ChalmeRisk.infoModel.setCorrectMoveText("You have marked the country to move troops from");
 				secondSelectedCountry = ChalmeRisk.map.getCountry(id);
 				if (firstSelectedCountry.hasNeighbour(id) == true) {
 					firstCountrySelected = false;
