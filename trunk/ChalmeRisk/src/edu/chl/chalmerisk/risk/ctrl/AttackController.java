@@ -32,6 +32,7 @@ public class AttackController extends TurnState{
 			else{
 				firstCountrySelected = true;
 				attCountry = ChalmeRisk.map.getCountry(id);	
+				ChalmeRisk.infoModel.setCorrectMoveText("You have selected the country to attack from");
 			}
 
 		}

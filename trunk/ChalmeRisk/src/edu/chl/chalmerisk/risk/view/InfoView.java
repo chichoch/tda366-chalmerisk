@@ -27,6 +27,10 @@ public class InfoView extends JLabel implements Observer {
 				setText(ChalmeRisk.infoModel.getWarningText());
 				setForeground(Color.RED);
 			}
+			if(arg.equals(new Integer(2))){
+				setText(ChalmeRisk.infoModel.getCorrectMoveText());
+				setForeground(Color.GREEN);
+			}
 		}
 	}
 }
