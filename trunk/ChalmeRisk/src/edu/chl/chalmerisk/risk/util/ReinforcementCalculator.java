@@ -30,11 +30,11 @@ public class ReinforcementCalculator {
 	public List<Player> setReinforcementsFirstRounds(List<Player> pList) {
 		players = pList;
 		//Sets the players reinforcements after the official rules.
-		int r = (50 - (5 * pList.size()))/3;
+		int r = (50 - (5 * players.size()))/3;
 		for (int p = 0; p < players.size(); p++) {
 			players.get(p).setReinforcements(r);
 		}
-		System.out.println("First Rounds" + r);
+		System.out.println("First Rounds number of players: " + r);
 		return pList;
 	}
 	
@@ -57,6 +57,7 @@ public class ReinforcementCalculator {
 			}
 		}
 		if (numOfCountries > 9) {
+			System.out.println("Normal Rounds number of players: " + ((numOfCountries/3)+ contValue));
 			player.setMoreReinforcements((numOfCountries/3)+ contValue);
 		}
 		else{

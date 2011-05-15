@@ -27,7 +27,7 @@ public class Turn extends Observable{
 	   }
 	   public void changeState() {
 		  
-		  if (firstRoundsIndex){
+		   if (firstRoundsIndex){
 			  FirstRoundState();
 			  if(firstRoundsCount == (ChalmeRisk.round.getNumberOfPlayers()*3)){
 				  firstRoundsIndex=false;
@@ -35,6 +35,8 @@ public class Turn extends Observable{
 		  }
 		  else if(currentStateIndex == 0){
 			  ReinforcementCalculator.getInstance().setReinforcements(ChalmeRisk.round.getCurrentPlayer());
+			  setChanged();
+			  notifyObservers(0);
 			  reinforcementState();
 			  currentStateIndex++;
 		  }
@@ -61,7 +63,12 @@ public class Turn extends Observable{
 		   }
 	   }
 	   public void FirstRoundState(){
-		   ReinforcementCalculator.getInstance().setFirstReinforcements(ChalmeRisk.round.getPlayerList());
+		   if(firstRoundsCount<(ChalmeRisk.round.getNumberOfPlayers()*3)-2){
+		   ReinforcementCalculator.getInstance().setReinforcementsFirstRounds(ChalmeRisk.round.getPlayerList());
+		   }
+		   else{
+			   ReinforcementCalculator.getInstance().setReinforcements(ChalmeRisk.round.getCurrentPlayer());
+		   }
 		   reinforcementState();
 		   ChalmeRisk.round.newRound();
 		   firstRoundsCount++;
@@ -74,7 +81,7 @@ public class Turn extends Observable{
 		   states[currentStateIndex].setCountry(n);
 	   }
 	   
-	   public Boolean isFirstRound() {
+	   public boolean isFirstRound() {
 		   return firstRoundsIndex;
 	   }
 	   
