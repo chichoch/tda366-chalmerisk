@@ -23,6 +23,7 @@ public class ReinforcementCalculator {
 		return setReinforcementsMain(player);
 	}
 	
+	
 	public List<Player> setFirstReinforcements(List<Player> pList) {
 		return setReinforcementsFirstRounds(pList);
 	}
