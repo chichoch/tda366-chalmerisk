@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
 
+import javax.swing.JOptionPane;
+
 import edu.chl.chalmerisk.risk.constants.Player;
 import edu.chl.chalmerisk.risk.util.ActivePlayers;
 import edu.chl.chalmerisk.risk.util.ReinforcementCalculator;
@@ -23,7 +25,7 @@ public class Round extends Observable{
 		ReinforcementCalculator.getInstance().setFirstReinforcements(pList);
 	}
 	
-	public void newRound() {
+	public void newRound(){
 		
 		try {
 			if(ActivePlayers.getInstance().getActivePlayers(pList.get(currentNumber+1))){
@@ -39,6 +41,9 @@ public class Round extends Observable{
 				numOfPlayers = pList.size();
 				currentPlayer = pList.get(pList.indexOf(currentPlayer) + 1);
 				currentNumber++;
+				if(pList.size()==1){
+					throw new GameOverException();
+				}
 				if(currentNumber+1 == numOfPlayers){
 					currentNumber = -1;
 				}
@@ -53,6 +58,9 @@ public class Round extends Observable{
 			//pList = ActivePlayers.getInstance().getActivePlayers(ChalmeRisk.map.getCountries());
 			//When its a new round set the reinforcements for the players.
 			//ReinforcementCalculator.getInstance().setReinforcements(pList);
+		} 
+		catch (GameOverException e) {
+			e.getClass();
 		}
 		finally {
 			setChanged();
