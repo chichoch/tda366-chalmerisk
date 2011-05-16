@@ -51,15 +51,8 @@ public class Round extends Observable{
 		return numOfPlayers;
 	}
 	
-	public void setNumberOfPlayers(int numberP) {
-		numOfPlayers=numberP;
-	}
 	public Player getCurrentPlayer() {
 		return currentPlayer;
-	}
-	
-	public void setCurrentPlayer(Player player){
-		currentPlayer=player;
 	}
 	
 	public int getCurrentNumber(){

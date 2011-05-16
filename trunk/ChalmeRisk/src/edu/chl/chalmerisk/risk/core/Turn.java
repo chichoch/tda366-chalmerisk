@@ -52,10 +52,6 @@ public class Turn extends Observable{
 			  		}
 			  		
 			  	}
-			  	catch (IndexOutOfBoundsException e){
-			  		ChalmeRisk.round.setNumberOfPlayers(ChalmeRisk.round.getNumberOfPlayers());
-			  		ChalmeRisk.round.setCurrentPlayer(ChalmeRisk.round.getPlayerList().get(0));
-			  	}
 			  	catch (GameOverException e) {
 			  		e.getClass();
 			  	}
