@@ -32,7 +32,8 @@ public class AttackDialog extends JFrame{
 	private DiceView d1dice;
 	private DiceView d2dice;
 	
-	
+	//TODO Bug! (I think?) IN the label, if the defending country only have 1 troop left
+	// The label can say that the defender have killed 2.
 	public AttackDialog() {
 		fightPanel = new JPanel(new GridLayout(1,3));
 		status = new JLabel();
