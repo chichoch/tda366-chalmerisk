@@ -8,11 +8,12 @@ import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 public class ActivePlayers {
     private static ActivePlayers instance;
     private int count;
+    private List<Player> currentList = ChalmeRisk.round.getPlayerList();
     private ActivePlayers() {
    	 
     }
   
-    public boolean getActivePlayers(Player player) {
+    public boolean isActivePlayer(Player player) {
     	count = 0;
     	List<Country> cList = new ArrayList<Country>();
     	cList = ChalmeRisk.map.getCountries();
@@ -26,6 +27,16 @@ public class ActivePlayers {
     	}
     	return true;
     }
+    
+    public List<Player> getActivePlayers(List <Player> pList) {
+    	for(int i = 0; i<pList.size(); i++){
+    		if(!isActivePlayer(pList.get(i))){
+    			currentList.remove(pList.get(i));
+    		}
+    	}
+    	return currentList;
+    }
+    
  
     public static synchronized ActivePlayers getInstance() {
    	 if(instance == null){

@@ -28,7 +28,7 @@ public class Round extends Observable{
 	public void newRound(){
 		
 		try {
-			if(ActivePlayers.getInstance().getActivePlayers(pList.get(currentNumber+1))){
+			if(ActivePlayers.getInstance().isActivePlayer(pList.get(currentNumber+1))){
 				currentPlayer = pList.get(pList.indexOf(currentPlayer) + 1);
 				numOfPlayers = pList.size();
 				currentNumber++;
@@ -36,32 +36,11 @@ public class Round extends Observable{
 					currentNumber = -1;
 				}
 			}
-			else{
-				pList.remove(currentNumber+1);
-				numOfPlayers = pList.size();
-				currentPlayer = pList.get(pList.indexOf(currentPlayer) + 1);
-				currentNumber++;
-				if(pList.size()==1){
-					throw new GameOverException();
-				}
-				if(currentNumber+1 == numOfPlayers){
-					currentNumber = -1;
-				}
-				newRound();
-			}
-			
 		}
 		catch (IndexOutOfBoundsException e){
 			numOfPlayers = pList.size();
 			currentPlayer = pList.get(0);
-			//TODO Check the countries for players. Set pList to the players that are still alive.
-			//pList = ActivePlayers.getInstance().getActivePlayers(ChalmeRisk.map.getCountries());
-			//When its a new round set the reinforcements for the players.
-			//ReinforcementCalculator.getInstance().setReinforcements(pList);
 		} 
-		catch (GameOverException e) {
-			e.getClass();
-		}
 		finally {
 			setChanged();
 			notifyObservers(0);
@@ -72,11 +51,26 @@ public class Round extends Observable{
 		return numOfPlayers;
 	}
 	
+	public void setNumberOfPlayers(int numberP) {
+		numOfPlayers=numberP;
+	}
 	public Player getCurrentPlayer() {
 		return currentPlayer;
 	}
 	
+	public void setCurrentPlayer(Player player){
+		currentPlayer=player;
+	}
+	
+	public int getCurrentNumber(){
+		return currentNumber;
+	}
+	
 	public List<Player> getPlayerList() {
 		return pList;
+	}
+	
+	public void updatePlayers(){
+ 	ActivePlayers.getInstance().getActivePlayers(getPlayerList());
 	}
 }
