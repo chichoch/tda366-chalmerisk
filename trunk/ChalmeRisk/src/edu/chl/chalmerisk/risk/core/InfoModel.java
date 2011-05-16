@@ -1,12 +1,16 @@
 package edu.chl.chalmerisk.risk.core;
 
 import java.util.Observable;
+import java.util.Observer;
 
-public class InfoModel extends Observable{
+public class InfoModel extends Observable implements Observer {
 	private String infoText;
 	private String warningText;
 	private String CorrectMoveText;
 	
+	public InfoModel() {
+		ChalmeRisk.turn.addObserver(this);
+	}
 	public void setInfoText(String infoText){
 		this.infoText = infoText;
 		setChanged();
@@ -35,6 +39,23 @@ public class InfoModel extends Observable{
 	
 	public String getCorrectMoveText(){
 		return CorrectMoveText;
+	}
+
+	@Override
+	public void update(Observable observable, Object arg) {
+		if (observable.equals(ChalmeRisk.turn)) {
+			if(arg.equals(new Integer(0))){
+				if (ChalmeRisk.turn.getCurrentStateIndex() == 0){
+					setInfoText("Reinforcement");
+				}
+				else if (ChalmeRisk.turn.getCurrentStateIndex() == 1) {
+					setInfoText("Attack");
+				}
+				else if (ChalmeRisk.turn.getCurrentStateIndex() == 2) {
+					setInfoText("Troop Movement");
+				}
+			}
+		}
 	}
 
 }
