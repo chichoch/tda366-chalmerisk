@@ -2,7 +2,6 @@ package edu.chl.chalmerisk.risk.view;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.util.Observable;
 import java.util.Observer;
 import javax.swing.*;
@@ -14,7 +13,6 @@ public class CountryView extends JPanel implements Observer {
 	private ImageIcon icon;
 	private JLabel troopIcon;
 	private Country country;
-	private int tempid;
 	
 	public CountryView(Country country){
 		this.country = country;
@@ -41,14 +39,14 @@ public class CountryView extends JPanel implements Observer {
 			if(arg.equals(new Integer(1))){
 				troopIcon.setIcon(ChalmeRisk.iconHandler.getIcon(country.getOwner(), country.getTroops()));
 			}
-			/*if(arg.equals(new Integer(2))){
+			if(arg.equals(new Integer(2))){
 				if(country.isSelected()){
-					
+					troopIcon.setIcon(ChalmeRisk.iconHandler.getSelectedIcon(country.getOwner(), country.getTroops()));
 				}
 				else{
-					
+					troopIcon.setIcon(ChalmeRisk.iconHandler.getIcon(country.getOwner(), country.getTroops()));
 				}
-			}*/
+			}
 		}
 	}
 

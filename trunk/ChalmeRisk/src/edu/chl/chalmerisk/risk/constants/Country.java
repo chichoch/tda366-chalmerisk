@@ -12,7 +12,7 @@ public class Country extends Observable{
 	private int[] grannar;
 	private int x;
 	private int y;
-	//private boolean isSelected;
+	private boolean isSelected;
 	
 	public Country() {
 		
@@ -91,12 +91,12 @@ public class Country extends Observable{
 		this.y = y;
 	}
 	
-	/*public void setSelected(boolean isSelected){
+	public void setSelected(boolean isSelected){
 		this.isSelected = isSelected;
 		setChanged();
 		notifyObservers(2);
 	}
 	public boolean isSelected(){
 		return isSelected;
-	}*/
+	}
 }
