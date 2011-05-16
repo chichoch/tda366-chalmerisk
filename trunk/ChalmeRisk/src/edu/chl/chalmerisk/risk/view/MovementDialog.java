@@ -24,6 +24,7 @@ public class MovementDialog extends JFrame implements ActionListener {
 	public MovementDialog(){
 		quantitySlider = new JSlider();
 		quantitySlider.setMinimum(1);
+		quantitySlider.setMinorTickSpacing(1);
 		quantitySlider.setMajorTickSpacing(1);
 		quantitySlider.setSnapToTicks(true);
 		moveTroopsButton = new JButton("Move troops!");
@@ -72,6 +73,9 @@ public class MovementDialog extends JFrame implements ActionListener {
 	public void newMovement(Country fromCountry, Country toCountry){
 		moveTroopsButton.setEnabled(true);
 		cancelButton.setEnabled(true);
+		if(fromCountry.getTroops()>16){
+			quantitySlider.setMajorTickSpacing(3);
+		}
 		quantitySlider.setMaximum(fromCountry.getTroops()-1);
 		quantitySlider.setValue(1);
 		quantitySlider.setPaintLabels(true);

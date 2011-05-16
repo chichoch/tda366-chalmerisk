@@ -18,6 +18,7 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener, 
 	private JPanel bottom;
 	private JPanel top;
 	private JPanel infoViewPanel;
+	private JPanel fillPanel;
 	private CountryView cv;
 	private JButton nextStep;
 	private PlayerView pv;
@@ -49,7 +50,7 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener, 
 			cv.addMouseMotionListener(this);
 		}
 		
-        l.setIcon(icon); // NOI18N
+        l.setIcon(icon); 
         l.setBounds(-18, -80, 1400, 800);
         karta.add(l, JLayeredPane.DEFAULT_LAYER);
         
@@ -62,13 +63,19 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener, 
 		}
 		//nextStep.setEnabled(false);
 		infoView = new InfoView();
+	
 		
 		infoViewPanel = new JPanel();
+		fillPanel = new JPanel();
 		infoViewPanel.setBackground(Color.BLACK);
 		infoViewPanel.setMaximumSize(new Dimension(1200,25));
 		infoViewPanel.setMinimumSize(new Dimension(1200,25));
 		infoViewPanel.setPreferredSize(new Dimension(1200,25));
+		fillPanel.setBackground(Color.BLACK);
+		fillPanel.setPreferredSize(new Dimension(260,5));
+		infoViewPanel.add(fillPanel);
 		infoViewPanel.add(infoView);
+		
 	
 		bottom.add(infoViewPanel);
 		bottom.add(nextStep);
@@ -143,7 +150,7 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener, 
 		if(e.getSource()== nextStep){
 			ChalmeRisk.turn.changeState();
 			if (ChalmeRisk.turn.getCurrentStateIndex() == 0) {
-			//	nextStep.setEnabled(false);
+				//nextStep.setEnabled(false);
 				ChalmeRisk.tCtrl.allowTroopMovement();
 			}
 		}
