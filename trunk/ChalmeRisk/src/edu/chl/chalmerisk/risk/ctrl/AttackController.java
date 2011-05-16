@@ -69,7 +69,7 @@ public class AttackController extends TurnState{
 		}
 		else if(i==2){
 			attCountry.setTroops(attCountry.getTroops() - 1);
-			ChalmeRisk.attack.setStatusText("Defender killed 1 ");
+			ChalmeRisk.attack.setStatusText("Defender killed 2 ");
 		}
 
 		else if(i==3){
@@ -79,13 +79,13 @@ public class AttackController extends TurnState{
 		}
 		else if(i==4){
 			attCountry.setTroops(attCountry.getTroops() - 2);
-			ChalmeRisk.attack.setStatusText("Defender killed 2 ");
+			ChalmeRisk.attack.setStatusText("Defender killed 2");
 		}
 
 		else if(i==5){
 			defCountry.setTroops(defCountry.getTroops() - 1);
 			attCountry.setTroops(attCountry.getTroops() - 1);
-			ChalmeRisk.attack.setStatusText("Attacker and defender killed 1 ");
+			ChalmeRisk.attack.setStatusText("1 of each killed");
 		}
 		
 		if(attCountry.getTroops() == 1){
