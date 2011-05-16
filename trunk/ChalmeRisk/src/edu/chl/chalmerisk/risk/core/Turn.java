@@ -1,8 +1,11 @@
 package edu.chl.chalmerisk.risk.core;
 
 
+import java.util.List;
 import java.util.Observable;
 
+import edu.chl.chalmerisk.risk.constants.Player;
+import edu.chl.chalmerisk.risk.util.ActivePlayers;
 import edu.chl.chalmerisk.risk.util.ReinforcementCalculator;
 
 
@@ -40,8 +43,26 @@ public class Turn extends Observable{
 			  currentStateIndex++;
 		  }
 		  else if(currentStateIndex == 1){
-			  attackState();
-			  currentStateIndex++;
+			  	attackState();
+			  	currentStateIndex++;
+			  	try{
+			  		ChalmeRisk.round.updatePlayers();
+			  		if(ChalmeRisk.round.getPlayerList().size()==1){
+			  			throw new GameOverException();
+			  		}
+			  		
+			  	}
+			  	catch (IndexOutOfBoundsException e){
+			  		ChalmeRisk.round.setNumberOfPlayers(ChalmeRisk.round.getNumberOfPlayers());
+			  		ChalmeRisk.round.setCurrentPlayer(ChalmeRisk.round.getPlayerList().get(0));
+			  	}
+			  	catch (GameOverException e) {
+			  		e.getClass();
+			  	}
+				finally {
+					setChanged();
+					notifyObservers(0);
+				}
 		  }
 		  else if(currentStateIndex == 2){
 			  troopMovementState();
@@ -65,8 +86,6 @@ public class Turn extends Observable{
 		   reinforcementState();
 		   ChalmeRisk.round.newRound();
 		   firstRoundsCount++;
-		   setChanged();
-		   notifyObservers(0);
 	   }
 	   
 	  
@@ -77,11 +96,7 @@ public class Turn extends Observable{
 	   public boolean isFirstRound() {
 		   return firstRoundsIndex;
 	   }
-	   
-	   public int firstRoundCount(){
-		   return firstRoundsCount;
-	   }
-	   
+
 	   public int getCurrentStateIndex() {
 		   return currentStateIndex;
 	   }
