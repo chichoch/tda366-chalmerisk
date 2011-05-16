@@ -31,17 +31,19 @@ public class AttackController extends TurnState{
 			}
 			else{
 				firstCountrySelected = true;
-				attCountry = ChalmeRisk.map.getCountry(id);	
+				attCountry = ChalmeRisk.map.getCountry(id);
+				attCountry.setSelected(true);	
 				ChalmeRisk.infoModel.setCorrectMoveText("You have selected the country to attack from");
 			}
 
 		}
 		else {
 			if(attCountry.getOwner() != ChalmeRisk.map.getCountry(id).getOwner()){
-				defCountry = ChalmeRisk.map.getCountry(id);	
+				defCountry = ChalmeRisk.map.getCountry(id);
 				if (attCountry.hasNeighbour(id) == true) {
 					firstCountrySelected = false;
 					takeOverCountry = false;
+					attCountry.setSelected(false);
 					ChalmeRisk.attack.newAttack(attCountry, defCountry);
 					ChalmeRisk.attack.repaintTroops(attCountry.getTroops()-1, defCountry.getTroops());
 					ChalmeRisk.attack.setVisible(true);
@@ -52,6 +54,7 @@ public class AttackController extends TurnState{
 			}
 			else{
 				ChalmeRisk.infoModel.setWarningText("You cant attack your own country!");
+				attCountry.setSelected(false);
 				attCountry = null;
 				firstCountrySelected = false;
 			}
