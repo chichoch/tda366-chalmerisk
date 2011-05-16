@@ -54,7 +54,6 @@ public class ReinforcementPanel extends JPanel implements Observer{
 		//TODO This method never runs, which it should. 
 		if (observable.equals(ChalmeRisk.turn)) {
 			if(arg.equals(new Integer(0))){
-				System.out.println("TURN REINFORCEMENTPANEL" + ChalmeRisk.turn.getCurrentStateIndex());
 				iconLabel.setIcon(ChalmeRisk.iconHandler.getIcon(ChalmeRisk.round.getCurrentPlayer(), 1));
 				troopLabel.setText("" + ChalmeRisk.round.getCurrentPlayer().getReinforcements());
 				iconLabel.setVisible(true);
