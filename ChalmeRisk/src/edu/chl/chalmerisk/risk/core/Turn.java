@@ -50,7 +50,6 @@ public class Turn extends Observable{
 			  		if(ChalmeRisk.round.getPlayerList().size()==1){
 			  			throw new GameOverException();
 			  		}
-			  		
 			  	}
 			  	catch (GameOverException e) {
 			  		e.getClass();
