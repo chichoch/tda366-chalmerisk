@@ -38,7 +38,6 @@ public class ReinforcementCalculator implements Observer{
 		for (int p = 0; p < players.size(); p++) {
 			players.get(p).setReinforcements(r);
 		}
-		System.out.println("First Rounds number of players: " + r);
 		return pList;
 	}
 	
@@ -61,7 +60,6 @@ public class ReinforcementCalculator implements Observer{
 			}
 		}
 		if (numOfCountries > 9) {
-			System.out.println("Normal Rounds number of players: " + ((numOfCountries/3)+ contValue));
 			player.setReinforcements((numOfCountries/3)+ contValue);
 		}
 		else{
