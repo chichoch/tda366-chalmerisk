@@ -2,19 +2,22 @@ package edu.chl.chalmerisk.risk.util;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Observable;
+import java.util.Observer;
 
 import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 import edu.chl.chalmerisk.risk.constants.Continent;
 import edu.chl.chalmerisk.risk.constants.Country;
 import edu.chl.chalmerisk.risk.constants.Player;
 
-public class ReinforcementCalculator {
+public class ReinforcementCalculator implements Observer{
 	private static ReinforcementCalculator instance;
 	private List<Continent> conts = new ArrayList<Continent>();
 	private List<Player> players = new ArrayList<Player>();
 	private List<Country> countries = new ArrayList<Country>();
 	
 	private ReinforcementCalculator() {
+		ChalmeRisk.turn.addObserver(this);
 		conts = ChalmeRisk.map.getContinents();
 		countries = ChalmeRisk.map.getCountries();
 	}
@@ -59,7 +62,7 @@ public class ReinforcementCalculator {
 		}
 		if (numOfCountries > 9) {
 			System.out.println("Normal Rounds number of players: " + ((numOfCountries/3)+ contValue));
-			player.setMoreReinforcements((numOfCountries/3)+ contValue);
+			player.setReinforcements((numOfCountries/3)+ contValue);
 		}
 		else{
 			//Set every players reinforcements to the minimum (3):
@@ -73,5 +76,21 @@ public class ReinforcementCalculator {
 			instance = new ReinforcementCalculator();
 		}
 		return instance;
+	}
+
+	@Override
+	public void update(Observable observable, Object arg) {
+		if (observable.equals(ChalmeRisk.turn)) {
+			if(arg.equals(new Integer(0))){
+				if (ChalmeRisk.turn.getCurrentStateIndex() == 0) {
+					if(ChalmeRisk.turn.firstRoundCount()<ChalmeRisk.round.getNumberOfPlayers()*2){
+						ReinforcementCalculator.getInstance().setReinforcementsFirstRounds(ChalmeRisk.round.getPlayerList());
+					}
+					else{
+						ReinforcementCalculator.getInstance().setReinforcements(ChalmeRisk.round.getCurrentPlayer());
+					}
+				}
+			}
+		}
 	}
 }

@@ -27,8 +27,8 @@ public class ChalmeRisk {
 	public static ReinforcementController rCtrl = new ReinforcementController();
 	public static TroopMovementController tCtrl = new TroopMovementController();
 	
-	public static InfoModel infoModel = new InfoModel();
-	public static Turn turn = new Turn();
+	public static InfoModel infoModel;
+	public static Turn turn;
 	public static Round round;
 	public static RandomizeCountries randomizer;
 
@@ -38,7 +38,10 @@ public class ChalmeRisk {
 		randomizer = new RandomizeCountries();
 		map.setCountries(randomizer.randomize(pList, map.getCountries()));
 		iconHandler  = new IconHandler();
+		turn = new Turn();
 		round = new Round(pList);
+		
+		infoModel = new InfoModel();
 		guiTest = new MainFrame(map.getCountries());
 	}
 }
