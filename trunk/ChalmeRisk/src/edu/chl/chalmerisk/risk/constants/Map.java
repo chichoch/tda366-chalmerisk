@@ -36,6 +36,10 @@ public class Map {
 		countryList = cList;
 	}
 	
+	public void setContinents(List<Continent> cList) {
+		continentList = cList;
+	}
+	
 	public void setPlayer(Player p, int countryId) {
 		for (int i = 0; i < countryList.size(); i++) {
  			if (countryList.get(i).getCountryId() == countryId) {
