@@ -25,10 +25,11 @@ public class MovementDialog extends JFrame implements ActionListener {
 		quantitySlider = new JSlider();
 		quantitySlider.setMinimum(1);
 		quantitySlider.setMinorTickSpacing(1);
-		quantitySlider.setMajorTickSpacing(1);
+		quantitySlider.setMajorTickSpacing(2);
+		quantitySlider.setPaintTicks(true);
 		quantitySlider.setSnapToTicks(true);
 		moveTroopsButton = new JButton("Move troops!");
-		cancelButton = new JButton("Cancel");
+		cancelButton = new JButton("Dont Move Troops / Cancel");
 		movementPanelCenter = new JPanel();
 		movementPanelSouth = new JPanel();
 		
@@ -64,7 +65,6 @@ public class MovementDialog extends JFrame implements ActionListener {
 				}
 				
 			}
-			
 			if(e.getSource()== cancelButton){
 				setVisible(false);
 			}
@@ -73,9 +73,6 @@ public class MovementDialog extends JFrame implements ActionListener {
 	public void newMovement(Country fromCountry, Country toCountry){
 		moveTroopsButton.setEnabled(true);
 		cancelButton.setEnabled(true);
-		if(fromCountry.getTroops()>16){
-			quantitySlider.setMajorTickSpacing(3);
-		}
 		quantitySlider.setMaximum(fromCountry.getTroops()-1);
 		quantitySlider.setValue(1);
 		quantitySlider.setPaintLabels(true);

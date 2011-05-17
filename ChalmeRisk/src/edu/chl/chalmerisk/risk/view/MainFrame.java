@@ -19,12 +19,14 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener, 
 	private JPanel top;
 	private JPanel infoViewPanel;
 	private JPanel fillPanel;
+	private JPanel fillPanel1;
 	private CountryView cv;
 	private JButton nextStep;
 	private PlayerView pv;
 	private SequenceMap sm;
 	private InfoView infoView;
 	private ReinforcementPanel reinforcementPanel;
+	private GridLayout layout;
 	
 	//TODO No hardcode here!
 	public MainFrame(List<Country> list) {
@@ -72,7 +74,7 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener, 
 		infoViewPanel.setMinimumSize(new Dimension(1200,25));
 		infoViewPanel.setPreferredSize(new Dimension(1200,25));
 		fillPanel.setBackground(Color.BLACK);
-		fillPanel.setPreferredSize(new Dimension(260,5));
+		fillPanel.setPreferredSize(new Dimension(100,5));
 		infoViewPanel.add(fillPanel);
 		infoViewPanel.add(infoView);
 		
@@ -81,12 +83,18 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener, 
 		bottom.add(nextStep);
 		bottom.setBackground(Color.BLACK);
 		
-		top = new JPanel(new GridLayout(1,3));
+		layout = new GridLayout(1,3);
+		layout.setHgap(430);
+		top = new JPanel(layout);
+		fillPanel1 = new JPanel();
+		fillPanel1.setBackground(Color.BLACK);
 		pv= new PlayerView();
 		sm = new SequenceMap();
 		
 		top.add(pv);
 		top.add(sm);
+		top.add(fillPanel1);
+		
 		top.setPreferredSize(new Dimension (1400,40));
 		top.setBackground(Color.BLACK);
 	
