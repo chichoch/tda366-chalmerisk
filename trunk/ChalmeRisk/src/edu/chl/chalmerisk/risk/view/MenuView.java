@@ -89,7 +89,7 @@ public class MenuView extends JFrame implements ActionListener, ItemListener{
 		startPlayingButton.addActionListener(this);
 		
 		//add your maps here (the name should be the same as the name of the file.
-		//for example: testmap.gif would be testmap
+		//for example: testmap.txt would be testmap
 		String maps[] = { "testmap", "Ingen karta" };
 		
 		map = new JComboBox(maps);
