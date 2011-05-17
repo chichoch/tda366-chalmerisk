@@ -87,7 +87,11 @@ public class MenuView extends JFrame implements ActionListener, ItemListener{
 		startPlayingButton = new JButton("Start");
 		startPlayingButton.setPreferredSize(new Dimension(120, 45));
 		startPlayingButton.addActionListener(this);
+		
+		//add your maps here (the name should be the same as the name of the file.
+		//for example: testmap.gif would be testmap
 		String maps[] = { "testmap", "Ingen karta" };
+		
 		map = new JComboBox(maps);
 		map.setPreferredSize(new Dimension (240, 30));
 		back = new JButton("Back");
@@ -178,7 +182,7 @@ public class MenuView extends JFrame implements ActionListener, ItemListener{
 			}
 		}
 	}
-
+	//Checks how many players thats selected and enables/disables textfields
 	@Override
 	public void itemStateChanged(ItemEvent arg0) {
 		if(numberOfPlayers.getSelectedIndex()==0){
