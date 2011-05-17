@@ -2,7 +2,7 @@ resources/testmap1.jpg
 
 <continent>
 GreenContinent
-12
+7
 
 <country>
 Green1
@@ -90,7 +90,7 @@ Green12
 
 <continent>
 BlueContinent
-7
+4
 
 <country>
 Blue1
@@ -143,7 +143,7 @@ Blue7
 
 <continent>
 GrayContinent
-9
+5
 
 <country>
 Gray1
@@ -210,7 +210,7 @@ Gray9
 
 <continent>
 RedContinent
-4
+2
 
 <country>
 Red1
@@ -242,7 +242,7 @@ Red4
 
 <continent>
 OrangeContinent
-7
+5
 
 <country>
 Orange1
@@ -295,7 +295,7 @@ Orange7
 
 <continent>
 PurpleContinent
-4
+2
 
 <country>
 Purple1

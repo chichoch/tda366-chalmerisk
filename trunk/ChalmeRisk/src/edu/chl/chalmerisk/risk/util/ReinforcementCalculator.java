@@ -20,6 +20,7 @@ public class ReinforcementCalculator implements Observer{
 		ChalmeRisk.turn.addObserver(this);
 		conts = ChalmeRisk.map.getContinents();
 		countries = ChalmeRisk.map.getCountries();
+
 	}
 	
 	public Player setReinforcements(Player player) {
