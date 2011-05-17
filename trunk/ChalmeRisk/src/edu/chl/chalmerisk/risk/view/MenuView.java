@@ -72,7 +72,7 @@ public class MenuView extends JFrame implements ActionListener, ItemListener{
 		playerName2.setForeground(Color.GREEN);
 		playerName3 = new JLabel("Name of player three:");
 		playerName3.setForeground(Color.YELLOW);
-		playerName4 = new JLabel("Name of PLayer four");
+		playerName4 = new JLabel("Name of player four");
 		playerName4.setForeground(Color.BLUE);
 		playerTextField1 = new JTextField();
 		playerTextField1.setPreferredSize(new Dimension (240, 30));
@@ -158,7 +158,7 @@ public class MenuView extends JFrame implements ActionListener, ItemListener{
 	        cl.show(centerPanel, option);
 		}
 		if (e.getSource() == tutorialButton) {
-	
+			new TutorialView();
 		}
 		if (e.getSource() == exitGameButton) {
 			System.exit(0);
