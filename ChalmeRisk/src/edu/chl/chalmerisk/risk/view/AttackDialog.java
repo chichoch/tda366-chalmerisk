@@ -14,16 +14,16 @@ public class AttackDialog extends JFrame{
 	private JPanel attTeamPanel;
 	private JPanel defTeamPanel;
 	private JPanel actionPanel;
-	private JLabel status;
-	private JLabel standings;
+	private JLabel statusLabel;
+	private JLabel standingsLabel;
 	private ImageIcon attCannon;
 	private ImageIcon attHorse;
 	private ImageIcon attInfantry;
 	private ImageIcon defCannon;
 	private ImageIcon defHorse;
 	private ImageIcon defInfantry;
-	private JButton fight;
-	private JButton retreat;
+	private JButton fightButton;
+	private JButton retreatButton;
 	private JPanel dicePanel;
 	private JPanel fillPanel;
 	private DiceView a1dice;
@@ -36,13 +36,13 @@ public class AttackDialog extends JFrame{
 	// The label can say that the defender have killed 2.
 	public AttackDialog() {
 		fightPanel = new JPanel(new GridLayout(1,3));
-		status = new JLabel();
+		statusLabel = new JLabel();
 		attTeamPanel = new JPanel();
 		defTeamPanel = new JPanel();
 		actionPanel = new JPanel();
-		fight = new JButton("Fight!");
-		retreat = new JButton("Retreat!");
-		standings = new JLabel();
+		fightButton = new JButton("Fight!");
+		retreatButton = new JButton("Retreat!");
+		standingsLabel = new JLabel();
 		dicePanel = new JPanel();
 		a1dice = new DiceView(ChalmeRisk.dCtrl.getAttDice1());
 		a2dice = new DiceView(ChalmeRisk.dCtrl.getAttDice2());
@@ -56,10 +56,10 @@ public class AttackDialog extends JFrame{
 		setPanel(actionPanel);
 		setPanel(dicePanel);
 		
-		actionPanel.add(status);
-		actionPanel.add(fight);
-		actionPanel.add(retreat);
-		actionPanel.add(standings);
+		actionPanel.add(statusLabel);
+		actionPanel.add(fightButton);
+		actionPanel.add(retreatButton);
+		actionPanel.add(standingsLabel);
 		
 		dicePanel.setLayout(new GridLayout(1,6));
 		dicePanel.add(a1dice);
@@ -85,13 +85,13 @@ public class AttackDialog extends JFrame{
 		add(dicePanel, BorderLayout.SOUTH);
 		
 		//actionlisteners
-		fight.addActionListener(new ActionListener() {
+		fightButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e){
 				ChalmeRisk.aCtrl.startFight();
 			}
 		});
 		
-		retreat.addActionListener(new ActionListener() {
+		retreatButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e){
 				ChalmeRisk.aCtrl.endFight();
 			}
@@ -100,13 +100,13 @@ public class AttackDialog extends JFrame{
 	
 	//constructor thats sets up the window
 	public AttackDialog(Country att, Country def){
-		status = new JLabel();
+		statusLabel = new JLabel();
 		attTeamPanel = new JPanel();
 		defTeamPanel = new JPanel();
 		actionPanel = new JPanel();
-		fight = new JButton("Fight!");
-		retreat = new JButton("Retreat!");
-		standings = new JLabel();
+		fightButton = new JButton("Fight!");
+		retreatButton = new JButton("Retreat!");
+		standingsLabel = new JLabel();
 		dicePanel = new JPanel();
 		a1dice = new DiceView(ChalmeRisk.dCtrl.getAttDice1());
 		a2dice = new DiceView(ChalmeRisk.dCtrl.getAttDice2());
@@ -128,10 +128,10 @@ public class AttackDialog extends JFrame{
 		setPanel(actionPanel);
 		setPanel(dicePanel);
 		
-		actionPanel.add(status);
-		actionPanel.add(fight);
-		actionPanel.add(retreat);
-		actionPanel.add(standings);
+		actionPanel.add(statusLabel);
+		actionPanel.add(fightButton);
+		actionPanel.add(retreatButton);
+		actionPanel.add(standingsLabel);
 		
 		attCannon = (ChalmeRisk.iconHandler.getIcon(att.getOwner(), 10));
 		attHorse = (ChalmeRisk.iconHandler.getIcon(att.getOwner(), 5));
@@ -155,13 +155,13 @@ public class AttackDialog extends JFrame{
 		add(dicePanel);
 		
 		//actionlisteners
-		fight.addActionListener(new ActionListener() {
+		fightButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e){
 				ChalmeRisk.aCtrl.startFight();
 			}
 		});
 		
-		retreat.addActionListener(new ActionListener() {
+		retreatButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e){
 				ChalmeRisk.aCtrl.endFight();
 			}
@@ -211,28 +211,28 @@ public class AttackDialog extends JFrame{
 	}
 	
 	public void setStatusText(String s) {
-		status.setText(s);
+		statusLabel.setText(s);
 	}
 	
 	public void setAttackerWin() {
-		fight.setEnabled(false);
-		retreat.setText("Invade!");
+		fightButton.setEnabled(false);
+		retreatButton.setText("Invade!");
 	}
 	
 	public void setDefenderWin() {
-		fight.setEnabled(false);
-		retreat.setText("Flee");
+		fightButton.setEnabled(false);
+		retreatButton.setText("Flee");
 	}
 	
 	public void newAttack(Country att, Country def) {
-		fight.setEnabled(true);
+		fightButton.setEnabled(true);
 		a1dice.newDice();
 		a2dice.newDice();
 		a3dice.newDice();
 		d1dice.newDice();
 		d2dice.newDice();
-		retreat.setText("Retreat");
-		status.setText("");
+		retreatButton.setText("Retreat");
+		statusLabel.setText("");
 		attCannon = (ChalmeRisk.iconHandler.getIcon(att.getOwner(), 10));
 		attHorse = (ChalmeRisk.iconHandler.getIcon(att.getOwner(), 5));
 		attInfantry = (ChalmeRisk.iconHandler.getIcon(att.getOwner(), 1));
