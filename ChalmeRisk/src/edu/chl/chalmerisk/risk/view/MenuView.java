@@ -96,7 +96,8 @@ public class MenuView extends JFrame implements ActionListener, ItemListener{
 		playerTextField4 = new JTextField();
 		playerTextField4.setEnabled(false);
 		playerTextField4.setPreferredSize(new Dimension (240, 30));
-		startPlayingButton = new JButton("Start");
+		ImageIcon start = new ImageIcon("resources/startButton.gif");
+		startPlayingButton = new JButton(start);
 		startPlayingButton.setPreferredSize(new Dimension(120, 45));
 		startPlayingButton.addActionListener(this);
 		
@@ -106,7 +107,8 @@ public class MenuView extends JFrame implements ActionListener, ItemListener{
 		
 		map = new JComboBox(maps);
 		map.setPreferredSize(new Dimension (240, 30));
-		back = new JButton("Back");
+		ImageIcon backImage = new ImageIcon("resources/backButton.gif");
+		back = new JButton(backImage);
 		back.setPreferredSize(new Dimension(120, 45));
 		back.addActionListener(this);
 		
