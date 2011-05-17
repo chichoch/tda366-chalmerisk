@@ -42,7 +42,7 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener, 
 		karta.setBackground(Color.BLACK);
 		karta.add(reinforcementPanel, JLayeredPane.DEFAULT_LAYER);
 		//Set icons
-		JLabel l = new JLabel(icon);
+		JLabel map = new JLabel(icon);
 		for (int i = 0; i < list.size(); i++) {
 			cv = new CountryView(list.get(i));
 			cv.setBounds(list.get(i).getX(), list.get(i).getY(), 60, 75);
@@ -52,10 +52,9 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener, 
 			cv.addMouseMotionListener(this);
 		}
 		
-        l.setIcon(icon); 
-        l.setBounds(-18, -80, 1400, 800);
-        karta.add(l, JLayeredPane.DEFAULT_LAYER);
-        
+        map.setIcon(icon); 
+        map.setBounds(-18, -80, 1400, 800);
+        karta.add(map, JLayeredPane.DEFAULT_LAYER);
         
 		bottom = new JPanel();
 		nextStep = new JButton("Next step");
