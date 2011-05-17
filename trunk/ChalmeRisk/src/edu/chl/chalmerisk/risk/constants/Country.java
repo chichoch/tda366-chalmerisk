@@ -9,7 +9,7 @@ public class Country extends Observable{
 	private int countryid;
 	private Player owner;
 	private String continent;
-	private int[] grannar;
+	private int[] neighbours;
 	private int x;
 	private int y;
 	private boolean isSelected;
@@ -24,7 +24,7 @@ public class Country extends Observable{
 		this.x = x;
 		this.y = y;
 		this.troops = t;
-		this.grannar = n;
+		this.neighbours = n;
 		this.owner = owner;
 		setChanged();
 		notifyObservers(0);
@@ -59,8 +59,8 @@ public class Country extends Observable{
 	}
 	
 	public boolean hasNeighbour(int n){
-		for ( int i = 0; i < grannar.length; i++  ){
-			if ( grannar[i] == n){
+		for ( int i = 0; i < neighbours.length; i++  ){
+			if ( neighbours[i] == n){
 			return true;	
 			}
 		}
