@@ -41,27 +41,39 @@ public class MenuView extends JFrame implements ActionListener, ItemListener{
 	private Choice numberOfPlayers;
 	final static String main = "mainCard";
 	final static String option = "optionCard";
+	private JLabel horseLabel;
+	private JLabel infLabel;
+	private JLabel headingLabel;
 	
 	
 	public MenuView (){
 		// Setting up the buttons for the Maincard
-		startGameButton = new JButton("Start game");
+		ImageIcon heading = new ImageIcon("resources/ChalmeRiskHeading.gif");
+		headingLabel = new JLabel(heading);
+		
+		ImageIcon startgame = new ImageIcon("resources/startGame.gif");
+		startGameButton = new JButton(startgame);
 		startGameButton.setPreferredSize(new Dimension(260, 106));
 		startGameButton.addActionListener(this);
 		
-		tutorialButton = new JButton("Tutorial");
+		ImageIcon tutorial = new ImageIcon("resources/tutorial.gif");
+		tutorialButton = new JButton(tutorial);
 		tutorialButton.setPreferredSize(new Dimension(260, 106));
 		tutorialButton.addActionListener(this);
 		
-		exitGameButton  = new JButton("Exit game");
+		ImageIcon exitgame = new ImageIcon("resources/exitGame.gif");
+		exitGameButton  = new JButton(exitgame);
 		exitGameButton.setPreferredSize(new Dimension(260, 106));
 		exitGameButton.addActionListener(this);
 		
 		// Setting up the option items
 		whatMap = new JLabel("What map do you want to play?");
+		whatMap.setForeground(Color.WHITE);
 		numberOfPlayersLabel = new JLabel("How many players?");
+		numberOfPlayersLabel.setForeground(Color.WHITE);
 		numberOfPlayersLabel.setPreferredSize(new Dimension (180, 30));
 		numberOfPlayers = new Choice();
+		numberOfPlayers.setBackground(Color.WHITE);
 		numberOfPlayers.add("2");
 		numberOfPlayers.add("3");
 		numberOfPlayers.add("4");
@@ -72,7 +84,7 @@ public class MenuView extends JFrame implements ActionListener, ItemListener{
 		playerName2.setForeground(Color.GREEN);
 		playerName3 = new JLabel("Name of player three:");
 		playerName3.setForeground(Color.YELLOW);
-		playerName4 = new JLabel("Name of player four");
+		playerName4 = new JLabel("Name of player four:");
 		playerName4.setForeground(Color.BLUE);
 		playerTextField1 = new JTextField();
 		playerTextField1.setPreferredSize(new Dimension (240, 30));
@@ -99,24 +111,33 @@ public class MenuView extends JFrame implements ActionListener, ItemListener{
 		back.addActionListener(this);
 		
 		// Setting up the left panel
+		ImageIcon horse = new ImageIcon("resources/startHorse.jpg");
+		horseLabel = new JLabel(horse);
 		leftPanel = new JPanel();
 		leftPanel.setBackground(Color.BLACK);
+		leftPanel.add(horseLabel);
 		leftPanel.setPreferredSize(new Dimension(500, 535));
 		
 		//Setting up the right panel
+		ImageIcon inf = new ImageIcon("resources/startInf.jpg");
+		infLabel = new JLabel(inf);
 		rightPanel = new JPanel();
+		rightPanel.add(infLabel);
 		rightPanel.setBackground(Color.BLACK);
 		rightPanel.setPreferredSize(new Dimension(500, 535));
 		
 		// Main menu card
 		JPanel mainCard = new JPanel();
+		mainCard.setBackground(Color.BLACK);
 		mainCard.setLayout(new FlowLayout());
+		mainCard.add(headingLabel);
 		mainCard.add(startGameButton);
 		mainCard.add(tutorialButton);
 		mainCard.add(exitGameButton);
 		
         // Option menu card
 		JPanel optionCard = new JPanel();
+		optionCard.setBackground(Color.BLACK);
 		optionCard.setLayout(new FlowLayout());
 		optionCard.add(numberOfPlayersLabel);
 		optionCard.add(numberOfPlayers);
