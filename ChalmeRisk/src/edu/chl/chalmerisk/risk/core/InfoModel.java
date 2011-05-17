@@ -46,13 +46,13 @@ public class InfoModel extends Observable implements Observer {
 		if (observable.equals(ChalmeRisk.turn)) {
 			if(arg.equals(new Integer(0))){
 				if (ChalmeRisk.turn.getCurrentStateIndex() == 0){
-					setInfoText("Reinforcement");
+					setInfoText("You are now in the reinforcement state, place your reinforcements.");
 				}
 				else if (ChalmeRisk.turn.getCurrentStateIndex() == 1) {
-					setInfoText("Attack");
+					setInfoText("You are now in the attack state.");
 				}
 				else if (ChalmeRisk.turn.getCurrentStateIndex() == 2) {
-					setInfoText("Troop Movement");
+					setInfoText("You are now in the troop movement state.");
 				}
 			}
 		}
