@@ -12,7 +12,8 @@ import edu.chl.chalmerisk.risk.core.InfoModel;
 public class InfoView extends JLabel implements Observer {
 	
 	public InfoView (){
-		setText("Welcome to ChalmeRisk!");
+		setForeground(Color.WHITE);
+		setText("Welcome to ChalmeRisk! "+" You are now in the reinforcement state, place your reinforcements.");
 		ChalmeRisk.infoModel.addObserver(this);
 	}
 	
