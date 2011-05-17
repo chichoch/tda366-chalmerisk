@@ -1,10 +1,7 @@
 package edu.chl.chalmerisk.risk.ctrl;
-
-
 import edu.chl.chalmerisk.risk.core.Dice;
 
 public class DiceController {
-
 
 	private Dice attDice1 = new Dice();
 	private Dice attDice2 = new Dice();
@@ -14,6 +11,7 @@ public class DiceController {
 	
 	private int attNumberOfDice;
 	private int defNumberOfDice;
+	private int result;
 
 	// Takes Attacking/defending troops and returns number of dice.
 	
@@ -48,7 +46,13 @@ public class DiceController {
 		return battle(attNumberOfDice, defNumberOfDice);
 	}
 	
-	//Takes number of dice and returns the outcome of the battle into 5 different cases.
+	/**Takes number of dice and returns the outcome of the battle into 5 different cases.
+	 * Where (1) means attacker killed 1.
+	 * (2) defender killed 1
+	 * (3) one of each.
+	 * (4) attacker killed 2
+	 * (5) defender killed 2 
+	 **/
 	
 	public int battle(int attNumberOfDice, int defNumberOfDice) {
 		
@@ -57,17 +61,13 @@ public class DiceController {
 		attDice3.tossDice();
 		defDice1.tossDice();
 		defDice2.tossDice();
-		
-		
+				
 		int attDiceMax;
 		int attDiceMin;
 		int defDiceMax;
 		int defDiceMin;
-		int result = 5;
-		
-		if(attNumberOfDice==3 && defNumberOfDice==1){
-			
 
+		if(attNumberOfDice==3 && defNumberOfDice==1){
 			attDiceMax = Math.max(attDice1.getNumber(), attDice2.getNumber());
 			attDiceMax = Math.max(attDiceMax, attDice3.getNumber());
 
@@ -78,8 +78,8 @@ public class DiceController {
 				result = 2;
 			}
 		}
-		if(attNumberOfDice==2 && defNumberOfDice==1){
-			
+		
+		if(attNumberOfDice==2 && defNumberOfDice==1){	
 			attDiceMax=Math.max(attDice1.getNumber(), attDice2.getNumber());
 			
 			if( attDiceMax > defDice1.getNumber() ) {
@@ -90,6 +90,7 @@ public class DiceController {
 			}
 
 		}
+		
 		if(attNumberOfDice==1 && defNumberOfDice==1){
 			if(attDice1.getNumber() > defDice1.getNumber() ) {
 				result = 1;
@@ -99,6 +100,7 @@ public class DiceController {
 			}
 
 		}
+		
 		if(attNumberOfDice==3 && defNumberOfDice==2 ){
 			
 			attDiceMax = Math.max(attDice1.getNumber(), attDice2.getNumber());
@@ -137,6 +139,7 @@ public class DiceController {
 			}
 
 		}
+		
 		if(attNumberOfDice==2 && defNumberOfDice==2){
 			
 			if (attDice1.getNumber() > attDice2.getNumber()){
@@ -167,6 +170,7 @@ public class DiceController {
 			}
 
 		}
+		
 		if(attNumberOfDice==1 && defNumberOfDice==2){
 			
 			defDiceMax = Math.max(defDice1.getNumber(), defDice2.getNumber());
@@ -183,14 +187,7 @@ public class DiceController {
 		return result;
 
 	}
-	//TODO Clean up below! and fix observer or a getmethod for att/def dice!
-	
-	
-	public void printTest(int a, int d){
-		System.out.println("\tresult: "+getResult(a, d));		
-	}
-	
-	
+
 	public Dice getAttDice1(){
 		return attDice1;	
 	}
@@ -212,14 +209,13 @@ public class DiceController {
 	}
 	
 	public int getAttNumberOfDices(){		
-		return attNumberOfDice;
-		
+		return attNumberOfDice;	
 	}
 
 	public int getDefNumberOfDices() {		
-		return defNumberOfDice;
-		
+		return defNumberOfDice;		
 	}
+	
 	public void diceNotTossed(){
 	
 	}
