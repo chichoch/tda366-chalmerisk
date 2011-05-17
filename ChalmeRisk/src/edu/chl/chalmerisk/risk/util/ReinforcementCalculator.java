@@ -43,7 +43,8 @@ public class ReinforcementCalculator implements Observer{
 	}
 	
 	public Player setReinforcementsMain(Player player) {
-		
+		conts = ChalmeRisk.map.getContinents();
+		countries = ChalmeRisk.map.getCountries();
 		//Set reinforcements based on continents.
 		int contValue = 0;
 		for (int i = 0; i < conts.size(); i++) {
