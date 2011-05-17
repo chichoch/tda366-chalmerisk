@@ -10,8 +10,6 @@ import javax.swing.*;
 public class TutorialView extends JFrame implements ActionListener {
 	
 	private JButton backButton1;
-	private JPanel backPanel1;
-	private JPanel backPanel2;
 	private JButton backButton2;
 	private JScrollPane scrollPane;
 	private JPanel mainWindowPanel;
@@ -28,16 +26,9 @@ public class TutorialView extends JFrame implements ActionListener {
 		
 		mainWindowPanel = new JPanel();
 		mainWindowPanel.setLayout(new BoxLayout(mainWindowPanel, BoxLayout.PAGE_AXIS));
-		backPanel1 = new JPanel(new GridLayout(1,1));
-		backButton1 = new JButton("Back");
-		backButton1.addActionListener(this);
-		backPanel1.setPreferredSize(new Dimension(200,80));
-		backPanel1.add(backButton1);
-		backPanel2 = new JPanel(new GridLayout(1,1));
-		backButton2 = new JButton("Back");
-		backButton2.addActionListener(this);
-		backPanel2.setPreferredSize(new Dimension(200,80));
-		backPanel2.add(backButton2);
+		
+	
+		
 	
 		ImageIcon tutorialheading = new ImageIcon("resources/tutorialheading.gif");
 		ImageIcon tutorial1 = new ImageIcon("resources/tutorial1.gif");
@@ -45,6 +36,7 @@ public class TutorialView extends JFrame implements ActionListener {
 		ImageIcon tutorial2 = new ImageIcon("resources/tutorial2.gif");
 		ImageIcon tutorial3 = new ImageIcon("resources/tutorial3.gif");
 		ImageIcon tutorial4 = new ImageIcon("resources/tutorial4.gif");
+		ImageIcon back = new ImageIcon("resources/backBig.gif");
 		
 		tutorialheadingLabel = new JLabel(tutorialheading);
 		tutorial1Label = new JLabel(tutorial1);
@@ -54,10 +46,17 @@ public class TutorialView extends JFrame implements ActionListener {
 		tutorialspace1Label = new JLabel(tutorialspace);
 		tutorialspace2Label = new JLabel(tutorialspace);
 		tutorialspace3Label = new JLabel(tutorialspace);
+		backButton1 = new JButton(back);
+		backButton1.setBackground(Color.WHITE);
+		backButton1.addActionListener(this);
+		backButton2 = new JButton(back);
+		backButton2.setBackground(Color.WHITE);
+		backButton2.addActionListener(this);
 		
-		//mainWindowPanel.setBackground(Color.BLACK);
-		backPanel1.setAlignmentX(Component.CENTER_ALIGNMENT);
-		mainWindowPanel.add(backPanel1);
+		
+		
+		backButton1.setAlignmentX(Component.CENTER_ALIGNMENT);
+		mainWindowPanel.add(backButton1);
 		tutorialheadingLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 		mainWindowPanel.add(tutorialheadingLabel);
 		tutorial1Label.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -74,8 +73,8 @@ public class TutorialView extends JFrame implements ActionListener {
 		mainWindowPanel.add(tutorialspace3Label);
 		tutorial4Label.setAlignmentX(Component.CENTER_ALIGNMENT);
 		mainWindowPanel.add(tutorial4Label);
-		backPanel2.setAlignmentX(Component.CENTER_ALIGNMENT);
-		mainWindowPanel.add(backPanel2);
+		backButton2.setAlignmentX(Component.CENTER_ALIGNMENT);
+		mainWindowPanel.add(backButton2);
 		mainWindowPanel.setVisible(true);
 		
 		scrollPane = new JScrollPane(mainWindowPanel);
