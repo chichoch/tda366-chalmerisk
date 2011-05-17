@@ -20,6 +20,7 @@ import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 public class GameTest {
 	private List<Player> pList;
 	private List<Country> countries;
+	private List<Continent> continentList;
 	private Continent cont1;
 	private Continent cont2;
 	private Continent cont3;
@@ -98,7 +99,7 @@ public class GameTest {
 		cont3Countries.add(c15);
 		cont3 = new Continent("Cont3", cont3Countries, 5);
 		
-		List<Continent> continentList = new ArrayList<Continent>();
+		continentList = new ArrayList<Continent>();
 		continentList.add(cont1);
 		continentList.add(cont2);
 		continentList.add(cont3);
@@ -132,6 +133,15 @@ public class GameTest {
 		test = ReinforcementCalculator.getInstance().setReinforcementsMain(pList.get(0));
 		//The reinforcements should be 15/3 + 5*3 = 20. (From the rules for the game). 
 		Assert.assertTrue(test.getReinforcements() == 20);
+		
+		//Sets all the countries owner, except the last continent, to a different owner
+		Player random = new Player(Color.black, "random");
+		for (int i = 0; i < risk.map.getCountries().size() - 5; i++) {
+			risk.map.getCountries().get(i).setOwner(random);
+		}
+		test = ReinforcementCalculator.getInstance().setReinforcementsMain(pList.get(0));
+		//Should now only be 3 + 5 = 8
+		Assert.assertTrue(test.getReinforcements() == 8);
 	}
 	
 }
