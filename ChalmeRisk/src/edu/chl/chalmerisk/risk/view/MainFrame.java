@@ -165,7 +165,14 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener, 
 
 	@Override
 	public void mouseDragged(MouseEvent arg0) {
-		// TODO Auto-generated method stub
+		if (ChalmeRisk.turn.getCurrentStateIndex() == 0) {
+			reinforcementPanel.setVisible(true);
+			reinforcementPanel.setLocation((int)getMousePosition().getX() , (int)getMousePosition().getY() - 50);
+			validate();
+		}
+		else {
+			reinforcementPanel.setVisible(false);
+		}
 		
 	}
 	//TODO Maybe not the best way to check if we should show the reinforcementPanel?
