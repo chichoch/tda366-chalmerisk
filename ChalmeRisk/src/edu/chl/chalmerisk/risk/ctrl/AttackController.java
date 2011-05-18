@@ -69,7 +69,7 @@ public class AttackController extends TurnState{
 		}
 		else if(i==2){
 			attCountry.setTroops(attCountry.getTroops() - 1);
-			ChalmeRisk.attack.setStatusText("Defender killed 2 ");
+			ChalmeRisk.attack.setStatusText("Defender killed 1 ");
 		}
 
 		else if(i==3){
