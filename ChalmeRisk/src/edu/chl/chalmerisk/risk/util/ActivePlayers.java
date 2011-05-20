@@ -4,6 +4,8 @@ import java.util.List;
  
 import edu.chl.chalmerisk.risk.constants.*;
 import edu.chl.chalmerisk.risk.core.ChalmeRisk;
+import edu.chl.chalmerisk.risk.core.Country;
+import edu.chl.chalmerisk.risk.core.Player;
  
 public class ActivePlayers {
     private static ActivePlayers instance;

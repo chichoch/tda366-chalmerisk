@@ -1,7 +1,8 @@
-package edu.chl.chalmerisk.risk.constants;
+package edu.chl.chalmerisk.risk.core;
 
 import java.awt.Color;
 import java.util.List;
+
 
 public class Continent {
 	private Player test = new Player(Color.black, "Test");

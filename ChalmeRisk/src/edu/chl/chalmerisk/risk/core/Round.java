@@ -6,7 +6,6 @@ import java.util.Observable;
 
 import javax.swing.JOptionPane;
 
-import edu.chl.chalmerisk.risk.constants.Player;
 import edu.chl.chalmerisk.risk.util.ActivePlayers;
 import edu.chl.chalmerisk.risk.util.ReinforcementCalculator;
 

@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.chl.chalmerisk.risk.constants.*;
+import edu.chl.chalmerisk.risk.core.Country;
+import edu.chl.chalmerisk.risk.core.Player;
 
 /* This is a class that randomizes the Countries for
  * the players in the start of each game 

@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import edu.chl.chalmerisk.risk.constants.Continent;
-import edu.chl.chalmerisk.risk.constants.Country;
-import edu.chl.chalmerisk.risk.constants.Player;
+import edu.chl.chalmerisk.risk.core.Continent;
+import edu.chl.chalmerisk.risk.core.Country;
+import edu.chl.chalmerisk.risk.core.Player;
 
 public class MapBuilder {
 	private IFileReader file;
