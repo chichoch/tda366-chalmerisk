@@ -1,4 +1,4 @@
-package edu.chl.chalmerisk.risk.io;
+package edu.chl.chalmerisk.risk.core;
 
 import java.awt.Color;
 import java.io.FileNotFoundException;
@@ -6,9 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import edu.chl.chalmerisk.risk.core.Continent;
-import edu.chl.chalmerisk.risk.core.Country;
-import edu.chl.chalmerisk.risk.core.Player;
+import edu.chl.chalmerisk.risk.io.FileReader;
+import edu.chl.chalmerisk.risk.io.IFileReader;
 
 public class MapBuilder {
 	private IFileReader file;
