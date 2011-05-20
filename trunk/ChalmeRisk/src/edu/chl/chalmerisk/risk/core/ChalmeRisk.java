@@ -38,7 +38,6 @@ public class ChalmeRisk {
 		iconHandler  = new IconHandler();
 		turn = new Turn();
 		round = new Round(pList);
-		
 		infoModel = new InfoModel();
 		guiTest = new MainFrame(map.getCountries());
 	}
