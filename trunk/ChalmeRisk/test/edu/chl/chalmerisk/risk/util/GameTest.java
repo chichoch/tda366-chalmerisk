@@ -11,9 +11,9 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import edu.chl.chalmerisk.risk.constants.Continent;
-import edu.chl.chalmerisk.risk.constants.Country;
-import edu.chl.chalmerisk.risk.constants.Player;
+import edu.chl.chalmerisk.risk.core.Continent;
+import edu.chl.chalmerisk.risk.core.Country;
+import edu.chl.chalmerisk.risk.core.Player;
 import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 
 
