@@ -6,9 +6,9 @@ import java.util.Observable;
 import java.util.Observer;
 
 import edu.chl.chalmerisk.risk.core.ChalmeRisk;
-import edu.chl.chalmerisk.risk.constants.Continent;
-import edu.chl.chalmerisk.risk.constants.Country;
-import edu.chl.chalmerisk.risk.constants.Player;
+import edu.chl.chalmerisk.risk.core.Continent;
+import edu.chl.chalmerisk.risk.core.Country;
+import edu.chl.chalmerisk.risk.core.Player;
 
 public class ReinforcementCalculator implements Observer{
 	private static ReinforcementCalculator instance;

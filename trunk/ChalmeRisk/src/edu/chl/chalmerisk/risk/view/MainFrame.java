@@ -9,8 +9,8 @@ import java.util.Observer;
 
 import javax.swing.*;
 
-import edu.chl.chalmerisk.risk.constants.Country;
 import edu.chl.chalmerisk.risk.core.ChalmeRisk;
+import edu.chl.chalmerisk.risk.core.Country;
 
 
 public class MainFrame extends JFrame implements MouseListener, ActionListener, MouseMotionListener, Observer {
@@ -31,6 +31,7 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener, 
 	//TODO No hardcode here!
 	public MainFrame(List<Country> list) {
 		setLayout(new BorderLayout());
+		setBackground(Color.BLACK);
 		ImageIcon icon = new ImageIcon(ChalmeRisk.map.getIconFileName());
 		reinforcementPanel = new ReinforcementPanel(ChalmeRisk.round.getCurrentPlayer().getReinforcements());
 		addMouseMotionListener(this);
@@ -39,7 +40,7 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener, 
 		reinforcementPanel.setBounds(140, 140, 30, 75);
 		reinforcementPanel.setBorder(BorderFactory.createEmptyBorder(1, 1, 1, 1));
 		karta = new JLayeredPane();
-		karta.setBackground(Color.BLACK);
+		karta.setForeground(Color.BLACK);
 		karta.add(reinforcementPanel, JLayeredPane.DEFAULT_LAYER);
 		//Set icons
 		JLabel map = new JLabel(icon);
@@ -54,9 +55,11 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener, 
 		
         map.setIcon(icon); 
         map.setBounds(-18, -80, 1400, 800);
+        map.setBackground(Color.BLACK);
         karta.add(map, JLayeredPane.DEFAULT_LAYER);
         
 		bottom = new JPanel();
+		bottom.setBackground(Color.BLACK);
 		nextStep = new JButton("Next step");
 		nextStep.addActionListener(this);
 		for (int i = 0; i < ChalmeRisk.round.getPlayerList().size(); i++){
@@ -167,20 +170,19 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener, 
 	public void mouseDragged(MouseEvent arg0) {
 		if (ChalmeRisk.turn.getCurrentStateIndex() == 0) {
 			reinforcementPanel.setVisible(true);
-			reinforcementPanel.setLocation((int)getMousePosition().getX() , (int)getMousePosition().getY() - 50);
+			reinforcementPanel.setLocation(((int)getMousePosition().getX()), ((int)getMousePosition().getY() - 50));
 			validate();
 		}
 		else {
 			reinforcementPanel.setVisible(false);
 		}
-		
 	}
 	//TODO Maybe not the best way to check if we should show the reinforcementPanel?
 	@Override
 	public void mouseMoved(MouseEvent arg0) {
 		if (ChalmeRisk.turn.getCurrentStateIndex() == 0) {
 			reinforcementPanel.setVisible(true);
-			reinforcementPanel.setLocation((int)getMousePosition().getX() , (int)getMousePosition().getY() - 50);
+			reinforcementPanel.setLocation(((int)getMousePosition().getX()), ((int)getMousePosition().getY() - 50));
 			validate();
 		}
 		else {

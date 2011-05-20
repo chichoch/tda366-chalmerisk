@@ -5,8 +5,8 @@ import java.awt.event.MouseEvent;
 import java.util.Observable;
 import java.util.Observer;
 import javax.swing.*;
-import edu.chl.chalmerisk.risk.constants.Country;
 import edu.chl.chalmerisk.risk.core.ChalmeRisk;
+import edu.chl.chalmerisk.risk.core.Country;
 
 public class CountryView extends JPanel implements Observer {
 	private JLabel troopDisplay;

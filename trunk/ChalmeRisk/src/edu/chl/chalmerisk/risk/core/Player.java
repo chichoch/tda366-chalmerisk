@@ -1,4 +1,4 @@
-package edu.chl.chalmerisk.risk.constants;
+package edu.chl.chalmerisk.risk.core;
 import java.awt.Color;
 import java.util.Observable;
 

@@ -1,6 +1,7 @@
-package edu.chl.chalmerisk.risk.constants;
+package edu.chl.chalmerisk.risk.core;
 
 import java.util.Observable;
+
 
 
 public class Country extends Observable{

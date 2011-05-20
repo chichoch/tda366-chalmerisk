@@ -1,6 +1,7 @@
-package edu.chl.chalmerisk.risk.constants;
+package edu.chl.chalmerisk.risk.core;
 import java.io.FileNotFoundException;
 import java.util.List;
+
 import edu.chl.chalmerisk.risk.io.MapBuilder;
 
 

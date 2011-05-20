@@ -5,8 +5,8 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
-import edu.chl.chalmerisk.risk.constants.Player;
 import edu.chl.chalmerisk.risk.core.ChalmeRisk;
+import edu.chl.chalmerisk.risk.core.Player;
 
 public class MenuController {
 	private static List<Player> pList = new ArrayList<Player>();

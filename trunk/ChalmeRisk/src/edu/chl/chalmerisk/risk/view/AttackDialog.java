@@ -6,8 +6,8 @@ import java.awt.GridLayout;
 import java.awt.event.*;
 import javax.swing.*;
 
-import edu.chl.chalmerisk.risk.constants.Country;
 import edu.chl.chalmerisk.risk.core.ChalmeRisk;
+import edu.chl.chalmerisk.risk.core.Country;
 
 public class AttackDialog extends JFrame{
 	private JPanel fightPanel;
