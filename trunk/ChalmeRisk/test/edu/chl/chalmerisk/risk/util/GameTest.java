@@ -107,6 +107,7 @@ public class GameTest {
 		risk.map.setContinents(continentList);
 	}
 	
+	//Test the reinforcements for the first rounds.
 	@Test
 	public void TestSetReinforcementsFirstRounds() {
 		List<Player> testList = new ArrayList<Player>();
@@ -144,4 +145,12 @@ public class GameTest {
 		Assert.assertTrue(test.getReinforcements() == 8);
 	}
 	
+	//Test the Neighbours. All countries should be neighbours with country1, but none with country 16.
+	@Test
+	public void neighbourTest() {
+		for (int i = 0; i < countries.size(); i++) {
+			Assert.assertTrue(countries.get(i).hasNeighbour(1));
+			Assert.assertFalse(countries.get(i).hasNeighbour(16));
+		}
+	}
 }
