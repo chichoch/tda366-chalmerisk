@@ -140,42 +140,6 @@ public class MapBuilder {
 		
 	}
 	
- 	/* public MapBuilder(String fileName) throws FileNotFoundException { 		
-		
- 		file = FileReader.getInstance();
-		List<String> command = file.getFile(fileName);
-		numOfCountries = (command.size() - 1) /5;
-		mapIconFileName = command.get(0);
-		
-		for (int i = 0; i < numOfCountries; i++) {
-			countryName = command.get((i * 5) + 1);
-			System.out.println(countryName);
-			countryId = Integer.parseInt(command.get((i * 5) + 2));
-			System.out.println("" + countryId);
-			countryX = Integer.parseInt(command.get((i * 5) + 3));
-			countryY = Integer.parseInt(command.get((i * 5) + 4));
-			
-			Scanner sc = new Scanner(command.get((i * 5) + 5));
-			int numOfNeighbours = 0;
-			while (sc.hasNextInt()) {
-				numOfNeighbours++;
-				sc.nextInt();
-			}
-			countryNeighboors = new int[numOfNeighbours];
-			sc.close();
-			Scanner sca = new Scanner(command.get((i * 5) + 5));
-			for (int j = 0; j < countryNeighboors.length; j++) {
-				countryNeighboors[j] = sca.nextInt();
-			}
-			sca.close();
-			Player p = new Player(Color.black, "Random PLayer");
-			//Creates a new Country with a standard number of troops (1), and a "Random Player"
-			Country c = new Country(countryName, countryId, countryX, countryY, 1, countryNeighboors, p);
-			countries.add(c);
-		}
-		System.out.println("Antal länder: " + numOfCountries);
-	}
-	*/
  	
  	public List<Country> getCountries() {
  		return countries;
