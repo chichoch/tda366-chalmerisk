@@ -2,7 +2,7 @@ package edu.chl.chalmerisk.risk.util;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 import edu.chl.chalmerisk.risk.core.Country;
 import edu.chl.chalmerisk.risk.core.Player;
 
@@ -16,6 +16,7 @@ public class RandomizeCountries {
 	private int index = 0;
 	private int indexplayer; 
 	private List<Country> copyList = new ArrayList<Country>();
+	/*
 	public  List<Country> randomize (List <Player> pList, List<Country> cList){
 		int l = cList.size();
 		for (int j=0; j<l; j++){
@@ -36,6 +37,28 @@ public class RandomizeCountries {
 		}
 		return cList;
 	}
+	*/
+	public  void randomize (List <Player> pList, List<Country> cList){
+		int l = cList.size();
+		for (int j=0; j<l; j++){
+			id = (int)(Math.random()*cList.size());
+			copyList.add(cList.get(id));
+			cList.remove(id);    
+		}
+		indexplayer =(int)(Math.random()*pList.size());
+		while(!copyList.isEmpty()){
+			cList.add(copyList.get(0));
+			cList.get(index).setOwner(pList.get(indexplayer));
+			copyList.remove(0);
+			index=index+1;
+			indexplayer = indexplayer +1;
+			if(indexplayer == pList.size()){
+				indexplayer = 0;
+			}
+		}
+		ChalmeRisk.map.setCountries(cList);
+	}
+	
 }
 /*
 public static void main(String[] args){

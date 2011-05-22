@@ -54,7 +54,7 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener, 
 		reinforcementPanel.setBounds(140, 140, 30, 75);
 		reinforcementPanel.setBorder(BorderFactory.createEmptyBorder(1, 1, 1, 1));
 		karta = new JLayeredPane();
-		karta.setForeground(Color.BLACK);
+		karta.setBackground(Color.BLACK);
 		karta.add(reinforcementPanel, JLayeredPane.DEFAULT_LAYER);
 		//Set icons
 		JLabel map = new JLabel(icon);
@@ -68,7 +68,7 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener, 
 		}
 		
         map.setIcon(icon); 
-        map.setBounds(-18, -80, 1400, 800);
+        map.setBounds(-18, -73, 1400, 800);
         map.setBackground(Color.BLACK);
         karta.add(map, JLayeredPane.DEFAULT_LAYER);
         
@@ -81,7 +81,6 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener, 
 		}
 		nextStep.setEnabled(false);
 		infoView = new InfoView();
-	
 		
 		infoViewPanel = new JPanel();
 		fillPanel = new JPanel();
@@ -119,24 +118,11 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener, 
 		add(karta, BorderLayout.CENTER);
 		add(bottom, BorderLayout.SOUTH);
 		add(top, BorderLayout.NORTH);
-		
 		setExtendedState(getExtendedState()|Frame.MAXIMIZED_BOTH); //Fullscreen
 		setVisible(true);
 		pack();
 	}
-	
-	/*//TODO no hardcode here
-	public void setInfo(String info){
-		infoLabel.setForeground(Color.WHITE);
-		infoLabel.setText(info);
-
-		//infoLabel.setText(info);
-
-	}*/
-	
-	
-
-	
+		
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		ChalmeRisk.turn.setCountry(((CountryView) e.getSource()).getCountry().getCountryId());

@@ -1,6 +1,8 @@
 package edu.chl.chalmerisk.risk.ctrl;
+
 import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 import edu.chl.chalmerisk.risk.core.TurnState;
+
 
 public class ReinforcementController extends TurnState{
 
