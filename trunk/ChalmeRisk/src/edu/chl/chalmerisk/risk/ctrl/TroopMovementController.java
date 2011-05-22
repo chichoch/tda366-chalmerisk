@@ -2,6 +2,7 @@ package edu.chl.chalmerisk.risk.ctrl;
 import javax.swing.JOptionPane;
 
 import edu.chl.chalmerisk.risk.core.*;
+import edu.chl.chalmerisk.risk.view.ViewBuilder;
 
 public class TroopMovementController extends TurnState {
 	
@@ -38,9 +39,9 @@ public class TroopMovementController extends TurnState {
 				if (moveFromCountry.hasNeighbour(id) == true) {
 					firstCountrySelected = false;
 					moveFromCountry.setSelected(false);
-					ChalmeRisk.movement.newMovement(moveFromCountry, moveToCountry);
+					ViewBuilder.movement.newMovement(moveFromCountry, moveToCountry);
 					if(allowTroopMovement){
-						ChalmeRisk.movement.setVisible(true);
+						ViewBuilder.movement.setVisible(true);
 						isTroopMovementState = true;
 					}
 					else{

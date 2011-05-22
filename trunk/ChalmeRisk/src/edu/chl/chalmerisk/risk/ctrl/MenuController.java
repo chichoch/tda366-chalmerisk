@@ -7,6 +7,7 @@ import java.util.List;
 
 import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 import edu.chl.chalmerisk.risk.core.Player;
+import edu.chl.chalmerisk.risk.view.ViewBuilder;
 
 public class MenuController {
 	private static List<Player> pList = new ArrayList<Player>();
@@ -33,5 +34,6 @@ public class MenuController {
 			pList.add(PlayerFour);
 		}
 		new ChalmeRisk(pList, map);
+		new ViewBuilder();
 	}
 }

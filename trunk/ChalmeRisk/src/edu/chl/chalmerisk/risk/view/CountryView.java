@@ -18,7 +18,7 @@ public class CountryView extends JPanel implements Observer {
 		this.country = country;
 		country.addObserver(this);
 		setLayout(new FlowLayout());
-		icon = ChalmeRisk.iconHandler.getIcon(country.getOwner(), country.getTroops());
+		icon = ViewBuilder.iconHandler.getIcon(country.getOwner(), country.getTroops());
 		troopIcon = new JLabel();
 		troopDisplay = new JLabel(""+country.getTroops());
 		troopIcon.setIcon(icon);
@@ -34,17 +34,17 @@ public class CountryView extends JPanel implements Observer {
 		if(observable.equals(country)){
 			if(arg.equals(new Integer(0))){
 				troopDisplay.setText(""+country.getTroops());
-				troopIcon.setIcon(ChalmeRisk.iconHandler.getIcon(country.getOwner(), country.getTroops()));
+				troopIcon.setIcon(ViewBuilder.iconHandler.getIcon(country.getOwner(), country.getTroops()));
 			}
 			if(arg.equals(new Integer(1))){
-				troopIcon.setIcon(ChalmeRisk.iconHandler.getIcon(country.getOwner(), country.getTroops()));
+				troopIcon.setIcon(ViewBuilder.iconHandler.getIcon(country.getOwner(), country.getTroops()));
 			}
 			if(arg.equals(new Integer(2))){
 				if(country.isSelected()){
-					troopIcon.setIcon(ChalmeRisk.iconHandler.getSelectedIcon(country.getOwner(), country.getTroops()));
+					troopIcon.setIcon(ViewBuilder.iconHandler.getSelectedIcon(country.getOwner(), country.getTroops()));
 				}
 				else{
-					troopIcon.setIcon(ChalmeRisk.iconHandler.getIcon(country.getOwner(), country.getTroops()));
+					troopIcon.setIcon(ViewBuilder.iconHandler.getIcon(country.getOwner(), country.getTroops()));
 				}
 			}
 		}
