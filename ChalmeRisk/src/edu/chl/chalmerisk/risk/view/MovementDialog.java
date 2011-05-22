@@ -7,13 +7,11 @@ import java.awt.event.ActionListener;
 import java.util.Hashtable;
 import java.util.Observable;
 import java.util.Observer;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JSlider;
-
 import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 import edu.chl.chalmerisk.risk.core.Country;
 
@@ -33,6 +31,7 @@ public class MovementDialog extends JFrame implements ActionListener, Observer {
 		ChalmeRisk.movementModel.addObserver(this);
 		quantitySlider = new JSlider();
 		quantitySlider.setMinimum(1);
+		//Hashtable for the labels in the JSlider
 		Hashtable<Integer, JLabel> table = new Hashtable<Integer, JLabel>();
 		table.put(1,new JLabel("1"));
 		table.put(2,new JLabel("2"));
@@ -78,9 +77,6 @@ public class MovementDialog extends JFrame implements ActionListener, Observer {
 		setLocation(500, 200);
 		setSize(300,150);
 	
-		
-
-		
 		moveTroopsButton.addActionListener(this); 
 		cancelButton.addActionListener(this);
 		
@@ -101,7 +97,6 @@ public class MovementDialog extends JFrame implements ActionListener, Observer {
 	}
 
 	public void newMovement(Country fromCountry, Country toCountry){
-		//TODO maby fix newMovement in constructor instead so we could fix MajorTickSpacing with if sats.
 		moveTroopsButton.setEnabled(true);
 		cancelButton.setEnabled(true);
 		quantitySlider.setMaximum(fromCountry.getTroops()-1);
