@@ -23,16 +23,18 @@ public class ChalmeRisk {
 	public static Turn turn;
 	public static Round round;
 	public static RandomizeCountries randomizer;
+	public static AttackModel attackModel;
+	public static MovementModel movementModel;
 
 	public ChalmeRisk(List<Player> pList, String filename) throws FileNotFoundException {
-		
 		map = new Map("maps/"+filename+".txt");
 		randomizer = new RandomizeCountries();
 		map.setCountries(randomizer.randomize(pList, map.getCountries()));
 		turn = new Turn();
 		round = new Round(pList);
 		infoModel = new InfoModel();
-		
+		attackModel = new AttackModel();
+		movementModel = new MovementModel();
 	}
 }
 

@@ -39,9 +39,8 @@ public class TroopMovementController extends TurnState {
 				if (moveFromCountry.hasNeighbour(id) == true) {
 					firstCountrySelected = false;
 					moveFromCountry.setSelected(false);
-					ViewBuilder.movement.newMovement(moveFromCountry, moveToCountry);
 					if(allowTroopMovement){
-						ViewBuilder.movement.setVisible(true);
+						ChalmeRisk.movementModel.newMovement(moveFromCountry, moveToCountry);
 						isTroopMovementState = true;
 					}
 					else{

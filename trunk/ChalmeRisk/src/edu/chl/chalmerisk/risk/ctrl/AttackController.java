@@ -45,9 +45,7 @@ public class AttackController extends TurnState{
 					firstCountrySelected = false;
 					takeOverCountry = false;
 					attCountry.setSelected(false);
-					ViewBuilder.attack.newAttack(attCountry, defCountry);
-					ViewBuilder.attack.repaintTroops(attCountry.getTroops()-1, defCountry.getTroops());
-					ViewBuilder.attack.setVisible(true);
+					ChalmeRisk.attackModel.newAttack(attCountry, defCountry);
 				}
 				else {
 					ChalmeRisk.infoModel.setWarningText("You have to attack a neighbouring country!");
@@ -66,50 +64,49 @@ public class AttackController extends TurnState{
 		int i = ChalmeRisk.dCtrl.getResult(attCountry.getTroops(), defCountry.getTroops());
 		if(i==1){
 			defCountry.setTroops(defCountry.getTroops() - 1);
-			ViewBuilder.attack.setStatusText("Attacker killed 1 ");
+			ChalmeRisk.attackModel.setStatusText("Attacker killed 1 ");
 		}
 		else if(i==2){
 			attCountry.setTroops(attCountry.getTroops() - 1);
-			ViewBuilder.attack.setStatusText("Defender killed 1 ");
+			ChalmeRisk.attackModel.setStatusText("Defender killed 1 ");
 		}
 
 		else if(i==3){
 			defCountry.setTroops(defCountry.getTroops() - 2);
-			ViewBuilder.attack.setStatusText("Attacker killed 2 ");
+			ChalmeRisk.attackModel.setStatusText("Attacker killed 2 ");
 
 		}
 		else if(i==4){
 			attCountry.setTroops(attCountry.getTroops() - 2);
-			ViewBuilder.attack.setStatusText("Defender killed 2");
+			ChalmeRisk.attackModel.setStatusText("Defender killed 2");
 		}
 
 		else if(i==5){
 			defCountry.setTroops(defCountry.getTroops() - 1);
 			attCountry.setTroops(attCountry.getTroops() - 1);
-			ViewBuilder.attack.setStatusText("1 of each killed");
+			ChalmeRisk.attackModel.setStatusText("1 of each killed");
 		}
 		
 		if(attCountry.getTroops() == 1){
-			ViewBuilder.attack.setDefenderWin();
+			ChalmeRisk.attackModel.setDefenderWin();
 		}
 		
 		if(defCountry.getTroops() == 0){
 			//fight.setVisible(false);
-			ViewBuilder.attack.setAttackerWin();
+			ChalmeRisk.attackModel.setAttackerWin();
 			takeOverCountry = true;
 		}
-		ViewBuilder.attack.repaintTroops(attCountry.getTroops()-1, defCountry.getTroops());	
+		ChalmeRisk.attackModel.callForRepaintTroops(attCountry, defCountry);	
 	}
 
 	//When you click "Invade" or "Retreat".
 	public void endFight() {
-		ViewBuilder.attack.setVisible(false);
+		ChalmeRisk.attackModel.endFight();
 		if(takeOverCountry == true){
 			defCountry.setOwner(attCountry.getOwner());
 			attCountry.setTroops(attCountry.getTroops()-1);
 			defCountry.setTroops(1);
-			ViewBuilder.movement.newMovement(attCountry, defCountry); 
-			ViewBuilder.movement.setVisible(true);
+			ChalmeRisk.movementModel.newMovement(attCountry, defCountry); 
 		}
 	}
 }
