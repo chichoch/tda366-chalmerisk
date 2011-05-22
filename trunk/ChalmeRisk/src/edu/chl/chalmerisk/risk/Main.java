@@ -1,8 +1,8 @@
 package edu.chl.chalmerisk.risk;
 import java.io.FileNotFoundException;
+
 import edu.chl.chalmerisk.risk.ctrl.MenuController;
 import edu.chl.chalmerisk.risk.view.MenuView;
-import edu.chl.chalmerisk.risk.view.ViewBuilder;
 
 public class Main {
 	

@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
 
-import javax.swing.JOptionPane;
-
 import edu.chl.chalmerisk.risk.util.ActivePlayers;
 import edu.chl.chalmerisk.risk.util.ReinforcementCalculator;
 

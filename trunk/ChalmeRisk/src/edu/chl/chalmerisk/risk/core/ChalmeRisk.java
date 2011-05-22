@@ -2,11 +2,12 @@ package edu.chl.chalmerisk.risk.core;
 
 import java.io.FileNotFoundException;
 import java.util.List;
-import java.util.Observable;
 
-import edu.chl.chalmerisk.risk.ctrl.*;
-import edu.chl.chalmerisk.risk.util.*;
-import edu.chl.chalmerisk.risk.view.*;
+import edu.chl.chalmerisk.risk.ctrl.AttackController;
+import edu.chl.chalmerisk.risk.ctrl.DiceController;
+import edu.chl.chalmerisk.risk.ctrl.ReinforcementController;
+import edu.chl.chalmerisk.risk.ctrl.TroopMovementController;
+import edu.chl.chalmerisk.risk.util.RandomizeCountries;
 
 
 

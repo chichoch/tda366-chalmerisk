@@ -1,11 +1,7 @@
 package edu.chl.chalmerisk.risk.core;
 
 
-import java.util.List;
 import java.util.Observable;
-
-import edu.chl.chalmerisk.risk.util.ActivePlayers;
-import edu.chl.chalmerisk.risk.util.ReinforcementCalculator;
 
 
 public class Turn extends Observable{

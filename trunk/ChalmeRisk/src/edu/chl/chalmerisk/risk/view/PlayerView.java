@@ -1,9 +1,12 @@
 package edu.chl.chalmerisk.risk.view;
 
-import java.awt.*;
-import java.util.*;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.util.Observable;
+import java.util.Observer;
 
-import javax.swing.*;
+import javax.swing.JLabel;
 
 import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 

@@ -1,6 +1,5 @@
 package edu.chl.chalmerisk.risk.view;
 
-import java.awt.Color;
 import java.awt.Dimension;
 import java.util.Observable;
 import java.util.Observer;
