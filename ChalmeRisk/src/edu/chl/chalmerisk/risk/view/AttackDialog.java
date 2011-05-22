@@ -133,12 +133,12 @@ public class AttackDialog extends JFrame{
 		actionPanel.add(retreatButton);
 		actionPanel.add(standingsLabel);
 		
-		attCannon = (ChalmeRisk.iconHandler.getIcon(att.getOwner(), 10));
-		attHorse = (ChalmeRisk.iconHandler.getIcon(att.getOwner(), 5));
-		attInfantry = (ChalmeRisk.iconHandler.getIcon(att.getOwner(), 1));
-		defCannon = (ChalmeRisk.iconHandler.getIcon(def.getOwner(), 10));
-		defHorse = (ChalmeRisk.iconHandler.getIcon(att.getOwner(), 5));
-		defInfantry = (ChalmeRisk.iconHandler.getIcon(att.getOwner(), 1));
+		attCannon = (ViewBuilder.iconHandler.getIcon(att.getOwner(), 10));
+		attHorse = (ViewBuilder.iconHandler.getIcon(att.getOwner(), 5));
+		attInfantry = (ViewBuilder.iconHandler.getIcon(att.getOwner(), 1));
+		defCannon = (ViewBuilder.iconHandler.getIcon(def.getOwner(), 10));
+		defHorse = (ViewBuilder.iconHandler.getIcon(att.getOwner(), 5));
+		defInfantry = (ViewBuilder.iconHandler.getIcon(att.getOwner(), 1));
 		
 		//repaintTroops(att.getTroops(), def.getTroops());
 		
@@ -233,12 +233,12 @@ public class AttackDialog extends JFrame{
 		d2dice.newDice();
 		retreatButton.setText("Retreat");
 		statusLabel.setText("");
-		attCannon = (ChalmeRisk.iconHandler.getIcon(att.getOwner(), 10));
-		attHorse = (ChalmeRisk.iconHandler.getIcon(att.getOwner(), 5));
-		attInfantry = (ChalmeRisk.iconHandler.getIcon(att.getOwner(), 1));
-		defCannon = (ChalmeRisk.iconHandler.getIcon(def.getOwner(), 10));
-		defHorse = (ChalmeRisk.iconHandler.getIcon(def.getOwner(), 5));
-		defInfantry = (ChalmeRisk.iconHandler.getIcon(def.getOwner(), 1));
+		attCannon = (ViewBuilder.iconHandler.getIcon(att.getOwner(), 10));
+		attHorse = (ViewBuilder.iconHandler.getIcon(att.getOwner(), 5));
+		attInfantry = (ViewBuilder.iconHandler.getIcon(att.getOwner(), 1));
+		defCannon = (ViewBuilder.iconHandler.getIcon(def.getOwner(), 10));
+		defHorse = (ViewBuilder.iconHandler.getIcon(def.getOwner(), 5));
+		defInfantry = (ViewBuilder.iconHandler.getIcon(def.getOwner(), 1));
 	}
 }
 

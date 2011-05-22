@@ -19,7 +19,7 @@ public class ReinforcementPanel extends JPanel implements Observer{
 	
 	public ReinforcementPanel(int troops) {
 		this.troops = troops;
-		icon = ChalmeRisk.iconHandler.getIcon(ChalmeRisk.round.getCurrentPlayer(), 1);
+		icon = ViewBuilder.iconHandler.getIcon(ChalmeRisk.round.getCurrentPlayer(), 1);
 		iconLabel = new JLabel(icon);
 		ChalmeRisk.turn.addObserver(this);
 		for (int i = 0; i < ChalmeRisk.round.getPlayerList().size(); i++) {
@@ -39,7 +39,7 @@ public class ReinforcementPanel extends JPanel implements Observer{
 		if(observable.equals(ChalmeRisk.round.getCurrentPlayer())){
 			if(arg.equals(new Integer(0))){
 				if (ChalmeRisk.round.getCurrentPlayer().getReinforcements() > 0) {
-					iconLabel.setIcon(ChalmeRisk.iconHandler.getIcon(ChalmeRisk.round.getCurrentPlayer(), 1));
+					iconLabel.setIcon(ViewBuilder.iconHandler.getIcon(ChalmeRisk.round.getCurrentPlayer(), 1));
 					troopLabel.setText("" + ChalmeRisk.round.getCurrentPlayer().getReinforcements());
 					iconLabel.setVisible(true);
 					validate();
@@ -54,7 +54,7 @@ public class ReinforcementPanel extends JPanel implements Observer{
 		//TODO This method never runs, which it should. 
 		if (observable.equals(ChalmeRisk.turn)) {
 			if(arg.equals(new Integer(0))){
-				iconLabel.setIcon(ChalmeRisk.iconHandler.getIcon(ChalmeRisk.round.getCurrentPlayer(), 1));
+				iconLabel.setIcon(ViewBuilder.iconHandler.getIcon(ChalmeRisk.round.getCurrentPlayer(), 1));
 				troopLabel.setText("" + ChalmeRisk.round.getCurrentPlayer().getReinforcements());
 				iconLabel.setVisible(true);
 				validate();
