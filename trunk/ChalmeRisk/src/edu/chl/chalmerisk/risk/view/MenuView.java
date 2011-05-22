@@ -23,6 +23,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import edu.chl.chalmerisk.risk.Main;
+import edu.chl.chalmerisk.risk.core.GameStarter;
 
 public class MenuView extends JFrame implements ActionListener, ItemListener{
 	private JPanel leftPanel;
@@ -202,7 +203,7 @@ public class MenuView extends JFrame implements ActionListener, ItemListener{
 			}
 			else{
 				try {
-					Main.mCtrl.newGame(playerTextField1.getText(), playerTextField2.getText(), playerTextField3.getText(), playerTextField4.getText(), (String)map.getSelectedItem());
+					new GameStarter(playerTextField1.getText(), playerTextField2.getText(), playerTextField3.getText(), playerTextField4.getText(), (String)map.getSelectedItem());
 				} catch (FileNotFoundException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
