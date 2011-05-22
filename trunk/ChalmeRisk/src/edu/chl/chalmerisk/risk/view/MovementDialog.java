@@ -5,6 +5,8 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Hashtable;
+import java.util.Observable;
+import java.util.Observer;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -15,7 +17,7 @@ import javax.swing.JSlider;
 import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 import edu.chl.chalmerisk.risk.core.Country;
 
-public class MovementDialog extends JFrame implements ActionListener {
+public class MovementDialog extends JFrame implements ActionListener, Observer {
 	
 	private JPanel movementPanelCenter;
 	private JPanel movementPanelSouth;
@@ -28,6 +30,7 @@ public class MovementDialog extends JFrame implements ActionListener {
 	
 	
 	public MovementDialog(){
+		ChalmeRisk.movementModel.addObserver(this);
 		quantitySlider = new JSlider();
 		quantitySlider.setMinimum(1);
 		Hashtable<Integer, JLabel> table = new Hashtable<Integer, JLabel>();
@@ -106,5 +109,14 @@ public class MovementDialog extends JFrame implements ActionListener {
 		quantitySlider.setPaintLabels(true);
 		c1=fromCountry;
 		c2=toCountry;
+	}
+	@Override
+	public void update(Observable observable, Object arg) {
+		if(observable.equals(ChalmeRisk.movementModel)){
+			if(arg.equals(new Integer(0))){
+				newMovement(ChalmeRisk.movementModel.getMoveFromCountry(), ChalmeRisk.movementModel.getMoveToCountry());
+				setVisible(true);
+			}
+		}
 	}
 }

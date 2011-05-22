@@ -5,6 +5,8 @@ import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Observable;
+import java.util.Observer;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -16,7 +18,7 @@ import javax.swing.JPanel;
 import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 import edu.chl.chalmerisk.risk.core.Country;
 
-public class AttackDialog extends JFrame{
+public class AttackDialog extends JFrame implements Observer{
 	private JPanel fightPanel;
 	private JPanel attTeamPanel;
 	private JPanel defTeamPanel;
@@ -42,6 +44,7 @@ public class AttackDialog extends JFrame{
 	//TODO Bug! (I think?) IN the label, if the defending country only have 1 troop left
 	// The label can say that the defender have killed 2.
 	public AttackDialog() {
+		ChalmeRisk.attackModel.addObserver(this);
 		fightPanel = new JPanel(new GridLayout(1,3));
 		statusLabel = new JLabel();
 		attTeamPanel = new JPanel();
@@ -185,6 +188,7 @@ public class AttackDialog extends JFrame{
 	public void repaintTroops(int attTroops, int defTroops){
 		attTeamPanel.removeAll();
 		defTeamPanel.removeAll();
+		attTroops-=1;
 		while(attTroops>0 ){
 			if(attTroops%10==0){
 				attTroops=attTroops-10;
@@ -246,6 +250,32 @@ public class AttackDialog extends JFrame{
 		defCannon = (ViewBuilder.iconHandler.getIcon(def.getOwner(), 10));
 		defHorse = (ViewBuilder.iconHandler.getIcon(def.getOwner(), 5));
 		defInfantry = (ViewBuilder.iconHandler.getIcon(def.getOwner(), 1));
+	}
+
+	@Override
+	public void update(Observable observable, Object arg) {
+		if(observable.equals(ChalmeRisk.attackModel)){
+			if(arg.equals(new Integer(0))){
+				newAttack(ChalmeRisk.attackModel.getAttCountry(), ChalmeRisk.attackModel.getDefCountry());
+				repaintTroops(ChalmeRisk.attackModel.getAttCountry().getTroops(), ChalmeRisk.attackModel.getDefCountry().getTroops());
+				setVisible(true);
+			}
+			if(arg.equals(new Integer(1))){
+				setStatusText(ChalmeRisk.attackModel.getStatusText());
+			}
+			if(arg.equals(new Integer(2))){
+				setAttackerWin();
+			}
+			if(arg.equals(new Integer(3))){
+				setDefenderWin();
+			}
+			if(arg.equals(new Integer(4))){
+				repaintTroops(ChalmeRisk.attackModel.getAttCountry().getTroops(), ChalmeRisk.attackModel.getDefCountry().getTroops());
+			}
+			if(arg.equals(new Integer(5))){
+				setVisible(false);
+			}
+		}	
 	}
 }
 
