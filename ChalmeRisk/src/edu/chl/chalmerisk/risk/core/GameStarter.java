@@ -1,4 +1,4 @@
-package edu.chl.chalmerisk.risk.ctrl;
+package edu.chl.chalmerisk.risk.core;
 
 import java.awt.Color;
 import java.io.FileNotFoundException;
@@ -9,14 +9,10 @@ import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 import edu.chl.chalmerisk.risk.core.Player;
 import edu.chl.chalmerisk.risk.view.ViewBuilder;
 
-public class MenuController {
+public class GameStarter {
 	private static List<Player> pList = new ArrayList<Player>();
 	
-	public MenuController(){
-		
-	}
-	//gets information from the MenuView and sets them
-	public void newGame (String player1, String player2, String player3, String player4, String map) throws FileNotFoundException{
+	public GameStarter(String player1, String player2, String player3, String player4, String map) throws FileNotFoundException{
 		if(player1.isEmpty()==false){
 			Player PlayerOne = new Player(Color.RED, player1);
 			pList.add(PlayerOne);
