@@ -1,11 +1,14 @@
 package edu.chl.chalmerisk.risk.view;
 
-import java.awt.*;
-import java.awt.event.MouseEvent;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.util.Observable;
 import java.util.Observer;
-import javax.swing.*;
-import edu.chl.chalmerisk.risk.core.ChalmeRisk;
+
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
 import edu.chl.chalmerisk.risk.core.Country;
 
 public class CountryView extends JPanel implements Observer {

@@ -1,6 +1,7 @@
 package edu.chl.chalmerisk.risk.util;
 import java.util.ArrayList;
 import java.util.List;
+
 import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 import edu.chl.chalmerisk.risk.core.Country;
 import edu.chl.chalmerisk.risk.core.Player;

@@ -4,10 +4,9 @@ import java.awt.Color;
 import java.util.Observable;
 import java.util.Observer;
 
-import javax.swing.*;
+import javax.swing.JLabel;
 
 import edu.chl.chalmerisk.risk.core.ChalmeRisk;
-import edu.chl.chalmerisk.risk.core.InfoModel;
 
 public class InfoView extends JLabel implements Observer {
 	

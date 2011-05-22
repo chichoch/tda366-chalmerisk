@@ -1,5 +1,6 @@
 package edu.chl.chalmerisk.risk.core;
 import java.awt.Color;
+
 import javax.swing.ImageIcon;
 
 

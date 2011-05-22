@@ -1,8 +1,6 @@
 package edu.chl.chalmerisk.risk.ctrl;
-import javax.swing.JOptionPane;
-
-import edu.chl.chalmerisk.risk.core.*;
-import edu.chl.chalmerisk.risk.util.ReinforcementCalculator;
+import edu.chl.chalmerisk.risk.core.ChalmeRisk;
+import edu.chl.chalmerisk.risk.core.TurnState;
 
 public class ReinforcementController extends TurnState{
 
