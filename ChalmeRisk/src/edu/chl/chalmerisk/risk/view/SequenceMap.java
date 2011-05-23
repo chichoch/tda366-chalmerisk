@@ -14,6 +14,9 @@ public class SequenceMap extends JLabel implements Observer {
 	private int state;
 	private String player;
 	
+	/**
+	 * Shows the current state. Observs both Turn and Round.
+	 */
 	public SequenceMap() {
 		imageIcon = new ImageIcon("resources/SQr1.gif");
 		setIcon(imageIcon);
@@ -25,12 +28,12 @@ public class SequenceMap extends JLabel implements Observer {
 	}
 	@Override
 	public void update(Observable observable, Object arg) {
-		// TODO Auto-generated method stub
 		if(observable.equals(ChalmeRisk.turn)){
 			if(arg.equals(new Integer(0))) {
 				state = ChalmeRisk.turn.getCurrentStateIndex() + 1;
 			}
 		}
+		
 		if(observable.equals(ChalmeRisk.round)) {
 			if(arg.equals(new Integer(0))) {
 				if (ChalmeRisk.round.getCurrentPlayer().getColor().equals(Color.RED))
@@ -41,11 +44,9 @@ public class SequenceMap extends JLabel implements Observer {
 					player = "y";
 				else if(ChalmeRisk.round.getCurrentPlayer().getColor().equals(Color.green))
 					player = "g";
-			}
-			
+			}	
 		}
 		imageIcon = new ImageIcon("resources/SQ" + player + state + ".gif");
 		setIcon(imageIcon);
-		
 	}
 }

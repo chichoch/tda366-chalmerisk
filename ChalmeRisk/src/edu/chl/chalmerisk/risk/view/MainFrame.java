@@ -42,17 +42,17 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener, 
 	private ReinforcementPanel reinforcementPanel;
 	private GridLayout layout;
 	
-	//TODO No hardcode here!
 	public MainFrame(List<Country> list) {
 		setLayout(new BorderLayout());
 		setBackground(Color.BLACK);
-		ImageIcon icon = new ImageIcon(ChalmeRisk.map.getIconFileName());
-		reinforcementPanel = new ReinforcementPanel(ChalmeRisk.round.getCurrentPlayer().getReinforcements());
 		addMouseMotionListener(this);
+		ImageIcon icon = new ImageIcon(ChalmeRisk.map.getIconFileName());
+		
+		reinforcementPanel = new ReinforcementPanel(ChalmeRisk.round.getCurrentPlayer().getReinforcements());
 		reinforcementPanel.addMouseMotionListener(this);
-
 		reinforcementPanel.setBounds(140, 140, 30, 75);
 		reinforcementPanel.setBorder(BorderFactory.createEmptyBorder(1, 1, 1, 1));
+		
 		karta = new JLayeredPane();
 		karta.setBackground(Color.BLACK);
 		karta.add(reinforcementPanel, JLayeredPane.DEFAULT_LAYER);
@@ -80,9 +80,10 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener, 
 			ChalmeRisk.round.getPlayerList().get(i).addObserver(this);
 		}
 		nextStep.setEnabled(false);
-		infoView = new InfoView();
 		
+		infoView = new InfoView();
 		infoViewPanel = new JPanel();
+		
 		fillPanel = new JPanel();
 		infoViewPanel.setBackground(Color.BLACK);
 		infoViewPanel.setMaximumSize(new Dimension(1200,25));
@@ -129,29 +130,24 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener, 
 	}
 
 	
-
-
 	@Override
 	public void mouseEntered(MouseEvent arg0) {
-		
-		
+			//Do nothing
 	}
 
 	@Override
 	public void mouseExited(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-		
+		//Do nothing
 	}
 
 	@Override
 	public void mousePressed(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-		
+		//Do nothing
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent arg0) {
-		// TODO Auto-generated method stub
+		//Do nothing
 		
 	}
 
@@ -178,7 +174,7 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener, 
 			reinforcementPanel.setVisible(false);
 		}
 	}
-	//TODO Maybe not the best way to check if we should show the reinforcementPanel?
+	
 	@Override
 	public void mouseMoved(MouseEvent arg0) {
 		if (ChalmeRisk.turn.getCurrentStateIndex() == 0) {
@@ -189,9 +185,7 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener, 
 				catch (NullPointerException e) {
 					//Do nothing.
 			}
-			validate();
-			
-			
+			validate();	
 		}
 		else {
 			reinforcementPanel.setVisible(false);
@@ -204,7 +198,6 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener, 
 			if(arg.equals(new Integer(0))){
 				if(ChalmeRisk.round.getCurrentPlayer().getReinforcements()==0){
 					nextStep.setEnabled(true);	
-					//validate();
 				}
 			}
 		}

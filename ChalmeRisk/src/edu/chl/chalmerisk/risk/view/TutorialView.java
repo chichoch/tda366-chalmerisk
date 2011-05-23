@@ -34,9 +34,6 @@ public class TutorialView extends JFrame implements ActionListener {
 		
 		mainWindowPanel = new JPanel();
 		mainWindowPanel.setLayout(new BoxLayout(mainWindowPanel, BoxLayout.PAGE_AXIS));
-		
-	
-		
 	
 		ImageIcon tutorialheading = new ImageIcon("resources/tutorialheading.gif");
 		ImageIcon tutorial1 = new ImageIcon("resources/tutorial1.gif");

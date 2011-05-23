@@ -11,6 +11,10 @@ import javax.swing.JPanel;
 
 import edu.chl.chalmerisk.risk.core.Country;
 
+/**
+ * The Panel that represents a Country.
+ *
+ */
 public class CountryView extends JPanel implements Observer {
 	private JLabel troopDisplay;
 	private ImageIcon icon;

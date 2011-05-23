@@ -10,6 +10,12 @@ import javax.swing.JPanel;
 
 import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 
+/**
+ * This Panel shows the Reinforcements you can set out 
+ * in the Reinforcement-state. 
+ * 
+ *
+ */
 public class ReinforcementPanel extends JPanel implements Observer{
 	private int troops;
 	private JLabel troopLabel;
@@ -25,7 +31,6 @@ public class ReinforcementPanel extends JPanel implements Observer{
 			ChalmeRisk.round.getPlayerList().get(i).addObserver(this);
 		}
 		troopLabel = new JLabel("" + troops);
-		//setBackground(Color.black);
 		setOpaque(false);
 		add(iconLabel);
 		add(troopLabel);
@@ -50,7 +55,7 @@ public class ReinforcementPanel extends JPanel implements Observer{
 				}
 			}
 		}
-		//TODO This method never runs, which it should. 
+		
 		if (observable.equals(ChalmeRisk.turn)) {
 			if(arg.equals(new Integer(0))){
 				iconLabel.setIcon(ViewBuilder.iconHandler.getIcon(ChalmeRisk.round.getCurrentPlayer(), 1));
