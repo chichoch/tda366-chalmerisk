@@ -8,7 +8,10 @@ import edu.chl.chalmerisk.risk.ctrl.ReinforcementController;
 import edu.chl.chalmerisk.risk.ctrl.TroopMovementController;
 import edu.chl.chalmerisk.risk.util.RandomizeCountries;
 
-
+/**
+ * This class works as a Builder for the whole game.
+ * 
+ */
 public class ChalmeRisk {
 	
 	public static Map map;

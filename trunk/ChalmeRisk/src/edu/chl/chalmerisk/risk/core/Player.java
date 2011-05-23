@@ -3,7 +3,11 @@ import java.awt.Color;
 import java.util.Observable;
 
 
-
+/**
+ * Describe a Player. 
+ * Contains a Color, Name and the Players current reinforcements.
+ *
+ */
 public class Player extends Observable{
 	
 	private Color color;

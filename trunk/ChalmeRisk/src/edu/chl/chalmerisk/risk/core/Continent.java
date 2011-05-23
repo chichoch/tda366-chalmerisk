@@ -3,7 +3,10 @@ package edu.chl.chalmerisk.risk.core;
 import java.awt.Color;
 import java.util.List;
 
-
+/**
+ * Describes a Continent. 
+ *
+ */
 public class Continent {
 	private Player test = new Player(Color.black, "Test");
 	private String name;

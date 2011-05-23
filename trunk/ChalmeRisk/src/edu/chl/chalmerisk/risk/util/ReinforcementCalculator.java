@@ -10,6 +10,10 @@ import edu.chl.chalmerisk.risk.core.Continent;
 import edu.chl.chalmerisk.risk.core.Country;
 import edu.chl.chalmerisk.risk.core.Player;
 
+/**
+ * Calculates the Reinforcements. 
+ *
+ */
 public class ReinforcementCalculator implements Observer{
 	private static ReinforcementCalculator instance;
 	private List<Continent> conts = new ArrayList<Continent>();

@@ -5,7 +5,12 @@ import java.util.List;
 import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 import edu.chl.chalmerisk.risk.core.Country;
 import edu.chl.chalmerisk.risk.core.Player;
- 
+
+/**
+ * Checks if the player (or Players) are active.
+ * @author christophe
+ *
+ */
 public class ActivePlayers {
     private static ActivePlayers instance;
     private int count;
