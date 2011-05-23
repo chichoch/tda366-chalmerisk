@@ -19,8 +19,6 @@ public class DiceView extends JLabel implements Observer {
 	private ImageIcon diceImage4;
 	private ImageIcon diceImage5;
 	private ImageIcon diceImage6;
-	private int temp1;
-	private int temp2;
 
 	public DiceView(Dice dice) {
 		
