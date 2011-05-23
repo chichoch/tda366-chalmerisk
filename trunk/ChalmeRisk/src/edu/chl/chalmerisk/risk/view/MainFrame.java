@@ -163,6 +163,7 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener, 
 				nextStep.setEnabled(false);
 				ChalmeRisk.tCtrl.allowTroopMovement();
 			}
+	
 		}
 	}
 
@@ -182,8 +183,15 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener, 
 	public void mouseMoved(MouseEvent arg0) {
 		if (ChalmeRisk.turn.getCurrentStateIndex() == 0) {
 			reinforcementPanel.setVisible(true);
-			reinforcementPanel.setLocation(((int)getMousePosition().getX()), ((int)getMousePosition().getY() - 50));
+			try {
+				reinforcementPanel.setLocation(((int)getMousePosition().getX()), ((int)getMousePosition().getY() - 50));
+			}
+				catch (NullPointerException e) {
+					//Do nothing.
+			}
 			validate();
+			
+			
 		}
 		else {
 			reinforcementPanel.setVisible(false);
