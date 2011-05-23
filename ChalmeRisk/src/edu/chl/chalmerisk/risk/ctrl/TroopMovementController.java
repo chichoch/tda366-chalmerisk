@@ -2,7 +2,6 @@ package edu.chl.chalmerisk.risk.ctrl;
 import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 import edu.chl.chalmerisk.risk.core.Country;
 import edu.chl.chalmerisk.risk.core.TurnState;
-import edu.chl.chalmerisk.risk.view.ViewBuilder;
 
 public class TroopMovementController extends TurnState {
 	
