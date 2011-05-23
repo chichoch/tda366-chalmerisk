@@ -18,6 +18,7 @@ import javax.swing.JPanel;
 import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 import edu.chl.chalmerisk.risk.core.Country;
 
+
 public class AttackDialog extends JFrame implements Observer{
 	private JPanel fightPanel;
 	private JPanel attTeamPanel;
@@ -41,8 +42,6 @@ public class AttackDialog extends JFrame implements Observer{
 	private DiceView d1dice;
 	private DiceView d2dice;
 	
-	//TODO Bug! (I think?) IN the label, if the defending country only have 1 troop left
-	// The label can say that the defender have killed 2.
 	public AttackDialog() {
 		ChalmeRisk.attackModel.addObserver(this);
 		fightPanel = new JPanel(new GridLayout(1,3));
@@ -78,9 +77,7 @@ public class AttackDialog extends JFrame implements Observer{
 		dicePanel.add(fillPanel);
 		dicePanel.add(d1dice);
 		dicePanel.add(d2dice);
-		
-		//repaintTroops(att.getTroops(), def.getTroops());
-		
+	
 		//setLayout();
 		setUndecorated(true);
 		setVisible(false);
@@ -149,9 +146,7 @@ public class AttackDialog extends JFrame implements Observer{
 		defCannon = (ViewBuilder.iconHandler.getIcon(def.getOwner(), 10));
 		defHorse = (ViewBuilder.iconHandler.getIcon(att.getOwner(), 5));
 		defInfantry = (ViewBuilder.iconHandler.getIcon(att.getOwner(), 1));
-		
-		//repaintTroops(att.getTroops(), def.getTroops());
-		
+	
 		setLayout(new GridLayout(1,3));
 		setUndecorated(true);
 		setVisible(false);
