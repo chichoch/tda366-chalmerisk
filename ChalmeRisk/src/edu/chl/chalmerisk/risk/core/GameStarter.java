@@ -9,6 +9,10 @@ import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 import edu.chl.chalmerisk.risk.core.Player;
 import edu.chl.chalmerisk.risk.view.ViewBuilder;
 
+/**
+ * Starts the game with the information it gets from its constructor.
+ *
+ */
 public class GameStarter {
 	private static List<Player> pList = new ArrayList<Player>();
 	

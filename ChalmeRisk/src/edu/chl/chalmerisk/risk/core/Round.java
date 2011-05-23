@@ -7,6 +7,11 @@ import java.util.Observable;
 import edu.chl.chalmerisk.risk.util.ActivePlayers;
 import edu.chl.chalmerisk.risk.util.ReinforcementCalculator;
 
+/**
+ * This class keeps track of the players in the game.
+ * @author christophe
+ *
+ */
 public class Round extends Observable{
 	private List<Player> pList = new ArrayList<Player>();
 	private Player currentPlayer;

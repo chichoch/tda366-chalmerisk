@@ -9,6 +9,9 @@ import java.util.Scanner;
 import edu.chl.chalmerisk.risk.io.FileReader;
 import edu.chl.chalmerisk.risk.io.IFileReader;
 
+/**
+ * This class uses the FileReader to create a real map.
+*/
 public class MapBuilder {
 	private IFileReader file;
 	private List<Country> countries = new ArrayList<Country>();

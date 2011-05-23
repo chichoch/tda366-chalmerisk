@@ -2,7 +2,12 @@ package edu.chl.chalmerisk.risk.core;
 import java.io.FileNotFoundException;
 import java.util.List;
 
-
+/**
+ * This class holds the information about the whole Map.
+ * Gets its information from the MapBuilder (The subsystem)
+ * and contains the countries and continents.
+ *
+ */
 
 public class Map {
 	private MapBuilder map;
@@ -15,9 +20,8 @@ public class Map {
 		countryList = map.getCountries();
 		iconFileName = map.getIconFileName();
 		continentList = map.getContinents();
-		//
-	
 	}
+	
 	//Returns the specific ID of each country
 	public Country getCountry(int id) {
  		for (int i = 0; i < countryList.size(); i++) {

@@ -2,6 +2,10 @@ package edu.chl.chalmerisk.risk.core;
 
 import java.util.Observable;
 
+/**
+ * This class notifies the MovementDialog that something has changed.
+ * 
+ */
 public class MovementModel extends Observable {
 	private Country moveFromCountry;
 	private Country moveToCountry;

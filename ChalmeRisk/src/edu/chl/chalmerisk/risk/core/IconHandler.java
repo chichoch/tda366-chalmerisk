@@ -3,7 +3,10 @@ import java.awt.Color;
 
 import javax.swing.ImageIcon;
 
-
+/**
+ * A class that contains the troop icons. 
+ *
+ */
 public class IconHandler {
 	ImageIcon redKnight = new ImageIcon("resources/KnightRed.gif");
 	ImageIcon blueKnight = new ImageIcon("resources/KnightBlue.gif");
@@ -35,8 +38,14 @@ public class IconHandler {
 		
 	}
 	
-	public ImageIcon getIcon(Player p, int i){
-		if(i<5){
+	/**
+	 * 
+	 * @param Player p
+	 * @param int numOfTroops
+	 * @return the ImageIcon that represents that amount of troops.
+	 */
+	public ImageIcon getIcon(Player p, int numOfTroops){
+		if(numOfTroops<5){
 			if(p.getColor()==Color.RED){
 				return redInfantrie;
 			}
@@ -50,7 +59,7 @@ public class IconHandler {
 				return blueInfantrie;
 			}
 		}
-		else if(i>=5 && i<10){
+		else if(numOfTroops>=5 && numOfTroops<10){
 			if(p.getColor()==Color.RED){
 				return redKnight;
 			}

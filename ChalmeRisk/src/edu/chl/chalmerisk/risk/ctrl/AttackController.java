@@ -4,8 +4,9 @@ import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 import edu.chl.chalmerisk.risk.core.Country;
 import edu.chl.chalmerisk.risk.core.TurnState;
 
-
-
+/**
+ * This class describes the Use-case Attack.
+ */
 public class AttackController extends TurnState{
 
 	private Country attCountry;
@@ -21,7 +22,6 @@ public class AttackController extends TurnState{
 
 	@Override
 	public void setCountry(int id) {
-
 		if (!firstCountrySelected) {
 			if(!ChalmeRisk.map.getCountry(id).getOwner().equals(ChalmeRisk.round.getCurrentPlayer())){
 				ChalmeRisk.infoModel.setWarningText("You have to attack from one of your own countries!");	
@@ -35,7 +35,6 @@ public class AttackController extends TurnState{
 				attCountry.setSelected(true);	
 				ChalmeRisk.infoModel.setCorrectMoveText("You have selected the country to attack from");
 			}
-
 		}
 		else {
 			if(attCountry.getOwner() != ChalmeRisk.map.getCountry(id).getOwner()){
@@ -69,7 +68,6 @@ public class AttackController extends TurnState{
 			attCountry.setTroops(attCountry.getTroops() - 1);
 			ChalmeRisk.attackModel.setStatusText("Defender killed 1 ");
 		}
-
 		else if(i==3){
 			defCountry.setTroops(defCountry.getTroops() - 2);
 			ChalmeRisk.attackModel.setStatusText("Attacker killed 2 ");
@@ -79,17 +77,14 @@ public class AttackController extends TurnState{
 			attCountry.setTroops(attCountry.getTroops() - 2);
 			ChalmeRisk.attackModel.setStatusText("Defender killed 2");
 		}
-
 		else if(i==5){
 			defCountry.setTroops(defCountry.getTroops() - 1);
 			attCountry.setTroops(attCountry.getTroops() - 1);
 			ChalmeRisk.attackModel.setStatusText("1 of each killed");
 		}
-		
 		if(attCountry.getTroops() == 1){
 			ChalmeRisk.attackModel.setDefenderWin();
 		}
-		
 		if(defCountry.getTroops() == 0){
 			//fight.setVisible(false);
 			ChalmeRisk.attackModel.setAttackerWin();

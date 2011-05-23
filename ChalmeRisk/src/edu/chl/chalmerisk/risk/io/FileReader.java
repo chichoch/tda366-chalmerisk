@@ -6,7 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 /**
- * 
+ * Subsystem FileReader. Reads a file, and makes a List<String>
+ * from it.
  * @author hajo, modified by Christophe
  * 
  */

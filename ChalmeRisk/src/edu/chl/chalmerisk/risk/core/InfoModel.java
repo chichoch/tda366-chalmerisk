@@ -2,7 +2,12 @@ package edu.chl.chalmerisk.risk.core;
 
 import java.util.Observable;
 import java.util.Observer;
-
+/**
+ * This class is the model that the InfoView Observ.
+ * Holds the information that relevant for the game.
+ * Observs Turn, so it shows which turn your in.
+ *
+ */
 public class InfoModel extends Observable implements Observer {
 	private String infoText;
 	private String warningText;

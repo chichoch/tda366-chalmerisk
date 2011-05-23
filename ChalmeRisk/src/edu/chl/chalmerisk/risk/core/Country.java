@@ -2,7 +2,12 @@ package edu.chl.chalmerisk.risk.core;
 
 import java.util.Observable;
 
-
+/**
+ * This class describes a Country. 
+ * The Country is one of the main-elements of the game, so we have
+ * collected lots of information here.
+ *
+ */
 
 public class Country extends Observable{
 	private int troops;
@@ -11,6 +16,7 @@ public class Country extends Observable{
 	private Player owner;
 	private String continent;
 	private int[] neighbours;
+	//The "x" and "y" is coordinates for the country.
 	private int x;
 	private int y;
 	private boolean isSelected;
@@ -59,9 +65,14 @@ public class Country extends Observable{
 		notifyObservers(1);
 	}
 	
-	public boolean hasNeighbour(int n){
+	/**
+	 * Check if the CountryId is a Neighbour to this Country.
+	 * @param countryId
+	 * @return Boolean
+	 */
+	public boolean hasNeighbour(int countryId){
 		for ( int i = 0; i < neighbours.length; i++  ){
-			if ( neighbours[i] == n){
+			if ( neighbours[i] == countryId){
 			return true;	
 			}
 		}
@@ -79,17 +90,9 @@ public class Country extends Observable{
 	public int getX() {
 		return x;
 	}
-	//TODO Remove?
-	public void setX(int x) {
-		this.x = x;
-	}
 	
 	public int getY() {
 		return y;
-	}
-	//TODO Remove?
-	public void setY(int y) {
-		this.y = y;
 	}
 	
 	public void setSelected(boolean isSelected){

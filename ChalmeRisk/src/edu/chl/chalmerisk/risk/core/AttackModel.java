@@ -1,7 +1,10 @@
 package edu.chl.chalmerisk.risk.core;
 
 import java.util.Observable;
-
+/**
+ * AttackModel, Notifies the View, when changes have been done in the controller.
+ *
+ */
 public class AttackModel extends Observable {
 	private Country attCountry;
 	private Country defCountry;
