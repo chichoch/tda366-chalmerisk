@@ -68,7 +68,7 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener, 
 		}
 		
         map.setIcon(icon); 
-        map.setBounds(-18, -80, 1400, 800);
+        map.setBounds(-18, -72, 1400, 800);
         map.setBackground(Color.BLACK);
         karta.add(map, JLayeredPane.DEFAULT_LAYER);
         
