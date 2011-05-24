@@ -89,6 +89,10 @@ public class IconHandler {
 		}
 		return null;
 	}
+	/**
+	 * Similar method that handles the selected icons 
+	 * (the larger ones used when selecting a country)
+	 */
 	
 	public ImageIcon getSelectedIcon(Player p, int i){
 		if(i<5){
