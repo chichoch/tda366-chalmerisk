@@ -3,7 +3,6 @@ package edu.chl.chalmerisk.risk.core;
 
 import java.util.Observable;
 
-import edu.chl.chalmerisk.risk.exceptions.GameOverException;
 
 /**
  * This class is built with the State-pattern, 
@@ -13,7 +12,7 @@ import edu.chl.chalmerisk.risk.exceptions.GameOverException;
  * @author christophe
  *
  */
-public class Turn extends Observable{
+public class Turn extends Observable {
 	
 	private TurnState[] states  = {ChalmeRisk.rCtrl, ChalmeRisk.aCtrl, ChalmeRisk.tCtrl};
 	
