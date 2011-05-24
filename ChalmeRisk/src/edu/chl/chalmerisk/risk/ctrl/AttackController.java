@@ -57,6 +57,11 @@ public class AttackController extends TurnState{
 			}
 		}	 
 	}
+	/**
+	 * This class sends the number of troops to the DiceController class
+	 * and gets a number between 1-5 that represent a case which determines 
+	 * the outcome of the battle.
+	 */
 
 	public void startFight() {
 		int i = ChalmeRisk.dCtrl.getResult(attCountry.getTroops(), defCountry.getTroops());
