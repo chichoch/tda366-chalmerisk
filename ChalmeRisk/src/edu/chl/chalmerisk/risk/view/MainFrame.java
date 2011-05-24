@@ -132,7 +132,7 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener, 
 	
 	@Override
 	public void mouseEntered(MouseEvent arg0) {
-			//Do nothing
+		//Do nothing
 	}
 
 	@Override
@@ -159,7 +159,6 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener, 
 				nextStep.setEnabled(false);
 				ChalmeRisk.tCtrl.allowTroopMovement();
 			}
-	
 		}
 	}
 
