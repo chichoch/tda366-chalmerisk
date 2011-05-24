@@ -1,7 +1,8 @@
-package edu.chl.chalmerisk.risk.core;
+package edu.chl.chalmerisk.risk.exceptions;
 
 import javax.swing.JOptionPane;
 
+import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 import edu.chl.chalmerisk.risk.view.MenuView;
 import edu.chl.chalmerisk.risk.view.ViewBuilder;
 

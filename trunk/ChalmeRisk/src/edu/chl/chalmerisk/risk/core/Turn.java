@@ -3,6 +3,8 @@ package edu.chl.chalmerisk.risk.core;
 
 import java.util.Observable;
 
+import edu.chl.chalmerisk.risk.exceptions.GameOverException;
+
 /**
  * This class is built with the State-pattern, 
  * and keeps track of which state the current player is in.

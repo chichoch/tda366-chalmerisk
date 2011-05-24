@@ -155,10 +155,11 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener, 
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()== nextStep){
 			ChalmeRisk.turn.changeState();
-			if (ChalmeRisk.turn.getCurrentStateIndex() == 0) {
+			/*if (ChalmeRisk.turn.getCurrentStateIndex() == 0) {
 				nextStep.setEnabled(false);
 				ChalmeRisk.tCtrl.allowTroopMovement();
 			}
+			*/
 		}
 	}
 
