@@ -14,7 +14,7 @@ public class DiceController {
 	private int result;
 
 	/** Takes Attacking/defending troops and returns number of dice.
-	 * This method exist to make it easier,
+	 * This method exists(purpose)to make it easier:
 	 * if you want to change the rules of the game.
 	**/
 	public int getResult(int attckingTroops, int defendingTroops) {
@@ -172,7 +172,6 @@ public class DiceController {
 			}
 
 		}
-
 		if(attNumberOfDice==1 && defNumberOfDice==2){
 
 			defDiceMax = Math.max(defDice1.getNumber(), defDice2.getNumber());
