@@ -8,6 +8,7 @@ import java.util.Observable;
  */
 public class Dice extends Observable{
 	private int num;
+	
 	/**
 	 * Constructor. Creates a dice with a random number
 	 */
