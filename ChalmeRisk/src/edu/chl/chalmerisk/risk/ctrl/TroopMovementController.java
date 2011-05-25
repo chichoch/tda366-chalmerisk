@@ -4,8 +4,6 @@ import edu.chl.chalmerisk.risk.core.Country;
 
 /**
  * Describes the Usecase TroopMovement.
- * @author christophe
- *
  */
 public class TroopMovementController extends TurnState {
 	private boolean firstCountrySelected;

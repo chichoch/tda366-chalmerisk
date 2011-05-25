@@ -29,13 +29,13 @@ public class SequenceMap extends JLabel implements Observer {
 	@Override
 	public void update(Observable observable, Object arg) {
 		if(observable.equals(ChalmeRisk.turnModel)){
-			if(arg.equals(new Integer(0))) {
+			if(arg.equals(Integer.valueOf(0))) {
 				state = ChalmeRisk.turnModel.getCurrentStateIndex() + 1;
 			}
 		}
 		
 		if(observable.equals(ChalmeRisk.round)) {
-			if(arg.equals(new Integer(0))) {
+			if(arg.equals(Integer.valueOf(0))) {
 				if (ChalmeRisk.round.getCurrentPlayer().getColor().equals(Color.RED))
 					player = "r";
 				else if(ChalmeRisk.round.getCurrentPlayer().getColor().equals(Color.blue))

@@ -32,7 +32,6 @@ public class IconHandler {
 	ImageIcon redCannonSelected = new ImageIcon("resources/redCannonSelected.gif");
 	ImageIcon yellowCannonSelected = new ImageIcon("resources/yellowCannonSelected.gif");
 	ImageIcon blueCannonSelected = new ImageIcon("resources/blueCannonSelected.gif");
-	ImageIcon attackerSelected = new ImageIcon("resources/colorInfantry.gif");
 	
 	public IconHandler(){
 		

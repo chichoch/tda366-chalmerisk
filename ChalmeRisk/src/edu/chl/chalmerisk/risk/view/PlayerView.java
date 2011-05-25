@@ -26,7 +26,7 @@ public class PlayerView extends JLabel implements Observer{
 	@Override
 	public void update(Observable observable, Object arg) {
 		if(observable.equals(ChalmeRisk.round)){
-			if(arg.equals(new Integer(0))){
+			if(arg.equals(Integer.valueOf(0))){
 				setText("  "+ChalmeRisk.round.getCurrentPlayer().getName()+"`s turn");
 				setForeground(ChalmeRisk.round.getCurrentPlayer().getColor());
 				

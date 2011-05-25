@@ -25,6 +25,8 @@ public class GameTest {
 	private Continent cont2;
 	private Continent cont3;
 	static ChalmeRisk risk;
+	
+	
  		
 	@Before
 	public void setUp() throws FileNotFoundException{
@@ -35,7 +37,6 @@ public class GameTest {
 		pList.add(new Player(Color.YELLOW, "Joakim"));
 		
 		risk = new ChalmeRisk(pList, "testmap");
-
 		countries = new ArrayList<Country>();
 		//All countries are neighbours.
 		int[] g = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15};
@@ -109,8 +110,8 @@ public class GameTest {
 	
 	//Test the reinforcements for the first rounds.
 	@Test
-	public void TestSetReinforcementsFirstRounds() {
-		List<Player> testList = new ArrayList<Player>();
+	public void testSetReinforcementsFirstRounds() {
+		List<Player> testList;
 		testList = ReinforcementCalculator.getInstance().setReinforcementsFirstRounds(pList);
 		Player p1 = testList.get(0);
 		Player p2 = testList.get(1);
@@ -123,13 +124,12 @@ public class GameTest {
 		
 		//Test to remove a player and check if the reinforcement still works.
 		testList.remove(0);
-		testList = ReinforcementCalculator.getInstance().setReinforcementsFirstRounds(testList);
 		Assert.assertTrue(p2.getReinforcements() == 11);
 	}
 	
 	// Tests the ReinforcementMain-method.
 	@Test
-	public void TestSetReinforcementMain() {
+	public void testSetReinforcementMain() {
 		Player test = pList.get(0);
 		test = ReinforcementCalculator.getInstance().setReinforcementsMain(pList.get(0));
 		//The reinforcements should be 15/3 + 5*3 = 20. (From the rules for the game). 

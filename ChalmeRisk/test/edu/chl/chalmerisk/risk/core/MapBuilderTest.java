@@ -16,7 +16,7 @@ public class MapBuilderTest {
 	}
 	
 	@Test
-	public void TestMap() {
+	public void testMap() {
 		Assert.assertTrue(map.getIconFileName().equals("testfile"));
 		Assert.assertTrue(map.getContinents().size() == 2);
 		Assert.assertTrue(map.getCountries().size() == 4);

@@ -251,24 +251,24 @@ public class AttackDialog extends JFrame implements Observer{
 	@Override
 	public void update(Observable observable, Object arg) {
 		if(observable.equals(ChalmeRisk.attackModel)){
-			if(arg.equals(new Integer(0))){
+			if(arg.equals(Integer.valueOf(0))){
 				newAttack(ChalmeRisk.attackModel.getAttCountry(), ChalmeRisk.attackModel.getDefCountry());
 				repaintTroops(ChalmeRisk.attackModel.getAttCountry().getTroops(), ChalmeRisk.attackModel.getDefCountry().getTroops());
 				setVisible(true);
 			}
-			if(arg.equals(new Integer(1))){
+			if(arg.equals(Integer.valueOf(1))){
 				setStatusText(ChalmeRisk.attackModel.getStatusText());
 			}
-			if(arg.equals(new Integer(2))){
+			if(arg.equals(Integer.valueOf(2))){
 				setAttackerWin();
 			}
-			if(arg.equals(new Integer(3))){
+			if(arg.equals(Integer.valueOf(3))){
 				setDefenderWin();
 			}
-			if(arg.equals(new Integer(4))){
+			if(arg.equals(Integer.valueOf(4))){
 				repaintTroops(ChalmeRisk.attackModel.getAttCountry().getTroops(), ChalmeRisk.attackModel.getDefCountry().getTroops());
 			}
-			if(arg.equals(new Integer(5))){
+			if(arg.equals(Integer.valueOf(5))){
 				setVisible(false);
 			}
 		}	

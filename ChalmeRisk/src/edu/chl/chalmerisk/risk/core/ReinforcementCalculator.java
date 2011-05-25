@@ -86,7 +86,7 @@ public class ReinforcementCalculator implements Observer{
 	@Override
 	public void update(Observable observable, Object arg) {
 		if (observable.equals(ChalmeRisk.turnModel)) {
-			if(arg.equals(new Integer(0))){
+			if(arg.equals(Integer.valueOf(0))){
 				if (ChalmeRisk.turnModel.getCurrentStateIndex() == 0) {
 					if(ChalmeRisk.turnModel.isFirstRound()){
 						ReinforcementCalculator.getInstance().setReinforcementsFirstRounds(ChalmeRisk.round.getPlayerList());
