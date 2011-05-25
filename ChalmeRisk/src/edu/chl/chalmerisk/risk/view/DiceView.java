@@ -8,6 +8,7 @@ import javax.swing.JLabel;
 
 import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 import edu.chl.chalmerisk.risk.core.Dice;
+import edu.chl.chalmerisk.risk.ctrl.AttackController;
 
 public class DiceView extends JLabel implements Observer {
 
@@ -37,18 +38,18 @@ public class DiceView extends JLabel implements Observer {
 	}
 
 	private boolean diceNotTossed(Dice dice){
-		if(ChalmeRisk.dCtrl.getAttNumberOfDices()==2){
-			if(this.dice == ChalmeRisk.dCtrl.getAttDice3()){
+		if(AttackController.dCtrl.getAttNumberOfDices()==2){
+			if(this.dice == AttackController.dCtrl.getAttDice3()){
 				return true;
 			}
 		}
-		else if(ChalmeRisk.dCtrl.getAttNumberOfDices()==1){
-			if(this.dice == ChalmeRisk.dCtrl.getAttDice3() || this.dice == ChalmeRisk.dCtrl.getAttDice2()){
+		else if(AttackController.dCtrl.getAttNumberOfDices()==1){
+			if(this.dice == AttackController.dCtrl.getAttDice3() || this.dice == AttackController.dCtrl.getAttDice2()){
 				return true;
 			}
 		}
-		if(ChalmeRisk.dCtrl.getDefNumberOfDices()==1){
-			if(this.dice==ChalmeRisk.dCtrl.getDefDice2()){
+		if(AttackController.dCtrl.getDefNumberOfDices()==1){
+			if(this.dice==AttackController.dCtrl.getDefDice2()){
 				return true;
 			}
 		}

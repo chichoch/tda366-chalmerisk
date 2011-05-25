@@ -1,4 +1,4 @@
-package edu.chl.chalmerisk.risk.util;
+package edu.chl.chalmerisk.risk.core;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,6 +9,7 @@ import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 import edu.chl.chalmerisk.risk.core.Continent;
 import edu.chl.chalmerisk.risk.core.Country;
 import edu.chl.chalmerisk.risk.core.Player;
+import edu.chl.chalmerisk.risk.view.MainFrame;
 
 /**
  * Calculates the Reinforcements. 
@@ -21,7 +22,7 @@ public class ReinforcementCalculator implements Observer{
 	private List<Country> countries = new ArrayList<Country>();
 	
 	private ReinforcementCalculator() {
-		ChalmeRisk.turn.addObserver(this);
+		ChalmeRisk.turnModel.addObserver(this);
 		conts = ChalmeRisk.map.getContinents();
 		countries = ChalmeRisk.map.getCountries();
 
@@ -84,13 +85,13 @@ public class ReinforcementCalculator implements Observer{
 
 	@Override
 	public void update(Observable observable, Object arg) {
-		if (observable.equals(ChalmeRisk.turn)) {
+		if (observable.equals(ChalmeRisk.turnModel)) {
 			if(arg.equals(new Integer(0))){
-				if (ChalmeRisk.turn.getCurrentStateIndex() == 0) {
-					if(ChalmeRisk.turn.isFirstRound()){
+				if (ChalmeRisk.turnModel.getCurrentStateIndex() == 0) {
+					if(ChalmeRisk.turnModel.isFirstRound()){
 						ReinforcementCalculator.getInstance().setReinforcementsFirstRounds(ChalmeRisk.round.getPlayerList());
 					}
-					else{
+					else{;
 						ReinforcementCalculator.getInstance().setReinforcements(ChalmeRisk.round.getCurrentPlayer());
 					}
 				}

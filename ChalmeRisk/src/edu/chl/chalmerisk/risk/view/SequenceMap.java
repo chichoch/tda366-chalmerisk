@@ -20,7 +20,7 @@ public class SequenceMap extends JLabel implements Observer {
 	public SequenceMap() {
 		imageIcon = new ImageIcon("resources/SQr1.gif");
 		setIcon(imageIcon);
-		ChalmeRisk.turn.addObserver(this);
+		ChalmeRisk.turnModel.addObserver(this);
 		ChalmeRisk.round.addObserver(this);
 		setPreferredSize(new Dimension(160,40));
 		setOpaque(false);
@@ -28,9 +28,9 @@ public class SequenceMap extends JLabel implements Observer {
 	}
 	@Override
 	public void update(Observable observable, Object arg) {
-		if(observable.equals(ChalmeRisk.turn)){
+		if(observable.equals(ChalmeRisk.turnModel)){
 			if(arg.equals(new Integer(0))) {
-				state = ChalmeRisk.turn.getCurrentStateIndex() + 1;
+				state = ChalmeRisk.turnModel.getCurrentStateIndex() + 1;
 			}
 		}
 		

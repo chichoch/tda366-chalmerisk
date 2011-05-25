@@ -17,6 +17,7 @@ import javax.swing.JPanel;
 
 import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 import edu.chl.chalmerisk.risk.core.Country;
+import edu.chl.chalmerisk.risk.ctrl.AttackController;
 
 
 public class AttackDialog extends JFrame implements Observer{
@@ -53,11 +54,11 @@ public class AttackDialog extends JFrame implements Observer{
 		retreatButton = new JButton("Retreat!");
 		standingsLabel = new JLabel();
 		dicePanel = new JPanel();
-		a1dice = new DiceView(ChalmeRisk.dCtrl.getAttDice1());
-		a2dice = new DiceView(ChalmeRisk.dCtrl.getAttDice2());
-		a3dice = new DiceView(ChalmeRisk.dCtrl.getAttDice3());
-		d1dice = new DiceView(ChalmeRisk.dCtrl.getDefDice1());
-		d2dice = new DiceView(ChalmeRisk.dCtrl.getDefDice2());
+		a1dice = new DiceView(AttackController.dCtrl.getAttDice1());
+		a2dice = new DiceView(AttackController.dCtrl.getAttDice2());
+		a3dice = new DiceView(AttackController.dCtrl.getAttDice3());
+		d1dice = new DiceView(AttackController.dCtrl.getDefDice1());
+		d2dice = new DiceView(AttackController.dCtrl.getDefDice2());
 		fillPanel = new JPanel();
 		
 		setPanel(attTeamPanel);
@@ -94,13 +95,13 @@ public class AttackDialog extends JFrame implements Observer{
 		//actionlisteners
 		fightButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e){
-				ChalmeRisk.aCtrl.startFight();
+				new AttackController().startFight();
 			}
 		});
 		
 		retreatButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e){
-				ChalmeRisk.aCtrl.endFight();
+				new AttackController().endFight();
 			}
 		});
 	}
@@ -115,11 +116,11 @@ public class AttackDialog extends JFrame implements Observer{
 		retreatButton = new JButton("Retreat!");
 		standingsLabel = new JLabel();
 		dicePanel = new JPanel();
-		a1dice = new DiceView(ChalmeRisk.dCtrl.getAttDice1());
-		a2dice = new DiceView(ChalmeRisk.dCtrl.getAttDice2());
-		a3dice = new DiceView(ChalmeRisk.dCtrl.getAttDice3());
-		d1dice = new DiceView(ChalmeRisk.dCtrl.getDefDice1());
-		d2dice = new DiceView(ChalmeRisk.dCtrl.getDefDice2());
+		a1dice = new DiceView(AttackController.dCtrl.getAttDice1());
+		a2dice = new DiceView(AttackController.dCtrl.getAttDice2());
+		a3dice = new DiceView(AttackController.dCtrl.getAttDice3());
+		d1dice = new DiceView(AttackController.dCtrl.getDefDice1());
+		d2dice = new DiceView(AttackController.dCtrl.getDefDice2());
 		fillPanel = new JPanel();
 		
 		dicePanel.setLayout(new GridLayout(1,6));
@@ -162,13 +163,13 @@ public class AttackDialog extends JFrame implements Observer{
 		//actionlisteners
 		fightButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e){
-				ChalmeRisk.aCtrl.startFight();
+				new AttackController().startFight();
 			}
 		});
 		
 		retreatButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e){
-				ChalmeRisk.aCtrl.endFight();
+				new AttackController().endFight();
 			}
 		});
 	}

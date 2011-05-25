@@ -14,6 +14,7 @@ import javax.swing.JPanel;
 import javax.swing.JSlider;
 import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 import edu.chl.chalmerisk.risk.core.Country;
+import edu.chl.chalmerisk.risk.ctrl.TroopMovementController;
 
 public class MovementDialog extends JFrame implements ActionListener, Observer {
 	
@@ -84,10 +85,10 @@ public class MovementDialog extends JFrame implements ActionListener, Observer {
 		public void actionPerformed(ActionEvent e){
 			
 			if(e.getSource() == moveTroopsButton){
-				ChalmeRisk.tCtrl.doMovement(quantitySlider.getValue(), c1, c2);
+				new TroopMovementController().doMovement(quantitySlider.getValue(), c1, c2);
 				setVisible(false);
-				if(ChalmeRisk.turn.getCurrentStateIndex()==2){
-					ChalmeRisk.tCtrl.notAllowTroopMovement();
+				if(ChalmeRisk.turnModel.getCurrentStateIndex()==2){
+					ChalmeRisk.movementModel.notAllowTroopMovement();
 				}
 				
 			}

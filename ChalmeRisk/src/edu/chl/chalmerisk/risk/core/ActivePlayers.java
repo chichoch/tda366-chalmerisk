@@ -1,4 +1,4 @@
-package edu.chl.chalmerisk.risk.util;
+package edu.chl.chalmerisk.risk.core;
 import java.util.ArrayList;
 import java.util.List;
 

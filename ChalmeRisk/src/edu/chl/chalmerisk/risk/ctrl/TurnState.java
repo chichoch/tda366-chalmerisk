@@ -1,4 +1,4 @@
-package edu.chl.chalmerisk.risk.core;
+package edu.chl.chalmerisk.risk.ctrl;
 import edu.chl.chalmerisk.risk.ctrl.AttackController;
 import edu.chl.chalmerisk.risk.ctrl.ReinforcementController;
 import edu.chl.chalmerisk.risk.ctrl.TroopMovementController;

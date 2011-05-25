@@ -9,6 +9,7 @@ import java.util.Observable;
 public class MovementModel extends Observable {
 	private Country moveFromCountry;
 	private Country moveToCountry;
+	private boolean allowTroopMovement;
 	
 	public void newMovement(Country moveFromCountry, Country moveToCountry){
 		this.moveFromCountry = moveFromCountry;
@@ -23,5 +24,17 @@ public class MovementModel extends Observable {
 	
 	public Country getMoveToCountry(){
 		return moveToCountry;
+	}
+	
+	public void notAllowTroopMovement (){
+		allowTroopMovement=false;
+	}
+	
+	public void allowTroopMovement(){
+		allowTroopMovement=true;
+	}
+	
+	public boolean isTroopMovementAllowed(){
+		return allowTroopMovement;
 	}
 }
