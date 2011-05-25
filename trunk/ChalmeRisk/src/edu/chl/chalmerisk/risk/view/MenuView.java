@@ -12,6 +12,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -20,7 +23,9 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import edu.chl.chalmerisk.risk.core.GameStarter;
+
+import edu.chl.chalmerisk.risk.core.ChalmeRisk;
+import edu.chl.chalmerisk.risk.core.Player;
 
 public class MenuView extends JFrame implements ActionListener, ItemListener{
 	private JPanel leftPanel;
@@ -178,6 +183,28 @@ public class MenuView extends JFrame implements ActionListener, ItemListener{
 	    setExtendedState(getExtendedState()|Frame.MAXIMIZED_BOTH);
 	}
 	
+	public void startGame(String player1, String player2, String player3, String player4, String map) throws FileNotFoundException{
+		List<Player> pList = new ArrayList<Player>();
+		if(player1.isEmpty()==false){
+			Player PlayerOne = new Player(Color.RED, player1);
+			pList.add(PlayerOne);
+		}
+		if(player2.isEmpty()==false){
+			Player PlayerTwo = new Player(Color.GREEN, player2);
+			pList.add(PlayerTwo);
+		}
+		if(player3.isEmpty()==false){
+			Player PlayerThree = new Player(Color.YELLOW, player3);
+			pList.add(PlayerThree);
+		}
+		if(player4.isEmpty()==false){
+			Player PlayerFour = new Player(Color.BLUE, player4);
+			pList.add(PlayerFour);
+		}
+		new ChalmeRisk(pList, map);
+		new ViewBuilder();
+	}
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == startGameButton) {
@@ -200,7 +227,7 @@ public class MenuView extends JFrame implements ActionListener, ItemListener{
 			}
 			else{
 				try {
-					new GameStarter(playerTextField1.getText(), playerTextField2.getText(), playerTextField3.getText(), playerTextField4.getText(), (String)map.getSelectedItem());
+					startGame(playerTextField1.getText(), playerTextField2.getText(), playerTextField3.getText(), playerTextField4.getText(), (String)map.getSelectedItem());
 				} catch (FileNotFoundException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
