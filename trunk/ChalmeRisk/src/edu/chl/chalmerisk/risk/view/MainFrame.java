@@ -25,6 +25,7 @@ import javax.swing.JPanel;
 
 import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 import edu.chl.chalmerisk.risk.core.Country;
+import edu.chl.chalmerisk.risk.ctrl.Turn;
 
 
 public class MainFrame extends JFrame implements MouseListener, ActionListener, MouseMotionListener, Observer {
@@ -41,8 +42,10 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener, 
 	private InfoView infoView;
 	private ReinforcementPanel reinforcementPanel;
 	private GridLayout layout;
+	public static Turn turn;
 	
 	public MainFrame(List<Country> list) {
+		turn = new Turn();
 		setLayout(new BorderLayout());
 		setBackground(Color.BLACK);
 		addMouseMotionListener(this);
@@ -126,7 +129,7 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener, 
 		
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		ChalmeRisk.turn.setCountry(((CountryView) e.getSource()).getCountry().getCountryId());
+		turn.setCountry(((CountryView) e.getSource()).getCountry().getCountryId());
 	}
 
 	
@@ -154,18 +157,17 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener, 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()== nextStep){
-			ChalmeRisk.turn.changeState();
-			/*if (ChalmeRisk.turn.getCurrentStateIndex() == 0) {
+			turn.changeState();
+			if (ChalmeRisk.turnModel.getCurrentStateIndex() == 0) {
 				nextStep.setEnabled(false);
-				ChalmeRisk.tCtrl.allowTroopMovement();
+				ChalmeRisk.movementModel.allowTroopMovement();
 			}
-			*/
 		}
 	}
 
 	@Override
 	public void mouseDragged(MouseEvent arg0) {
-		if (ChalmeRisk.turn.getCurrentStateIndex() == 0) {
+		if (ChalmeRisk.turnModel.getCurrentStateIndex() == 0) {
 			reinforcementPanel.setVisible(true);
 			reinforcementPanel.setLocation(((int)getMousePosition().getX()), ((int)getMousePosition().getY() - 50));
 			validate();
@@ -177,7 +179,7 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener, 
 	
 	@Override
 	public void mouseMoved(MouseEvent arg0) {
-		if (ChalmeRisk.turn.getCurrentStateIndex() == 0) {
+		if (ChalmeRisk.turnModel.getCurrentStateIndex() == 0) {
 			reinforcementPanel.setVisible(true);
 			try {
 				reinforcementPanel.setLocation(((int)getMousePosition().getX()), ((int)getMousePosition().getY() - 50));

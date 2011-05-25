@@ -14,6 +14,7 @@ import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 import edu.chl.chalmerisk.risk.core.Continent;
 import edu.chl.chalmerisk.risk.core.Country;
 import edu.chl.chalmerisk.risk.core.Player;
+import edu.chl.chalmerisk.risk.core.ReinforcementCalculator;
 
 
 public class GameTest {

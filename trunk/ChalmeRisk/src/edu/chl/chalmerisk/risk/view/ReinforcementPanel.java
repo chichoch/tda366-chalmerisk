@@ -26,7 +26,7 @@ public class ReinforcementPanel extends JPanel implements Observer{
 		this.troops = troops;
 		icon = ViewBuilder.iconHandler.getIcon(ChalmeRisk.round.getCurrentPlayer(), 1);
 		iconLabel = new JLabel(icon);
-		ChalmeRisk.turn.addObserver(this);
+		ChalmeRisk.turnModel.addObserver(this);
 		for (int i = 0; i < ChalmeRisk.round.getPlayerList().size(); i++) {
 			ChalmeRisk.round.getPlayerList().get(i).addObserver(this);
 		}
@@ -56,7 +56,7 @@ public class ReinforcementPanel extends JPanel implements Observer{
 			}
 		}
 		
-		if (observable.equals(ChalmeRisk.turn)) {
+		if (observable.equals(ChalmeRisk.turnModel)) {
 			if(arg.equals(new Integer(0))){
 				iconLabel.setIcon(ViewBuilder.iconHandler.getIcon(ChalmeRisk.round.getCurrentPlayer(), 1));
 				troopLabel.setText("" + ChalmeRisk.round.getCurrentPlayer().getReinforcements());

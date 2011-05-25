@@ -2,6 +2,8 @@ package edu.chl.chalmerisk.risk.core;
 
 import java.util.Observable;
 import java.util.Observer;
+
+import edu.chl.chalmerisk.risk.view.MainFrame;
 /**
  * This class is the model that the InfoView Observ.
  * Holds the information that relevant for the game.
@@ -14,7 +16,7 @@ public class InfoModel extends Observable implements Observer {
 	private String CorrectMoveText;
 	
 	public InfoModel() {
-		ChalmeRisk.turn.addObserver(this);
+		ChalmeRisk.turnModel.addObserver(this);
 	}
 	public void setInfoText(String infoText){
 		this.infoText = infoText;
@@ -48,15 +50,15 @@ public class InfoModel extends Observable implements Observer {
 
 	@Override
 	public void update(Observable observable, Object arg) {
-		if (observable.equals(ChalmeRisk.turn)) {
+		if (observable.equals(ChalmeRisk.turnModel)) {
 			if(arg.equals(new Integer(0))){
-				if (ChalmeRisk.turn.getCurrentStateIndex() == 0){
+				if (ChalmeRisk.turnModel.getCurrentStateIndex() == 0){
 					setInfoText("You are now in the reinforcement state, place your reinforcements.");
 				}
-				else if (ChalmeRisk.turn.getCurrentStateIndex() == 1) {
+				else if (ChalmeRisk.turnModel.getCurrentStateIndex() == 1) {
 					setInfoText("You are now in the attack state.");
 				}
-				else if (ChalmeRisk.turn.getCurrentStateIndex() == 2) {
+				else if (ChalmeRisk.turnModel.getCurrentStateIndex() == 2) {
 					setInfoText("You are now in the troop movement state.");
 				}
 			}

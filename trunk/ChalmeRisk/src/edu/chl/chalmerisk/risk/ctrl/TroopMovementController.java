@@ -1,7 +1,6 @@
 package edu.chl.chalmerisk.risk.ctrl;
 import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 import edu.chl.chalmerisk.risk.core.Country;
-import edu.chl.chalmerisk.risk.core.TurnState;
 
 /**
  * Describes the Usecase TroopMovement.
@@ -13,7 +12,7 @@ public class TroopMovementController extends TurnState {
 	private Country moveFromCountry;
 	private Country moveToCountry;
 	private boolean isTroopMovementState;
-	private boolean allowTroopMovement;
+	
 	
 	
 	public TroopMovementController(){
@@ -42,7 +41,7 @@ public class TroopMovementController extends TurnState {
 				if (moveFromCountry.hasNeighbour(id) == true) {
 					firstCountrySelected = false;
 					moveFromCountry.setSelected(false);
-					if(allowTroopMovement){
+					if(ChalmeRisk.movementModel.isTroopMovementAllowed()){
 						ChalmeRisk.movementModel.newMovement(moveFromCountry, moveToCountry);
 						isTroopMovementState = true;
 					}
@@ -72,13 +71,7 @@ public class TroopMovementController extends TurnState {
 		}
 	}
 	
-	public void notAllowTroopMovement (){
-		allowTroopMovement=false;
-	}
 	
-	public void allowTroopMovement(){
-		allowTroopMovement=true;
-	}
 	
 
 	

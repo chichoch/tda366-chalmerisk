@@ -9,6 +9,7 @@ public class AttackModel extends Observable {
 	private Country attCountry;
 	private Country defCountry;
 	private String statusText;
+	private boolean takeOverCountry = false;
 	
 	public void newAttack(Country attCountry, Country defCountry){
 		this.attCountry = attCountry;
@@ -33,6 +34,18 @@ public class AttackModel extends Observable {
 		notifyObservers(3);
 	}
 	
+	public void setAttCountry(Country attCountry){
+		this.attCountry = attCountry;
+	}
+	
+	public void setDefCountry(Country defCountry){
+		this.defCountry = defCountry;
+	}
+	
+	public void setTakeOverCountry(boolean takeOverCountry){
+		this.takeOverCountry = takeOverCountry;
+	}
+	
 	public void callForRepaintTroops(Country attCountry, Country defCountry){
 		this.attCountry = attCountry;
 		this.defCountry = defCountry;
@@ -54,5 +67,9 @@ public class AttackModel extends Observable {
 	}
 	public String getStatusText(){
 		return statusText;
+	}
+	
+	public boolean takeOverCountry(){
+		return takeOverCountry;
 	}
 }
