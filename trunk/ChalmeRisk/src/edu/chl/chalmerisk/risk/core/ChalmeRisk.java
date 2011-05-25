@@ -5,7 +5,6 @@ import java.util.List;
 
 /**
  * This class works as a Builder for the whole game.
- * 
  */
 public class ChalmeRisk {
 	

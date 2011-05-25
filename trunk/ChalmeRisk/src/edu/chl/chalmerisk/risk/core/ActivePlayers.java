@@ -21,7 +21,7 @@ public class ActivePlayers {
   
     public boolean isActivePlayer(Player player) {
     	count = 0;
-    	List<Country> cList = new ArrayList<Country>();
+    	List<Country> cList;
     	cList = ChalmeRisk.map.getCountries();
     	for (int i = 0; i < cList.size(); i++) {
     		if(cList.get(i).getOwner().equals(player)){

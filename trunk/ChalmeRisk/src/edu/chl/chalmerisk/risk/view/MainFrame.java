@@ -197,7 +197,7 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener, 
 	@Override
 	public void update(Observable observable, Object arg) {
 		if(observable.equals(ChalmeRisk.round.getCurrentPlayer())){
-			if(arg.equals(new Integer(0))){
+			if(arg.equals(Integer.valueOf(0))){
 				if(ChalmeRisk.round.getCurrentPlayer().getReinforcements()==0){
 					nextStep.setEnabled(true);	
 				}

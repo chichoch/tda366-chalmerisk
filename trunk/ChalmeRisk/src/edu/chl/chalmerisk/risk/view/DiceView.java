@@ -62,7 +62,7 @@ public class DiceView extends JLabel implements Observer {
 	@Override
 	public void update(Observable observable, Object arg) {
 		if(observable.equals(dice)){
-			if(arg.equals(new Integer(0))){
+			if(arg.equals(Integer.valueOf(0))){
 				if(diceNotTossed(this.dice)){
 					setIcon(diceImageTom); 
 				}

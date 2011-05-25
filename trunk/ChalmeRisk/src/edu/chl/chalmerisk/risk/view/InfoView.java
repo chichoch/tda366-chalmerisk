@@ -20,15 +20,15 @@ public class InfoView extends JLabel implements Observer {
 	@Override
 	public void update(Observable observable, Object arg) {		
 		if(observable.equals(ChalmeRisk.infoModel)){
-			if(arg.equals(new Integer(0))){
+			if(arg.equals(Integer.valueOf(0))){
 				setText(ChalmeRisk.infoModel.getInfoText());
 				setForeground(Color.WHITE);
 			}
-			if(arg.equals(new Integer(1))){
+			if(arg.equals(Integer.valueOf(1))){
 				setText(ChalmeRisk.infoModel.getWarningText());
 				setForeground(Color.RED);
 			}
-			if(arg.equals(new Integer(2))){
+			if(arg.equals(Integer.valueOf(2))){
 				setText(ChalmeRisk.infoModel.getCorrectMoveText());
 				setForeground(Color.GREEN);
 			}

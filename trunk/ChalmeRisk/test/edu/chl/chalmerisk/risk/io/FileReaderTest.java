@@ -33,7 +33,7 @@ public class FileReaderTest {
 	 */
 	@Test
 	public void FileReaderTest() throws FileNotFoundException {
-		List<String> list = new ArrayList<String>();
+		List<String> list;
 		list = filereader.getFile("test/test.txt");
 		
 		Assert.assertTrue(list.size() == 4);

@@ -13,6 +13,5 @@ import edu.chl.chalmerisk.risk.view.ViewBuilder;
 public class GameOverException extends RuntimeException {
 	public GameOverException() {
 		JOptionPane.showMessageDialog(null, "The game is over! The winner is: " + ChalmeRisk.round.getCurrentPlayer().getName());
-		System.exit(0);
 	}
 }

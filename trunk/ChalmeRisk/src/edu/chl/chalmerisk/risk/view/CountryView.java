@@ -39,14 +39,14 @@ public class CountryView extends JPanel implements Observer {
 	@Override
 	public void update(Observable observable, Object arg) {
 		if(observable.equals(country)){
-			if(arg.equals(new Integer(0))){
+			if(arg.equals(Integer.valueOf(0))){
 				troopDisplay.setText(""+country.getTroops());
 				troopIcon.setIcon(ViewBuilder.iconHandler.getIcon(country.getOwner(), country.getTroops()));
 			}
-			if(arg.equals(new Integer(1))){
+			if(arg.equals(Integer.valueOf(1))){
 				troopIcon.setIcon(ViewBuilder.iconHandler.getIcon(country.getOwner(), country.getTroops()));
 			}
-			if(arg.equals(new Integer(2))){
+			if(arg.equals(Integer.valueOf(2))){
 				if(country.isSelected()){
 					troopIcon.setIcon(ViewBuilder.iconHandler.getSelectedIcon(country.getOwner(), country.getTroops()));
 				}

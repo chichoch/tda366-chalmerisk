@@ -11,6 +11,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.awt.event.WindowEvent;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
@@ -215,7 +216,8 @@ public class MenuView extends JFrame implements ActionListener, ItemListener{
 			new TutorialView();
 		}
 		if (e.getSource() == exitGameButton) {
-			System.exit(0);
+			processEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
+		
 		}
 		if (e.getSource() == back) {
 			CardLayout cl = (CardLayout)(centerPanel.getLayout());

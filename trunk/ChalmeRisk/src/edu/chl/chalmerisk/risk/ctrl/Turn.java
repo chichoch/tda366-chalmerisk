@@ -12,9 +12,6 @@ import edu.chl.chalmerisk.risk.ctrl.*;
  * This class is built with the State-pattern, 
  * and keeps track of which state the current player is in.
  * It also is checks if the game is in the first rounds. 
- *
- * @author christophe
- *
  */
 public class Turn extends Observable {
 	private AttackController aCtrl = new AttackController();
@@ -41,7 +38,7 @@ public class Turn extends Observable {
 	   
 	   public void changeState() {
 		   if (ChalmeRisk.turnModel.isFirstRound()){
-			   FirstRoundState();
+			   firstRoundState();
 			   if(firstRoundsCount == (ChalmeRisk.round.getNumberOfPlayers()*3)){
 				  ChalmeRisk.turnModel.notFirstRound();
 			   }
@@ -86,7 +83,7 @@ public class Turn extends Observable {
 		   }
 	   }
 	   
-	   public void FirstRoundState(){
+	   public void firstRoundState(){
 		   reinforcementState();
 		   ChalmeRisk.round.newRound();
 		   firstRoundsCount++;

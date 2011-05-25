@@ -109,7 +109,7 @@ public class MovementDialog extends JFrame implements ActionListener, Observer {
 	@Override
 	public void update(Observable observable, Object arg) {
 		if(observable.equals(ChalmeRisk.movementModel)){
-			if(arg.equals(new Integer(0))){
+			if(arg.equals(Integer.valueOf(0))){
 				newMovement(ChalmeRisk.movementModel.getMoveFromCountry(), ChalmeRisk.movementModel.getMoveToCountry());
 				setVisible(true);
 			}
