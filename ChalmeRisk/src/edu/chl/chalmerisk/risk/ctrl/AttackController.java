@@ -9,7 +9,7 @@ import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 public class AttackController extends TurnState{
 	public static DiceController dCtrl = new DiceController();
 	private boolean firstCountrySelected;
-	//TODO AttackTroops-1
+
 	//Constructor
 	public AttackController() {
 		firstCountrySelected = false;
