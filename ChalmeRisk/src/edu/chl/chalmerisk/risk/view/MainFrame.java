@@ -42,10 +42,9 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener, 
 	private InfoView infoView;
 	private ReinforcementPanel reinforcementPanel;
 	private GridLayout layout;
-	public static Turn turn;
+	public static Turn turn = new Turn();
 	
 	public MainFrame(List<Country> list) {
-		turn = new Turn();
 		setLayout(new BorderLayout());
 		setBackground(Color.BLACK);
 		addMouseMotionListener(this);

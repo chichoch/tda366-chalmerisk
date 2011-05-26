@@ -17,6 +17,10 @@ public class ViewBuilder {
 	public static IconHandler iconHandler;
 	
 	public ViewBuilder(){
+		build();
+	}
+	
+	private static void build(){
 		 movement = new MovementDialog();
 		 attack = new AttackDialog();
 		 iconHandler  = new IconHandler();
