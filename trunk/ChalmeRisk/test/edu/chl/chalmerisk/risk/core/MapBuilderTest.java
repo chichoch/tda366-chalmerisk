@@ -1,11 +1,14 @@
 package edu.chl.chalmerisk.risk.core;
 
 import java.io.FileNotFoundException;
-
 import junit.framework.Assert;
-
 import org.junit.Before;
 import org.junit.Test;
+
+/**
+ * Test for the mapbuilder
+ *
+ */
 
 
 public class MapBuilderTest {

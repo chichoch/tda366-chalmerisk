@@ -27,7 +27,6 @@ public class Dice extends Observable{
 	 */
 	public void tossDice() {
 		num = (int) ((Math.random() * 6) + 1);
-		//return num; 
 		setChanged();
 		notifyObservers(0);
 	}

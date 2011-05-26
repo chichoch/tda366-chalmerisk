@@ -9,10 +9,6 @@ import java.util.List;
 public class ChalmeRisk {
 	
 	public static Map map;
-	//public static DiceController dCtrl = new DiceController();
-	//public static AttackController aCtrl = new AttackController();
-	//public static ReinforcementController rCtrl = new ReinforcementController();
-	//public static TroopMovementController tCtrl = new TroopMovementController();
 	public static InfoModel infoModel;
 	public static Round round;
 	public static RandomizeCountries randomizer;

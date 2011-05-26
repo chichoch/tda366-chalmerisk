@@ -12,7 +12,10 @@ import edu.chl.chalmerisk.risk.core.Continent;
 import edu.chl.chalmerisk.risk.core.Country;
 import edu.chl.chalmerisk.risk.core.Player;
 import edu.chl.chalmerisk.risk.core.ReinforcementCalculator;
-
+/**
+ * Test different parts of the game
+ * Builds a dummy map for testing
+ */
 
 public class GameTest {
 	private List<Player> pList;
@@ -132,6 +135,7 @@ public class GameTest {
 	public void testSetReinforcementMain() {
 		Player test = pList.get(0);
 		test = ReinforcementCalculator.getInstance().setReinforcementsMain(pList.get(0));
+		
 		//The reinforcements should be 15/3 + 5*3 = 20. (From the rules for the game). 
 		Assert.assertTrue(test.getReinforcements() == 20);
 		
@@ -141,6 +145,7 @@ public class GameTest {
 			risk.map.getCountries().get(i).setOwner(random);
 		}
 		test = ReinforcementCalculator.getInstance().setReinforcementsMain(pList.get(0));
+		
 		//Should now only be 3 + 5 = 8
 		Assert.assertTrue(test.getReinforcements() == 8);
 	}

@@ -15,7 +15,7 @@ public class SequenceMap extends JLabel implements Observer {
 	private String player;
 	
 	/**
-	 * Shows the current state. Observs both Turn and Round.
+	 * Shows the current state. Observes both TurnModel and Round.
 	 */
 	public SequenceMap() {
 		imageIcon = new ImageIcon("resources/SQr1.gif");

@@ -7,7 +7,6 @@ import java.util.Observable;
 
 /**
  * This class keeps track of the players in the game.
- * @author christophe
  *
  */
 public class Round extends Observable{
@@ -21,6 +20,7 @@ public class Round extends Observable{
 		currentPlayer = pList.get(0);
 		numOfPlayers = pList.size();
 		currentNumber = -1;
+		
 		//Set the reinforcements.
 		ReinforcementCalculator.getInstance().setFirstReinforcements(pList);
 	}
@@ -64,6 +64,6 @@ public class Round extends Observable{
 	}
 	
 	public void updatePlayers(){
- 	ActivePlayers.getInstance().getActivePlayers(getPlayerList());
+		ActivePlayers.getInstance().getActivePlayers(getPlayerList());
 	}
 }

@@ -8,7 +8,7 @@ import java.util.Scanner;
 /**
  * Subsystem FileReader. Reads a file, and makes a List<String>
  * from it.
- * @author hajo, modified by Christophe
+ * @author hajo, modified by ChalmeRisk
  * 
  */
 public class FileReader implements IFileReader {
@@ -21,8 +21,10 @@ public class FileReader implements IFileReader {
 			while (sc.hasNextLine()) {
 				String s = sc.nextLine().trim();
 				if (s.length() == 0) {
+					
 					// Skip empty lines
 				} else if (s.matches("#.*")) {
+					
 					// Skip comments in file
 				} else {
 					sList.add(s);
@@ -41,5 +43,4 @@ public class FileReader implements IFileReader {
 	public static IFileReader getInstance() {
 		return new FileReader();
 	}
-	
 }

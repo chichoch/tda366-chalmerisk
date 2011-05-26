@@ -15,7 +15,6 @@ import java.awt.event.WindowEvent;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -24,10 +23,13 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-
 import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 import edu.chl.chalmerisk.risk.core.Player;
 
+/**
+ * The menu
+ *
+ */
 public class MenuView extends JFrame implements ActionListener, ItemListener{
 	private JPanel leftPanel;
 	private JPanel rightPanel;

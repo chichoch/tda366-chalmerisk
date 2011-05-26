@@ -8,6 +8,7 @@ import edu.chl.chalmerisk.risk.core.IconHandler;
  * Contains the View-elements of the application.
  * (Except the menu)
  */
+
 public class ViewBuilder {
 	public static MainFrame guiTest;
 	public static MovementDialog movement;

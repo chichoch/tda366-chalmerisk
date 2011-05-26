@@ -6,8 +6,7 @@ import edu.chl.chalmerisk.risk.core.Player;
 
 /**
  * Checks if the player (or Players) are active.
- * @author christophe
- *
+ * This is a singelton
  */
 public class ActivePlayers {
     private static ActivePlayers instance;

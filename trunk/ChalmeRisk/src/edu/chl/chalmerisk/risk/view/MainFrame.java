@@ -58,6 +58,7 @@ public class MainFrame extends JFrame implements MouseListener, ActionListener, 
 		karta = new JLayeredPane();
 		karta.setBackground(Color.BLACK);
 		karta.add(reinforcementPanel, JLayeredPane.DEFAULT_LAYER);
+		
 		//Set icons
 		JLabel map = new JLabel(icon);
 		for (int i = 0; i < list.size(); i++) {

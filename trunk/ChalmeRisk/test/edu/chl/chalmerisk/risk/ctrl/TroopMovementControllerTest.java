@@ -10,6 +10,10 @@ import org.junit.Test;
 import edu.chl.chalmerisk.risk.core.Country;
 import edu.chl.chalmerisk.risk.core.Player;
 
+/**
+ * Test the TroopMovementController
+ *
+ */
 
 public class TroopMovementControllerTest {
 	private TroopMovementController mCtrl;
@@ -26,6 +30,7 @@ public class TroopMovementControllerTest {
 		c2 = new Country("c2", 2, 100, 100, 10, n, player);
 	}
 	
+	//Test to move troops
 	@Test
 	public void moveTroopsTest() {
 		mCtrl.doMovement(5, c1, c2);

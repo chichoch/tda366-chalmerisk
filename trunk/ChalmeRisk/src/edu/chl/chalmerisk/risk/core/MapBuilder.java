@@ -91,7 +91,6 @@ public class MapBuilder {
 	 * 
 	 *
 	 * @throws FileNotFoundException
-	 * @author Christophe
 	 */
 	public MapBuilder(String fileName) throws FileNotFoundException {
 		file = FileReader.getInstance();
@@ -124,6 +123,7 @@ public class MapBuilder {
 						}
 						sca.close();
 						Player p = new Player(Color.black, "Random PLayer");
+						
 						//Creates a new Country with a standard number of troops (1), and a "Random Player"
 						Country c = new Country(countryName, countryId, countryX, countryY, 1, countryNeighboors, p);
 						countries.add(c);

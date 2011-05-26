@@ -6,6 +6,10 @@ import java.util.Observer;
 import javax.swing.JLabel;
 import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 
+/**
+ * The view for the infolabel 
+ *
+ */
 
 public class InfoView extends JLabel implements Observer {
 	

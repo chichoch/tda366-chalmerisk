@@ -3,8 +3,9 @@ import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 import edu.chl.chalmerisk.risk.core.Country;
 
 /**
- * Describes the Usecase TroopMovement.
+ * Describes the TroopMovement state.
  */
+
 public class TroopMovementController extends TurnState {
 	private boolean firstCountrySelected;
 	private Country moveFromCountry;
@@ -68,17 +69,4 @@ public class TroopMovementController extends TurnState {
 			isTroopMovementState = false;
 		}
 	}
-	
-	
-	
-
-	
-
-	/*
-	public void doMovement(int value){
-		firstSelectedCountry.setTroops(firstSelectedCountry.getTroops()-value);
-		secondSelectedCountry.setTroops(secondSelectedCountry.getTroops()+value);
-		ChalmeRisk.turn.changeState();
-	}
-	*/
 }

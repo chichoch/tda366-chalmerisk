@@ -4,9 +4,9 @@ import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 
 /**
  * Describes the Use-case Reinforcement.
- * @author christophe
  *
  */
+
 public class ReinforcementController extends TurnState{
 
 	public ReinforcementController(){

@@ -7,6 +7,11 @@ import javax.swing.JLabel;
 import edu.chl.chalmerisk.risk.core.Dice;
 import edu.chl.chalmerisk.risk.ctrl.AttackController;
 
+/**
+ * The view for the dices
+ *
+ */
+
 public class DiceView extends JLabel implements Observer {
 
 	private Dice dice;
