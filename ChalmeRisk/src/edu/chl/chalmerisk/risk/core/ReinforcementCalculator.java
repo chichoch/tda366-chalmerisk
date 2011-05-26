@@ -4,12 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
-
 import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 import edu.chl.chalmerisk.risk.core.Continent;
 import edu.chl.chalmerisk.risk.core.Country;
 import edu.chl.chalmerisk.risk.core.Player;
-import edu.chl.chalmerisk.risk.view.MainFrame;
+
 
 /**
  * Calculates the Reinforcements. 

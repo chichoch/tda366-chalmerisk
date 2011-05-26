@@ -3,7 +3,6 @@ package edu.chl.chalmerisk.risk.core;
 import java.util.Observable;
 import java.util.Observer;
 
-import edu.chl.chalmerisk.risk.view.MainFrame;
 /**
  * This class is the model that the InfoView Observ.
  * Holds the information that relevant for the game.

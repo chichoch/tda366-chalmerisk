@@ -3,9 +3,7 @@ package edu.chl.chalmerisk.risk.view;
 import java.awt.Color;
 import java.util.Observable;
 import java.util.Observer;
-
 import javax.swing.JLabel;
-
 import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 
 
