@@ -4,7 +4,7 @@ import javax.swing.JOptionPane;
 
 /**
  * GameOverException. 
- * Shows the winner and close the application.
+ * Shows the winner.
  * 
  */
 public class GameOverException extends RuntimeException {

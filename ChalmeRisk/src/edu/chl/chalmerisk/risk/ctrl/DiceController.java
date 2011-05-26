@@ -17,6 +17,7 @@ public class DiceController {
 	 * This method exists(purpose)to make it easier:
 	 * if you want to change the rules of the game.
 	**/
+	
 	public int getResult(int attckingTroops, int defendingTroops) {
 
 		if(attckingTroops>3 && defendingTroops==1){
@@ -55,7 +56,6 @@ public class DiceController {
 	 * (4) attacker killed 2
 	 * (5) defender killed 2 
 	 **/
-
 	public int battle(int attNumberOfDice, int defNumberOfDice) {
 
 		attDice1.tossDice();

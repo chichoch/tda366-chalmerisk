@@ -16,6 +16,10 @@ import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 import edu.chl.chalmerisk.risk.core.Country;
 import edu.chl.chalmerisk.risk.ctrl.TroopMovementController;
 
+/**
+ * The view for the movement dialog
+ *
+ */
 public class MovementDialog extends JFrame implements ActionListener, Observer {
 	
 	private JPanel movementPanelCenter;
@@ -82,19 +86,17 @@ public class MovementDialog extends JFrame implements ActionListener, Observer {
 		cancelButton.addActionListener(this);
 		
 	}
-		public void actionPerformed(ActionEvent e){
-			
-			if(e.getSource() == moveTroopsButton){
-				new TroopMovementController().doMovement(quantitySlider.getValue(), c1, c2);
-				setVisible(false);
-				if(ChalmeRisk.turnModel.getCurrentStateIndex()==2){
-					ChalmeRisk.movementModel.notAllowTroopMovement();
-				}
-				
-			}
-			if(e.getSource()== cancelButton){
-				setVisible(false);
-			}
+	public void actionPerformed(ActionEvent e){		
+		if(e.getSource() == moveTroopsButton){
+			new TroopMovementController().doMovement(quantitySlider.getValue(), c1, c2);
+			setVisible(false);
+			if(ChalmeRisk.turnModel.getCurrentStateIndex()==2){
+				ChalmeRisk.movementModel.notAllowTroopMovement();
+			}		
+		}
+		if(e.getSource()== cancelButton){
+			setVisible(false);
+		}
 	}
 
 	public void newMovement(Country fromCountry, Country toCountry){
@@ -106,6 +108,7 @@ public class MovementDialog extends JFrame implements ActionListener, Observer {
 		c1=fromCountry;
 		c2=toCountry;
 	}
+	
 	@Override
 	public void update(Observable observable, Object arg) {
 		if(observable.equals(ChalmeRisk.movementModel)){

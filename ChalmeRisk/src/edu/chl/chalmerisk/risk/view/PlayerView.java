@@ -9,7 +9,10 @@ import java.util.Observer;
 import javax.swing.JLabel;
 
 import edu.chl.chalmerisk.risk.core.ChalmeRisk;
-
+/**
+ * The view to show the active player
+ *
+ */
 
 public class PlayerView extends JLabel implements Observer{
 	

@@ -19,6 +19,10 @@ import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 import edu.chl.chalmerisk.risk.core.Country;
 import edu.chl.chalmerisk.risk.ctrl.AttackController;
 
+/**
+ * The view for the attackdialog
+ *
+ */
 
 public class AttackDialog extends JFrame implements Observer{
 	private JPanel fightPanel;

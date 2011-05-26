@@ -1,14 +1,15 @@
 package edu.chl.chalmerisk.risk.io;
 
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 import java.util.List;
-
 import junit.framework.Assert;
-
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * Tests the FileReader
+ *
+ */
 
 public class FileReaderTest {
 	

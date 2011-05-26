@@ -1,6 +1,10 @@
 package edu.chl.chalmerisk.risk.core;
 
 import java.util.Observable;
+/**
+ * This is the Model for the turn class
+ * 
+ */
 
 public class TurnModel extends Observable{
 

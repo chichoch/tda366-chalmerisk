@@ -6,7 +6,7 @@ import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 import edu.chl.chalmerisk.risk.core.Country;
 import edu.chl.chalmerisk.risk.core.Player;
 
-/* This is a class that randomizes the Countries for
+/** This is a class that randomizes the Countries for
  * the players in the start of each game 
  */
 

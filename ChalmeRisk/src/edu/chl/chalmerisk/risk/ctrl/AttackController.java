@@ -2,10 +2,10 @@ package edu.chl.chalmerisk.risk.ctrl;
 
 import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 
-
 /**
  * This class describes the Use-case Attack.
  */
+
 public class AttackController extends TurnState{
 	public static DiceController dCtrl = new DiceController();
 	private boolean firstCountrySelected;
@@ -52,8 +52,9 @@ public class AttackController extends TurnState{
 			}
 		}	 
 	}
+	
 	/**
-	 * This class sends the number of troops to the DiceController class
+	 * This method sends the number of troops to the DiceController class
 	 * and gets a number between 1-5 that represent a case which determines 
 	 * the outcome of the battle.
 	 */

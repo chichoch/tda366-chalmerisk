@@ -38,6 +38,7 @@ public class ReinforcementCalculator implements Observer{
 	
 	public List<Player> setReinforcementsFirstRounds(List<Player> pList) {
 		players = pList;
+		
 		//Sets the players reinforcements after the official rules.
 		int r = (50 - (5 * players.size()))/3;
 		for (int p = 0; p < players.size(); p++) {
@@ -49,12 +50,12 @@ public class ReinforcementCalculator implements Observer{
 	public Player setReinforcementsMain(Player player) {
 		conts = ChalmeRisk.map.getContinents();
 		countries = ChalmeRisk.map.getCountries();
+		
 		//Set reinforcements based on continents.
 		int contValue = 0;
 		for (int i = 0; i < conts.size(); i++) {
 			if (conts.get(i).getOwner().equals(player) && conts.get(i).getOwner() != null) {
 				contValue = contValue + conts.get(i).getValue();
-				//player.setMoreReinforcements(conts.get(i).getValue());
 			}
 		}
 		

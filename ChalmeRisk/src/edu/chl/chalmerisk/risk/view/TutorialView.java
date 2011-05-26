@@ -14,6 +14,10 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
+/**
+ * The tutorial
+ *
+ */
 
 public class TutorialView extends JFrame implements ActionListener {
 	
@@ -57,8 +61,6 @@ public class TutorialView extends JFrame implements ActionListener {
 		backButton2 = new JButton(back);
 		backButton2.setBackground(Color.WHITE);
 		backButton2.addActionListener(this);
-		
-		
 		
 		backButton1.setAlignmentX(Component.CENTER_ALIGNMENT);
 		mainWindowPanel.add(backButton1);
