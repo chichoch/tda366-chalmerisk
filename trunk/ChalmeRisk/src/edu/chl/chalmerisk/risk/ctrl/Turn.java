@@ -5,7 +5,6 @@ import java.util.Observable;
 
 import edu.chl.chalmerisk.risk.core.ChalmeRisk;
 import edu.chl.chalmerisk.risk.core.GameOverException;
-import edu.chl.chalmerisk.risk.ctrl.*;
 
 
 /**

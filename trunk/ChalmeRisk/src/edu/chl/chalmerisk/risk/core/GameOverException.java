@@ -2,9 +2,6 @@ package edu.chl.chalmerisk.risk.core;
 
 import javax.swing.JOptionPane;
 
-import edu.chl.chalmerisk.risk.view.MenuView;
-import edu.chl.chalmerisk.risk.view.ViewBuilder;
-
 /**
  * GameOverException. 
  * Shows the winner and close the application.

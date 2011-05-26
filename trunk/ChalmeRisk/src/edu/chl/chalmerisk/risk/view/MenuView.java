@@ -231,7 +231,6 @@ public class MenuView extends JFrame implements ActionListener, ItemListener{
 				try {
 					startGame(playerTextField1.getText(), playerTextField2.getText(), playerTextField3.getText(), playerTextField4.getText(), (String)map.getSelectedItem());
 				} catch (FileNotFoundException e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
 				setVisible(false);

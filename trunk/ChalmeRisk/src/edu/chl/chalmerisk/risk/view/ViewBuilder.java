@@ -7,8 +7,6 @@ import edu.chl.chalmerisk.risk.core.IconHandler;
  * Builder for the View.
  * Contains the View-elements of the application.
  * (Except the menu)
- * @author christophe
- *
  */
 public class ViewBuilder {
 	public static MainFrame guiTest;
