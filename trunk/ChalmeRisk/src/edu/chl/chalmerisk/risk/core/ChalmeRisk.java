@@ -19,8 +19,11 @@ public class ChalmeRisk {
 	public static AttackModel attackModel;
 	public static MovementModel movementModel;
 	public static TurnModel turnModel;
-
-	public ChalmeRisk(List<Player> pList, String filename) throws FileNotFoundException {
+	
+	public ChalmeRisk(List<Player> pList, String filename ) throws FileNotFoundException {
+		build(pList, filename);
+	}
+	private static void build(List<Player> pList, String filename) throws FileNotFoundException{
 		map = new Map("maps/"+filename+".txt");
 		turnModel = new TurnModel();
 		randomizer = new RandomizeCountries();
