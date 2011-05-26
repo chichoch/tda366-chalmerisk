@@ -26,6 +26,9 @@ public class GameTest {
 	private Continent cont3;
 	static ChalmeRisk risk;
 	
+	private static void build(List<Player> pList) throws FileNotFoundException {
+		risk = new ChalmeRisk(pList, "testmap");
+	}
 	
  		
 	@Before
@@ -35,8 +38,7 @@ public class GameTest {
 		pList.add(new Player(Color.GREEN, "Fredrik"));
 		pList.add(new Player(Color.BLUE, "Alexander"));
 		pList.add(new Player(Color.YELLOW, "Joakim"));
-		
-		risk = new ChalmeRisk(pList, "testmap");
+		build(pList);
 		countries = new ArrayList<Country>();
 		//All countries are neighbours.
 		int[] g = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15};
@@ -124,6 +126,7 @@ public class GameTest {
 		
 		//Test to remove a player and check if the reinforcement still works.
 		testList.remove(0);
+		testList = ReinforcementCalculator.getInstance().setReinforcementsFirstRounds(pList);
 		Assert.assertTrue(p2.getReinforcements() == 11);
 	}
 	
